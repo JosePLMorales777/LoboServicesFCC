@@ -1,0 +1,709 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>LoboServices</class>
+ <widget class="QMainWindow" name="LoboServices">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>LoboServices</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(244, 244, 244);</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QStackedWidget" name="stackedWidget">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>801</width>
+      <height>601</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QFrame{
+
+	font: 12pt &quot;Arial&quot;;
+}</string>
+    </property>
+    <property name="currentIndex">
+     <number>2</number>
+    </property>
+    <widget class="QWidget" name="IniciarSesion">
+     <widget class="QFrame" name="frame_7">
+      <property name="geometry">
+       <rect>
+        <x>-10</x>
+        <y>-10</y>
+        <width>811</width>
+        <height>611</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> background-color: rgb(145, 196, 107);</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QFrame" name="frame_8">
+       <property name="geometry">
+        <rect>
+         <x>390</x>
+         <y>20</y>
+         <width>411</width>
+         <height>581</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: #ffffff;</string>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+       <widget class="QLabel" name="label">
+        <property name="geometry">
+         <rect>
+          <x>160</x>
+          <y>20</y>
+          <width>111</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Iniciar Sesion</string>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="Registro">
+     <widget class="QFrame" name="frame_9">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>801</width>
+        <height>611</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> background-color: rgb(145, 196, 107);</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QFrame" name="frame_10">
+       <property name="geometry">
+        <rect>
+         <x>430</x>
+         <y>10</y>
+         <width>361</width>
+         <height>581</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: #ffffff;</string>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+       <widget class="QLabel" name="label_2">
+        <property name="geometry">
+         <rect>
+          <x>110</x>
+          <y>40</y>
+          <width>151</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Registro Profesor</string>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="Profesor">
+     <widget class="QFrame" name="frame">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>211</width>
+        <height>601</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QFrame {
+	background-color: rgb(49, 51, 64);
+}
+
+QPushButton{
+	background-color: rgb(49, 51, 64);
+	border: none;
+	color: rgb(153, 153, 161);
+
+}</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QPushButton" name="pushButton">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>40</y>
+         <width>161</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
+font: 12pt &quot;Arial&quot;;
+background-image: url(:/new/prefix1/Recursos/Profesor/Estudiantes32.png);
+background-repeat: no-repeat;
+padding-left: 30px;
+background-position:center left;
+
+}
+QPushButton:hover{
+	
+	font: 12pt &quot;Arial&quot;;
+	color: #ffffff;
+	background-image: url(:/new/prefix1/Recursos/Profesor/Estudiantes_Hover_32.png);
+background-repeat: no-repeat;
+padding-left: 30px;
+background-position:center left;
+}
+
+QPushButton:pressed{
+	
+	font: 12pt &quot;Arial&quot;;
+	color:  rgb(145, 196, 107);
+	background-image: url(:/new/prefix1/Recursos/Profesor/Estudiantes_Pressed_32.png);
+background-repeat: no-repeat;
+padding-left: 30px;
+background-position:center left;
+
+}</string>
+       </property>
+       <property name="text">
+        <string>Estudiantes</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_2">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>110</y>
+         <width>151</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
+font: 12pt &quot;Arial&quot;;
+background-image: url(:/new/prefix1/Recursos/Profesor/Materias32.png);
+background-repeat: no-repeat;
+padding-left: 30px;
+background-position:center left;
+
+}
+QPushButton:hover{
+	
+	font: 12pt &quot;Arial&quot;;
+	color: #ffffff;
+	background-image: url(:/new/prefix1/Recursos/Profesor/Materias_Hover_32.png);
+background-repeat: no-repeat;
+padding-left: 30px;
+background-position:center left;
+
+}
+QPushButton:pressed{
+	
+	font: 12pt &quot;Arial&quot;;
+	color:  rgb(145, 196, 107);
+	background-image: url(:/new/prefix1/Recursos/Profesor/Materias_Pressed_32.png);
+background-repeat: no-repeat;
+padding-left: 30px;
+background-position:center left;
+
+}</string>
+       </property>
+       <property name="text">
+        <string>Materias</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_3">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>180</y>
+         <width>141</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
+font: 12pt &quot;Arial&quot;;
+background-image: url(:/new/prefix1/Recursos/Profesor/Graficas32.png);
+background-repeat: no-repeat;
+padding-left: 30px;
+background-position:center left;
+
+}
+QPushButton:hover{
+	
+	font: 12pt &quot;Arial&quot;;
+	color: #ffffff;
+	background-image: url(:/new/prefix1/Recursos/Profesor/Graficas_Hover_32.png);
+background-repeat: no-repeat;
+padding-left: 30px;
+background-position:center left;
+}
+QPushButton:pressed{
+	
+	font: 12pt &quot;Arial&quot;;
+	color:  rgb(145, 196, 107);
+	background-image: url(:/new/prefix1/Recursos/Profesor/Graficas_Pressed_32.png);
+background-repeat: no-repeat;
+padding-left: 30px;
+background-position:center left;
+
+}</string>
+       </property>
+       <property name="text">
+        <string>Gráficas</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_4">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>260</y>
+         <width>131</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
+font: 12pt &quot;Arial&quot;;
+background-image: url(:/new/prefix1/Recursos/Profesor/Perfil32.png);
+background-repeat: no-repeat;
+padding-left: 30px;
+background-position:center left;
+
+}
+QPushButton:hover{
+	
+	font: 12pt &quot;Arial&quot;;
+	color: #ffffff;
+	background-image: url(:/new/prefix1/Recursos/Profesor/Perfil_Hover_32.png);
+background-repeat: no-repeat;
+padding-left: 30px;
+background-position:center left;
+}
+QPushButton:pressed{
+	
+	font: 12pt &quot;Arial&quot;;
+	color:  rgb(145, 196, 107);
+	background-image: url(:/new/prefix1/Recursos/Profesor/Perfil_Pressed_32.png);
+background-repeat: no-repeat;
+padding-left: 30px;
+background-position:center left;
+
+}</string>
+       </property>
+       <property name="text">
+        <string>Perfil</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_5">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>540</y>
+         <width>141</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
+font: 12pt &quot;Arial&quot;;
+background-image: url(:/new/prefix1/Recursos/Profesor/CerrarSesion32.png);
+background-repeat: no-repeat;
+padding-left: 30px;
+background-position:center left;
+}
+QPushButton:hover{
+	
+	font: 12pt &quot;Arial&quot;;
+	color: #ffffff;
+	background-image: url(:/new/prefix1/Recursos/Profesor/CerrarSesion_Hover_32.png);
+background-repeat: no-repeat;
+padding-left: 30px;
+background-position:center left;
+
+}
+QPushButton:pressed{
+	
+	font: 12pt &quot;Arial&quot;;
+	color:  rgb(145, 196, 107);
+	background-image: url(:/new/prefix1/Recursos/Profesor/CerrarSesion_Pressed_32.png);
+background-repeat: no-repeat;
+padding-left: 30px;
+background-position:center left;
+
+}</string>
+       </property>
+       <property name="text">
+        <string>Cerrar Sesión</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QFrame" name="frame_2">
+      <property name="geometry">
+       <rect>
+        <x>210</x>
+        <y>0</y>
+        <width>591</width>
+        <height>611</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> background-color: rgb(145, 196, 107);</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QFrame" name="frame_3">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>571</width>
+         <height>581</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: #ffffff;</string>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="Alumno">
+     <widget class="QFrame" name="frame_4">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>211</width>
+        <height>601</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QFrame {
+	background-color: rgb(49, 51, 64);
+}
+
+QPushButton{
+	background-color: rgb(49, 51, 64);
+	border: none;
+	color: rgb(153, 153, 161);
+
+}</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QPushButton" name="pushButton_6">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>40</y>
+         <width>161</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
+font: 12pt &quot;Arial&quot;;
+background-image: url(:/new/prefix1/Recursos/Alumno/Mapa32.png);
+background-repeat: no-repeat;
+padding-left: 30px;
+background-position:center left;
+
+}
+QPushButton:hover{
+	
+	font: 12pt &quot;Arial&quot;;
+	color: #ffffff;
+	background-image: url(:/new/prefix1/Recursos/Alumno/Mapa_Hover_32.png);
+background-repeat: no-repeat;
+padding-left: 30px;
+background-position:center left;
+}
+
+QPushButton:pressed{
+	
+	font: 12pt &quot;Arial&quot;;
+	color:  rgb(145, 196, 107);
+	background-image: url(:/new/prefix1/Recursos/Alumno/Mapa_Pressed_32.png);
+background-repeat: no-repeat;
+padding-left: 30px;
+background-position:center left;
+
+}</string>
+       </property>
+       <property name="text">
+        <string>Mapa</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_7">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>110</y>
+         <width>151</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
+font: 12pt &quot;Arial&quot;;
+background-image: url(:/new/prefix1/Recursos/Profesor/Materias32.png);
+background-repeat: no-repeat;
+padding-left: 30px;
+background-position:center left;
+
+}
+QPushButton:hover{
+	
+	font: 12pt &quot;Arial&quot;;
+	color: #ffffff;
+	background-image: url(:/new/prefix1/Recursos/Profesor/Materias_Hover_32.png);
+background-repeat: no-repeat;
+padding-left: 30px;
+background-position:center left;
+
+}
+QPushButton:pressed{
+	
+	font: 12pt &quot;Arial&quot;;
+	color:  rgb(145, 196, 107);
+	background-image: url(:/new/prefix1/Recursos/Profesor/Materias_Pressed_32.png);
+background-repeat: no-repeat;
+padding-left: 30px;
+background-position:center left;
+
+}</string>
+       </property>
+       <property name="text">
+        <string>Materias</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_8">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>180</y>
+         <width>141</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
+font: 12pt &quot;Arial&quot;;
+background-image: url(:/new/prefix1/Recursos/Profesor/Graficas32.png);
+background-repeat: no-repeat;
+padding-left: 30px;
+background-position:center left;
+
+}
+QPushButton:hover{
+	
+	font: 12pt &quot;Arial&quot;;
+	color: #ffffff;
+	background-image: url(:/new/prefix1/Recursos/Profesor/Graficas_Hover_32.png);
+background-repeat: no-repeat;
+padding-left: 30px;
+background-position:center left;
+}
+QPushButton:pressed{
+	
+	font: 12pt &quot;Arial&quot;;
+	color:  rgb(145, 196, 107);
+	background-image: url(:/new/prefix1/Recursos/Profesor/Graficas_Pressed_32.png);
+background-repeat: no-repeat;
+padding-left: 30px;
+background-position:center left;
+
+}</string>
+       </property>
+       <property name="text">
+        <string>Gráficas</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_9">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>260</y>
+         <width>131</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
+font: 12pt &quot;Arial&quot;;
+background-image: url(:/new/prefix1/Recursos/Profesor/Perfil32.png);
+background-repeat: no-repeat;
+padding-left: 30px;
+background-position:center left;
+
+}
+QPushButton:hover{
+	
+	font: 12pt &quot;Arial&quot;;
+	color: #ffffff;
+	background-image: url(:/new/prefix1/Recursos/Profesor/Perfil_Hover_32.png);
+background-repeat: no-repeat;
+padding-left: 30px;
+background-position:center left;
+}
+QPushButton:pressed{
+	
+	font: 12pt &quot;Arial&quot;;
+	color:  rgb(145, 196, 107);
+	background-image: url(:/new/prefix1/Recursos/Profesor/Perfil_Pressed_32.png);
+background-repeat: no-repeat;
+padding-left: 30px;
+background-position:center left;
+
+}</string>
+       </property>
+       <property name="text">
+        <string>Perfil</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_10">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>540</y>
+         <width>141</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
+font: 12pt &quot;Arial&quot;;
+background-image: url(:/new/prefix1/Recursos/Profesor/CerrarSesion32.png);
+background-repeat: no-repeat;
+padding-left: 30px;
+background-position:center left;
+}
+QPushButton:hover{
+	
+	font: 12pt &quot;Arial&quot;;
+	color: #ffffff;
+	background-image: url(:/new/prefix1/Recursos/Profesor/CerrarSesion_Hover_32.png);
+background-repeat: no-repeat;
+padding-left: 30px;
+background-position:center left;
+
+}
+QPushButton:pressed{
+	
+	font: 12pt &quot;Arial&quot;;
+	color:  rgb(145, 196, 107);
+	background-image: url(:/new/prefix1/Recursos/Profesor/CerrarSesion_Pressed_32.png);
+background-repeat: no-repeat;
+padding-left: 30px;
+background-position:center left;
+
+}</string>
+       </property>
+       <property name="text">
+        <string>Cerrar Sesión</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QFrame" name="frame_5">
+      <property name="geometry">
+       <rect>
+        <x>210</x>
+        <y>0</y>
+        <width>591</width>
+        <height>611</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> background-color: rgb(145, 196, 107);</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QFrame" name="frame_6">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>571</width>
+         <height>581</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: #ffffff;</string>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
