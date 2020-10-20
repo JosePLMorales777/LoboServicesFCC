@@ -202,6 +202,19 @@ void MainWindow::on_mapa_clicked(){
     ui->stackAlumno->setCurrentIndex(0);
 }
 void MainWindow::on_materias_clicked(){
+    QString materDips = "SELECT m.idMateria,m.Nombre FROM materia as m"
+             " INNER JOIN infomateria as i ON m.idMateria = i.idMateria "
+            "WHERE i.matricula = '" + matricula + "' AND i.disponible = 1";
+
+    qDebug()<< materDips;
+
+    QSqlQueryModel *queryMateriaDisp;
+
+    queryMateriaDisp = new QSqlQueryModel();
+    queryMateriaDisp->setQuery(materDips);
+
+    ui->tablaMaterias->setModel(queryMateriaDisp);
+
     ui->stackAlumno->setCurrentIndex(1);
 }
 void MainWindow::on_graficas_clicked(){

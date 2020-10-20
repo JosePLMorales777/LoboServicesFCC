@@ -573,6 +573,217 @@ background-position:center left;
          <property name="title">
           <string/>
          </property>
+         <widget class="QLabel" name="label_7">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>601</width>
+            <height>131</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border-image: url(:/Imagenes/Profesor/barra.png);</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+         <widget class="QTableView" name="tablaMaterias">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>150</y>
+            <width>561</width>
+            <height>161</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QTableView {
+
+border-radius: 15px;
+background: rgba(224, 222, 225, 120);
+selection-background-color: rgba(143, 141, 161, 204);
+selection-color: rgb(243, 241, 244);
+}
+
+QHeaderView::section {
+font: 9pt;
+height: 15px;
+background: rgb(240, 238, 241);
+border-radius: 20px;
+}</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_8">
+          <property name="geometry">
+           <rect>
+            <x>110</x>
+            <y>60</y>
+            <width>391</width>
+            <height>62</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>MS Shell Dlg 2</family>
+            <pointsize>16</pointsize>
+            <weight>10</weight>
+            <italic>false</italic>
+            <bold>false</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: transparent;
+color:white;
+font: 80 16pt &quot;MS Shell Dlg 2&quot;;</string>
+          </property>
+          <property name="text">
+           <string>Seleccionar materias para cursar</string>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="materiaEdit1">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>370</y>
+            <width>71</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QLineEdit {
+background: rgba(224, 222, 225, 120);
+border-radius: 12px;
+color: black;
+font-size: 15px;
+padding-left: 27px;
+}
+</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_9">
+          <property name="geometry">
+           <rect>
+            <x>130</x>
+            <y>325</y>
+            <width>361</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>MS Shell Dlg 2</family>
+            <pointsize>12</pointsize>
+            <weight>10</weight>
+            <italic>false</italic>
+            <bold>false</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: transparent;
+color:black;
+font: 80 12pt &quot;MS Shell Dlg 2&quot;;</string>
+          </property>
+          <property name="text">
+           <string>Inserte el id de las materias a inscribir:</string>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="materiaEdit2">
+          <property name="geometry">
+           <rect>
+            <x>120</x>
+            <y>370</y>
+            <width>71</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QLineEdit {
+background: rgba(224, 222, 225, 120);
+border-radius: 12px;
+color: black;
+font-size: 15px;
+padding-left: 27px;
+}</string>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="materiaEdit3">
+          <property name="geometry">
+           <rect>
+            <x>220</x>
+            <y>370</y>
+            <width>71</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QLineEdit {
+background: rgba(224, 222, 225, 120);
+border-radius: 12px;
+color: black;
+font-size: 15px;
+padding-left: 27px;
+}</string>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="materiaEdit4">
+          <property name="geometry">
+           <rect>
+            <x>320</x>
+            <y>370</y>
+            <width>71</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QLineEdit {
+background: rgba(224, 222, 225, 120);
+border-radius: 12px;
+color: black;
+font-size: 15px;
+padding-left: 27px;
+}</string>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="materiaEdit5">
+          <property name="geometry">
+           <rect>
+            <x>420</x>
+            <y>370</y>
+            <width>71</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QLineEdit {
+background: rgba(224, 222, 225, 120);
+border-radius: 12px;
+color: black;
+font-size: 15px;
+padding-left: 27px;
+}</string>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="materiaEdit6">
+          <property name="geometry">
+           <rect>
+            <x>510</x>
+            <y>370</y>
+            <width>71</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QLineEdit {
+background: rgba(224, 222, 225, 120);
+border-radius: 12px;
+color: black;
+font-size: 15px;
+padding-left: 27px;
+}</string>
+          </property>
+         </widget>
         </widget>
        </widget>
        <widget class="QWidget" name="Graficas">
