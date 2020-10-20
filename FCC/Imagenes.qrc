@@ -1,0 +1,30 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Imagenes/Alumno/logo.gif</file>
+        <file>Imagenes/Alumno/mapa.jpg</file>
+        <file>Imagenes/Alumno/Mapa_Hover_32.png</file>
+        <file>Imagenes/Alumno/Mapa_Pressed_32.png</file>
+        <file>Imagenes/Alumno/Mapa32.png</file>
+        <file>Imagenes/Alumno/user.png</file>
+        <file>Imagenes/Profesor/barra.png</file>
+        <file>Imagenes/Profesor/buscar.png</file>
+        <file>Imagenes/Profesor/CerrarSesion_Hover_32.png</file>
+        <file>Imagenes/Profesor/CerrarSesion_Pressed_32.png</file>
+        <file>Imagenes/Profesor/CerrarSesion32.png</file>
+        <file>Imagenes/Profesor/Estudiantes_Hover_32.png</file>
+        <file>Imagenes/Profesor/Estudiantes_Pressed_32.png</file>
+        <file>Imagenes/Profesor/Estudiantes32.png</file>
+        <file>Imagenes/Profesor/Estudiantes64.png</file>
+        <file>Imagenes/Profesor/grafica.png</file>
+        <file>Imagenes/Profesor/Graficas_Hover_32.png</file>
+        <file>Imagenes/Profesor/Graficas_Pressed_32.png</file>
+        <file>Imagenes/Profesor/Graficas32.png</file>
+        <file>Imagenes/Profesor/Materias_Hover_32.png</file>
+        <file>Imagenes/Profesor/Materias_Pressed_32.png</file>
+        <file>Imagenes/Profesor/Materias32.png</file>
+        <file>Imagenes/Profesor/Perfil_Hover_32.png</file>
+        <file>Imagenes/Profesor/Perfil_Pressed_32.png</file>
+        <file>Imagenes/Profesor/Perfil32.png</file>
+        <file>Imagenes/Alumno/Mapa_ICC.jpg</file>
+    </qresource>
+</RCC>
