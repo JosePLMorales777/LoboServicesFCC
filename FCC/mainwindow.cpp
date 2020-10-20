@@ -47,8 +47,32 @@ void MainWindow::BaseDatos(){
     }
 }
 
-void MainWindow::CargarDatosAlumo(){
+void MainWindow::CargarMateriasAlumo(){
+    int contCM = 1;
 
+    /*aqui se cargan las materias de primer semestre*/
+    while (contCM <= 5) {
+        QString idMater = QString::number(contCM);
+        QString insertMAT1 = "INSERT INTO infomateria(matricula,idMateria,cursada,encurso,disponible,ninguno) VALUES ('" + matricula + "','" + idMater + "',0,1,0,0)";
+
+        QSqlQuery insertMateria1;
+        insertMateria1.exec(insertMAT1);
+        insertMateria1.next();
+
+        contCM = contCM + 1;
+    }
+
+    /*aqui las de segundo semestre*/
+    while (contCM <= 73) {
+        QString idMater2 = QString::number(contCM);
+        QString insertMAT2 = "INSERT INTO infomateria(matricula,idMateria,cursada,encurso,disponible,ninguno) VALUES ('" + matricula + "','" + idMater2 + "',0,0,0,1)";
+
+        QSqlQuery insertMateria2;
+        insertMateria2.exec(insertMAT2);
+        insertMateria2.next();
+
+        contCM = contCM + 1;
+    }
 }
 
 void MainWindow::AgregarDatos(){
@@ -121,6 +145,25 @@ void MainWindow::on_ingresar_clicked(){
     if(mat == resultCAl && pa == resultCAL2){
         ui->stackedWidget->setCurrentIndex(1);
 
+        matricula = mat;
+        qDebug()<< "Matricula autenticada: " << matricula;
+
+        /*Cargar las materias si es necesario*/
+        QString verifmaterias = "SELECT matricula FROM infomateria WHERE matricula = '" + matricula + "' AND idMateria = 1";
+
+        QSqlQuery verMaterias;
+        verMaterias.exec(verifmaterias);
+        verMaterias.next();
+
+        QString verMat = verMaterias.value("matricula").toString();
+        qDebug() << verMat;
+
+        if(verMat.isEmpty()){
+            qDebug() << "Está vacío";
+            CargarMateriasAlumo();
+        }
+        /**/
+
         ui->matricula->clear();
         ui->contra->clear();
 
@@ -146,8 +189,8 @@ void MainWindow::on_ingresar_clicked(){
             ui->contra->clear();
 
             return;
-        }else if(resultCAl.isEmpty() && resultCAL2.isEmpty() && resultCPR.isEmpty() && resultCPR2.isEmpty()){
-            QMessageBox::about(this, "Error", "El usuario es incorrecto o inexistente");
+        }else if(resultCAl.isEmpty() || resultCAL2.isEmpty() || resultCPR.isEmpty() || resultCPR2.isEmpty()){
+            QMessageBox::about(this, "Error", "Los datos ingresados son incorrectos");
             return;
         }
     }

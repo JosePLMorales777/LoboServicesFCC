@@ -40,7 +40,7 @@ private slots:
 
     void BaseDatos();
 
-    void CargarDatosAlumo();
+    void CargarMateriasAlumo();
 
     void BuscarAlumno();
 

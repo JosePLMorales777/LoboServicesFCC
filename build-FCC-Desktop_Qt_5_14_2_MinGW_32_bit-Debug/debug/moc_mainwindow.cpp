@@ -23,7 +23,7 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainWindow_t {
     QByteArrayData data[17];
-    char stringdata0[291];
+    char stringdata0[294];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -36,23 +36,23 @@ QT_MOC_LITERAL(0, 0, 10), // "MainWindow"
 QT_MOC_LITERAL(1, 11, 5), // "Movie"
 QT_MOC_LITERAL(2, 17, 0), // ""
 QT_MOC_LITERAL(3, 18, 9), // "BaseDatos"
-QT_MOC_LITERAL(4, 28, 16), // "CargarDatosAlumo"
-QT_MOC_LITERAL(5, 45, 12), // "BuscarAlumno"
-QT_MOC_LITERAL(6, 58, 19), // "on_ingresar_clicked"
-QT_MOC_LITERAL(7, 78, 15), // "on_mapa_clicked"
-QT_MOC_LITERAL(8, 94, 19), // "on_materias_clicked"
-QT_MOC_LITERAL(9, 114, 19), // "on_graficas_clicked"
-QT_MOC_LITERAL(10, 134, 17), // "on_perfil_clicked"
-QT_MOC_LITERAL(11, 152, 24), // "on_cerrar_sesion_clicked"
-QT_MOC_LITERAL(12, 177, 22), // "on_estudiantes_clicked"
-QT_MOC_LITERAL(13, 200, 21), // "on_materias_2_clicked"
-QT_MOC_LITERAL(14, 222, 21), // "on_graficas_2_clicked"
-QT_MOC_LITERAL(15, 244, 19), // "on_perfil_2_clicked"
-QT_MOC_LITERAL(16, 264, 26) // "on_cerrar_sesion_2_clicked"
+QT_MOC_LITERAL(4, 28, 19), // "CargarMateriasAlumo"
+QT_MOC_LITERAL(5, 48, 12), // "BuscarAlumno"
+QT_MOC_LITERAL(6, 61, 19), // "on_ingresar_clicked"
+QT_MOC_LITERAL(7, 81, 15), // "on_mapa_clicked"
+QT_MOC_LITERAL(8, 97, 19), // "on_materias_clicked"
+QT_MOC_LITERAL(9, 117, 19), // "on_graficas_clicked"
+QT_MOC_LITERAL(10, 137, 17), // "on_perfil_clicked"
+QT_MOC_LITERAL(11, 155, 24), // "on_cerrar_sesion_clicked"
+QT_MOC_LITERAL(12, 180, 22), // "on_estudiantes_clicked"
+QT_MOC_LITERAL(13, 203, 21), // "on_materias_2_clicked"
+QT_MOC_LITERAL(14, 225, 21), // "on_graficas_2_clicked"
+QT_MOC_LITERAL(15, 247, 19), // "on_perfil_2_clicked"
+QT_MOC_LITERAL(16, 267, 26) // "on_cerrar_sesion_2_clicked"
 
     },
     "MainWindow\0Movie\0\0BaseDatos\0"
-    "CargarDatosAlumo\0BuscarAlumno\0"
+    "CargarMateriasAlumo\0BuscarAlumno\0"
     "on_ingresar_clicked\0on_mapa_clicked\0"
     "on_materias_clicked\0on_graficas_clicked\0"
     "on_perfil_clicked\0on_cerrar_sesion_clicked\0"
@@ -120,7 +120,7 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         switch (_id) {
         case 0: _t->Movie(); break;
         case 1: _t->BaseDatos(); break;
-        case 2: _t->CargarDatosAlumo(); break;
+        case 2: _t->CargarMateriasAlumo(); break;
         case 3: _t->BuscarAlumno(); break;
         case 4: _t->on_ingresar_clicked(); break;
         case 5: _t->on_mapa_clicked(); break;
