@@ -53,6 +53,57 @@ public:
     QStackedWidget *stackAlumno;
     QWidget *Mapa;
     QGroupBox *groupBox_2;
+    QLabel *mapaGRAFICO;
+    QPushButton *mater2;
+    QPushButton *mater22;
+    QPushButton *mater17;
+    QPushButton *mater10;
+    QPushButton *mater4;
+    QPushButton *mater5;
+    QPushButton *mater11;
+    QPushButton *mater7;
+    QPushButton *mater1;
+    QPushButton *mater8;
+    QPushButton *mater14;
+    QPushButton *mater13;
+    QPushButton *mater19;
+    QPushButton *mater18;
+    QPushButton *mater12;
+    QPushButton *mater6;
+    QPushButton *mater9;
+    QPushButton *mater3;
+    QPushButton *mater26;
+    QPushButton *mater27;
+    QPushButton *mater21;
+    QPushButton *mater20;
+    QPushButton *mater32;
+    QPushButton *mater16;
+    QPushButton *mater25;
+    QPushButton *mater15;
+    QPushButton *mater37;
+    QPushButton *mater41;
+    QPushButton *mater29;
+    QPushButton *mater42;
+    QPushButton *mater23;
+    QPushButton *mater28;
+    QPushButton *mater24;
+    QPushButton *mater40;
+    QPushButton *mater35;
+    QPushButton *mater30;
+    QPushButton *mater31;
+    QPushButton *mater36;
+    QPushButton *mater43;
+    QPushButton *mater47;
+    QPushButton *pushButton_41;
+    QPushButton *mater46;
+    QPushButton *mater49;
+    QPushButton *mater48;
+    QPushButton *mater33;
+    QPushButton *mater38;
+    QPushButton *mater34;
+    QPushButton *mater39;
+    QPushButton *mater44;
+    QPushButton *mater45;
     QWidget *Materias;
     QGroupBox *groupBox_18;
     QLabel *label_7;
@@ -65,6 +116,7 @@ public:
     QLineEdit *materiaEdit4;
     QLineEdit *materiaEdit5;
     QLineEdit *materiaEdit6;
+    QPushButton *inscribitButton;
     QWidget *Graficas;
     QGroupBox *groupBox_17;
     QWidget *Perfil;
@@ -392,8 +444,412 @@ public:
         Mapa->setObjectName(QString::fromUtf8("Mapa"));
         groupBox_2 = new QGroupBox(Mapa);
         groupBox_2->setObjectName(QString::fromUtf8("groupBox_2"));
-        groupBox_2->setGeometry(QRect(0, 10, 1291, 951));
-        groupBox_2->setStyleSheet(QString::fromUtf8("border-image: url(:/Imagenes/Alumno/Mapa_ICC.jpg);"));
+        groupBox_2->setGeometry(QRect(0, 10, 1321, 951));
+        groupBox_2->setStyleSheet(QString::fromUtf8(""));
+        mapaGRAFICO = new QLabel(groupBox_2);
+        mapaGRAFICO->setObjectName(QString::fromUtf8("mapaGRAFICO"));
+        mapaGRAFICO->setGeometry(QRect(0, 0, 1291, 951));
+        mapaGRAFICO->setStyleSheet(QString::fromUtf8("border-image: url(:/Imagenes/Alumno/Mapa_ICC.jpg);"));
+        mater2 = new QPushButton(groupBox_2);
+        mater2->setObjectName(QString::fromUtf8("mater2"));
+        mater2->setGeometry(QRect(210, 210, 51, 51));
+        mater2->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	background-color: transparent;\n"
+"	border-image: url(:/Imagenes/Alumno/candadoF.png);\n"
+"}\n"
+""));
+        mater22 = new QPushButton(groupBox_2);
+        mater22->setObjectName(QString::fromUtf8("mater22"));
+        mater22->setGeometry(QRect(540, 750, 51, 51));
+        mater22->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	background-color: transparent;\n"
+"	border-image: url(:/Imagenes/Alumno/candadoF.png);\n"
+"}\n"
+""));
+        mater17 = new QPushButton(groupBox_2);
+        mater17->setObjectName(QString::fromUtf8("mater17"));
+        mater17->setGeometry(QRect(430, 750, 51, 51));
+        mater17->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	background-color: transparent;\n"
+"	border-image: url(:/Imagenes/Alumno/candadoF.png);\n"
+"}\n"
+""));
+        mater10 = new QPushButton(groupBox_2);
+        mater10->setObjectName(QString::fromUtf8("mater10"));
+        mater10->setGeometry(QRect(320, 750, 51, 51));
+        mater10->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	background-color: transparent;\n"
+"	border-image: url(:/Imagenes/Alumno/candadoF.png);\n"
+"}\n"
+""));
+        mater4 = new QPushButton(groupBox_2);
+        mater4->setObjectName(QString::fromUtf8("mater4"));
+        mater4->setGeometry(QRect(210, 750, 51, 51));
+        mater4->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	background-color: transparent;\n"
+"	border-image: url(:/Imagenes/Alumno/candadoF.png);\n"
+"}\n"
+""));
+        mater5 = new QPushButton(groupBox_2);
+        mater5->setObjectName(QString::fromUtf8("mater5"));
+        mater5->setGeometry(QRect(210, 840, 51, 51));
+        mater5->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	background-color: transparent;\n"
+"	border-image: url(:/Imagenes/Alumno/candadoF.png);\n"
+"}\n"
+""));
+        mater11 = new QPushButton(groupBox_2);
+        mater11->setObjectName(QString::fromUtf8("mater11"));
+        mater11->setGeometry(QRect(320, 840, 51, 51));
+        mater11->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	background-color: transparent;\n"
+"	border-image: url(:/Imagenes/Alumno/candadoF.png);\n"
+"}\n"
+""));
+        mater7 = new QPushButton(groupBox_2);
+        mater7->setObjectName(QString::fromUtf8("mater7"));
+        mater7->setGeometry(QRect(320, 210, 51, 51));
+        mater7->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	background-color: transparent;\n"
+"	border-image: url(:/Imagenes/Alumno/candadoF.png);\n"
+"}\n"
+""));
+        mater1 = new QPushButton(groupBox_2);
+        mater1->setObjectName(QString::fromUtf8("mater1"));
+        mater1->setGeometry(QRect(210, 110, 51, 51));
+        mater1->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	background-color: transparent;\n"
+"	border-image: url(:/Imagenes/Alumno/candadoF.png);\n"
+"}\n"
+""));
+        mater8 = new QPushButton(groupBox_2);
+        mater8->setObjectName(QString::fromUtf8("mater8"));
+        mater8->setGeometry(QRect(320, 290, 51, 51));
+        mater8->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	background-color: transparent;\n"
+"	border-image: url(:/Imagenes/Alumno/candadoF.png);\n"
+"}\n"
+""));
+        mater14 = new QPushButton(groupBox_2);
+        mater14->setObjectName(QString::fromUtf8("mater14"));
+        mater14->setGeometry(QRect(430, 290, 51, 51));
+        mater14->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	background-color: transparent;\n"
+"	border-image: url(:/Imagenes/Alumno/candadoF.png);\n"
+"}\n"
+""));
+        mater13 = new QPushButton(groupBox_2);
+        mater13->setObjectName(QString::fromUtf8("mater13"));
+        mater13->setGeometry(QRect(430, 210, 51, 51));
+        mater13->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	background-color: transparent;\n"
+"	border-image: url(:/Imagenes/Alumno/candadoF.png);\n"
+"}\n"
+""));
+        mater19 = new QPushButton(groupBox_2);
+        mater19->setObjectName(QString::fromUtf8("mater19"));
+        mater19->setGeometry(QRect(540, 210, 51, 51));
+        mater19->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	background-color: transparent;\n"
+"	border-image: url(:/Imagenes/Alumno/candadoF.png);\n"
+"}\n"
+""));
+        mater18 = new QPushButton(groupBox_2);
+        mater18->setObjectName(QString::fromUtf8("mater18"));
+        mater18->setGeometry(QRect(540, 110, 51, 51));
+        mater18->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	background-color: transparent;\n"
+"	border-image: url(:/Imagenes/Alumno/candadoF.png);\n"
+"}\n"
+""));
+        mater12 = new QPushButton(groupBox_2);
+        mater12->setObjectName(QString::fromUtf8("mater12"));
+        mater12->setGeometry(QRect(430, 110, 51, 51));
+        mater12->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	background-color: transparent;\n"
+"	border-image: url(:/Imagenes/Alumno/candadoF.png);\n"
+"}\n"
+""));
+        mater6 = new QPushButton(groupBox_2);
+        mater6->setObjectName(QString::fromUtf8("mater6"));
+        mater6->setGeometry(QRect(320, 110, 51, 51));
+        mater6->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	background-color: transparent;\n"
+"	border-image: url(:/Imagenes/Alumno/candadoF.png);\n"
+"}\n"
+""));
+        mater9 = new QPushButton(groupBox_2);
+        mater9->setObjectName(QString::fromUtf8("mater9"));
+        mater9->setGeometry(QRect(320, 380, 51, 51));
+        mater9->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	background-color: transparent;\n"
+"	border-image: url(:/Imagenes/Alumno/candadoF.png);\n"
+"}\n"
+""));
+        mater3 = new QPushButton(groupBox_2);
+        mater3->setObjectName(QString::fromUtf8("mater3"));
+        mater3->setGeometry(QRect(210, 380, 51, 51));
+        mater3->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	background-color: transparent;\n"
+"	border-image: url(:/Imagenes/Alumno/candadoF.png);\n"
+"}\n"
+""));
+        mater26 = new QPushButton(groupBox_2);
+        mater26->setObjectName(QString::fromUtf8("mater26"));
+        mater26->setGeometry(QRect(690, 470, 51, 51));
+        mater26->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	background-color: transparent;\n"
+"	border-image: url(:/Imagenes/Alumno/candadoF.png);\n"
+"}\n"
+""));
+        mater27 = new QPushButton(groupBox_2);
+        mater27->setObjectName(QString::fromUtf8("mater27"));
+        mater27->setGeometry(QRect(690, 570, 51, 51));
+        mater27->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	background-color: transparent;\n"
+"	border-image: url(:/Imagenes/Alumno/candadoF.png);\n"
+"}\n"
+""));
+        mater21 = new QPushButton(groupBox_2);
+        mater21->setObjectName(QString::fromUtf8("mater21"));
+        mater21->setGeometry(QRect(540, 480, 51, 51));
+        mater21->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	background-color: transparent;\n"
+"	border-image: url(:/Imagenes/Alumno/candadoF.png);\n"
+"}\n"
+""));
+        mater20 = new QPushButton(groupBox_2);
+        mater20->setObjectName(QString::fromUtf8("mater20"));
+        mater20->setGeometry(QRect(540, 380, 51, 51));
+        mater20->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	background-color: transparent;\n"
+"	border-image: url(:/Imagenes/Alumno/candadoF.png);\n"
+"}\n"
+""));
+        mater32 = new QPushButton(groupBox_2);
+        mater32->setObjectName(QString::fromUtf8("mater32"));
+        mater32->setGeometry(QRect(810, 470, 51, 51));
+        mater32->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	background-color: transparent;\n"
+"	border-image: url(:/Imagenes/Alumno/candadoF.png);\n"
+"}\n"
+""));
+        mater16 = new QPushButton(groupBox_2);
+        mater16->setObjectName(QString::fromUtf8("mater16"));
+        mater16->setGeometry(QRect(430, 480, 51, 51));
+        mater16->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	background-color: transparent;\n"
+"	border-image: url(:/Imagenes/Alumno/candadoF.png);\n"
+"}\n"
+""));
+        mater25 = new QPushButton(groupBox_2);
+        mater25->setObjectName(QString::fromUtf8("mater25"));
+        mater25->setGeometry(QRect(690, 380, 51, 51));
+        mater25->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	background-color: transparent;\n"
+"	border-image: url(:/Imagenes/Alumno/candadoF.png);\n"
+"}\n"
+""));
+        mater15 = new QPushButton(groupBox_2);
+        mater15->setObjectName(QString::fromUtf8("mater15"));
+        mater15->setGeometry(QRect(430, 380, 51, 51));
+        mater15->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	background-color: transparent;\n"
+"	border-image: url(:/Imagenes/Alumno/candadoF.png);\n"
+"}\n"
+""));
+        mater37 = new QPushButton(groupBox_2);
+        mater37->setObjectName(QString::fromUtf8("mater37"));
+        mater37->setGeometry(QRect(910, 570, 51, 51));
+        mater37->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	background-color: transparent;\n"
+"	border-image: url(:/Imagenes/Alumno/candadoF.png);\n"
+"}\n"
+""));
+        mater41 = new QPushButton(groupBox_2);
+        mater41->setObjectName(QString::fromUtf8("mater41"));
+        mater41->setGeometry(QRect(1030, 470, 51, 51));
+        mater41->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	background-color: transparent;\n"
+"	border-image: url(:/Imagenes/Alumno/candadoF.png);\n"
+"}\n"
+""));
+        mater29 = new QPushButton(groupBox_2);
+        mater29->setObjectName(QString::fromUtf8("mater29"));
+        mater29->setGeometry(QRect(800, 200, 51, 51));
+        mater29->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	background-color: transparent;\n"
+"	border-image: url(:/Imagenes/Alumno/candadoF.png);\n"
+"}\n"
+""));
+        mater42 = new QPushButton(groupBox_2);
+        mater42->setObjectName(QString::fromUtf8("mater42"));
+        mater42->setGeometry(QRect(1030, 572, 51, 51));
+        mater42->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	background-color: transparent;\n"
+"	border-image: url(:/Imagenes/Alumno/candadoF.png);\n"
+"}\n"
+""));
+        mater23 = new QPushButton(groupBox_2);
+        mater23->setObjectName(QString::fromUtf8("mater23"));
+        mater23->setGeometry(QRect(690, 110, 51, 51));
+        mater23->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	background-color: transparent;\n"
+"	border-image: url(:/Imagenes/Alumno/candadoF.png);\n"
+"}\n"
+""));
+        mater28 = new QPushButton(groupBox_2);
+        mater28->setObjectName(QString::fromUtf8("mater28"));
+        mater28->setGeometry(QRect(800, 110, 51, 51));
+        mater28->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	background-color: transparent;\n"
+"	border-image: url(:/Imagenes/Alumno/candadoF.png);\n"
+"}\n"
+""));
+        mater24 = new QPushButton(groupBox_2);
+        mater24->setObjectName(QString::fromUtf8("mater24"));
+        mater24->setGeometry(QRect(690, 200, 51, 51));
+        mater24->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	background-color: transparent;\n"
+"	border-image: url(:/Imagenes/Alumno/candadoF.png);\n"
+"}\n"
+""));
+        mater40 = new QPushButton(groupBox_2);
+        mater40->setObjectName(QString::fromUtf8("mater40"));
+        mater40->setGeometry(QRect(1030, 380, 51, 51));
+        mater40->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	background-color: transparent;\n"
+"	border-image: url(:/Imagenes/Alumno/candadoF.png);\n"
+"}\n"
+""));
+        mater35 = new QPushButton(groupBox_2);
+        mater35->setObjectName(QString::fromUtf8("mater35"));
+        mater35->setGeometry(QRect(910, 290, 51, 51));
+        mater35->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	background-color: transparent;\n"
+"	border-image: url(:/Imagenes/Alumno/candadoF.png);\n"
+"}\n"
+""));
+        mater30 = new QPushButton(groupBox_2);
+        mater30->setObjectName(QString::fromUtf8("mater30"));
+        mater30->setGeometry(QRect(810, 290, 51, 51));
+        mater30->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	background-color: transparent;\n"
+"	border-image: url(:/Imagenes/Alumno/candadoF.png);\n"
+"}\n"
+""));
+        mater31 = new QPushButton(groupBox_2);
+        mater31->setObjectName(QString::fromUtf8("mater31"));
+        mater31->setGeometry(QRect(800, 380, 51, 51));
+        mater31->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	background-color: transparent;\n"
+"	border-image: url(:/Imagenes/Alumno/candadoF.png);\n"
+"}\n"
+""));
+        mater36 = new QPushButton(groupBox_2);
+        mater36->setObjectName(QString::fromUtf8("mater36"));
+        mater36->setGeometry(QRect(910, 470, 51, 51));
+        mater36->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	background-color: transparent;\n"
+"	border-image: url(:/Imagenes/Alumno/candadoF.png);\n"
+"}\n"
+""));
+        mater43 = new QPushButton(groupBox_2);
+        mater43->setObjectName(QString::fromUtf8("mater43"));
+        mater43->setGeometry(QRect(1030, 670, 51, 51));
+        mater43->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	background-color: transparent;\n"
+"	border-image: url(:/Imagenes/Alumno/candadoF.png);\n"
+"}\n"
+""));
+        mater47 = new QPushButton(groupBox_2);
+        mater47->setObjectName(QString::fromUtf8("mater47"));
+        mater47->setGeometry(QRect(1140, 670, 51, 51));
+        mater47->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	background-color: transparent;\n"
+"	border-image: url(:/Imagenes/Alumno/candadoF.png);\n"
+"}\n"
+""));
+        pushButton_41 = new QPushButton(groupBox_2);
+        pushButton_41->setObjectName(QString::fromUtf8("pushButton_41"));
+        pushButton_41->setGeometry(QRect(1250, 670, 51, 51));
+        pushButton_41->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	background-color: transparent;\n"
+"	border-image: url(:/Imagenes/Alumno/candadoF.png);\n"
+"}\n"
+""));
+        mater46 = new QPushButton(groupBox_2);
+        mater46->setObjectName(QString::fromUtf8("mater46"));
+        mater46->setGeometry(QRect(1140, 470, 51, 51));
+        mater46->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	background-color: transparent;\n"
+"	border-image: url(:/Imagenes/Alumno/candadoF.png);\n"
+"}\n"
+""));
+        mater49 = new QPushButton(groupBox_2);
+        mater49->setObjectName(QString::fromUtf8("mater49"));
+        mater49->setGeometry(QRect(1250, 470, 51, 51));
+        mater49->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	background-color: transparent;\n"
+"	border-image: url(:/Imagenes/Alumno/candadoF.png);\n"
+"}\n"
+""));
+        mater48 = new QPushButton(groupBox_2);
+        mater48->setObjectName(QString::fromUtf8("mater48"));
+        mater48->setGeometry(QRect(1250, 380, 51, 51));
+        mater48->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	background-color: transparent;\n"
+"	border-image: url(:/Imagenes/Alumno/candadoF.png);\n"
+"}\n"
+""));
+        mater33 = new QPushButton(groupBox_2);
+        mater33->setObjectName(QString::fromUtf8("mater33"));
+        mater33->setGeometry(QRect(910, 110, 51, 51));
+        mater33->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	background-color: transparent;\n"
+"	border-image: url(:/Imagenes/Alumno/candadoF.png);\n"
+"}\n"
+""));
+        mater38 = new QPushButton(groupBox_2);
+        mater38->setObjectName(QString::fromUtf8("mater38"));
+        mater38->setGeometry(QRect(1030, 110, 51, 51));
+        mater38->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	background-color: transparent;\n"
+"	border-image: url(:/Imagenes/Alumno/candadoF.png);\n"
+"}\n"
+""));
+        mater34 = new QPushButton(groupBox_2);
+        mater34->setObjectName(QString::fromUtf8("mater34"));
+        mater34->setGeometry(QRect(910, 200, 51, 51));
+        mater34->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	background-color: transparent;\n"
+"	border-image: url(:/Imagenes/Alumno/candadoF.png);\n"
+"}\n"
+""));
+        mater39 = new QPushButton(groupBox_2);
+        mater39->setObjectName(QString::fromUtf8("mater39"));
+        mater39->setGeometry(QRect(1030, 200, 51, 51));
+        mater39->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	background-color: transparent;\n"
+"	border-image: url(:/Imagenes/Alumno/candadoF.png);\n"
+"}\n"
+""));
+        mater44 = new QPushButton(groupBox_2);
+        mater44->setObjectName(QString::fromUtf8("mater44"));
+        mater44->setGeometry(QRect(1140, 200, 51, 51));
+        mater44->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	background-color: transparent;\n"
+"	border-image: url(:/Imagenes/Alumno/candadoF.png);\n"
+"}\n"
+""));
+        mater45 = new QPushButton(groupBox_2);
+        mater45->setObjectName(QString::fromUtf8("mater45"));
+        mater45->setGeometry(QRect(1140, 290, 51, 51));
+        mater45->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	background-color: transparent;\n"
+"	border-image: url(:/Imagenes/Alumno/candadoF.png);\n"
+"}\n"
+""));
         stackAlumno->addWidget(Mapa);
         Materias = new QWidget();
         Materias->setObjectName(QString::fromUtf8("Materias"));
@@ -448,7 +904,7 @@ public:
 ""));
         label_9 = new QLabel(groupBox_18);
         label_9->setObjectName(QString::fromUtf8("label_9"));
-        label_9->setGeometry(QRect(130, 325, 361, 31));
+        label_9->setGeometry(QRect(100, 325, 401, 31));
         QFont font2;
         font2.setFamily(QString::fromUtf8("MS Shell Dlg 2"));
         font2.setPointSize(12);
@@ -508,6 +964,21 @@ public:
 "color: black;\n"
 "font-size: 15px;\n"
 "padding-left: 27px;\n"
+"}"));
+        inscribitButton = new QPushButton(groupBox_18);
+        inscribitButton->setObjectName(QString::fromUtf8("inscribitButton"));
+        inscribitButton->setGeometry(QRect(240, 420, 121, 31));
+        QFont font3;
+        font3.setBold(true);
+        font3.setWeight(75);
+        inscribitButton->setFont(font3);
+        inscribitButton->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"color: white;\n"
+"background-color: rgb(49, 51, 64);\n"
+"font-size:14px;\n"
+"border: 1px solid rgb(49, 51, 64);\n"
+"border-radius: 10px; \n"
+"padding: 2px 4px;\n"
 "}"));
         stackAlumno->addWidget(Materias);
         Graficas = new QWidget();
@@ -709,15 +1180,15 @@ public:
         groupBox_3 = new QGroupBox(Estudiantes);
         groupBox_3->setObjectName(QString::fromUtf8("groupBox_3"));
         groupBox_3->setGeometry(QRect(0, 0, 1322, 942));
-        QFont font3;
-        font3.setPointSize(16);
-        groupBox_3->setFont(font3);
+        QFont font4;
+        font4.setPointSize(16);
+        groupBox_3->setFont(font4);
         Alumnos = new QTableView(groupBox_3);
         Alumnos->setObjectName(QString::fromUtf8("Alumnos"));
         Alumnos->setGeometry(QRect(42, 250, 1262, 662));
-        QFont font4;
-        font4.setPointSize(14);
-        Alumnos->setFont(font4);
+        QFont font5;
+        font5.setPointSize(14);
+        Alumnos->setFont(font5);
         Alumnos->setStyleSheet(QString::fromUtf8("QTableView {\n"
 "\n"
 "border-radius: 30px;\n"
@@ -755,13 +1226,13 @@ public:
         label_4 = new QLabel(groupBox_3);
         label_4->setObjectName(QString::fromUtf8("label_4"));
         label_4->setGeometry(QRect(190, 110, 422, 62));
-        QFont font5;
-        font5.setFamily(QString::fromUtf8("MS Shell Dlg 2"));
-        font5.setPointSize(32);
-        font5.setBold(false);
-        font5.setItalic(false);
-        font5.setWeight(10);
-        label_4->setFont(font5);
+        QFont font6;
+        font6.setFamily(QString::fromUtf8("MS Shell Dlg 2"));
+        font6.setPointSize(32);
+        font6.setBold(false);
+        font6.setItalic(false);
+        font6.setWeight(10);
+        label_4->setFont(font6);
         label_4->setStyleSheet(QString::fromUtf8("background-color: transparent;\n"
 "color:white;\n"
 "font: 80 32pt \"MS Shell Dlg 2\";"));
@@ -872,10 +1343,62 @@ public:
         perfil->setText(QCoreApplication::translate("MainWindow", "Perfil", nullptr));
         cerrar_sesion->setText(QCoreApplication::translate("MainWindow", "Cerrar Sesi\303\263n", nullptr));
         groupBox_2->setTitle(QString());
+        mapaGRAFICO->setText(QString());
+        mater2->setText(QString());
+        mater22->setText(QString());
+        mater17->setText(QString());
+        mater10->setText(QString());
+        mater4->setText(QString());
+        mater5->setText(QString());
+        mater11->setText(QString());
+        mater7->setText(QString());
+        mater1->setText(QString());
+        mater8->setText(QString());
+        mater14->setText(QString());
+        mater13->setText(QString());
+        mater19->setText(QString());
+        mater18->setText(QString());
+        mater12->setText(QString());
+        mater6->setText(QString());
+        mater9->setText(QString());
+        mater3->setText(QString());
+        mater26->setText(QString());
+        mater27->setText(QString());
+        mater21->setText(QString());
+        mater20->setText(QString());
+        mater32->setText(QString());
+        mater16->setText(QString());
+        mater25->setText(QString());
+        mater15->setText(QString());
+        mater37->setText(QString());
+        mater41->setText(QString());
+        mater29->setText(QString());
+        mater42->setText(QString());
+        mater23->setText(QString());
+        mater28->setText(QString());
+        mater24->setText(QString());
+        mater40->setText(QString());
+        mater35->setText(QString());
+        mater30->setText(QString());
+        mater31->setText(QString());
+        mater36->setText(QString());
+        mater43->setText(QString());
+        mater47->setText(QString());
+        pushButton_41->setText(QString());
+        mater46->setText(QString());
+        mater49->setText(QString());
+        mater48->setText(QString());
+        mater33->setText(QString());
+        mater38->setText(QString());
+        mater34->setText(QString());
+        mater39->setText(QString());
+        mater44->setText(QString());
+        mater45->setText(QString());
         groupBox_18->setTitle(QString());
         label_7->setText(QString());
         label_8->setText(QCoreApplication::translate("MainWindow", "Seleccionar materias para cursar", nullptr));
-        label_9->setText(QCoreApplication::translate("MainWindow", "Inserte el id de las materias a inscribir:", nullptr));
+        label_9->setText(QCoreApplication::translate("MainWindow", "Inserte el id de las materias que va inscribir:", nullptr));
+        inscribitButton->setText(QCoreApplication::translate("MainWindow", "INSCRIBIR", nullptr));
         groupBox_17->setTitle(QString());
         groupBox_16->setTitle(QString());
         estudiantes->setText(QCoreApplication::translate("MainWindow", "Estudiantes", nullptr));

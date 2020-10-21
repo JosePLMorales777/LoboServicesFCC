@@ -44,6 +44,10 @@ private slots:
 
     void BuscarAlumno();
 
+    void CargarTablaMaterias();
+
+    void IndicarMaterias();
+
     void on_ingresar_clicked();
 
     void on_mapa_clicked();
@@ -65,6 +69,8 @@ private slots:
     void on_perfil_2_clicked();
 
     void on_cerrar_sesion_2_clicked();
+
+    void on_pushButton_clicked();
 
 private:
     QString matricula, pass;

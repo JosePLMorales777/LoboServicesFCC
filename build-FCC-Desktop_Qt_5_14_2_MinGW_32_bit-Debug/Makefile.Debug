@@ -104,13 +104,26 @@ compiler_rcc_clean:
 	-$(DEL_FILE) debug\qrc_Imagenes.cpp
 debug/qrc_Imagenes.cpp: ../FCC/Imagenes.qrc \
 		../../../QT/5.14.2/mingw73_32/bin/rcc.exe \
-		../FCC/Imagenes/Alumno/Mapa_Pressed_32.png \
+		../FCC/Imagenes/Alumno/disponible3.png \
+		../FCC/Imagenes/Alumno/candadoF.png \
 		../FCC/Imagenes/Alumno/Mapa_ICC.jpg \
-		../FCC/Imagenes/Alumno/Mapa_Hover_32.png \
-		../FCC/Imagenes/Alumno/mapa.jpg \
-		../FCC/Imagenes/Alumno/logo.gif \
-		../FCC/Imagenes/Alumno/user.png \
 		../FCC/Imagenes/Alumno/Mapa32.png \
+		../FCC/Imagenes/Alumno/Mapa_Hover_32.png \
+		../FCC/Imagenes/Alumno/palomita2.png \
+		../FCC/Imagenes/Alumno/Mapa_Pressed_32.png \
+		../FCC/Imagenes/Alumno/libretaF.png \
+		../FCC/Imagenes/Alumno/candado.png \
+		../FCC/Imagenes/Alumno/palomita.png \
+		../FCC/Imagenes/Alumno/disponible.png \
+		../FCC/Imagenes/Alumno/disponibleF.png \
+		../FCC/Imagenes/Alumno/mapa.jpg \
+		../FCC/Imagenes/Alumno/user.png \
+		../FCC/Imagenes/Alumno/libreta2.png \
+		../FCC/Imagenes/Alumno/libreta.png \
+		../FCC/Imagenes/Alumno/libreta3.png \
+		../FCC/Imagenes/Alumno/palomitaF.png \
+		../FCC/Imagenes/Alumno/logo.gif \
+		../FCC/Imagenes/Alumno/disponible2.png \
 		../FCC/Imagenes/Profesor/Estudiantes_Pressed_32.png \
 		../FCC/Imagenes/Profesor/CerrarSesion_Pressed_32.png \
 		../FCC/Imagenes/Profesor/Materias_Pressed_32.png \
