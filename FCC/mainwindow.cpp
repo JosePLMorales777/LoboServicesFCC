@@ -2292,6 +2292,8 @@ void MainWindow::on_ingresar_clicked(){
 
 //------------------------ Interfaz Alumno -------------------------
 void MainWindow::on_mapa_clicked(){
+    IndicarMaterias();
+
     ui->stackAlumno->setCurrentIndex(0);
 }
 void MainWindow::on_materias_clicked(){
