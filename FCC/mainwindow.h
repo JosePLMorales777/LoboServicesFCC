@@ -72,6 +72,10 @@ private slots:
 
     void on_pushButton_clicked();
 
+    void on_inscribitButton_clicked();
+
+    void on_mater1_clicked();
+
 private:
     QString matricula, pass;
     Ui::MainWindow *ui;

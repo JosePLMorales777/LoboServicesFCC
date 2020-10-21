@@ -117,7 +117,7 @@ void MainWindow::Limpiar(){
 }
 
 void MainWindow::CargarTablaMaterias(){
-    QString materDips = "SELECT m.idMateria,m.Nombre FROM materia as m"
+    QString materDips = "SELECT m.idMateria AS ID,m.Nombre FROM materia as m"
              " INNER JOIN infomateria as i ON m.idMateria = i.idMateria "
             "WHERE i.matricula = '" + matricula + "' AND i.disponible = 1";
 
@@ -128,6 +128,9 @@ void MainWindow::CargarTablaMaterias(){
     queryMateriaDisp = new QSqlQueryModel();
     queryMateriaDisp->setQuery(materDips);
 
+    ui->tablaMaterias->verticalHeader()->setVisible(false);   //hide header
+    ui->tablaMaterias->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    ui->tablaMaterias->setSelectionBehavior(QAbstractItemView::SelectRows);
     ui->tablaMaterias->setModel(queryMateriaDisp);
 }
 
@@ -1323,340 +1326,41 @@ void MainWindow::IndicarMaterias(){
 
     /*OPTATIVAS 1--------------------------------------------*/
     /**/
-       	QString OPTUNO1 = "SELECT cursada,encurso,disponible,ninguno FROM infomateria WHERE matricula = '" + matricula + "' AND idMateria = 43";
+        ui->mater43->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/candadoF.png);");
 
-        QSqlQuery OPUNO1;
-        OPUNO1.exec(OPTUNO1);
-        OPUNO1.next();
+        int contOP1 = 43, indic2OP1 = 0;
 
-        int cursOP1,encOP1,dispOP1,ningOP1;
-        cursOP1 = OPUNO1.value("cursada").toInt();
-        encOP1 = OPUNO1.value("encurso").toInt();
-        dispOP1 = OPUNO1.value("disponible").toInt();
-        ningOP1 = OPUNO1.value("ninguno").toInt();
+        while (contOP1 <= 54 && indic2OP1 == 0) {
+            QString OPTUNO1 = "SELECT cursada,encurso,disponible,ninguno FROM infomateria WHERE matricula = '" + matricula + "' AND idMateria = '" + QString::number(contOP1) + "'";
 
-        qDebug()<< cursOP1 << encOP1 << dispOP1 << ningOP1;
+            QSqlQuery OPUNO1;
+            OPUNO1.exec(OPTUNO1);
+            OPUNO1.next();
 
-        if(cursOP1==1){
-            ui->mater43->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/palomitaF.png);");
-        }
-        if(encOP1==1){
-            ui->mater43->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/libretaF.png);");
-        }
-        if(dispOP1==1){
-            ui->mater43->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/disponibleF.png);");
-        }
-        if(ningOP1==1){
-            ui->mater43->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/candadoF.png);");
-        }
-    /**/
-    /**/
-        QString OPTUNO2 = "SELECT cursada,encurso,disponible,ninguno FROM infomateria WHERE matricula = '" + matricula + "' AND idMateria = 44";
+            int cursOP1,encOP1,dispOP1,ningOP1;
+            cursOP1 = OPUNO1.value("cursada").toInt();
+            encOP1 = OPUNO1.value("encurso").toInt();
+            dispOP1 = OPUNO1.value("disponible").toInt();
+            ningOP1 = OPUNO1.value("ninguno").toInt();
 
-        QSqlQuery OPUNO2;
-        OPUNO2.exec(OPTUNO2);
-        OPUNO2.next();
+            qDebug()<< contOP1 << cursOP1 << encOP1 << dispOP1 << ningOP1;
 
-        int cursOP2,encOP2,dispOP2,ningOP2;
-        cursOP2 = OPUNO2.value("cursada").toInt();
-        encOP2 = OPUNO2.value("encurso").toInt();
-        dispOP2 = OPUNO2.value("disponible").toInt();
-        ningOP2 = OPUNO2.value("ninguno").toInt();
+            if(cursOP1==1){
+                ui->mater43->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/palomitaF.png);");
+                indic2OP1 = 1;
+            }
+            if(encOP1==1){
+                ui->mater43->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/libretaF.png);");
+                indic2OP1 = 1;
+            }
+            if(dispOP1==1){
+                ui->mater43->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/disponibleF.png);");
+                indic2OP1 = 1;
+            }
 
-        qDebug()<< cursOP2 << encOP2 << dispOP2 << ningOP2;
+            contOP1 = contOP1 + 1;
+        }
 
-        if(cursOP2==1){
-            ui->mater43->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/palomitaF.png);");
-        }
-        if(encOP2==1){
-            ui->mater43->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/libretaF.png);");
-        }
-        if(dispOP2==1){
-            ui->mater43->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/disponibleF.png);");
-        }
-        if(ningOP2==1){
-            ui->mater43->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/candadoF.png);");
-        }
-    /**/
-    /**/
-        QString OPTUNO3 = "SELECT cursada,encurso,disponible,ninguno FROM infomateria WHERE matricula = '" + matricula + "' AND idMateria = 45";
-
-        QSqlQuery OPUNO3;
-        OPUNO3.exec(OPTUNO3);
-        OPUNO3.next();
-
-        int cursOP3,encOP3,dispOP3,ningOP3;
-        cursOP3 = OPUNO3.value("cursada").toInt();
-        encOP3 = OPUNO3.value("encurso").toInt();
-        dispOP3 = OPUNO3.value("disponible").toInt();
-        ningOP3 = OPUNO3.value("ninguno").toInt();
-
-        qDebug()<< cursOP3 << encOP3 << dispOP3 << ningOP3;
-
-        if(cursOP3==1){
-            ui->mater43->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/palomitaF.png);");
-        }
-        if(encOP3==1){
-            ui->mater43->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/libretaF.png);");
-        }
-        if(dispOP3==1){
-            ui->mater43->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/disponibleF.png);");
-        }
-        if(ningOP3==1){
-            ui->mater43->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/candadoF.png);");
-        }
-    /**/
-    /**/
-        QString OPTUNO4 = "SELECT cursada,encurso,disponible,ninguno FROM infomateria WHERE matricula = '" + matricula + "' AND idMateria = 46";
-
-        QSqlQuery OPUNO4;
-        OPUNO4.exec(OPTUNO4);
-        OPUNO4.next();
-
-        int cursOP4,encOP4,dispOP4,ningOP4;
-        cursOP4 = OPUNO4.value("cursada").toInt();
-        encOP4 = OPUNO4.value("encurso").toInt();
-        dispOP4 = OPUNO4.value("disponible").toInt();
-        ningOP4 = OPUNO4.value("ninguno").toInt();
-
-        qDebug()<< cursOP4 << encOP4 << dispOP4 << ningOP4;
-
-        if(cursOP4==1){
-            ui->mater43->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/palomitaF.png);");
-        }
-        if(encOP4==1){
-            ui->mater43->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/libretaF.png);");
-        }
-        if(dispOP4==1){
-            ui->mater43->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/disponibleF.png);");
-        }
-        if(ningOP4==1){
-            ui->mater43->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/candadoF.png);");
-        }
-    /**/
-    /**/
-        QString OPTUNO5 = "SELECT cursada,encurso,disponible,ninguno FROM infomateria WHERE matricula = '" + matricula + "' AND idMateria = 47";
-
-        QSqlQuery OPUNO5;
-        OPUNO5.exec(OPTUNO5);
-        OPUNO5.next();
-
-        int cursOP5,encOP5,dispOP5,ningOP5;
-        cursOP5 = OPUNO5.value("cursada").toInt();
-        encOP5 = OPUNO5.value("encurso").toInt();
-        dispOP5 = OPUNO5.value("disponible").toInt();
-        ningOP5 = OPUNO5.value("ninguno").toInt();
-
-        qDebug()<< cursOP5 << encOP5 << dispOP5 << ningOP5;
-
-        if(cursOP5==1){
-            ui->mater43->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/palomitaF.png);");
-        }
-        if(encOP5==1){
-            ui->mater43->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/libretaF.png);");
-        }
-        if(dispOP5==1){
-            ui->mater43->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/disponibleF.png);");
-        }
-        if(ningOP5==1){
-            ui->mater43->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/candadoF.png);");
-        }
-    /**/
-    /**/
-        QString OPTUNO6 = "SELECT cursada,encurso,disponible,ninguno FROM infomateria WHERE matricula = '" + matricula + "' AND idMateria = 48";
-
-        QSqlQuery OPUNO6;
-        OPUNO6.exec(OPTUNO6);
-        OPUNO6.next();
-
-        int cursOP6,encOP6,dispOP6,ningOP6;
-        cursOP6 = OPUNO6.value("cursada").toInt();
-        encOP6 = OPUNO6.value("encurso").toInt();
-        dispOP6 = OPUNO6.value("disponible").toInt();
-        ningOP6 = OPUNO6.value("ninguno").toInt();
-
-        qDebug()<< cursOP6 << encOP6 << dispOP6 << ningOP6;
-
-        if(cursOP6==1){
-            ui->mater43->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/palomitaF.png);");
-        }
-        if(encOP6==1){
-            ui->mater43->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/libretaF.png);");
-        }
-        if(dispOP6==1){
-            ui->mater43->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/disponibleF.png);");
-        }
-        if(ningOP6==1){
-            ui->mater43->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/candadoF.png);");
-        }
-    /**/
-    /**/
-        QString OPTUNO7 = "SELECT cursada,encurso,disponible,ninguno FROM infomateria WHERE matricula = '" + matricula + "' AND idMateria = 49";
-
-        QSqlQuery OPUNO7;
-        OPUNO7.exec(OPTUNO7);
-        OPUNO7.next();
-
-        int cursOP7,encOP7,dispOP7,ningOP7;
-        cursOP7 = OPUNO7.value("cursada").toInt();
-        encOP7 = OPUNO7.value("encurso").toInt();
-        dispOP7 = OPUNO7.value("disponible").toInt();
-        ningOP7 = OPUNO7.value("ninguno").toInt();
-
-        qDebug()<< cursOP7 << encOP7 << dispOP7 << ningOP7;
-
-        if(cursOP7==1){
-            ui->mater43->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/palomitaF.png);");
-        }
-        if(encOP7==1){
-            ui->mater43->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/libretaF.png);");
-        }
-        if(dispOP7==1){
-            ui->mater43->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/disponibleF.png);");
-        }
-        if(ningOP7==1){
-            ui->mater43->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/candadoF.png);");
-        }
-    /**/
-    /**/
-        QString OPTUNO8 = "SELECT cursada,encurso,disponible,ninguno FROM infomateria WHERE matricula = '" + matricula + "' AND idMateria = 50";
-
-        QSqlQuery OPUNO8;
-        OPUNO8.exec(OPTUNO8);
-        OPUNO8.next();
-
-        int cursOP8,encOP8,dispOP8,ningOP8;
-        cursOP8 = OPUNO8.value("cursada").toInt();
-        encOP8 = OPUNO8.value("encurso").toInt();
-        dispOP8 = OPUNO8.value("disponible").toInt();
-        ningOP8 = OPUNO8.value("ninguno").toInt();
-
-        qDebug()<< cursOP8 << encOP8 << dispOP8 << ningOP8;
-
-        if(cursOP8==1){
-            ui->mater43->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/palomitaF.png);");
-        }
-        if(encOP8==1){
-            ui->mater43->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/libretaF.png);");
-        }
-        if(dispOP8==1){
-            ui->mater43->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/disponibleF.png);");
-        }
-        if(ningOP8==1){
-            ui->mater43->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/candadoF.png);");
-        }
-    /**/
-    /**/
-        QString OPTUNO9 = "SELECT cursada,encurso,disponible,ninguno FROM infomateria WHERE matricula = '" + matricula + "' AND idMateria = 51";
-
-        QSqlQuery OPUNO9;
-        OPUNO9.exec(OPTUNO9);
-        OPUNO9.next();
-
-        int cursOP9,encOP9,dispOP9,ningOP9;
-        cursOP9 = OPUNO9.value("cursada").toInt();
-        encOP9 = OPUNO9.value("encurso").toInt();
-        dispOP9 = OPUNO9.value("disponible").toInt();
-        ningOP9 = OPUNO9.value("ninguno").toInt();
-
-        qDebug()<< cursOP9 << encOP9 << dispOP9 << ningOP9;
-
-        if(cursOP9==1){
-            ui->mater43->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/palomitaF.png);");
-        }
-        if(encOP9==1){
-            ui->mater43->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/libretaF.png);");
-        }
-        if(dispOP9==1){
-            ui->mater43->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/disponibleF.png);");
-        }
-        if(ningOP9==1){
-            ui->mater43->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/candadoF.png);");
-        }
-    /**/
-    /**/
-        QString OPTUNO10 = "SELECT cursada,encurso,disponible,ninguno FROM infomateria WHERE matricula = '" + matricula + "' AND idMateria = 52";
-
-        QSqlQuery OPUNO10;
-        OPUNO10.exec(OPTUNO10);
-        OPUNO10.next();
-
-        int cursOP10,encOP10,dispOP10,ningOP10;
-        cursOP10 = OPUNO10.value("cursada").toInt();
-        encOP10 = OPUNO10.value("encurso").toInt();
-        dispOP10 = OPUNO10.value("disponible").toInt();
-        ningOP10 = OPUNO10.value("ninguno").toInt();
-
-        qDebug()<< cursOP10 << encOP10 << dispOP10 << ningOP10;
-
-        if(cursOP10==1){
-            ui->mater43->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/palomitaF.png);");
-        }
-        if(encOP10==1){
-            ui->mater43->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/libretaF.png);");
-        }
-        if(dispOP10==1){
-            ui->mater43->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/disponibleF.png);");
-        }
-        if(ningOP10==1){
-            ui->mater43->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/candadoF.png);");
-        }
-    /**/
-    /**/
-        QString OPTUNO11 = "SELECT cursada,encurso,disponible,ninguno FROM infomateria WHERE matricula = '" + matricula + "' AND idMateria = 53";
-
-        QSqlQuery OPUNO11;
-        OPUNO11.exec(OPTUNO11);
-        OPUNO11.next();
-
-        int cursOP11,encOP11,dispOP11,ningOP11;
-        cursOP11 = OPUNO11.value("cursada").toInt();
-        encOP11 = OPUNO11.value("encurso").toInt();
-        dispOP11 = OPUNO11.value("disponible").toInt();
-        ningOP11 = OPUNO11.value("ninguno").toInt();
-
-        qDebug()<< cursOP11 << encOP11 << dispOP11 << ningOP11;
-
-        if(cursOP11==1){
-            ui->mater43->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/palomitaF.png);");
-        }
-        if(encOP11==1){
-            ui->mater43->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/libretaF.png);");
-        }
-        if(dispOP11==1){
-            ui->mater43->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/disponibleF.png);");
-        }
-        if(ningOP11==1){
-            ui->mater43->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/candadoF.png);");
-        }
-    /**/
-    /**/
-        QString OPTUNO12 = "SELECT cursada,encurso,disponible,ninguno FROM infomateria WHERE matricula = '" + matricula + "' AND idMateria = 54";
-
-        QSqlQuery OPUNO12;
-        OPUNO12.exec(OPTUNO12);
-        OPUNO12.next();
-
-        int cursOP12,encOP12,dispOP12,ningOP12;
-        cursOP12 = OPUNO12.value("cursada").toInt();
-        encOP12 = OPUNO12.value("encurso").toInt();
-        dispOP12 = OPUNO12.value("disponible").toInt();
-        ningOP12 = OPUNO12.value("ninguno").toInt();
-
-        qDebug()<< cursOP12 << encOP12 << dispOP12 << ningOP12;
-
-        if(cursOP12==1){
-            ui->mater43->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/palomitaF.png);");
-        }
-        if(encOP12==1){
-            ui->mater43->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/libretaF.png);");
-        }
-        if(dispOP12==1){
-            ui->mater43->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/disponibleF.png);");
-        }
-        if(ningOP12==1){
-            ui->mater43->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/candadoF.png);");
-        }
     /**/
     /*-------------------------------------------------------*/
 
@@ -1748,401 +1452,84 @@ void MainWindow::IndicarMaterias(){
     /**/
 
     /*OPTATIVAS 2------------------------------------------------------------------------*/
-    /**/
-    QString OPTDOS1 = "SELECT cursada,encurso,disponible,ninguno FROM infomateria WHERE matricula = '" + matricula + "' AND idMateria = 58";
+        /**/
+            ui->mater47->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/candadoF.png);");
 
-    QSqlQuery OPDOS1;
-    OPDOS1.exec(OPTDOS1);
-    OPDOS1.next();
+            int contOP2 = 58, indic2OP2 = 0;
 
-    int cursOPD1,encOPD1,dispOPD1,ningOPD1;
-    cursOPD1 = OPDOS1.value("cursada").toInt();
-    encOPD1 = OPDOS1.value("encurso").toInt();
-    dispOPD1 = OPDOS1.value("disponible").toInt();
-    ningOPD1 = OPDOS1.value("ninguno").toInt();
+            while (contOP2 <= 68 && indic2OP2 == 0) {
+                QString OPTUNO2 = "SELECT cursada,encurso,disponible,ninguno FROM infomateria WHERE matricula = '" + matricula + "' AND idMateria = '" + QString::number(contOP2) + "'";
 
-    qDebug()<< cursOPD1 << encOPD1 << dispOPD1 << ningOPD1;
+                QSqlQuery OPUNO2;
+                OPUNO2.exec(OPTUNO2);
+                OPUNO2.next();
 
-    if(cursOPD1==1){
-        ui->mater47->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/palomitaF.png);");
-    }
-    if(encOPD1==1){
-        ui->mater47->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/libretaF.png);");
-    }
-    if(dispOPD1==1){
-        ui->mater47->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/disponibleF.png);");
-    }
-    if(ningOPD1==1){
-        ui->mater47->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/candadoF.png);");
-    }
-    /**/
-    /**/
-    QString OPTDOS2 = "SELECT cursada,encurso,disponible,ninguno FROM infomateria WHERE matricula = '" + matricula + "' AND idMateria = 59";
+                int cursOP2,encOP2,dispOP2,ningOP2;
+                cursOP2 = OPUNO2.value("cursada").toInt();
+                encOP2 = OPUNO2.value("encurso").toInt();
+                dispOP2 = OPUNO2.value("disponible").toInt();
+                ningOP2 = OPUNO2.value("ninguno").toInt();
 
-    QSqlQuery OPDOS2;
-    OPDOS2.exec(OPTDOS2);
-    OPDOS2.next();
+                qDebug()<< contOP2 << cursOP2 << encOP2 << dispOP2 << ningOP2;
 
-    int cursOPD2,encOPD2,dispOPD2,ningOPD2;
-    cursOPD2 = OPDOS2.value("cursada").toInt();
-    encOPD2 = OPDOS2.value("encurso").toInt();
-    dispOPD2 = OPDOS2.value("disponible").toInt();
-    ningOPD2 = OPDOS2.value("ninguno").toInt();
+                if(cursOP2==1){
+                    ui->mater47->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/palomitaF.png);");
+                    indic2OP2 = 1;
+                }
+                if(encOP2==1){
+                    ui->mater47->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/libretaF.png);");
+                    indic2OP2 = 1;
+                }
+                if(dispOP2==1){
+                    ui->mater47->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/disponibleF.png);");
+                    indic2OP2 = 1;
+                }
 
-    qDebug()<< cursOPD2 << encOPD2 << dispOPD2 << ningOPD2;
+                contOP2 = contOP2 + 1;
+            }
 
-    if(cursOPD2==1){
-        ui->mater47->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/palomitaF.png);");
-    }
-    if(encOPD2==1){
-        ui->mater47->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/libretaF.png);");
-    }
-    if(dispOPD2==1){
-        ui->mater47->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/disponibleF.png);");
-    }
-    if(ningOPD2==1){
-        ui->mater47->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/candadoF.png);");
-    }
-    /**/
-    /**/
-    QString OPTDOS3 = "SELECT cursada,encurso,disponible,ninguno FROM infomateria WHERE matricula = '" + matricula + "' AND idMateria = 60";
-
-    QSqlQuery OPDOS3;
-    OPDOS3.exec(OPTDOS3);
-    OPDOS3.next();
-
-    int cursOPD3,encOPD3,dispOPD3,ningOPD3;
-    cursOPD3 = OPDOS3.value("cursada").toInt();
-    encOPD3 = OPDOS3.value("encurso").toInt();
-    dispOPD3 = OPDOS3.value("disponible").toInt();
-    ningOPD3 = OPDOS3.value("ninguno").toInt();
-
-    qDebug()<< cursOPD3 << encOPD3 << dispOPD3 << ningOPD3;
-
-    if(cursOPD3==1){
-        ui->mater47->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/palomitaF.png);");
-    }
-    if(encOPD3==1){
-        ui->mater47->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/libretaF.png);");
-    }
-    if(dispOPD3==1){
-        ui->mater47->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/disponibleF.png);");
-    }
-    if(ningOPD3==1){
-        ui->mater47->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/candadoF.png);");
-    }
-    /**/
-    /**/
-    QString OPTDOS4 = "SELECT cursada,encurso,disponible,ninguno FROM infomateria WHERE matricula = '" + matricula + "' AND idMateria = 61";
-
-    QSqlQuery OPDOS4;
-    OPDOS4.exec(OPTDOS4);
-    OPDOS4.next();
-
-    int cursOPD4,encOPD4,dispOPD4,ningOPD4;
-    cursOPD4 = OPDOS4.value("cursada").toInt();
-    encOPD4 = OPDOS4.value("encurso").toInt();
-    dispOPD4 = OPDOS4.value("disponible").toInt();
-    ningOPD4 = OPDOS4.value("ninguno").toInt();
-
-    qDebug()<< cursOPD4 << encOPD4 << dispOPD4 << ningOPD4;
-
-    if(cursOPD4==1){
-        ui->mater47->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/palomitaF.png);");
-    }
-    if(encOPD4==1){
-        ui->mater47->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/libretaF.png);");
-    }
-    if(dispOPD4==1){
-        ui->mater47->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/disponibleF.png);");
-    }
-    if(ningOPD4==1){
-        ui->mater47->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/candadoF.png);");
-    }
-    /**/
-    /**/
-    QString OPTDOS5 = "SELECT cursada,encurso,disponible,ninguno FROM infomateria WHERE matricula = '" + matricula + "' AND idMateria = 62";
-
-    QSqlQuery OPDOS5;
-    OPDOS5.exec(OPTDOS5);
-    OPDOS5.next();
-
-    int cursOPD5,encOPD5,dispOPD5,ningOPD5;
-    cursOPD5 = OPDOS5.value("cursada").toInt();
-    encOPD5 = OPDOS5.value("encurso").toInt();
-    dispOPD5 = OPDOS5.value("disponible").toInt();
-    ningOPD5 = OPDOS5.value("ninguno").toInt();
-
-    qDebug()<< cursOPD5 << encOPD5 << dispOPD5 << ningOPD5;
-
-    if(cursOPD5==1){
-        ui->mater47->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/palomitaF.png);");
-    }
-    if(encOPD5==1){
-        ui->mater47->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/libretaF.png);");
-    }
-    if(dispOPD5==1){
-        ui->mater47->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/disponibleF.png);");
-    }
-    if(ningOPD5==1){
-        ui->mater47->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/candadoF.png);");
-    }
-    /**/
-    /**/
-    QString OPTDOS6 = "SELECT cursada,encurso,disponible,ninguno FROM infomateria WHERE matricula = '" + matricula + "' AND idMateria = 63";
-
-    QSqlQuery OPDOS6;
-    OPDOS6.exec(OPTDOS6);
-    OPDOS6.next();
-
-    int cursOPD6,encOPD6,dispOPD6,ningOPD6;
-    cursOPD6 = OPDOS6.value("cursada").toInt();
-    encOPD6 = OPDOS6.value("encurso").toInt();
-    dispOPD6 = OPDOS6.value("disponible").toInt();
-    ningOPD6 = OPDOS6.value("ninguno").toInt();
-
-    qDebug()<< cursOPD6 << encOPD6 << dispOPD6 << ningOPD6;
-
-    if(cursOPD6==1){
-        ui->mater47->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/palomitaF.png);");
-    }
-    if(encOPD6==1){
-        ui->mater47->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/libretaF.png);");
-    }
-    if(dispOPD6==1){
-        ui->mater47->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/disponibleF.png);");
-    }
-    if(ningOPD6==1){
-        ui->mater47->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/candadoF.png);");
-    }
-    /**/
-    /**/
-    QString OPTDOS7 = "SELECT cursada,encurso,disponible,ninguno FROM infomateria WHERE matricula = '" + matricula + "' AND idMateria = 64";
-
-    QSqlQuery OPDOS7;
-    OPDOS7.exec(OPTDOS7);
-    OPDOS7.next();
-
-    int cursOPD7,encOPD7,dispOPD7,ningOPD7;
-    cursOPD7 = OPDOS7.value("cursada").toInt();
-    encOPD7 = OPDOS7.value("encurso").toInt();
-    dispOPD7 = OPDOS7.value("disponible").toInt();
-    ningOPD7 = OPDOS7.value("ninguno").toInt();
-
-    qDebug()<< cursOPD7 << encOPD7 << dispOPD7 << ningOPD7;
-
-    if(cursOPD7==1){
-        ui->mater47->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/palomitaF.png);");
-    }
-    if(encOPD7==1){
-        ui->mater47->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/libretaF.png);");
-    }
-    if(dispOPD7==1){
-        ui->mater47->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/disponibleF.png);");
-    }
-    if(ningOPD7==1){
-        ui->mater47->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/candadoF.png);");
-    }
-    /**/
-    /**/
-    QString OPTDOS8 = "SELECT cursada,encurso,disponible,ninguno FROM infomateria WHERE matricula = '" + matricula + "' AND idMateria = 65";
-
-    QSqlQuery OPDOS8;
-    OPDOS8.exec(OPTDOS8);
-    OPDOS8.next();
-
-    int cursOPD8,encOPD8,dispOPD8,ningOPD8;
-    cursOPD8 = OPDOS8.value("cursada").toInt();
-    encOPD8 = OPDOS8.value("encurso").toInt();
-    dispOPD8 = OPDOS8.value("disponible").toInt();
-    ningOPD8 = OPDOS8.value("ninguno").toInt();
-
-    qDebug()<< cursOPD8 << encOPD8 << dispOPD8 << ningOPD8;
-
-    if(cursOPD8==1){
-        ui->mater47->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/palomitaF.png);");
-    }
-    if(encOPD8==1){
-        ui->mater47->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/libretaF.png);");
-    }
-    if(dispOPD8==1){
-        ui->mater47->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/disponibleF.png);");
-    }
-    if(ningOPD8==1){
-        ui->mater47->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/candadoF.png);");
-    }
-    /**/
-    /**/
-    QString OPTDOS9 = "SELECT cursada,encurso,disponible,ninguno FROM infomateria WHERE matricula = '" + matricula + "' AND idMateria = 66";
-
-    QSqlQuery OPDOS9;
-    OPDOS9.exec(OPTDOS9);
-    OPDOS9.next();
-
-    int cursOPD9,encOPD9,dispOPD9,ningOPD9;
-    cursOPD9 = OPDOS9.value("cursada").toInt();
-    encOPD9 = OPDOS9.value("encurso").toInt();
-    dispOPD9 = OPDOS9.value("disponible").toInt();
-    ningOPD9 = OPDOS9.value("ninguno").toInt();
-
-    qDebug()<< cursOPD9 << encOPD9 << dispOPD9 << ningOPD9;
-
-    if(cursOPD9==1){
-        ui->mater47->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/palomitaF.png);");
-    }
-    if(encOPD9==1){
-        ui->mater47->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/libretaF.png);");
-    }
-    if(dispOPD9==1){
-        ui->mater47->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/disponibleF.png);");
-    }
-    if(ningOPD9==1){
-        ui->mater47->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/candadoF.png);");
-    }
-    /**/
-    /**/
-    QString OPTDOS10 = "SELECT cursada,encurso,disponible,ninguno FROM infomateria WHERE matricula = '" + matricula + "' AND idMateria = 67";
-
-    QSqlQuery OPDOS10;
-    OPDOS10.exec(OPTDOS10);
-    OPDOS10.next();
-
-    int cursOPD10,encOPD10,dispOPD10,ningOPD10;
-    cursOPD10 = OPDOS10.value("cursada").toInt();
-    encOPD10 = OPDOS10.value("encurso").toInt();
-    dispOPD10 = OPDOS10.value("disponible").toInt();
-    ningOPD10 = OPDOS10.value("ninguno").toInt();
-
-    qDebug()<< cursOPD10 << encOPD10 << dispOPD10 << ningOPD10;
-
-    if(cursOPD10==1){
-        ui->mater47->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/palomitaF.png);");
-    }
-    if(encOPD10==1){
-        ui->mater47->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/libretaF.png);");
-    }
-    if(dispOPD10==1){
-        ui->mater47->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/disponibleF.png);");
-    }
-    if(ningOPD10==1){
-        ui->mater47->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/candadoF.png);");
-    }
-    /**/
-    /**/
-    QString OPTDOS11 = "SELECT cursada,encurso,disponible,ninguno FROM infomateria WHERE matricula = '" + matricula + "' AND idMateria = 68";
-
-    QSqlQuery OPDOS11;
-    OPDOS11.exec(OPTDOS11);
-    OPDOS11.next();
-
-    int cursOPD11,encOPD11,dispOPD11,ningOPD11;
-    cursOPD11 = OPDOS11.value("cursada").toInt();
-    encOPD11 = OPDOS11.value("encurso").toInt();
-    dispOPD11 = OPDOS11.value("disponible").toInt();
-    ningOPD11 = OPDOS11.value("ninguno").toInt();
-
-    qDebug()<< cursOPD11 << encOPD11 << dispOPD11 << ningOPD11;
-
-    if(cursOPD11==1){
-        ui->mater47->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/palomitaF.png);");
-    }
-    if(encOPD11==1){
-        ui->mater47->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/libretaF.png);");
-    }
-    if(dispOPD11==1){
-        ui->mater47->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/disponibleF.png);");
-    }
-    if(ningOPD11==1){
-        ui->mater47->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/candadoF.png);");
-    }
-    /**/
+        /**/
     /*-----------------------------------------------------------------------------------*/
 
     /*OPTATIVAS DESIT------------------------------------------------------------------------*/
-    /**/
-    QString OPTDOS12 = "SELECT cursada,encurso,disponible,ninguno FROM infomateria WHERE matricula = '" + matricula + "' AND idMateria = 69";
+            /**/
+                ui->mater48->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/candadoF.png);");
 
-    QSqlQuery OPDOS12;
-    OPDOS12.exec(OPTDOS12);
-    OPDOS12.next();
+                int contOP3 = 69, indic2OP3 = 0;
 
-    int cursOPD12,encOPD12,dispOPD12,ningOPD12;
-    cursOPD12 = OPDOS12.value("cursada").toInt();
-    encOPD12 = OPDOS12.value("encurso").toInt();
-    dispOPD12 = OPDOS12.value("disponible").toInt();
-    ningOPD12 = OPDOS12.value("ninguno").toInt();
+                while (contOP3 <= 71 && indic2OP3 == 0) {
+                    QString OPTUNO3 = "SELECT cursada,encurso,disponible,ninguno FROM infomateria WHERE matricula = '" + matricula + "' AND idMateria = '" + QString::number(contOP3) + "'";
+                    qDebug()<< OPTUNO3;
 
-    qDebug()<< cursOPD12 << encOPD12 << dispOPD12 << ningOPD12;
+                    QSqlQuery OPUNO3;
+                    OPUNO3.exec(OPTUNO3);
+                    OPUNO3.next();
 
-    if(cursOPD12==1){
-        ui->mater48->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/palomitaF.png);");
-    }
-    if(encOPD12==1){
-        ui->mater48->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/libretaF.png);");
-    }
-    if(dispOPD12==1){
-        ui->mater48->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/disponibleF.png);");
-    }
-    if(ningOPD12==1){
-        ui->mater48->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/candadoF.png);");
-    }
-    /**/
-    /**/
-    QString OPTDOS13 = "SELECT cursada,encurso,disponible,ninguno FROM infomateria WHERE matricula = '" + matricula + "' AND idMateria = 70";
+                    int cursOP3,encOP3,dispOP3,ningOP3;
+                    cursOP3 = OPUNO3.value("cursada").toInt();
+                    encOP3 = OPUNO3.value("encurso").toInt();
+                    dispOP3 = OPUNO3.value("disponible").toInt();
+                    ningOP3 = OPUNO3.value("ninguno").toInt();
 
-    QSqlQuery OPDOS13;
-    OPDOS13.exec(OPTDOS13);
-    OPDOS13.next();
+                    qDebug()<< contOP3 << cursOP3 << encOP3 << dispOP3 << ningOP3;
 
-    int cursOPD13,encOPD13,dispOPD13,ningOPD13;
-    cursOPD13 = OPDOS13.value("cursada").toInt();
-    encOPD13 = OPDOS13.value("encurso").toInt();
-    dispOPD13 = OPDOS13.value("disponible").toInt();
-    ningOPD13 = OPDOS13.value("ninguno").toInt();
+                    if(cursOP3==1){
+                        ui->mater48->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/palomitaF.png);");
+                        indic2OP3 = 1;
+                    }
+                    if(encOP3==1){
+                        ui->mater48->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/libretaF.png);");
+                        indic2OP3 = 1;
+                    }
+                    if(dispOP3==1){
+                        ui->mater48->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/disponibleF.png);");
+                        indic2OP3 = 1;
+                    }
 
-    qDebug()<< cursOPD13 << encOPD13 << dispOPD13 << ningOPD13;
+                    contOP3 = contOP3 + 1;
+                }
 
-    if(cursOPD13==1){
-        ui->mater47->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/palomitaF.png);");
-    }
-    if(encOPD13==1){
-        ui->mater48->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/libretaF.png);");
-    }
-    if(dispOPD13==1){
-        ui->mater48->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/disponibleF.png);");
-    }
-    if(ningOPD13==1){
-        ui->mater48->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/candadoF.png);");
-    }
-    /**/
-    /**/
-    QString OPTDOS14 = "SELECT cursada,encurso,disponible,ninguno FROM infomateria WHERE matricula = '" + matricula + "' AND idMateria = 71";
-
-    QSqlQuery OPDOS14;
-    OPDOS14.exec(OPTDOS14);
-    OPDOS14.next();
-
-    int cursOPD14,encOPD14,dispOPD14,ningOPD14;
-    cursOPD14 = OPDOS14.value("cursada").toInt();
-    encOPD14 = OPDOS14.value("encurso").toInt();
-    dispOPD14 = OPDOS14.value("disponible").toInt();
-    ningOPD14 = OPDOS14.value("ninguno").toInt();
-
-    qDebug()<< cursOPD14 << encOPD14 << dispOPD14 << ningOPD14;
-
-    if(cursOPD14==1){
-        ui->mater48->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/palomitaF.png);");
-    }
-    if(encOPD14==1){
-        ui->mater48->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/libretaF.png);");
-    }
-    if(dispOPD14==1){
-        ui->mater48->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/disponibleF.png);");
-    }
-    if(ningOPD14==1){
-        ui->mater48->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/candadoF.png);");
-    }
-    /**/
+            /**/
     /*---------------------------------------------------------------------------------------*/
     
     /**/
@@ -2293,7 +1680,6 @@ void MainWindow::on_ingresar_clicked(){
 //------------------------ Interfaz Alumno -------------------------
 void MainWindow::on_mapa_clicked(){
     IndicarMaterias();
-
     ui->stackAlumno->setCurrentIndex(0);
 }
 void MainWindow::on_materias_clicked(){
@@ -2302,40 +1688,137 @@ void MainWindow::on_materias_clicked(){
 }
 void MainWindow::on_pushButton_clicked()
 {
-    QString mat1,mat2,mat3,mat4,mat5,mat6;
-    mat1 = ui->materiaEdit1->text();
-    mat2 = ui->materiaEdit2->text();
-    mat3 = ui->materiaEdit3->text();
-    mat4 = ui->materiaEdit4->text();
-    mat5 = ui->materiaEdit5->text();
-    mat6 = ui->materiaEdit6->text();
-    qDebug()<< mat1 << mat2 << mat3 <<mat4 << mat5 << mat6;
+}
+void MainWindow::on_inscribitButton_clicked()
+{
+    QString mat[6];
+    mat[0] = ui->materiaEdit1->text();
+    mat[1] = ui->materiaEdit2->text();
+    mat[2] = ui->materiaEdit3->text();
+    mat[3] = ui->materiaEdit4->text();
+    mat[4] = ui->materiaEdit5->text();
+    mat[5] = ui->materiaEdit6->text();
+    qDebug() << mat[0] << mat[1] << mat[2] <<mat[3] << mat[4] << mat[5];
 
-    int iii = 0;
+    /*Validación de datos*/
 
-    if(!(mat1.isEmpty())){
-        iii = iii + 1;
+    int iii = 0, icont1 = 0;
+
+    while (icont1 <= 5) {
+        if( (!(mat[icont1].isEmpty()))){
+            iii = iii + 1;
+        }
+
+        icont1 = icont1 + 1;
     }
-    if(!(mat2.isEmpty())){
-        iii = iii + 1;
-    }
-    if(!(mat3.isEmpty())){
-        iii = iii + 1;
-    }
-    if(!(mat4.isEmpty())){
-        iii = iii + 1;
-    }
-    if(!(mat5.isEmpty())){
-        iii = iii + 1;
-    }
-    if(!(mat6.isEmpty())){
-        iii = iii + 1;
-    }
+
+    qDebug()<< iii;
 
     if(iii<3){
-        QMessageBox::about(this, "Error", "Necesita introducir al menos 3 materias");
+        QMessageBox::about(this, "Error", "Necesita introducir al menos 3 materias y solo materias válidas");
         return;
     }
+
+    /*Inscripción de materias*/
+
+    icont1 = 0;
+
+    while (icont1 <= 5) {
+        QString consultaMat1 = "SELECT cursada,encurso,disponible,ninguno FROM infomateria WHERE matricula = '" + matricula + "' AND idMateria = '" + mat[icont1] + "'";
+
+        QSqlQuery consMat1;
+        consMat1.exec(consultaMat1);
+        consMat1.next();
+
+        int curs1,encurs1,disp1,ning1;
+        curs1 = consMat1.value("cursada").toInt();
+        encurs1 = consMat1.value("encurso").toInt();
+        disp1 = consMat1.value("disponible").toInt();
+        ning1 = consMat1.value("ninguno").toInt();
+
+        qDebug() << curs1 << encurs1 << disp1 << ning1 << mat[icont1];
+
+        if(curs1 == 0 && encurs1 == 0 && disp1 == 1 && ning1 == 0){
+            QString consultaOp = "SELECT optativaI,optativaII,optativaDESIT FROM materia WHERE idMateria = '" + mat[icont1] + "'";
+
+            QSqlQuery consOp;
+            consOp.exec(consultaOp);
+            consOp.next();
+
+            int OP1 = consOp.value("optativaI").toInt();
+            int OP2 = consOp.value("optativaII").toInt();
+            int OPD = consOp.value("optativaDESIT").toInt();
+
+            if(OP1 == 0 && OP2 == 0 && OPD == 0){
+                QString tomarMat = "UPDATE infomateria SET cursada = 0, encurso = 1, disponible = 0, ninguno = 0 WHERE idMateria = '" + mat[icont1] + "' AND matricula = '" + matricula + "'";
+
+                QSqlQuery tomaMat;
+                tomaMat.exec(tomarMat);
+                tomaMat.next();
+            }else{
+                /*OPTATIVA 1*/
+                if(OP1 == 1 && OP2 == 0 && OPD == 0){
+                    /*Desactivar las otras optativas*/
+                    QString desacOP1 = "UPDATE infomateria SET ninguno = 1, disponible = 0, cursada = 0, encurso = 0 WHERE idMateria >= 43 AND idMateria <= 54 AND idMateria != '" + mat[icont1] + "' AND matricula = '" + matricula + "'";
+                    QSqlQuery desOP1;
+                    desOP1.exec(desacOP1);
+                    desOP1.next();
+
+                    /*Cargar la optativa*/
+                    QString tomarMat = "UPDATE infomateria SET cursada = 0, encurso = 1, disponible = 0, ninguno = 0 WHERE idMateria = '" + mat[icont1] + "' AND matricula = '" + matricula + "'";
+
+                    QSqlQuery tomaMat;
+                    tomaMat.exec(tomarMat);
+                    tomaMat.next();
+                }
+                /*OPTATIVA 2*/
+                if(OP1 == 0 && OP2 == 1 && OPD == 0){
+                    /*Desactivar las otras optativas*/
+                    QString desacOP2 = "UPDATE infomateria SET ninguno = 1, disponible = 0, cursada = 0, encurso = 0 WHERE idMateria >= 58 AND idMateria <= 68 AND idMateria != '" + mat[icont1] + "' AND matricula = '" + matricula + "'";
+                    QSqlQuery desOP2;
+                    desOP2.exec(desacOP2);
+                    desOP2.next();
+
+                    /*Cargar la optativa*/
+                    QString tomarMat = "UPDATE infomateria SET cursada = 0, encurso = 1, disponible = 0, ninguno = 0 WHERE idMateria = '" + mat[icont1] + "' AND matricula = '" + matricula + "'";
+
+                    QSqlQuery tomaMat;
+                    tomaMat.exec(tomarMat);
+                    tomaMat.next();
+                }
+                /*OPTATIVA DESIT*/
+                if(OP1 == 0 && OP2 == 0 && OPD == 1){
+                    /*Desactivar las otras optativas*/
+                    QString desacOP2 = "UPDATE infomateria SET ninguno = 1, disponible = 0, cursada = 0, encurso = 0 WHERE idMateria >= 69 AND idMateria <= 71 AND idMateria != '" + mat[icont1] + "' AND matricula = '" + matricula + "'";
+                    QSqlQuery desOP2;
+                    desOP2.exec(desacOP2);
+                    desOP2.next();
+
+                    /*Cargar la optativa*/
+                    QString tomarMat = "UPDATE infomateria SET cursada = 0, encurso = 1, disponible = 0, ninguno = 0 WHERE idMateria = '" + mat[icont1] + "' AND matricula = '" + matricula + "'";
+
+                    QSqlQuery tomaMat;
+                    tomaMat.exec(tomarMat);
+                    tomaMat.next();
+                }
+            }
+        }else{
+            if( (!(mat[icont1].isEmpty()))){
+                QString aviso = "La materia con Id " + mat[icont1] + " no pudo inscribirse";
+                QMessageBox::about(this, "Error", aviso);
+            }
+        }
+
+        icont1 = icont1 + 1;
+    }
+
+    ui->materiaEdit1->clear();
+    ui->materiaEdit2->clear();
+    ui->materiaEdit3->clear();
+    ui->materiaEdit4->clear();
+    ui->materiaEdit5->clear();
+    ui->materiaEdit6->clear();
+    CargarTablaMaterias();
 }
 void MainWindow::on_graficas_clicked(){
     ui->stackAlumno->setCurrentIndex(2);
@@ -2365,4 +1848,58 @@ void MainWindow::on_cerrar_sesion_2_clicked(){
     ui->stackedWidget->setCurrentIndex(0);
 }
 
+//----------------------- Botones del mapa --------------------------
 
+void MainWindow::on_mater1_clicked()
+{
+    /*Verificar materia*/
+    QString numMat = "1";
+
+    QString siMateria = "SELECT cursada,encurso,disponible,ninguno FROM infomateria WHERE idMateria = '" + numMat + "' AND matricula = '" + matricula + "'";
+
+    qDebug() << siMateria;
+
+    QSqlQuery sMateria;
+    sMateria.exec(siMateria);
+    sMateria.next();
+
+    int curs = sMateria.value("cursada").toInt();
+    int encur = sMateria.value("encurso").toInt();
+    int disp = sMateria.value("disponible").toInt();
+    int ning = sMateria.value("ninguno").toInt();
+
+    qDebug() << curs << encur << disp << ning;
+
+    if(curs == 0 && encur == 1 && disp == 0 && ning == 0){
+        QMessageBox::StandardButton terminada;
+        terminada = QMessageBox::question(this, "Materia cursada", "¿Desea indicar que ha cursado esta materia?", QMessageBox::Yes|QMessageBox::No);
+
+        if(terminada == QMessageBox::Yes){
+            /*Actualizar datos materia*/
+            QString actDatMat = "UPDATE infomateria SET cursada = 1, encurso = 0, disponible = 0, ninguno = 0 WHERE idMateria = '" + numMat + "' AND matricula = '" + matricula + "'";
+            qDebug() << actDatMat;
+
+            QSqlQuery acDatM;
+            acDatM.exec(actDatMat);
+            acDatM.next();
+
+            /*Actualizar requisitos*/
+            QString actDatMat2 = "SELECT idMateria1,idMateria2 FROM requisito WHERE idMateria1 = '" + numMat + "'";
+
+            QSqlQuery acDM2;
+            acDM2.exec(actDatMat2);
+
+            while (acDM2.next()) {
+                QString matSigM = acDM2.value("idMateria2").toString();
+
+                QString actInfoSig = "UPDATE infomateria SET cursada = 0, encurso = 0, disponible = 1, ninguno = 0 WHERE idMateria = '" + matSigM + "' AND matricula = '" + matricula + "'";
+
+                QSqlQuery aInfS;
+                aInfS.exec(actInfoSig);
+                aInfS.next();
+            }
+        }
+
+        IndicarMaterias();
+    }
+}

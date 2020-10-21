@@ -855,119 +855,121 @@ public:
         Materias->setObjectName(QString::fromUtf8("Materias"));
         groupBox_18 = new QGroupBox(Materias);
         groupBox_18->setObjectName(QString::fromUtf8("groupBox_18"));
-        groupBox_18->setGeometry(QRect(0, 0, 601, 471));
+        groupBox_18->setGeometry(QRect(0, 0, 1311, 951));
         groupBox_18->setStyleSheet(QString::fromUtf8(""));
         label_7 = new QLabel(groupBox_18);
         label_7->setObjectName(QString::fromUtf8("label_7"));
-        label_7->setGeometry(QRect(0, 0, 601, 131));
+        label_7->setGeometry(QRect(0, 0, 1311, 191));
         label_7->setStyleSheet(QString::fromUtf8("border-image: url(:/Imagenes/Profesor/barra.png);"));
         tablaMaterias = new QTableView(groupBox_18);
         tablaMaterias->setObjectName(QString::fromUtf8("tablaMaterias"));
-        tablaMaterias->setGeometry(QRect(20, 150, 561, 161));
+        tablaMaterias->setGeometry(QRect(40, 201, 1221, 391));
         tablaMaterias->setStyleSheet(QString::fromUtf8("QTableView {\n"
 "\n"
-"border-radius: 15px;\n"
+"border-radius: 30px;\n"
+"font: 20pt;\n"
 "background: rgba(224, 222, 225, 120);\n"
 "selection-background-color: rgba(143, 141, 161, 204);\n"
 "selection-color: rgb(243, 241, 244);\n"
 "}\n"
 "\n"
 "QHeaderView::section {\n"
-"font: 9pt;\n"
-"height: 15px;\n"
+"font: 20pt;\n"
+"height: 30px;\n"
 "background: rgb(240, 238, 241);\n"
 "border-radius: 20px;\n"
-"}"));
+"}\n"
+""));
         label_8 = new QLabel(groupBox_18);
         label_8->setObjectName(QString::fromUtf8("label_8"));
-        label_8->setGeometry(QRect(110, 60, 391, 62));
+        label_8->setGeometry(QRect(270, 70, 771, 62));
         QFont font1;
         font1.setFamily(QString::fromUtf8("MS Shell Dlg 2"));
-        font1.setPointSize(16);
+        font1.setPointSize(32);
         font1.setBold(false);
         font1.setItalic(false);
         font1.setWeight(10);
         label_8->setFont(font1);
         label_8->setStyleSheet(QString::fromUtf8("background-color: transparent;\n"
 "color:white;\n"
-"font: 80 16pt \"MS Shell Dlg 2\";"));
+"font: 80 32pt \"MS Shell Dlg 2\";"));
         materiaEdit1 = new QLineEdit(groupBox_18);
         materiaEdit1->setObjectName(QString::fromUtf8("materiaEdit1"));
-        materiaEdit1->setGeometry(QRect(20, 370, 71, 31));
+        materiaEdit1->setGeometry(QRect(50, 700, 142, 62));
         materiaEdit1->setStyleSheet(QString::fromUtf8("QLineEdit {\n"
 "background: rgba(224, 222, 225, 120);\n"
 "border-radius: 12px;\n"
 "color: black;\n"
-"font-size: 15px;\n"
-"padding-left: 27px;\n"
+"font-size: 30px;\n"
+"padding-left: 54px;\n"
 "}\n"
 ""));
         label_9 = new QLabel(groupBox_18);
         label_9->setObjectName(QString::fromUtf8("label_9"));
-        label_9->setGeometry(QRect(100, 325, 401, 31));
+        label_9->setGeometry(QRect(250, 610, 802, 62));
         QFont font2;
         font2.setFamily(QString::fromUtf8("MS Shell Dlg 2"));
-        font2.setPointSize(12);
+        font2.setPointSize(24);
         font2.setBold(false);
         font2.setItalic(false);
         font2.setWeight(10);
         label_9->setFont(font2);
         label_9->setStyleSheet(QString::fromUtf8("background-color: transparent;\n"
 "color:black;\n"
-"font: 80 12pt \"MS Shell Dlg 2\";"));
+"font: 80 24pt \"MS Shell Dlg 2\";"));
         materiaEdit2 = new QLineEdit(groupBox_18);
         materiaEdit2->setObjectName(QString::fromUtf8("materiaEdit2"));
-        materiaEdit2->setGeometry(QRect(120, 370, 71, 31));
+        materiaEdit2->setGeometry(QRect(260, 700, 142, 62));
         materiaEdit2->setStyleSheet(QString::fromUtf8("QLineEdit {\n"
 "background: rgba(224, 222, 225, 120);\n"
 "border-radius: 12px;\n"
 "color: black;\n"
-"font-size: 15px;\n"
-"padding-left: 27px;\n"
+"font-size: 30px;\n"
+"padding-left: 54px;\n"
 "}"));
         materiaEdit3 = new QLineEdit(groupBox_18);
         materiaEdit3->setObjectName(QString::fromUtf8("materiaEdit3"));
-        materiaEdit3->setGeometry(QRect(220, 370, 71, 31));
+        materiaEdit3->setGeometry(QRect(480, 700, 142, 62));
         materiaEdit3->setStyleSheet(QString::fromUtf8("QLineEdit {\n"
 "background: rgba(224, 222, 225, 120);\n"
 "border-radius: 12px;\n"
 "color: black;\n"
-"font-size: 15px;\n"
-"padding-left: 27px;\n"
+"font-size: 30px;\n"
+"padding-left: 54px;\n"
 "}"));
         materiaEdit4 = new QLineEdit(groupBox_18);
         materiaEdit4->setObjectName(QString::fromUtf8("materiaEdit4"));
-        materiaEdit4->setGeometry(QRect(320, 370, 71, 31));
+        materiaEdit4->setGeometry(QRect(690, 700, 140, 62));
         materiaEdit4->setStyleSheet(QString::fromUtf8("QLineEdit {\n"
 "background: rgba(224, 222, 225, 120);\n"
 "border-radius: 12px;\n"
 "color: black;\n"
-"font-size: 15px;\n"
-"padding-left: 27px;\n"
+"font-size: 30px;\n"
+"padding-left: 54px;\n"
 "}"));
         materiaEdit5 = new QLineEdit(groupBox_18);
         materiaEdit5->setObjectName(QString::fromUtf8("materiaEdit5"));
-        materiaEdit5->setGeometry(QRect(420, 370, 71, 31));
+        materiaEdit5->setGeometry(QRect(910, 700, 142, 62));
         materiaEdit5->setStyleSheet(QString::fromUtf8("QLineEdit {\n"
 "background: rgba(224, 222, 225, 120);\n"
 "border-radius: 12px;\n"
 "color: black;\n"
-"font-size: 15px;\n"
-"padding-left: 27px;\n"
+"font-size: 30px;\n"
+"padding-left: 54px;\n"
 "}"));
         materiaEdit6 = new QLineEdit(groupBox_18);
         materiaEdit6->setObjectName(QString::fromUtf8("materiaEdit6"));
-        materiaEdit6->setGeometry(QRect(510, 370, 71, 31));
+        materiaEdit6->setGeometry(QRect(1120, 700, 142, 62));
         materiaEdit6->setStyleSheet(QString::fromUtf8("QLineEdit {\n"
 "background: rgba(224, 222, 225, 120);\n"
 "border-radius: 12px;\n"
 "color: black;\n"
-"font-size: 15px;\n"
-"padding-left: 27px;\n"
+"font-size: 30px;\n"
+"padding-left: 54px;\n"
 "}"));
         inscribitButton = new QPushButton(groupBox_18);
         inscribitButton->setObjectName(QString::fromUtf8("inscribitButton"));
-        inscribitButton->setGeometry(QRect(240, 420, 121, 31));
+        inscribitButton->setGeometry(QRect(530, 800, 242, 62));
         QFont font3;
         font3.setBold(true);
         font3.setWeight(75);
@@ -975,7 +977,7 @@ public:
         inscribitButton->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "color: white;\n"
 "background-color: rgb(49, 51, 64);\n"
-"font-size:14px;\n"
+"font-size:28px;\n"
 "border: 1px solid rgb(49, 51, 64);\n"
 "border-radius: 10px; \n"
 "padding: 2px 4px;\n"
@@ -1226,13 +1228,7 @@ public:
         label_4 = new QLabel(groupBox_3);
         label_4->setObjectName(QString::fromUtf8("label_4"));
         label_4->setGeometry(QRect(190, 110, 422, 62));
-        QFont font6;
-        font6.setFamily(QString::fromUtf8("MS Shell Dlg 2"));
-        font6.setPointSize(32);
-        font6.setBold(false);
-        font6.setItalic(false);
-        font6.setWeight(10);
-        label_4->setFont(font6);
+        label_4->setFont(font1);
         label_4->setStyleSheet(QString::fromUtf8("background-color: transparent;\n"
 "color:white;\n"
 "font: 80 32pt \"MS Shell Dlg 2\";"));

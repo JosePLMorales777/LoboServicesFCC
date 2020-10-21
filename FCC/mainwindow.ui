@@ -1579,8 +1579,8 @@ background-position:center left;
           <rect>
            <x>0</x>
            <y>0</y>
-           <width>601</width>
-           <height>471</height>
+           <width>1311</width>
+           <height>951</height>
           </rect>
          </property>
          <property name="styleSheet">
@@ -1594,8 +1594,8 @@ background-position:center left;
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>601</width>
-            <height>131</height>
+            <width>1311</width>
+            <height>191</height>
            </rect>
           </property>
           <property name="styleSheet">
@@ -1608,42 +1608,44 @@ background-position:center left;
          <widget class="QTableView" name="tablaMaterias">
           <property name="geometry">
            <rect>
-            <x>20</x>
-            <y>150</y>
-            <width>561</width>
-            <height>161</height>
+            <x>40</x>
+            <y>201</y>
+            <width>1221</width>
+            <height>391</height>
            </rect>
           </property>
           <property name="styleSheet">
            <string notr="true">QTableView {
 
-border-radius: 15px;
+border-radius: 30px;
+font: 20pt;
 background: rgba(224, 222, 225, 120);
 selection-background-color: rgba(143, 141, 161, 204);
 selection-color: rgb(243, 241, 244);
 }
 
 QHeaderView::section {
-font: 9pt;
-height: 15px;
+font: 20pt;
+height: 30px;
 background: rgb(240, 238, 241);
 border-radius: 20px;
-}</string>
+}
+</string>
           </property>
          </widget>
          <widget class="QLabel" name="label_8">
           <property name="geometry">
            <rect>
-            <x>110</x>
-            <y>60</y>
-            <width>391</width>
+            <x>270</x>
+            <y>70</y>
+            <width>771</width>
             <height>62</height>
            </rect>
           </property>
           <property name="font">
            <font>
             <family>MS Shell Dlg 2</family>
-            <pointsize>16</pointsize>
+            <pointsize>32</pointsize>
             <weight>10</weight>
             <italic>false</italic>
             <bold>false</bold>
@@ -1652,7 +1654,7 @@ border-radius: 20px;
           <property name="styleSheet">
            <string notr="true">background-color: transparent;
 color:white;
-font: 80 16pt &quot;MS Shell Dlg 2&quot;;</string>
+font: 80 32pt &quot;MS Shell Dlg 2&quot;;</string>
           </property>
           <property name="text">
            <string>Seleccionar materias para cursar</string>
@@ -1661,10 +1663,10 @@ font: 80 16pt &quot;MS Shell Dlg 2&quot;;</string>
          <widget class="QLineEdit" name="materiaEdit1">
           <property name="geometry">
            <rect>
-            <x>20</x>
-            <y>370</y>
-            <width>71</width>
-            <height>31</height>
+            <x>50</x>
+            <y>700</y>
+            <width>142</width>
+            <height>62</height>
            </rect>
           </property>
           <property name="styleSheet">
@@ -1672,8 +1674,8 @@ font: 80 16pt &quot;MS Shell Dlg 2&quot;;</string>
 background: rgba(224, 222, 225, 120);
 border-radius: 12px;
 color: black;
-font-size: 15px;
-padding-left: 27px;
+font-size: 30px;
+padding-left: 54px;
 }
 </string>
           </property>
@@ -1681,16 +1683,16 @@ padding-left: 27px;
          <widget class="QLabel" name="label_9">
           <property name="geometry">
            <rect>
-            <x>100</x>
-            <y>325</y>
-            <width>401</width>
-            <height>31</height>
+            <x>250</x>
+            <y>610</y>
+            <width>802</width>
+            <height>62</height>
            </rect>
           </property>
           <property name="font">
            <font>
             <family>MS Shell Dlg 2</family>
-            <pointsize>12</pointsize>
+            <pointsize>24</pointsize>
             <weight>10</weight>
             <italic>false</italic>
             <bold>false</bold>
@@ -1699,7 +1701,7 @@ padding-left: 27px;
           <property name="styleSheet">
            <string notr="true">background-color: transparent;
 color:black;
-font: 80 12pt &quot;MS Shell Dlg 2&quot;;</string>
+font: 80 24pt &quot;MS Shell Dlg 2&quot;;</string>
           </property>
           <property name="text">
            <string>Inserte el id de las materias que va inscribir:</string>
@@ -1708,10 +1710,10 @@ font: 80 12pt &quot;MS Shell Dlg 2&quot;;</string>
          <widget class="QLineEdit" name="materiaEdit2">
           <property name="geometry">
            <rect>
-            <x>120</x>
-            <y>370</y>
-            <width>71</width>
-            <height>31</height>
+            <x>260</x>
+            <y>700</y>
+            <width>142</width>
+            <height>62</height>
            </rect>
           </property>
           <property name="styleSheet">
@@ -1719,18 +1721,18 @@ font: 80 12pt &quot;MS Shell Dlg 2&quot;;</string>
 background: rgba(224, 222, 225, 120);
 border-radius: 12px;
 color: black;
-font-size: 15px;
-padding-left: 27px;
+font-size: 30px;
+padding-left: 54px;
 }</string>
           </property>
          </widget>
          <widget class="QLineEdit" name="materiaEdit3">
           <property name="geometry">
            <rect>
-            <x>220</x>
-            <y>370</y>
-            <width>71</width>
-            <height>31</height>
+            <x>480</x>
+            <y>700</y>
+            <width>142</width>
+            <height>62</height>
            </rect>
           </property>
           <property name="styleSheet">
@@ -1738,18 +1740,18 @@ padding-left: 27px;
 background: rgba(224, 222, 225, 120);
 border-radius: 12px;
 color: black;
-font-size: 15px;
-padding-left: 27px;
+font-size: 30px;
+padding-left: 54px;
 }</string>
           </property>
          </widget>
          <widget class="QLineEdit" name="materiaEdit4">
           <property name="geometry">
            <rect>
-            <x>320</x>
-            <y>370</y>
-            <width>71</width>
-            <height>31</height>
+            <x>690</x>
+            <y>700</y>
+            <width>140</width>
+            <height>62</height>
            </rect>
           </property>
           <property name="styleSheet">
@@ -1757,18 +1759,18 @@ padding-left: 27px;
 background: rgba(224, 222, 225, 120);
 border-radius: 12px;
 color: black;
-font-size: 15px;
-padding-left: 27px;
+font-size: 30px;
+padding-left: 54px;
 }</string>
           </property>
          </widget>
          <widget class="QLineEdit" name="materiaEdit5">
           <property name="geometry">
            <rect>
-            <x>420</x>
-            <y>370</y>
-            <width>71</width>
-            <height>31</height>
+            <x>910</x>
+            <y>700</y>
+            <width>142</width>
+            <height>62</height>
            </rect>
           </property>
           <property name="styleSheet">
@@ -1776,18 +1778,18 @@ padding-left: 27px;
 background: rgba(224, 222, 225, 120);
 border-radius: 12px;
 color: black;
-font-size: 15px;
-padding-left: 27px;
+font-size: 30px;
+padding-left: 54px;
 }</string>
           </property>
          </widget>
          <widget class="QLineEdit" name="materiaEdit6">
           <property name="geometry">
            <rect>
-            <x>510</x>
-            <y>370</y>
-            <width>71</width>
-            <height>31</height>
+            <x>1120</x>
+            <y>700</y>
+            <width>142</width>
+            <height>62</height>
            </rect>
           </property>
           <property name="styleSheet">
@@ -1795,18 +1797,18 @@ padding-left: 27px;
 background: rgba(224, 222, 225, 120);
 border-radius: 12px;
 color: black;
-font-size: 15px;
-padding-left: 27px;
+font-size: 30px;
+padding-left: 54px;
 }</string>
           </property>
          </widget>
          <widget class="QPushButton" name="inscribitButton">
           <property name="geometry">
            <rect>
-            <x>240</x>
-            <y>420</y>
-            <width>121</width>
-            <height>31</height>
+            <x>530</x>
+            <y>800</y>
+            <width>242</width>
+            <height>62</height>
            </rect>
           </property>
           <property name="font">
@@ -1820,7 +1822,7 @@ padding-left: 27px;
            <string notr="true">QPushButton{
 color: white;
 background-color: rgb(49, 51, 64);
-font-size:14px;
+font-size:28px;
 border: 1px solid rgb(49, 51, 64);
 border-radius: 10px; 
 padding: 2px 4px;

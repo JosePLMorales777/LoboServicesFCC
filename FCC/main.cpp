@@ -25,6 +25,7 @@ int main(int argc, char *argv[])
         qDebug() << "qtBaseTranslator ok";
         a.installTranslator(&qtBaseTranslator);
     }
+
     w.show();
     return a.exec();
 }
