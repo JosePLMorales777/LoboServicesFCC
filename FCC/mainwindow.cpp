@@ -1812,6 +1812,8 @@ void MainWindow::on_inscribitButton_clicked()
         icont1 = icont1 + 1;
     }
 
+    QMessageBox::about(this, "Información", "Las materias se inscribieron correctamente");
+
     ui->materiaEdit1->clear();
     ui->materiaEdit2->clear();
     ui->materiaEdit3->clear();
