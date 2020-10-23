@@ -13,7 +13,6 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->Buscar, SIGNAL(textChanged(QString)),this, SLOT(BuscarAlumno()));
     AgregarDatos();
     Limpiar();
-
 }
 
 MainWindow::~MainWindow()
@@ -427,19 +426,19 @@ void MainWindow::IndicarMaterias(){
 
     /**/
         QString mat11 = "SELECT cursada,encurso,disponible,ninguno FROM infomateria WHERE matricula = '" + matricula + "' AND idMateria = 11";
-        
+
         QSqlQuery mater11;
         mater11.exec(mat11);
         mater11.next();
-        
+
         int curs11,enc11,disp11,ning11;
         curs11 = mater11.value("cursada").toInt();
         enc11 = mater11.value("encurso").toInt();
         disp11 = mater11.value("disponible").toInt();
         ning11 = mater11.value("ninguno").toInt();
-        
+
         qDebug()<< curs11 << enc11 << disp11 << ning11;
-        
+
         if(curs11==1){
             ui->mater11->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/palomitaF.png);");
         }
@@ -456,19 +455,19 @@ void MainWindow::IndicarMaterias(){
 
     /**/
         QString mat12 = "SELECT cursada,encurso,disponible,ninguno FROM infomateria WHERE matricula = '" + matricula + "' AND idMateria = 12";
-        
+
         QSqlQuery mater12;
         mater12.exec(mat12);
         mater12.next();
-        
+
         int curs12,enc12,disp12,ning12;
         curs12 = mater12.value("cursada").toInt();
         enc12 = mater12.value("encurso").toInt();
         disp12 = mater12.value("disponible").toInt();
         ning12 = mater12.value("ninguno").toInt();
-        
+
         qDebug()<< curs12 << enc12 << disp12 << ning12;
-        
+
         if(curs12==1){
             ui->mater12->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/palomitaF.png);");
         }
@@ -485,19 +484,19 @@ void MainWindow::IndicarMaterias(){
 
     /**/
         QString mat13 = "SELECT cursada,encurso,disponible,ninguno FROM infomateria WHERE matricula = '" + matricula + "' AND idMateria = 13";
-        
+
         QSqlQuery mater13;
         mater13.exec(mat13);
         mater13.next();
-        
+
         int curs13,enc13,disp13,ning13;
         curs13 = mater13.value("cursada").toInt();
         enc13 = mater13.value("encurso").toInt();
         disp13 = mater13.value("disponible").toInt();
         ning13 = mater13.value("ninguno").toInt();
-        
+
         qDebug()<< curs13 << enc13 << disp13 << ning13;
-        
+
         if(curs13==1){
             ui->mater13->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/palomitaF.png);");
         }
@@ -514,19 +513,19 @@ void MainWindow::IndicarMaterias(){
 
     /**/
         QString mat14 = "SELECT cursada,encurso,disponible,ninguno FROM infomateria WHERE matricula = '" + matricula + "' AND idMateria = 14";
-        
+
         QSqlQuery mater14;
         mater14.exec(mat14);
         mater14.next();
-        
+
         int curs14,enc14,disp14,ning14;
         curs14 = mater14.value("cursada").toInt();
         enc14 = mater14.value("encurso").toInt();
         disp14 = mater14.value("disponible").toInt();
         ning14 = mater14.value("ninguno").toInt();
-        
+
         qDebug()<< curs14 << enc14 << disp14 << ning14;
-        
+
         if(curs14==1){
             ui->mater14->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/palomitaF.png);");
         }
@@ -543,19 +542,19 @@ void MainWindow::IndicarMaterias(){
 
     /**/
         QString mat15 = "SELECT cursada,encurso,disponible,ninguno FROM infomateria WHERE matricula = '" + matricula + "' AND idMateria = 15";
-        
+
         QSqlQuery mater15;
         mater15.exec(mat15);
         mater15.next();
-        
+
         int curs15,enc15,disp15,ning15;
         curs15 = mater15.value("cursada").toInt();
         enc15 = mater15.value("encurso").toInt();
         disp15 = mater15.value("disponible").toInt();
         ning15 = mater15.value("ninguno").toInt();
-        
+
         qDebug()<< curs15 << enc15 << disp15 << ning15;
-        
+
         if(curs15==1){
             ui->mater15->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/palomitaF.png);");
         }
@@ -572,19 +571,19 @@ void MainWindow::IndicarMaterias(){
 
     /**/
         QString mat16 = "SELECT cursada,encurso,disponible,ninguno FROM infomateria WHERE matricula = '" + matricula + "' AND idMateria = 16";
-        
+
         QSqlQuery mater16;
         mater16.exec(mat16);
         mater16.next();
-        
+
         int curs16,enc16,disp16,ning16;
         curs16 = mater16.value("cursada").toInt();
         enc16 = mater16.value("encurso").toInt();
         disp16 = mater16.value("disponible").toInt();
         ning16 = mater16.value("ninguno").toInt();
-        
+
         qDebug()<< curs16 << enc16 << disp16 << ning16;
-        
+
         if(curs16==1){
             ui->mater16->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/palomitaF.png);");
         }
@@ -601,19 +600,19 @@ void MainWindow::IndicarMaterias(){
 
     /**/
         QString mat18 = "SELECT cursada,encurso,disponible,ninguno FROM infomateria WHERE matricula = '" + matricula + "' AND idMateria = 18";
-        
+
         QSqlQuery mater18;
         mater18.exec(mat18);
         mater18.next();
-        
+
         int curs18,enc18,disp18,ning18;
         curs18 = mater18.value("cursada").toInt();
         enc18 = mater18.value("encurso").toInt();
         disp18 = mater18.value("disponible").toInt();
         ning18 = mater18.value("ninguno").toInt();
-        
+
         qDebug()<< curs18 << enc18 << disp18 << ning18;
-        
+
         if(curs18==1){
             ui->mater18->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/palomitaF.png);");
         }
@@ -630,19 +629,19 @@ void MainWindow::IndicarMaterias(){
 
     /**/
         QString mat19 = "SELECT cursada,encurso,disponible,ninguno FROM infomateria WHERE matricula = '" + matricula + "' AND idMateria = 19";
-        
+
         QSqlQuery mater19;
         mater19.exec(mat19);
         mater19.next();
-        
+
         int curs19,enc19,disp19,ning19;
         curs19 = mater19.value("cursada").toInt();
         enc19 = mater19.value("encurso").toInt();
         disp19 = mater19.value("disponible").toInt();
         ning19 = mater19.value("ninguno").toInt();
-        
+
         qDebug()<< curs19 << enc19 << disp19 << ning19;
-        
+
         if(curs19==1){
             ui->mater19->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/palomitaF.png);");
         }
@@ -659,19 +658,19 @@ void MainWindow::IndicarMaterias(){
 
     /**/
         QString mat20 = "SELECT cursada,encurso,disponible,ninguno FROM infomateria WHERE matricula = '" + matricula + "' AND idMateria = 20";
-        
+
         QSqlQuery mater20;
         mater20.exec(mat20);
         mater20.next();
-        
+
         int curs20,enc20,disp20,ning20;
         curs20 = mater20.value("cursada").toInt();
         enc20 = mater20.value("encurso").toInt();
         disp20 = mater20.value("disponible").toInt();
         ning20 = mater20.value("ninguno").toInt();
-        
+
         qDebug()<< curs20 << enc20 << disp20 << ning20;
-        
+
         if(curs20==1){
             ui->mater20->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/palomitaF.png);");
         }
@@ -688,19 +687,19 @@ void MainWindow::IndicarMaterias(){
 
     /**/
         QString mat21 = "SELECT cursada,encurso,disponible,ninguno FROM infomateria WHERE matricula = '" + matricula + "' AND idMateria = 21";
-        
+
         QSqlQuery mater21;
         mater21.exec(mat21);
         mater21.next();
-        
+
         int curs21,enc21,disp21,ning21;
         curs21 = mater21.value("cursada").toInt();
         enc21 = mater21.value("encurso").toInt();
         disp21 = mater21.value("disponible").toInt();
         ning21 = mater21.value("ninguno").toInt();
-        
+
         qDebug()<< curs21 << enc21 << disp21 << ning21;
-        
+
         if(curs21==1){
             ui->mater21->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/palomitaF.png);");
         }
@@ -717,19 +716,19 @@ void MainWindow::IndicarMaterias(){
 
     /**/
         QString mat22 = "SELECT cursada,encurso,disponible,ninguno FROM infomateria WHERE matricula = '" + matricula + "' AND idMateria = 22";
-        
+
         QSqlQuery mater22;
         mater22.exec(mat22);
         mater22.next();
-        
+
         int curs22,enc22,disp22,ning22;
         curs22 = mater22.value("cursada").toInt();
         enc22 = mater22.value("encurso").toInt();
         disp22 = mater22.value("disponible").toInt();
         ning22 = mater22.value("ninguno").toInt();
-        
+
         qDebug()<< curs22 << enc22 << disp22 << ning22;
-        
+
         if(curs22==1){
             ui->mater22->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/palomitaF.png);");
         }
@@ -746,19 +745,19 @@ void MainWindow::IndicarMaterias(){
 
     /**/
         QString mat23 = "SELECT cursada,encurso,disponible,ninguno FROM infomateria WHERE matricula = '" + matricula + "' AND idMateria = 23";
-        
+
         QSqlQuery mater23;
         mater23.exec(mat23);
         mater23.next();
-        
+
         int curs23,enc23,disp23,ning23;
         curs23 = mater23.value("cursada").toInt();
         enc23 = mater23.value("encurso").toInt();
         disp23 = mater23.value("disponible").toInt();
         ning23 = mater23.value("ninguno").toInt();
-        
+
         qDebug()<< curs23 << enc23 << disp23 << ning23;
-        
+
         if(curs23==1){
             ui->mater23->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/palomitaF.png);");
         }
@@ -775,19 +774,19 @@ void MainWindow::IndicarMaterias(){
 
     /**/
         QString mat24 = "SELECT cursada,encurso,disponible,ninguno FROM infomateria WHERE matricula = '" + matricula + "' AND idMateria = 24";
-        
+
         QSqlQuery mater24;
         mater24.exec(mat24);
         mater24.next();
-        
+
         int curs24,enc24,disp24,ning24;
         curs24 = mater24.value("cursada").toInt();
         enc24 = mater24.value("encurso").toInt();
         disp24 = mater24.value("disponible").toInt();
         ning24 = mater24.value("ninguno").toInt();
-        
+
         qDebug()<< curs24 << enc24 << disp24 << ning24;
-        
+
         if(curs24==1){
             ui->mater24->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/palomitaF.png);");
         }
@@ -804,19 +803,19 @@ void MainWindow::IndicarMaterias(){
 
     /**/
         QString mat25 = "SELECT cursada,encurso,disponible,ninguno FROM infomateria WHERE matricula = '" + matricula + "' AND idMateria = 25";
-        
+
         QSqlQuery mater25;
         mater25.exec(mat25);
         mater25.next();
-        
+
         int curs25,enc25,disp25,ning25;
         curs25 = mater25.value("cursada").toInt();
         enc25 = mater25.value("encurso").toInt();
         disp25 = mater25.value("disponible").toInt();
         ning25 = mater25.value("ninguno").toInt();
-        
+
         qDebug()<< curs25 << enc25 << disp25 << ning25;
-        
+
         if(curs25==1){
             ui->mater25->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/palomitaF.png);");
         }
@@ -833,19 +832,19 @@ void MainWindow::IndicarMaterias(){
 
     /**/
         QString mat26 = "SELECT cursada,encurso,disponible,ninguno FROM infomateria WHERE matricula = '" + matricula + "' AND idMateria = 26";
-        
+
         QSqlQuery mater26;
         mater26.exec(mat26);
         mater26.next();
-        
+
         int curs26,enc26,disp26,ning26;
         curs26 = mater26.value("cursada").toInt();
         enc26 = mater26.value("encurso").toInt();
         disp26 = mater26.value("disponible").toInt();
         ning26 = mater26.value("ninguno").toInt();
-        
+
         qDebug()<< curs26 << enc26 << disp26 << ning26;
-        
+
         if(curs26==1){
             ui->mater26->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/palomitaF.png);");
         }
@@ -862,19 +861,19 @@ void MainWindow::IndicarMaterias(){
 
     /**/
         QString mat27 = "SELECT cursada,encurso,disponible,ninguno FROM infomateria WHERE matricula = '" + matricula + "' AND idMateria = 27";
-        
+
         QSqlQuery mater27;
         mater27.exec(mat27);
         mater27.next();
-        
+
         int curs27,enc27,disp27,ning27;
         curs27 = mater27.value("cursada").toInt();
         enc27 = mater27.value("encurso").toInt();
         disp27 = mater27.value("disponible").toInt();
         ning27 = mater27.value("ninguno").toInt();
-        
+
         qDebug()<< curs27 << enc27 << disp27 << ning27;
-        
+
         if(curs27==1){
             ui->mater27->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/palomitaF.png);");
         }
@@ -891,19 +890,19 @@ void MainWindow::IndicarMaterias(){
 
     /**/
         QString mat28 = "SELECT cursada,encurso,disponible,ninguno FROM infomateria WHERE matricula = '" + matricula + "' AND idMateria = 28";
-        
+
         QSqlQuery mater28;
         mater28.exec(mat28);
         mater28.next();
-        
+
         int curs28,enc28,disp28,ning28;
         curs28 = mater28.value("cursada").toInt();
         enc28 = mater28.value("encurso").toInt();
         disp28 = mater28.value("disponible").toInt();
         ning28 = mater28.value("ninguno").toInt();
-        
+
         qDebug()<< curs28 << enc28 << disp28 << ning28;
-        
+
         if(curs28==1){
             ui->mater28->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/palomitaF.png);");
         }
@@ -920,19 +919,19 @@ void MainWindow::IndicarMaterias(){
 
     /**/
         QString mat29 = "SELECT cursada,encurso,disponible,ninguno FROM infomateria WHERE matricula = '" + matricula + "' AND idMateria = 29";
-        
+
         QSqlQuery mater29;
         mater29.exec(mat29);
         mater29.next();
-        
+
         int curs29,enc29,disp29,ning29;
         curs29 = mater29.value("cursada").toInt();
         enc29 = mater29.value("encurso").toInt();
         disp29 = mater29.value("disponible").toInt();
         ning29 = mater29.value("ninguno").toInt();
-        
+
         qDebug()<< curs29 << enc29 << disp29 << ning29;
-        
+
         if(curs29==1){
             ui->mater29->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/palomitaF.png);");
         }
@@ -949,19 +948,19 @@ void MainWindow::IndicarMaterias(){
 
     /**/
         QString mat30 = "SELECT cursada,encurso,disponible,ninguno FROM infomateria WHERE matricula = '" + matricula + "' AND idMateria = 30";
-        
+
         QSqlQuery mater30;
         mater30.exec(mat30);
         mater30.next();
-        
+
         int curs30,enc30,disp30,ning30;
         curs30 = mater30.value("cursada").toInt();
         enc30 = mater30.value("encurso").toInt();
         disp30 = mater30.value("disponible").toInt();
         ning30 = mater30.value("ninguno").toInt();
-        
+
         qDebug()<< curs30 << enc30 << disp30 << ning30;
-        
+
         if(curs30==1){
             ui->mater30->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/palomitaF.png);");
         }
@@ -978,19 +977,19 @@ void MainWindow::IndicarMaterias(){
 
     /**/
         QString mat31 = "SELECT cursada,encurso,disponible,ninguno FROM infomateria WHERE matricula = '" + matricula + "' AND idMateria = 31";
-        
+
         QSqlQuery mater31;
         mater31.exec(mat31);
         mater31.next();
-        
+
         int curs31,enc31,disp31,ning31;
         curs31 = mater31.value("cursada").toInt();
         enc31 = mater31.value("encurso").toInt();
         disp31 = mater31.value("disponible").toInt();
         ning31 = mater31.value("ninguno").toInt();
-        
+
         qDebug()<< curs31 << enc31 << disp31 << ning31;
-        
+
         if(curs31==1){
             ui->mater31->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/palomitaF.png);");
         }
@@ -1007,19 +1006,19 @@ void MainWindow::IndicarMaterias(){
 
     /**/
         QString mat32 = "SELECT cursada,encurso,disponible,ninguno FROM infomateria WHERE matricula = '" + matricula + "' AND idMateria = 32";
-        
+
         QSqlQuery mater32;
         mater32.exec(mat32);
         mater32.next();
-        
+
         int curs32,enc32,disp32,ning32;
         curs32 = mater32.value("cursada").toInt();
         enc32 = mater32.value("encurso").toInt();
         disp32 = mater32.value("disponible").toInt();
         ning32 = mater32.value("ninguno").toInt();
-        
+
         qDebug()<< curs32 << enc32 << disp32 << ning32;
-        
+
         if(curs32==1){
             ui->mater32->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/palomitaF.png);");
         }
@@ -1036,19 +1035,19 @@ void MainWindow::IndicarMaterias(){
 
     /**/
         QString mat33 = "SELECT cursada,encurso,disponible,ninguno FROM infomateria WHERE matricula = '" + matricula + "' AND idMateria = 33";
-        
+
         QSqlQuery mater33;
         mater33.exec(mat33);
         mater33.next();
-        
+
         int curs33,enc33,disp33,ning33;
         curs33 = mater33.value("cursada").toInt();
         enc33 = mater33.value("encurso").toInt();
         disp33 = mater33.value("disponible").toInt();
         ning33 = mater33.value("ninguno").toInt();
-        
+
         qDebug()<< curs33 << enc33 << disp33 << ning33;
-        
+
         if(curs33==1){
             ui->mater33->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/palomitaF.png);");
         }
@@ -1065,19 +1064,19 @@ void MainWindow::IndicarMaterias(){
 
     /**/
         QString mat34 = "SELECT cursada,encurso,disponible,ninguno FROM infomateria WHERE matricula = '" + matricula + "' AND idMateria = 34";
-        
+
         QSqlQuery mater34;
         mater34.exec(mat34);
         mater34.next();
-        
+
         int curs34,enc34,disp34,ning34;
         curs34 = mater34.value("cursada").toInt();
         enc34 = mater34.value("encurso").toInt();
         disp34 = mater34.value("disponible").toInt();
         ning34 = mater34.value("ninguno").toInt();
-        
+
         qDebug()<< curs34 << enc34 << disp34 << ning34;
-        
+
         if(curs34==1){
             ui->mater34->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/palomitaF.png);");
         }
@@ -1094,19 +1093,19 @@ void MainWindow::IndicarMaterias(){
 
     /**/
         QString mat35 = "SELECT cursada,encurso,disponible,ninguno FROM infomateria WHERE matricula = '" + matricula + "' AND idMateria = 35";
-        
+
         QSqlQuery mater35;
         mater35.exec(mat35);
         mater35.next();
-        
+
         int curs35,enc35,disp35,ning35;
         curs35 = mater35.value("cursada").toInt();
         enc35 = mater35.value("encurso").toInt();
         disp35 = mater35.value("disponible").toInt();
         ning35 = mater35.value("ninguno").toInt();
-        
+
         qDebug()<< curs35 << enc35 << disp35 << ning35;
-        
+
         if(curs35==1){
             ui->mater35->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/palomitaF.png);");
         }
@@ -1123,19 +1122,19 @@ void MainWindow::IndicarMaterias(){
 
     /**/
         QString mat36 = "SELECT cursada,encurso,disponible,ninguno FROM infomateria WHERE matricula = '" + matricula + "' AND idMateria = 36";
-        
+
         QSqlQuery mater36;
         mater36.exec(mat36);
         mater36.next();
-        
+
         int curs36,enc36,disp36,ning36;
         curs36 = mater36.value("cursada").toInt();
         enc36 = mater36.value("encurso").toInt();
         disp36 = mater36.value("disponible").toInt();
         ning36 = mater36.value("ninguno").toInt();
-        
+
         qDebug()<< curs36 << enc36 << disp36 << ning36;
-        
+
         if(curs36==1){
             ui->mater36->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/palomitaF.png);");
         }
@@ -1152,19 +1151,19 @@ void MainWindow::IndicarMaterias(){
 
     /**/
         QString mat37 = "SELECT cursada,encurso,disponible,ninguno FROM infomateria WHERE matricula = '" + matricula + "' AND idMateria = 37";
-        
+
         QSqlQuery mater37;
         mater37.exec(mat37);
         mater37.next();
-        
+
         int curs37,enc37,disp37,ning37;
         curs37 = mater37.value("cursada").toInt();
         enc37 = mater37.value("encurso").toInt();
         disp37 = mater37.value("disponible").toInt();
         ning37 = mater37.value("ninguno").toInt();
-        
+
         qDebug()<< curs37 << enc37 << disp37 << ning37;
-        
+
         if(curs37==1){
             ui->mater37->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/palomitaF.png);");
         }
@@ -1181,19 +1180,19 @@ void MainWindow::IndicarMaterias(){
 
     /**/
         QString mat38 = "SELECT cursada,encurso,disponible,ninguno FROM infomateria WHERE matricula = '" + matricula + "' AND idMateria = 38";
-        
+
         QSqlQuery mater38;
         mater38.exec(mat38);
         mater38.next();
-        
+
         int curs38,enc38,disp38,ning38;
         curs38 = mater38.value("cursada").toInt();
         enc38 = mater38.value("encurso").toInt();
         disp38 = mater38.value("disponible").toInt();
         ning38 = mater38.value("ninguno").toInt();
-        
+
         qDebug()<< curs38 << enc38 << disp38 << ning38;
-        
+
         if(curs38==1){
             ui->mater38->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/palomitaF.png);");
         }
@@ -1210,19 +1209,19 @@ void MainWindow::IndicarMaterias(){
 
     /**/
         QString mat39 = "SELECT cursada,encurso,disponible,ninguno FROM infomateria WHERE matricula = '" + matricula + "' AND idMateria = 39";
-        
+
         QSqlQuery mater39;
         mater39.exec(mat39);
         mater39.next();
-        
+
         int curs39,enc39,disp39,ning39;
         curs39 = mater39.value("cursada").toInt();
         enc39 = mater39.value("encurso").toInt();
         disp39 = mater39.value("disponible").toInt();
         ning39 = mater39.value("ninguno").toInt();
-        
+
         qDebug()<< curs39 << enc39 << disp39 << ning39;
-        
+
         if(curs39==1){
             ui->mater39->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/palomitaF.png);");
         }
@@ -1239,19 +1238,19 @@ void MainWindow::IndicarMaterias(){
 
     /**/
         QString mat40 = "SELECT cursada,encurso,disponible,ninguno FROM infomateria WHERE matricula = '" + matricula + "' AND idMateria = 40";
-        
+
         QSqlQuery mater40;
         mater40.exec(mat40);
         mater40.next();
-        
+
         int curs40,enc40,disp40,ning40;
         curs40 = mater40.value("cursada").toInt();
         enc40 = mater40.value("encurso").toInt();
         disp40 = mater40.value("disponible").toInt();
         ning40 = mater40.value("ninguno").toInt();
-        
+
         qDebug()<< curs40 << enc40 << disp40 << ning40;
-        
+
         if(curs40==1){
             ui->mater40->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/palomitaF.png);");
         }
@@ -1268,19 +1267,19 @@ void MainWindow::IndicarMaterias(){
 
     /**/
         QString mat41 = "SELECT cursada,encurso,disponible,ninguno FROM infomateria WHERE matricula = '" + matricula + "' AND idMateria = 41";
-        
+
         QSqlQuery mater41;
         mater41.exec(mat41);
         mater41.next();
-        
+
         int curs41,enc41,disp41,ning41;
         curs41 = mater41.value("cursada").toInt();
         enc41 = mater41.value("encurso").toInt();
         disp41 = mater41.value("disponible").toInt();
         ning41 = mater41.value("ninguno").toInt();
-        
+
         qDebug()<< curs41 << enc41 << disp41 << ning41;
-        
+
         if(curs41==1){
             ui->mater41->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/palomitaF.png);");
         }
@@ -1297,19 +1296,19 @@ void MainWindow::IndicarMaterias(){
 
     /**/
         QString mat42 = "SELECT cursada,encurso,disponible,ninguno FROM infomateria WHERE matricula = '" + matricula + "' AND idMateria = 42";
-        
+
         QSqlQuery mater42;
         mater42.exec(mat42);
         mater42.next();
-        
+
         int curs42,enc42,disp42,ning42;
         curs42 = mater42.value("cursada").toInt();
         enc42 = mater42.value("encurso").toInt();
         disp42 = mater42.value("disponible").toInt();
         ning42 = mater42.value("ninguno").toInt();
-        
+
         qDebug()<< curs42 << enc42 << disp42 << ning42;
-        
+
         if(curs42==1){
             ui->mater42->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/palomitaF.png);");
         }
@@ -1366,19 +1365,19 @@ void MainWindow::IndicarMaterias(){
 
     /**/
         QString mat44 = "SELECT cursada,encurso,disponible,ninguno FROM infomateria WHERE matricula = '" + matricula + "' AND idMateria = 55";
-        
+
         QSqlQuery mater44;
         mater44.exec(mat44);
         mater44.next();
-        
+
         int curs44,enc44,disp44,ning44;
         curs44 = mater44.value("cursada").toInt();
         enc44 = mater44.value("encurso").toInt();
         disp44 = mater44.value("disponible").toInt();
         ning44 = mater44.value("ninguno").toInt();
-        
+
         qDebug()<< curs44 << enc44 << disp44 << ning44;
-        
+
         if(curs44==1){
             ui->mater44->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/palomitaF.png);");
         }
@@ -1395,19 +1394,19 @@ void MainWindow::IndicarMaterias(){
 
     /**/
         QString mat45 = "SELECT cursada,encurso,disponible,ninguno FROM infomateria WHERE matricula = '" + matricula + "' AND idMateria = 56";
-        
+
         QSqlQuery mater45;
         mater45.exec(mat45);
         mater45.next();
-        
+
         int curs45,enc45,disp45,ning45;
         curs45 = mater45.value("cursada").toInt();
         enc45 = mater45.value("encurso").toInt();
         disp45 = mater45.value("disponible").toInt();
         ning45 = mater45.value("ninguno").toInt();
-        
+
         qDebug()<< curs45 << enc45 << disp45 << ning45;
-        
+
         if(curs45==1){
             ui->mater45->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/palomitaF.png);");
         }
@@ -1424,19 +1423,19 @@ void MainWindow::IndicarMaterias(){
 
     /**/
         QString mat46 = "SELECT cursada,encurso,disponible,ninguno FROM infomateria WHERE matricula = '" + matricula + "' AND idMateria = 57";
-        
+
         QSqlQuery mater46;
         mater46.exec(mat46);
         mater46.next();
-        
+
         int curs46,enc46,disp46,ning46;
         curs46 = mater46.value("cursada").toInt();
         enc46 = mater46.value("encurso").toInt();
         disp46 = mater46.value("disponible").toInt();
         ning46 = mater46.value("ninguno").toInt();
-        
+
         qDebug()<< curs46 << enc46 << disp46 << ning46;
-        
+
         if(curs46==1){
             ui->mater46->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/palomitaF.png);");
         }
@@ -1531,22 +1530,22 @@ void MainWindow::IndicarMaterias(){
 
             /**/
     /*---------------------------------------------------------------------------------------*/
-    
+
     /**/
         QString mat49 = "SELECT cursada,encurso,disponible,ninguno FROM infomateria WHERE matricula = '" + matricula + "' AND idMateria = 72";
-        
+
         QSqlQuery mater49;
         mater49.exec(mat49);
         mater49.next();
-        
+
         int curs49,enc49,disp49,ning49;
         curs49 = mater49.value("cursada").toInt();
         enc49 = mater49.value("encurso").toInt();
         disp49 = mater49.value("disponible").toInt();
         ning49 = mater49.value("ninguno").toInt();
-        
+
         qDebug()<< curs49 << enc49 << disp49 << ning49;
-        
+
         if(curs49==1){
             ui->mater49->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/palomitaF.png);");
         }
@@ -1563,19 +1562,19 @@ void MainWindow::IndicarMaterias(){
 
     /**/
         QString mat50 = "SELECT cursada,encurso,disponible,ninguno FROM infomateria WHERE matricula = '" + matricula + "' AND idMateria = 73";
-        
+
         QSqlQuery mater50;
         mater50.exec(mat50);
         mater50.next();
-        
+
         int curs50,enc50,disp50,ning50;
         curs50 = mater50.value("cursada").toInt();
         enc50 = mater50.value("encurso").toInt();
         disp50 = mater50.value("disponible").toInt();
         ning50 = mater50.value("ninguno").toInt();
-        
+
         qDebug()<< curs50 << enc50 << disp50 << ning50;
-        
+
         if(curs50==1){
             ui->pushButton_41->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/palomitaF.png);");
         }
@@ -1905,3 +1904,4 @@ void MainWindow::on_mater1_clicked()
         IndicarMaterias();
     }
 }
+

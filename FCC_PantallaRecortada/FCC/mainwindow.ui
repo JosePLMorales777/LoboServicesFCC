@@ -1,0 +1,2494 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1698</width>
+    <height>990</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QStackedWidget" name="stackedWidget">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>1702</width>
+      <height>1002</height>
+     </rect>
+    </property>
+    <widget class="QWidget" name="Inicio">
+     <widget class="QGroupBox" name="groupBox">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>1700</width>
+        <height>1022</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(49, 51, 64);</string>
+      </property>
+      <property name="title">
+       <string/>
+      </property>
+      <widget class="QFrame" name="frame_9">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>20</y>
+         <width>842</width>
+         <height>942</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QFrame{
+	 background-color: rgb(145, 196, 107);
+	font: 12pt &quot;Arial&quot;;
+}
+</string>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+       <widget class="QLabel" name="logo">
+        <property name="geometry">
+         <rect>
+          <x>60</x>
+          <y>140</y>
+          <width>622</width>
+          <height>582</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);
+</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QFrame" name="frame_8">
+       <property name="geometry">
+        <rect>
+         <x>880</x>
+         <y>20</y>
+         <width>802</width>
+         <height>942</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QFrame{
+	background-color: rgb(255, 255, 255);
+	font: 32pt &quot;Arial&quot;;
+
+}
+</string>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+       <widget class="QLabel" name="label_2">
+        <property name="geometry">
+         <rect>
+          <x>200</x>
+          <y>40</y>
+          <width>342</width>
+          <height>302</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">
+border-image: url(:/Imagenes/Alumno/user.png);</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QGroupBox" name="groupBox_14">
+        <property name="geometry">
+         <rect>
+          <x>60</x>
+          <y>460</y>
+          <width>622</width>
+          <height>402</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">*{
+background-color: transparent;
+border: none;
+}
+
+QGroupBox{
+background-color: rgba(255, 255, 255, 0.8);
+border-radius: 3px;
+
+}
+
+QLineEdit{
+color: rgb(49, 51, 64);
+border-bottom: 2px solid rgb(49, 51, 64);
+border-color: rgb(49, 51, 64);
+font-size:28px;
+padding-left: 6px;
+}
+
+QPushButton{
+color: white;
+background-color: rgb(49, 51, 64);
+font-size:28px;
+border: 1px solid rgb(49, 51, 64);
+border-radius: 10px; 
+padding: 2px 4px;
+}
+
+
+</string>
+        </property>
+        <property name="title">
+         <string/>
+        </property>
+        <widget class="QLineEdit" name="contra">
+         <property name="geometry">
+          <rect>
+           <x>80</x>
+           <y>120</y>
+           <width>502</width>
+           <height>54</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="echoMode">
+          <enum>QLineEdit::Password</enum>
+         </property>
+         <property name="placeholderText">
+          <string>Contraseña</string>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="matricula">
+         <property name="geometry">
+          <rect>
+           <x>80</x>
+           <y>20</y>
+           <width>502</width>
+           <height>54</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="placeholderText">
+          <string>Matricula</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="ingresar">
+         <property name="geometry">
+          <rect>
+           <x>180</x>
+           <y>220</y>
+           <width>300</width>
+           <height>54</height>
+          </rect>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>150</width>
+           <height>27</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>300</width>
+           <height>54</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="text">
+          <string>Ingresar</string>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QLabel" name="lb_iniciarSesion_2">
+        <property name="geometry">
+         <rect>
+          <x>80</x>
+          <y>340</y>
+          <width>582</width>
+          <height>100</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Arial</family>
+          <pointsize>32</pointsize>
+          <weight>50</weight>
+          <italic>false</italic>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: transparent;</string>
+        </property>
+        <property name="text">
+         <string>Iniciar sesión</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="Alumno">
+     <widget class="QFrame" name="frame_11">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>362</width>
+        <height>1002</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QFrame {
+	background-color: rgb(49, 51, 64);
+}
+
+QPushButton{
+	background-color: rgb(49, 51, 64);
+	border: none;
+	color: rgb(153, 153, 161);
+
+}</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QPushButton" name="mapa">
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>80</y>
+         <width>191</width>
+         <height>62</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
+font: 24pt &quot;Arial&quot;;
+background-image: url(:/Imagenes/Alumno/Mapa32.png);
+background-repeat: no-repeat;
+padding-left: 30px;
+background-position:center left;
+
+}
+QPushButton:hover{
+	
+	font: 24pt &quot;Arial&quot;;
+	color: #ffffff;
+	background-image: url(:/Imagenes/Alumno/Mapa_Hover_32.png);
+background-repeat: no-repeat;
+padding-left: 30px;
+background-position:center left;
+}
+
+QPushButton:pressed{
+	
+	font: 24pt &quot;Arial&quot;;
+	color:  rgb(145, 196, 107);
+	background-image: url(:/Imagenes/Alumno/Mapa_Pressed_32.png);
+background-repeat: no-repeat;
+padding-left: 30px;
+background-position:center left;
+
+}</string>
+       </property>
+       <property name="text">
+        <string>Mapa</string>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>40</width>
+         <height>40</height>
+        </size>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="materias">
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>220</y>
+         <width>241</width>
+         <height>62</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
+font: 24pt &quot;Arial&quot;;
+background-image: url(:/Imagenes/Profesor/Materias32.png);
+background-repeat: no-repeat;
+padding-left: 30px;
+background-position:center left;
+
+}
+
+QPushButton:hover{
+	
+	font: 24pt &quot;Arial&quot;;
+	color: #ffffff;
+	background-image: url(:/Imagenes/Profesor/Materias_Hover_32.png);
+background-repeat: no-repeat;
+padding-left: 30px;
+background-position:center left;
+
+}
+QPushButton:pressed{
+	
+	font: 24pt &quot;Arial&quot;;
+	color:  rgb(145, 196, 107);
+	background-image: url(:/Imagenes/Profesor/Materias_Pressed_32.png);
+background-repeat: no-repeat;
+padding-left: 30px;
+background-position:center left;
+
+}</string>
+       </property>
+       <property name="text">
+        <string>Materias</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="graficas">
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>380</y>
+         <width>231</width>
+         <height>62</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
+font: 24pt &quot;Arial&quot;;
+background-image: url(:/Imagenes/Profesor/Graficas32.png);
+background-repeat: no-repeat;
+padding-left: 30px;
+background-position:center left;
+
+}
+QPushButton:hover{
+	
+	font: 24pt &quot;Arial&quot;;
+	color: #ffffff;
+	background-image: url(:/Imagenes/Profesor/Graficas_Hover_32.png);
+background-repeat: no-repeat;
+padding-left: 30px;
+background-position:center left;
+}
+QPushButton:pressed{
+	
+	font: 24pt &quot;Arial&quot;;
+	color:  rgb(145, 196, 107);
+	background-image: url(:/Imagenes/Profesor/Graficas_Pressed_32.png);
+background-repeat: no-repeat;
+padding-left: 30px;
+background-position:center left;
+
+}</string>
+       </property>
+       <property name="text">
+        <string>Gráficas</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="perfil">
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>540</y>
+         <width>181</width>
+         <height>62</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
+font: 24pt &quot;Arial&quot;;
+background-image: url(:/Imagenes/Profesor/Perfil32.png);
+background-repeat: no-repeat;
+padding-left: 30px;
+background-position:center left;
+
+}
+QPushButton:hover{
+	
+	font: 24pt &quot;Arial&quot;;
+	color: #ffffff;
+	background-image: url(:/Imagenes/Profesor/Perfil_Hover_32.png);
+background-repeat: no-repeat;
+padding-left: 30px;
+background-position:center left;
+}
+QPushButton:pressed{
+	
+	font: 24pt &quot;Arial&quot;;
+	color:  rgb(145, 196, 107);
+	background-image: url(:/Imagenes/Profesor/Perfil_Pressed_32.png);
+background-repeat: no-repeat;
+padding-left: 30px;
+background-position:center left;
+
+}</string>
+       </property>
+       <property name="text">
+        <string>Perfil</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="cerrar_sesion">
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>880</y>
+         <width>321</width>
+         <height>62</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
+font: 24pt &quot;Arial&quot;;
+background-image: url(:/Imagenes/Profesor/CerrarSesion32.png);
+background-repeat: no-repeat;
+padding-left: 30px;
+background-position:center left;
+}
+QPushButton:hover{
+	
+	font: 24pt &quot;Arial&quot;;
+	color: #ffffff;
+	background-image: url(:/Imagenes/Profesor/CerrarSesion_Hover_32.png);
+background-repeat: no-repeat;
+padding-left: 30px;
+background-position:center left;
+
+}
+QPushButton:pressed{
+	
+	font: 24pt &quot;Arial&quot;;
+	color:  rgb(145, 196, 107);
+	background-image: url(:/Imagenes/Profesor/CerrarSesion_Pressed_32.png);
+background-repeat: no-repeat;
+padding-left: 30px;
+background-position:center left;
+
+}</string>
+       </property>
+       <property name="text">
+        <string>Cerrar Sesión</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QFrame" name="frame_12">
+      <property name="geometry">
+       <rect>
+        <x>360</x>
+        <y>0</y>
+        <width>1342</width>
+        <height>1002</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> background-color: rgb(145, 196, 107);</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QStackedWidget" name="stackAlumno">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>20</y>
+         <width>1302</width>
+         <height>942</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255);</string>
+       </property>
+       <widget class="QWidget" name="Mapa">
+        <widget class="QGroupBox" name="groupBox_2">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>10</y>
+           <width>1321</width>
+           <height>951</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="title">
+          <string/>
+         </property>
+         <widget class="QLabel" name="mapaGRAFICO">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>1291</width>
+            <height>951</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border-image: url(:/Imagenes/Alumno/Mapa_ICC.jpg);</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="mater2">
+          <property name="geometry">
+           <rect>
+            <x>210</x>
+            <y>210</y>
+            <width>51</width>
+            <height>51</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton{
+	background-color: transparent;
+	border-image: url(:/Imagenes/Alumno/candadoF.png);
+}
+</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="mater22">
+          <property name="geometry">
+           <rect>
+            <x>540</x>
+            <y>750</y>
+            <width>51</width>
+            <height>51</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton{
+	background-color: transparent;
+	border-image: url(:/Imagenes/Alumno/candadoF.png);
+}
+</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="mater17">
+          <property name="geometry">
+           <rect>
+            <x>430</x>
+            <y>750</y>
+            <width>51</width>
+            <height>51</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton{
+	background-color: transparent;
+	border-image: url(:/Imagenes/Alumno/candadoF.png);
+}
+</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="mater10">
+          <property name="geometry">
+           <rect>
+            <x>320</x>
+            <y>750</y>
+            <width>51</width>
+            <height>51</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton{
+	background-color: transparent;
+	border-image: url(:/Imagenes/Alumno/candadoF.png);
+}
+</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="mater4">
+          <property name="geometry">
+           <rect>
+            <x>210</x>
+            <y>750</y>
+            <width>51</width>
+            <height>51</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton{
+	background-color: transparent;
+	border-image: url(:/Imagenes/Alumno/candadoF.png);
+}
+</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="mater5">
+          <property name="geometry">
+           <rect>
+            <x>210</x>
+            <y>840</y>
+            <width>51</width>
+            <height>51</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton{
+	background-color: transparent;
+	border-image: url(:/Imagenes/Alumno/candadoF.png);
+}
+</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="mater11">
+          <property name="geometry">
+           <rect>
+            <x>320</x>
+            <y>840</y>
+            <width>51</width>
+            <height>51</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton{
+	background-color: transparent;
+	border-image: url(:/Imagenes/Alumno/candadoF.png);
+}
+</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="mater7">
+          <property name="geometry">
+           <rect>
+            <x>320</x>
+            <y>210</y>
+            <width>51</width>
+            <height>51</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton{
+	background-color: transparent;
+	border-image: url(:/Imagenes/Alumno/candadoF.png);
+}
+</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="mater1">
+          <property name="geometry">
+           <rect>
+            <x>210</x>
+            <y>110</y>
+            <width>51</width>
+            <height>51</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton{
+	background-color: transparent;
+	border-image: url(:/Imagenes/Alumno/candadoF.png);
+}
+</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="mater8">
+          <property name="geometry">
+           <rect>
+            <x>320</x>
+            <y>290</y>
+            <width>51</width>
+            <height>51</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton{
+	background-color: transparent;
+	border-image: url(:/Imagenes/Alumno/candadoF.png);
+}
+</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="mater14">
+          <property name="geometry">
+           <rect>
+            <x>430</x>
+            <y>290</y>
+            <width>51</width>
+            <height>51</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton{
+	background-color: transparent;
+	border-image: url(:/Imagenes/Alumno/candadoF.png);
+}
+</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="mater13">
+          <property name="geometry">
+           <rect>
+            <x>430</x>
+            <y>210</y>
+            <width>51</width>
+            <height>51</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton{
+	background-color: transparent;
+	border-image: url(:/Imagenes/Alumno/candadoF.png);
+}
+</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="mater19">
+          <property name="geometry">
+           <rect>
+            <x>540</x>
+            <y>210</y>
+            <width>51</width>
+            <height>51</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton{
+	background-color: transparent;
+	border-image: url(:/Imagenes/Alumno/candadoF.png);
+}
+</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="mater18">
+          <property name="geometry">
+           <rect>
+            <x>540</x>
+            <y>110</y>
+            <width>51</width>
+            <height>51</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton{
+	background-color: transparent;
+	border-image: url(:/Imagenes/Alumno/candadoF.png);
+}
+</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="mater12">
+          <property name="geometry">
+           <rect>
+            <x>430</x>
+            <y>110</y>
+            <width>51</width>
+            <height>51</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton{
+	background-color: transparent;
+	border-image: url(:/Imagenes/Alumno/candadoF.png);
+}
+</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="mater6">
+          <property name="geometry">
+           <rect>
+            <x>320</x>
+            <y>110</y>
+            <width>51</width>
+            <height>51</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton{
+	background-color: transparent;
+	border-image: url(:/Imagenes/Alumno/candadoF.png);
+}
+</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="mater9">
+          <property name="geometry">
+           <rect>
+            <x>320</x>
+            <y>380</y>
+            <width>51</width>
+            <height>51</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton{
+	background-color: transparent;
+	border-image: url(:/Imagenes/Alumno/candadoF.png);
+}
+</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="mater3">
+          <property name="geometry">
+           <rect>
+            <x>210</x>
+            <y>380</y>
+            <width>51</width>
+            <height>51</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton{
+	background-color: transparent;
+	border-image: url(:/Imagenes/Alumno/candadoF.png);
+}
+</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="mater26">
+          <property name="geometry">
+           <rect>
+            <x>690</x>
+            <y>470</y>
+            <width>51</width>
+            <height>51</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton{
+	background-color: transparent;
+	border-image: url(:/Imagenes/Alumno/candadoF.png);
+}
+</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="mater27">
+          <property name="geometry">
+           <rect>
+            <x>690</x>
+            <y>570</y>
+            <width>51</width>
+            <height>51</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton{
+	background-color: transparent;
+	border-image: url(:/Imagenes/Alumno/candadoF.png);
+}
+</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="mater21">
+          <property name="geometry">
+           <rect>
+            <x>540</x>
+            <y>480</y>
+            <width>51</width>
+            <height>51</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton{
+	background-color: transparent;
+	border-image: url(:/Imagenes/Alumno/candadoF.png);
+}
+</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="mater20">
+          <property name="geometry">
+           <rect>
+            <x>540</x>
+            <y>380</y>
+            <width>51</width>
+            <height>51</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton{
+	background-color: transparent;
+	border-image: url(:/Imagenes/Alumno/candadoF.png);
+}
+</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="mater32">
+          <property name="geometry">
+           <rect>
+            <x>810</x>
+            <y>470</y>
+            <width>51</width>
+            <height>51</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton{
+	background-color: transparent;
+	border-image: url(:/Imagenes/Alumno/candadoF.png);
+}
+</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="mater16">
+          <property name="geometry">
+           <rect>
+            <x>430</x>
+            <y>480</y>
+            <width>51</width>
+            <height>51</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton{
+	background-color: transparent;
+	border-image: url(:/Imagenes/Alumno/candadoF.png);
+}
+</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="mater25">
+          <property name="geometry">
+           <rect>
+            <x>690</x>
+            <y>380</y>
+            <width>51</width>
+            <height>51</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton{
+	background-color: transparent;
+	border-image: url(:/Imagenes/Alumno/candadoF.png);
+}
+</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="mater15">
+          <property name="geometry">
+           <rect>
+            <x>430</x>
+            <y>380</y>
+            <width>51</width>
+            <height>51</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton{
+	background-color: transparent;
+	border-image: url(:/Imagenes/Alumno/candadoF.png);
+}
+</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="mater37">
+          <property name="geometry">
+           <rect>
+            <x>910</x>
+            <y>570</y>
+            <width>51</width>
+            <height>51</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton{
+	background-color: transparent;
+	border-image: url(:/Imagenes/Alumno/candadoF.png);
+}
+</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="mater41">
+          <property name="geometry">
+           <rect>
+            <x>1030</x>
+            <y>470</y>
+            <width>51</width>
+            <height>51</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton{
+	background-color: transparent;
+	border-image: url(:/Imagenes/Alumno/candadoF.png);
+}
+</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="mater29">
+          <property name="geometry">
+           <rect>
+            <x>800</x>
+            <y>200</y>
+            <width>51</width>
+            <height>51</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton{
+	background-color: transparent;
+	border-image: url(:/Imagenes/Alumno/candadoF.png);
+}
+</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="mater42">
+          <property name="geometry">
+           <rect>
+            <x>1030</x>
+            <y>572</y>
+            <width>51</width>
+            <height>51</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton{
+	background-color: transparent;
+	border-image: url(:/Imagenes/Alumno/candadoF.png);
+}
+</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="mater23">
+          <property name="geometry">
+           <rect>
+            <x>690</x>
+            <y>110</y>
+            <width>51</width>
+            <height>51</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton{
+	background-color: transparent;
+	border-image: url(:/Imagenes/Alumno/candadoF.png);
+}
+</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="mater28">
+          <property name="geometry">
+           <rect>
+            <x>800</x>
+            <y>110</y>
+            <width>51</width>
+            <height>51</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton{
+	background-color: transparent;
+	border-image: url(:/Imagenes/Alumno/candadoF.png);
+}
+</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="mater24">
+          <property name="geometry">
+           <rect>
+            <x>690</x>
+            <y>200</y>
+            <width>51</width>
+            <height>51</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton{
+	background-color: transparent;
+	border-image: url(:/Imagenes/Alumno/candadoF.png);
+}
+</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="mater40">
+          <property name="geometry">
+           <rect>
+            <x>1030</x>
+            <y>380</y>
+            <width>51</width>
+            <height>51</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton{
+	background-color: transparent;
+	border-image: url(:/Imagenes/Alumno/candadoF.png);
+}
+</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="mater35">
+          <property name="geometry">
+           <rect>
+            <x>910</x>
+            <y>290</y>
+            <width>51</width>
+            <height>51</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton{
+	background-color: transparent;
+	border-image: url(:/Imagenes/Alumno/candadoF.png);
+}
+</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="mater30">
+          <property name="geometry">
+           <rect>
+            <x>810</x>
+            <y>290</y>
+            <width>51</width>
+            <height>51</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton{
+	background-color: transparent;
+	border-image: url(:/Imagenes/Alumno/candadoF.png);
+}
+</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="mater31">
+          <property name="geometry">
+           <rect>
+            <x>800</x>
+            <y>380</y>
+            <width>51</width>
+            <height>51</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton{
+	background-color: transparent;
+	border-image: url(:/Imagenes/Alumno/candadoF.png);
+}
+</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="mater36">
+          <property name="geometry">
+           <rect>
+            <x>910</x>
+            <y>470</y>
+            <width>51</width>
+            <height>51</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton{
+	background-color: transparent;
+	border-image: url(:/Imagenes/Alumno/candadoF.png);
+}
+</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="mater43">
+          <property name="geometry">
+           <rect>
+            <x>1030</x>
+            <y>670</y>
+            <width>51</width>
+            <height>51</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton{
+	background-color: transparent;
+	border-image: url(:/Imagenes/Alumno/candadoF.png);
+}
+</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="mater47">
+          <property name="geometry">
+           <rect>
+            <x>1140</x>
+            <y>670</y>
+            <width>51</width>
+            <height>51</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton{
+	background-color: transparent;
+	border-image: url(:/Imagenes/Alumno/candadoF.png);
+}
+</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="pushButton_41">
+          <property name="geometry">
+           <rect>
+            <x>1250</x>
+            <y>670</y>
+            <width>51</width>
+            <height>51</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton{
+	background-color: transparent;
+	border-image: url(:/Imagenes/Alumno/candadoF.png);
+}
+</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="mater46">
+          <property name="geometry">
+           <rect>
+            <x>1140</x>
+            <y>470</y>
+            <width>51</width>
+            <height>51</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton{
+	background-color: transparent;
+	border-image: url(:/Imagenes/Alumno/candadoF.png);
+}
+</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="mater49">
+          <property name="geometry">
+           <rect>
+            <x>1250</x>
+            <y>470</y>
+            <width>51</width>
+            <height>51</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton{
+	background-color: transparent;
+	border-image: url(:/Imagenes/Alumno/candadoF.png);
+}
+</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="mater48">
+          <property name="geometry">
+           <rect>
+            <x>1250</x>
+            <y>380</y>
+            <width>51</width>
+            <height>51</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton{
+	background-color: transparent;
+	border-image: url(:/Imagenes/Alumno/candadoF.png);
+}
+</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="mater33">
+          <property name="geometry">
+           <rect>
+            <x>910</x>
+            <y>110</y>
+            <width>51</width>
+            <height>51</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton{
+	background-color: transparent;
+	border-image: url(:/Imagenes/Alumno/candadoF.png);
+}
+</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="mater38">
+          <property name="geometry">
+           <rect>
+            <x>1030</x>
+            <y>110</y>
+            <width>51</width>
+            <height>51</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton{
+	background-color: transparent;
+	border-image: url(:/Imagenes/Alumno/candadoF.png);
+}
+</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="mater34">
+          <property name="geometry">
+           <rect>
+            <x>910</x>
+            <y>200</y>
+            <width>51</width>
+            <height>51</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton{
+	background-color: transparent;
+	border-image: url(:/Imagenes/Alumno/candadoF.png);
+}
+</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="mater39">
+          <property name="geometry">
+           <rect>
+            <x>1030</x>
+            <y>200</y>
+            <width>51</width>
+            <height>51</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton{
+	background-color: transparent;
+	border-image: url(:/Imagenes/Alumno/candadoF.png);
+}
+</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="mater44">
+          <property name="geometry">
+           <rect>
+            <x>1140</x>
+            <y>200</y>
+            <width>51</width>
+            <height>51</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton{
+	background-color: transparent;
+	border-image: url(:/Imagenes/Alumno/candadoF.png);
+}
+</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="mater45">
+          <property name="geometry">
+           <rect>
+            <x>1140</x>
+            <y>290</y>
+            <width>51</width>
+            <height>51</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton{
+	background-color: transparent;
+	border-image: url(:/Imagenes/Alumno/candadoF.png);
+}
+</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </widget>
+       </widget>
+       <widget class="QWidget" name="Materias">
+        <widget class="QGroupBox" name="groupBox_18">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>1311</width>
+           <height>951</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="title">
+          <string/>
+         </property>
+         <widget class="QLabel" name="label_7">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>1311</width>
+            <height>191</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border-image: url(:/Imagenes/Profesor/barra.png);</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+         <widget class="QTableView" name="tablaMaterias">
+          <property name="geometry">
+           <rect>
+            <x>40</x>
+            <y>201</y>
+            <width>1221</width>
+            <height>391</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QTableView {
+
+border-radius: 30px;
+font: 20pt;
+background: rgba(224, 222, 225, 120);
+selection-background-color: rgba(143, 141, 161, 204);
+selection-color: rgb(243, 241, 244);
+}
+
+QHeaderView::section {
+font: 20pt;
+height: 30px;
+background: rgb(240, 238, 241);
+border-radius: 20px;
+}
+</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_8">
+          <property name="geometry">
+           <rect>
+            <x>270</x>
+            <y>70</y>
+            <width>771</width>
+            <height>62</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>MS Shell Dlg 2</family>
+            <pointsize>32</pointsize>
+            <weight>10</weight>
+            <italic>false</italic>
+            <bold>false</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: transparent;
+color:white;
+font: 80 32pt &quot;MS Shell Dlg 2&quot;;</string>
+          </property>
+          <property name="text">
+           <string>Seleccionar materias para cursar</string>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="materiaEdit1">
+          <property name="geometry">
+           <rect>
+            <x>50</x>
+            <y>700</y>
+            <width>142</width>
+            <height>62</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QLineEdit {
+background: rgba(224, 222, 225, 120);
+border-radius: 12px;
+color: black;
+font-size: 30px;
+padding-left: 54px;
+}
+</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_9">
+          <property name="geometry">
+           <rect>
+            <x>250</x>
+            <y>610</y>
+            <width>802</width>
+            <height>62</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>MS Shell Dlg 2</family>
+            <pointsize>24</pointsize>
+            <weight>10</weight>
+            <italic>false</italic>
+            <bold>false</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: transparent;
+color:black;
+font: 80 24pt &quot;MS Shell Dlg 2&quot;;</string>
+          </property>
+          <property name="text">
+           <string>Inserte el id de las materias que va inscribir:</string>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="materiaEdit2">
+          <property name="geometry">
+           <rect>
+            <x>260</x>
+            <y>700</y>
+            <width>142</width>
+            <height>62</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QLineEdit {
+background: rgba(224, 222, 225, 120);
+border-radius: 12px;
+color: black;
+font-size: 30px;
+padding-left: 54px;
+}</string>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="materiaEdit3">
+          <property name="geometry">
+           <rect>
+            <x>480</x>
+            <y>700</y>
+            <width>142</width>
+            <height>62</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QLineEdit {
+background: rgba(224, 222, 225, 120);
+border-radius: 12px;
+color: black;
+font-size: 30px;
+padding-left: 54px;
+}</string>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="materiaEdit4">
+          <property name="geometry">
+           <rect>
+            <x>690</x>
+            <y>700</y>
+            <width>140</width>
+            <height>62</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QLineEdit {
+background: rgba(224, 222, 225, 120);
+border-radius: 12px;
+color: black;
+font-size: 30px;
+padding-left: 54px;
+}</string>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="materiaEdit5">
+          <property name="geometry">
+           <rect>
+            <x>910</x>
+            <y>700</y>
+            <width>142</width>
+            <height>62</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QLineEdit {
+background: rgba(224, 222, 225, 120);
+border-radius: 12px;
+color: black;
+font-size: 30px;
+padding-left: 54px;
+}</string>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="materiaEdit6">
+          <property name="geometry">
+           <rect>
+            <x>1120</x>
+            <y>700</y>
+            <width>142</width>
+            <height>62</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QLineEdit {
+background: rgba(224, 222, 225, 120);
+border-radius: 12px;
+color: black;
+font-size: 30px;
+padding-left: 54px;
+}</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="inscribitButton">
+          <property name="geometry">
+           <rect>
+            <x>530</x>
+            <y>800</y>
+            <width>242</width>
+            <height>62</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>-1</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton{
+color: white;
+background-color: rgb(49, 51, 64);
+font-size:28px;
+border: 1px solid rgb(49, 51, 64);
+border-radius: 10px; 
+padding: 2px 4px;
+}</string>
+          </property>
+          <property name="text">
+           <string>INSCRIBIR</string>
+          </property>
+         </widget>
+        </widget>
+       </widget>
+       <widget class="QWidget" name="Graficas">
+        <widget class="QGroupBox" name="groupBox_17">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>601</width>
+           <height>471</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="title">
+          <string/>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QWidget" name="Perfil">
+        <widget class="QGroupBox" name="groupBox_16">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>801</width>
+           <height>641</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="title">
+          <string/>
+         </property>
+        </widget>
+       </widget>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="Maestro">
+     <widget class="QFrame" name="frame">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>342</width>
+        <height>1002</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QFrame {
+	background-color: #313340;
+}
+
+QPushButton{
+	background-color: rgb(49, 51, 64);
+	border: none;
+	color: rgb(153, 153, 161);
+
+}</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QPushButton" name="estudiantes">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>60</y>
+         <width>281</width>
+         <height>62</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
+font: 24pt &quot;Arial&quot;;
+background-image: url(:/Imagenes/Profesor/Estudiantes32.png);
+background-repeat: no-repeat;
+padding-left: 30px;
+background-position:center left;
+
+}
+QPushButton:hover{
+	
+	font: 24pt &quot;Arial&quot;;
+	color: #ffffff;
+	background-image: url(:/Imagenes/Profesor/Estudiantes_Hover_32.png);
+background-repeat: no-repeat;
+padding-left: 30px;
+background-position:center left;
+}
+
+QPushButton:pressed{
+	
+	font: 24pt &quot;Arial&quot;;
+	color:  rgb(145, 196, 107);
+	background-image: url(:/Imagenes/Profesor/Estudiantes_Pressed_32.png);
+background-repeat: no-repeat;
+padding-left: 30px;
+background-position:center left;
+
+}</string>
+       </property>
+       <property name="text">
+        <string>Estudiantes</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="materias_2">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>200</y>
+         <width>231</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
+font: 24pt &quot;Arial&quot;;
+background-image: url(:/Imagenes/Profesor/Materias32.png);
+background-repeat: no-repeat;
+padding-left: 30px;
+background-position:center left;
+
+}
+QPushButton:hover{
+	
+	font: 24pt &quot;Arial&quot;;
+	color: #ffffff;
+	background-image: url(:/Imagenes/Profesor/Materias_Hover_32.png);
+background-repeat: no-repeat;
+padding-left: 30px;
+background-position:center left;
+
+}
+QPushButton:pressed{
+	
+	font: 24pt &quot;Arial&quot;;
+	color:  rgb(145, 196, 107);
+	background-image: url(:/Imagenes/Profesor/Materias_Pressed_32.png);
+background-repeat: no-repeat;
+padding-left: 30px;
+background-position:center left;
+
+}</string>
+       </property>
+       <property name="text">
+        <string>Materias</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="graficas_2">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>340</y>
+         <width>221</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
+font: 24pt &quot;Arial&quot;;
+background-image: url(:/Imagenes/Profesor/Graficas32.png);
+background-repeat: no-repeat;
+padding-left: 30px;
+background-position:center left;
+
+}
+QPushButton:hover{
+	
+	font: 24pt &quot;Arial&quot;;
+	color: #ffffff;
+	background-image: url(:/Imagenes/Profesor/Graficas_Hover_32.png);
+background-repeat: no-repeat;
+padding-left: 30px;
+background-position:center left;
+}
+QPushButton:pressed{
+	
+	font: 24pt &quot;Arial&quot;;
+	color:  rgb(145, 196, 107);
+	background-image: url(:/Imagenes/Profesor/Graficas_Pressed_32.png);
+background-repeat: no-repeat;
+padding-left: 30px;
+background-position:center left;
+
+}</string>
+       </property>
+       <property name="text">
+        <string>Gráficas</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="perfil_2">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>460</y>
+         <width>171</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
+font: 24pt &quot;Arial&quot;;
+background-image: url(:/Imagenes/Profesor/Perfil32.png);
+background-repeat: no-repeat;
+padding-left: 30px;
+background-position:center left;
+
+}
+QPushButton:hover{
+	
+	font: 24pt &quot;Arial&quot;;
+	color: #ffffff;
+	background-image: url(:/Imagenes/Profesor/Perfil_Hover_32.png);
+background-repeat: no-repeat;
+padding-left: 30px;
+background-position:center left;
+}
+QPushButton:pressed{
+	
+	font: 24pt &quot;Arial&quot;;
+	color:  rgb(145, 196, 107);
+	background-image: url(:/Imagenes/Profesor/Perfil_Pressed_32.png);
+background-repeat: no-repeat;
+padding-left: 30px;
+background-position:center left;
+
+}</string>
+       </property>
+       <property name="text">
+        <string>Perfil</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="cerrar_sesion_2">
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>880</y>
+         <width>301</width>
+         <height>62</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
+font: 24pt &quot;Arial&quot;;
+background-image: url(:/Imagenes/Profesor/CerrarSesion32.png);
+background-repeat: no-repeat;
+padding-left: 30px;
+background-position:center left;
+}
+QPushButton:hover{
+	
+	font: 24pt &quot;Arial&quot;;
+	color: #ffffff;
+	background-image: url(:/Imagenes/Profesor/CerrarSesion_Hover_32.png);
+background-repeat: no-repeat;
+padding-left: 30px;
+background-position:center left;
+
+}
+QPushButton:pressed{
+	
+	font: 24pt &quot;Arial&quot;;
+	color:  rgb(145, 196, 107);
+	background-image: url(:/Imagenes/Profesor/CerrarSesion_Pressed_32.png);
+background-repeat: no-repeat;
+padding-left: 30px;
+background-position:center left;
+
+}</string>
+       </property>
+       <property name="text">
+        <string>Cerrar Sesión</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QFrame" name="frame_13">
+      <property name="geometry">
+       <rect>
+        <x>340</x>
+        <y>0</y>
+        <width>1382</width>
+        <height>1002</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> background-color: rgb(145, 196, 107);</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QStackedWidget" name="stackProfesor">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>20</y>
+         <width>1322</width>
+         <height>942</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255);</string>
+       </property>
+       <widget class="QWidget" name="Estudiantes">
+        <widget class="QGroupBox" name="groupBox_3">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>1322</width>
+           <height>942</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>16</pointsize>
+          </font>
+         </property>
+         <property name="title">
+          <string/>
+         </property>
+         <widget class="QTableView" name="Alumnos">
+          <property name="geometry">
+           <rect>
+            <x>42</x>
+            <y>250</y>
+            <width>1262</width>
+            <height>662</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>14</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QTableView {
+
+border-radius: 30px;
+background: rgba(224, 222, 225, 120);
+selection-background-color: rgba(143, 141, 161, 204);
+selection-color: rgb(243, 241, 244);
+}
+
+QHeaderView::section {
+font: 14pt;
+height: 30px;
+background: rgb(240, 238, 241);
+border-radius: 20px;
+}
+</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>1331</width>
+            <height>221</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border-image: url(:/Imagenes/Profesor/barra.png);</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="Buscar">
+          <property name="geometry">
+           <rect>
+            <x>630</x>
+            <y>110</y>
+            <width>362</width>
+            <height>62</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QLineEdit {
+background: rgba(255, 255, 255, 150);
+border-radius: 15px;
+color: black;
+font-size: 30px;
+}
+</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_3">
+          <property name="geometry">
+           <rect>
+            <x>1030</x>
+            <y>100</y>
+            <width>101</width>
+            <height>82</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border-image: url(:/Imagenes/Profesor/buscar.png);
+background-color: transparent;</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_4">
+          <property name="geometry">
+           <rect>
+            <x>190</x>
+            <y>110</y>
+            <width>422</width>
+            <height>62</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>MS Shell Dlg 2</family>
+            <pointsize>32</pointsize>
+            <weight>10</weight>
+            <italic>false</italic>
+            <bold>false</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: transparent;
+color:white;
+font: 80 32pt &quot;MS Shell Dlg 2&quot;;</string>
+          </property>
+          <property name="text">
+           <string>Buscar Alumnos:</string>
+          </property>
+         </widget>
+        </widget>
+       </widget>
+       <widget class="QWidget" name="Materias_2">
+        <widget class="QGroupBox" name="groupBox_4">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>611</width>
+           <height>471</height>
+          </rect>
+         </property>
+         <property name="title">
+          <string/>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QWidget" name="Graficas_2">
+        <widget class="QGroupBox" name="groupBox_5">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>611</width>
+           <height>471</height>
+          </rect>
+         </property>
+         <property name="title">
+          <string/>
+         </property>
+         <widget class="QComboBox" name="comboBox">
+          <property name="geometry">
+           <rect>
+            <x>100</x>
+            <y>20</y>
+            <width>121</width>
+            <height>22</height>
+           </rect>
+          </property>
+          <item>
+           <property name="text">
+            <string>Matematicas</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Algebra Superior</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Metodologia de la programacion</string>
+           </property>
+          </item>
+         </widget>
+         <widget class="QLabel" name="label_5">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>20</y>
+            <width>71</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">font: 75 14pt &quot;Arial&quot;;</string>
+          </property>
+          <property name="text">
+           <string>Materia:</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="buscar">
+          <property name="geometry">
+           <rect>
+            <x>250</x>
+            <y>20</y>
+            <width>75</width>
+            <height>23</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Buscar</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_6">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>190</y>
+            <width>281</width>
+            <height>261</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border-image: url(:/Imagenes/Profesor/grafica.png);</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+         <widget class="QProgressBar" name="progressBar">
+          <property name="geometry">
+           <rect>
+            <x>90</x>
+            <y>200</y>
+            <width>31</width>
+            <height>241</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QProgressBar{
+	border: 2px solid black;
+	border-radius: 5px;
+	background-color: transparent;
+
+}
+
+QProgressBar::chunk {
+	background-color: rgb(145, 196, 107);
+}</string>
+          </property>
+          <property name="value">
+           <number>24</number>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="format">
+           <string/>
+          </property>
+         </widget>
+         <widget class="QProgressBar" name="progressBar_2">
+          <property name="geometry">
+           <rect>
+            <x>140</x>
+            <y>200</y>
+            <width>31</width>
+            <height>241</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QProgressBar{
+	border: 2px solid black;
+	border-radius: 5px;
+	background-color: transparent;
+
+}
+
+QProgressBar::chunk {
+	background-color: rgb(186, 186, 186)
+}</string>
+          </property>
+          <property name="value">
+           <number>24</number>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="format">
+           <string/>
+          </property>
+         </widget>
+         <widget class="QProgressBar" name="progressBar_3">
+          <property name="geometry">
+           <rect>
+            <x>190</x>
+            <y>200</y>
+            <width>31</width>
+            <height>241</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QProgressBar{
+	border: 2px solid black;
+	border-radius: 5px;
+	background-color: transparent;
+
+}
+
+QProgressBar::chunk {
+	background-color: rgb(145, 196, 107);
+}</string>
+          </property>
+          <property name="value">
+           <number>24</number>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="format">
+           <string/>
+          </property>
+         </widget>
+        </widget>
+       </widget>
+       <widget class="QWidget" name="Perfil_2">
+        <widget class="QGroupBox" name="groupBox_6">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>611</width>
+           <height>471</height>
+          </rect>
+         </property>
+         <property name="title">
+          <string/>
+         </property>
+        </widget>
+       </widget>
+      </widget>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

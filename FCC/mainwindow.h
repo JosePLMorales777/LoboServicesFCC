@@ -13,6 +13,8 @@
 #include <QTableWidgetItem>
 #include<QtCore>
 #include<QtGui>
+#include <QVBoxLayout>
+#include <QScrollArea>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }

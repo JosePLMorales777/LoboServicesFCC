@@ -104,6 +104,7 @@ compiler_rcc_clean:
 	-$(DEL_FILE) debug\qrc_Imagenes.cpp
 debug/qrc_Imagenes.cpp: ../FCC/Imagenes.qrc \
 		../../../QT/5.14.2/mingw73_32/bin/rcc.exe \
+		C:/Users/52951.DESKTOP-33Q653N/Desktop/mapaadaptado.png \
 		../FCC/Imagenes/Alumno/disponible3.png \
 		../FCC/Imagenes/Alumno/candadoF.png \
 		../FCC/Imagenes/Alumno/Mapa_ICC.jpg \
@@ -534,6 +535,13 @@ debug/moc_mainwindow.cpp: ../FCC/mainwindow.h \
 		../../../QT/5.14.2/mingw73_32/include/QtGui/qtextlist.h \
 		../../../QT/5.14.2/mingw73_32/include/QtGui/qtexttable.h \
 		../../../QT/5.14.2/mingw73_32/include/QtGui/qtguiversion.h \
+		../../../QT/5.14.2/mingw73_32/include/QtWidgets/QVBoxLayout \
+		../../../QT/5.14.2/mingw73_32/include/QtWidgets/qboxlayout.h \
+		../../../QT/5.14.2/mingw73_32/include/QtWidgets/qlayout.h \
+		../../../QT/5.14.2/mingw73_32/include/QtWidgets/qlayoutitem.h \
+		../../../QT/5.14.2/mingw73_32/include/QtWidgets/qgridlayout.h \
+		../../../QT/5.14.2/mingw73_32/include/QtWidgets/QScrollArea \
+		../../../QT/5.14.2/mingw73_32/include/QtWidgets/qscrollarea.h \
 		debug/moc_predefs.h \
 		../../../QT/5.14.2/mingw73_32/bin/moc.exe
 	D:\QT\5.14.2\mingw73_32\bin\moc.exe $(DEFINES) --include D:/PROYECTO_SCRUM_IS_II/LoboServicesFCC/build-FCC-Desktop_Qt_5_14_2_MinGW_32_bit-Debug/debug/moc_predefs.h -ID:/QT/5.14.2/mingw73_32/mkspecs/win32-g++ -ID:/PROYECTO_SCRUM_IS_II/LoboServicesFCC/FCC -ID:/QT/5.14.2/mingw73_32/include -ID:/QT/5.14.2/mingw73_32/include/QtWidgets -ID:/QT/5.14.2/mingw73_32/include/QtGui -ID:/QT/5.14.2/mingw73_32/include/QtANGLE -ID:/QT/5.14.2/mingw73_32/include/QtSql -ID:/QT/5.14.2/mingw73_32/include/QtCore -I. -ID:/QT/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++ -ID:/QT/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/i686-w64-mingw32 -ID:/QT/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/backward -ID:/QT/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include -ID:/QT/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include-fixed -ID:/QT/Tools/mingw730_32/i686-w64-mingw32/include ..\FCC\mainwindow.h -o debug\moc_mainwindow.cpp
@@ -941,6 +949,13 @@ debug/main.o: ../FCC/main.cpp ../FCC/mainwindow.h \
 		../../../QT/5.14.2/mingw73_32/include/QtGui/qtextlist.h \
 		../../../QT/5.14.2/mingw73_32/include/QtGui/qtexttable.h \
 		../../../QT/5.14.2/mingw73_32/include/QtGui/qtguiversion.h \
+		../../../QT/5.14.2/mingw73_32/include/QtWidgets/QVBoxLayout \
+		../../../QT/5.14.2/mingw73_32/include/QtWidgets/qboxlayout.h \
+		../../../QT/5.14.2/mingw73_32/include/QtWidgets/qlayout.h \
+		../../../QT/5.14.2/mingw73_32/include/QtWidgets/qlayoutitem.h \
+		../../../QT/5.14.2/mingw73_32/include/QtWidgets/qgridlayout.h \
+		../../../QT/5.14.2/mingw73_32/include/QtWidgets/QScrollArea \
+		../../../QT/5.14.2/mingw73_32/include/QtWidgets/qscrollarea.h \
 		../../../QT/5.14.2/mingw73_32/include/QtWidgets/QApplication \
 		../../../QT/5.14.2/mingw73_32/include/QtWidgets/qapplication.h \
 		../../../QT/5.14.2/mingw73_32/include/QtWidgets/qdesktopwidget.h
@@ -1326,6 +1341,13 @@ debug/mainwindow.o: ../FCC/mainwindow.cpp ../FCC/mainwindow.h \
 		../../../QT/5.14.2/mingw73_32/include/QtGui/qtextlist.h \
 		../../../QT/5.14.2/mingw73_32/include/QtGui/qtexttable.h \
 		../../../QT/5.14.2/mingw73_32/include/QtGui/qtguiversion.h \
+		../../../QT/5.14.2/mingw73_32/include/QtWidgets/QVBoxLayout \
+		../../../QT/5.14.2/mingw73_32/include/QtWidgets/qboxlayout.h \
+		../../../QT/5.14.2/mingw73_32/include/QtWidgets/qlayout.h \
+		../../../QT/5.14.2/mingw73_32/include/QtWidgets/qlayoutitem.h \
+		../../../QT/5.14.2/mingw73_32/include/QtWidgets/qgridlayout.h \
+		../../../QT/5.14.2/mingw73_32/include/QtWidgets/QScrollArea \
+		../../../QT/5.14.2/mingw73_32/include/QtWidgets/qscrollarea.h \
 		ui_mainwindow.h \
 		../../../QT/5.14.2/mingw73_32/include/QtCore/QVariant \
 		../../../QT/5.14.2/mingw73_32/include/QtWidgets/QApplication \
