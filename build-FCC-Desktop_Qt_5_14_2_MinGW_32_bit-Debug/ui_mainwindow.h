@@ -150,12 +150,26 @@ public:
     QProgressBar *progressBar_3;
     QWidget *Perfil_2;
     QGroupBox *groupBox_6;
+    QLabel *label_10;
+    QLabel *label_11;
+    QLabel *label_12;
+    QGroupBox *groupBox_7;
+    QLineEdit *resetpassNE;
+    QLineEdit *resetpassNC;
+    QLineEdit *resetpassNCR;
+    QLabel *label_13;
+    QLabel *label_14;
+    QGroupBox *groupBox_8;
+    QLineEdit *nombreusuariobuscm;
+    QPushButton *cambiarpass;
+    QPushButton *searchmat;
+    QTableView *tablaMatriculas;
 
     void setupUi(QMainWindow *MainWindow)
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(1698, 990);
+        MainWindow->resize(1103, 643);
         QSizePolicy sizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
@@ -270,7 +284,7 @@ public:
         Alumno->setObjectName(QString::fromUtf8("Alumno"));
         frame_11 = new QFrame(Alumno);
         frame_11->setObjectName(QString::fromUtf8("frame_11"));
-        frame_11->setGeometry(QRect(0, 0, 235, 635));
+        frame_11->setGeometry(QRect(0, 0, 235, 651));
         frame_11->setStyleSheet(QString::fromUtf8("QFrame {\n"
 "	background-color: rgb(49, 51, 64);\n"
 "}\n"
@@ -317,7 +331,7 @@ public:
         mapa->setIconSize(QSize(40, 40));
         materias = new QPushButton(frame_11);
         materias->setObjectName(QString::fromUtf8("materias"));
-        materias->setGeometry(QRect(26, 143, 141, 40));
+        materias->setGeometry(QRect(26, 143, 151, 40));
         materias->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "font: 15pt \"Arial\";\n"
 "background-image: url(:/Imagenes/Profesor/Materias32.png);\n"
@@ -349,7 +363,7 @@ public:
 "}"));
         graficas = new QPushButton(frame_11);
         graficas->setObjectName(QString::fromUtf8("graficas"));
-        graficas->setGeometry(QRect(26, 247, 141, 40));
+        graficas->setGeometry(QRect(26, 247, 151, 40));
         graficas->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "font: 15pt \"Arial\";\n"
 "background-image: url(:/Imagenes/Profesor/Graficas32.png);\n"
@@ -379,7 +393,7 @@ public:
 "}"));
         perfil = new QPushButton(frame_11);
         perfil->setObjectName(QString::fromUtf8("perfil"));
-        perfil->setGeometry(QRect(26, 351, 124, 40));
+        perfil->setGeometry(QRect(26, 351, 111, 40));
         perfil->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "font: 15pt \"Arial\";\n"
 "background-image: url(:/Imagenes/Profesor/Perfil32.png);\n"
@@ -409,9 +423,9 @@ public:
 "}"));
         cerrar_sesion = new QPushButton(frame_11);
         cerrar_sesion->setObjectName(QString::fromUtf8("cerrar_sesion"));
-        cerrar_sesion->setGeometry(QRect(40, 880, 321, 62));
+        cerrar_sesion->setGeometry(QRect(26, 527, 208, 40));
         cerrar_sesion->setStyleSheet(QString::fromUtf8("QPushButton{\n"
-"font: 24pt \"Arial\";\n"
+"font: 15pt \"Arial\";\n"
 "background-image: url(:/Imagenes/Profesor/CerrarSesion32.png);\n"
 "background-repeat: no-repeat;\n"
 "padding-left: 30px;\n"
@@ -419,7 +433,7 @@ public:
 "}\n"
 "QPushButton:hover{\n"
 "	\n"
-"	font: 24pt \"Arial\";\n"
+"	font: 15pt \"Arial\";\n"
 "	color: #ffffff;\n"
 "	background-image: url(:/Imagenes/Profesor/CerrarSesion_Hover_32.png);\n"
 "background-repeat: no-repeat;\n"
@@ -429,7 +443,7 @@ public:
 "}\n"
 "QPushButton:pressed{\n"
 "	\n"
-"	font: 24pt \"Arial\";\n"
+"	font: 15pt \"Arial\";\n"
 "	color:  rgb(145, 196, 107);\n"
 "	background-image: url(:/Imagenes/Profesor/CerrarSesion_Pressed_32.png);\n"
 "background-repeat: no-repeat;\n"
@@ -439,19 +453,19 @@ public:
 "}"));
         frame_12 = new QFrame(Alumno);
         frame_12->setObjectName(QString::fromUtf8("frame_12"));
-        frame_12->setGeometry(QRect(234, 0, 1342, 1002));
+        frame_12->setGeometry(QRect(234, 0, 871, 651));
         frame_12->setStyleSheet(QString::fromUtf8(" background-color: rgb(145, 196, 107);"));
         frame_12->setFrameShape(QFrame::StyledPanel);
         frame_12->setFrameShadow(QFrame::Raised);
         stackAlumno = new QStackedWidget(frame_12);
         stackAlumno->setObjectName(QString::fromUtf8("stackAlumno"));
-        stackAlumno->setGeometry(QRect(13, 13, 1302, 942));
+        stackAlumno->setGeometry(QRect(13, 13, 846, 612));
         stackAlumno->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
         Mapa = new QWidget();
         Mapa->setObjectName(QString::fromUtf8("Mapa"));
         groupBox_2 = new QGroupBox(Mapa);
         groupBox_2->setObjectName(QString::fromUtf8("groupBox_2"));
-        groupBox_2->setGeometry(QRect(0, 10, 1321, 941));
+        groupBox_2->setGeometry(QRect(0, 5, 858, 611));
         groupBox_2->setStyleSheet(QString::fromUtf8(""));
         mapaGRAFICO = new QLabel(groupBox_2);
         mapaGRAFICO->setObjectName(QString::fromUtf8("mapaGRAFICO"));
@@ -635,7 +649,7 @@ public:
 ""));
         mater32 = new QPushButton(groupBox_2);
         mater32->setObjectName(QString::fromUtf8("mater32"));
-        mater32->setGeometry(QRect(810, 470, 51, 51));
+        mater32->setGeometry(QRect(520, 305, 33, 33));
         mater32->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "	background-color: transparent;\n"
 "	border-image: url(:/Imagenes/Alumno/candadoF.png);\n"
@@ -667,7 +681,7 @@ public:
 ""));
         mater37 = new QPushButton(groupBox_2);
         mater37->setObjectName(QString::fromUtf8("mater37"));
-        mater37->setGeometry(QRect(910, 570, 51, 51));
+        mater37->setGeometry(QRect(591, 370, 33, 33));
         mater37->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "	background-color: transparent;\n"
 "	border-image: url(:/Imagenes/Alumno/candadoF.png);\n"
@@ -675,7 +689,7 @@ public:
 ""));
         mater41 = new QPushButton(groupBox_2);
         mater41->setObjectName(QString::fromUtf8("mater41"));
-        mater41->setGeometry(QRect(1030, 470, 51, 51));
+        mater41->setGeometry(QRect(667, 305, 33, 33));
         mater41->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "	background-color: transparent;\n"
 "	border-image: url(:/Imagenes/Alumno/candadoF.png);\n"
@@ -691,7 +705,7 @@ public:
 ""));
         mater42 = new QPushButton(groupBox_2);
         mater42->setObjectName(QString::fromUtf8("mater42"));
-        mater42->setGeometry(QRect(1030, 572, 51, 51));
+        mater42->setGeometry(QRect(667, 370, 33, 33));
         mater42->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "	background-color: transparent;\n"
 "	border-image: url(:/Imagenes/Alumno/candadoF.png);\n"
@@ -723,7 +737,7 @@ public:
 ""));
         mater40 = new QPushButton(groupBox_2);
         mater40->setObjectName(QString::fromUtf8("mater40"));
-        mater40->setGeometry(QRect(1030, 380, 51, 51));
+        mater40->setGeometry(QRect(667, 247, 33, 33));
         mater40->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "	background-color: transparent;\n"
 "	border-image: url(:/Imagenes/Alumno/candadoF.png);\n"
@@ -731,7 +745,7 @@ public:
 ""));
         mater35 = new QPushButton(groupBox_2);
         mater35->setObjectName(QString::fromUtf8("mater35"));
-        mater35->setGeometry(QRect(910, 290, 51, 51));
+        mater35->setGeometry(QRect(591, 188, 33, 33));
         mater35->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "	background-color: transparent;\n"
 "	border-image: url(:/Imagenes/Alumno/candadoF.png);\n"
@@ -739,7 +753,7 @@ public:
 ""));
         mater30 = new QPushButton(groupBox_2);
         mater30->setObjectName(QString::fromUtf8("mater30"));
-        mater30->setGeometry(QRect(810, 290, 51, 51));
+        mater30->setGeometry(QRect(520, 188, 33, 33));
         mater30->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "	background-color: transparent;\n"
 "	border-image: url(:/Imagenes/Alumno/candadoF.png);\n"
@@ -747,7 +761,7 @@ public:
 ""));
         mater31 = new QPushButton(groupBox_2);
         mater31->setObjectName(QString::fromUtf8("mater31"));
-        mater31->setGeometry(QRect(800, 380, 51, 51));
+        mater31->setGeometry(QRect(520, 247, 33, 33));
         mater31->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "	background-color: transparent;\n"
 "	border-image: url(:/Imagenes/Alumno/candadoF.png);\n"
@@ -755,7 +769,7 @@ public:
 ""));
         mater36 = new QPushButton(groupBox_2);
         mater36->setObjectName(QString::fromUtf8("mater36"));
-        mater36->setGeometry(QRect(910, 470, 51, 51));
+        mater36->setGeometry(QRect(591, 305, 33, 33));
         mater36->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "	background-color: transparent;\n"
 "	border-image: url(:/Imagenes/Alumno/candadoF.png);\n"
@@ -763,7 +777,7 @@ public:
 ""));
         mater43 = new QPushButton(groupBox_2);
         mater43->setObjectName(QString::fromUtf8("mater43"));
-        mater43->setGeometry(QRect(1030, 670, 51, 51));
+        mater43->setGeometry(QRect(667, 435, 33, 33));
         mater43->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "	background-color: transparent;\n"
 "	border-image: url(:/Imagenes/Alumno/candadoF.png);\n"
@@ -771,7 +785,7 @@ public:
 ""));
         mater47 = new QPushButton(groupBox_2);
         mater47->setObjectName(QString::fromUtf8("mater47"));
-        mater47->setGeometry(QRect(1140, 670, 51, 51));
+        mater47->setGeometry(QRect(739, 435, 33, 33));
         mater47->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "	background-color: transparent;\n"
 "	border-image: url(:/Imagenes/Alumno/candadoF.png);\n"
@@ -779,7 +793,7 @@ public:
 ""));
         pushButton_41 = new QPushButton(groupBox_2);
         pushButton_41->setObjectName(QString::fromUtf8("pushButton_41"));
-        pushButton_41->setGeometry(QRect(1250, 670, 51, 51));
+        pushButton_41->setGeometry(QRect(812, 435, 33, 33));
         pushButton_41->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "	background-color: transparent;\n"
 "	border-image: url(:/Imagenes/Alumno/candadoF.png);\n"
@@ -787,7 +801,7 @@ public:
 ""));
         mater46 = new QPushButton(groupBox_2);
         mater46->setObjectName(QString::fromUtf8("mater46"));
-        mater46->setGeometry(QRect(1140, 470, 51, 51));
+        mater46->setGeometry(QRect(740, 305, 33, 33));
         mater46->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "	background-color: transparent;\n"
 "	border-image: url(:/Imagenes/Alumno/candadoF.png);\n"
@@ -795,7 +809,7 @@ public:
 ""));
         mater49 = new QPushButton(groupBox_2);
         mater49->setObjectName(QString::fromUtf8("mater49"));
-        mater49->setGeometry(QRect(1250, 470, 51, 51));
+        mater49->setGeometry(QRect(812, 305, 33, 33));
         mater49->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "	background-color: transparent;\n"
 "	border-image: url(:/Imagenes/Alumno/candadoF.png);\n"
@@ -803,7 +817,7 @@ public:
 ""));
         mater48 = new QPushButton(groupBox_2);
         mater48->setObjectName(QString::fromUtf8("mater48"));
-        mater48->setGeometry(QRect(1250, 380, 51, 51));
+        mater48->setGeometry(QRect(812, 247, 33, 33));
         mater48->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "	background-color: transparent;\n"
 "	border-image: url(:/Imagenes/Alumno/candadoF.png);\n"
@@ -811,7 +825,7 @@ public:
 ""));
         mater33 = new QPushButton(groupBox_2);
         mater33->setObjectName(QString::fromUtf8("mater33"));
-        mater33->setGeometry(QRect(910, 110, 51, 51));
+        mater33->setGeometry(QRect(591, 71, 33, 33));
         mater33->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "	background-color: transparent;\n"
 "	border-image: url(:/Imagenes/Alumno/candadoF.png);\n"
@@ -819,7 +833,7 @@ public:
 ""));
         mater38 = new QPushButton(groupBox_2);
         mater38->setObjectName(QString::fromUtf8("mater38"));
-        mater38->setGeometry(QRect(1030, 110, 51, 51));
+        mater38->setGeometry(QRect(667, 71, 33, 33));
         mater38->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "	background-color: transparent;\n"
 "	border-image: url(:/Imagenes/Alumno/candadoF.png);\n"
@@ -827,7 +841,7 @@ public:
 ""));
         mater34 = new QPushButton(groupBox_2);
         mater34->setObjectName(QString::fromUtf8("mater34"));
-        mater34->setGeometry(QRect(910, 200, 51, 51));
+        mater34->setGeometry(QRect(591, 130, 33, 33));
         mater34->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "	background-color: transparent;\n"
 "	border-image: url(:/Imagenes/Alumno/candadoF.png);\n"
@@ -835,7 +849,7 @@ public:
 ""));
         mater39 = new QPushButton(groupBox_2);
         mater39->setObjectName(QString::fromUtf8("mater39"));
-        mater39->setGeometry(QRect(1030, 200, 51, 51));
+        mater39->setGeometry(QRect(667, 130, 33, 33));
         mater39->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "	background-color: transparent;\n"
 "	border-image: url(:/Imagenes/Alumno/candadoF.png);\n"
@@ -843,7 +857,7 @@ public:
 ""));
         mater44 = new QPushButton(groupBox_2);
         mater44->setObjectName(QString::fromUtf8("mater44"));
-        mater44->setGeometry(QRect(1140, 200, 51, 51));
+        mater44->setGeometry(QRect(741, 130, 33, 33));
         mater44->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "	background-color: transparent;\n"
 "	border-image: url(:/Imagenes/Alumno/candadoF.png);\n"
@@ -851,7 +865,7 @@ public:
 ""));
         mater45 = new QPushButton(groupBox_2);
         mater45->setObjectName(QString::fromUtf8("mater45"));
-        mater45->setGeometry(QRect(1140, 290, 51, 51));
+        mater45->setGeometry(QRect(741, 188, 33, 33));
         mater45->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "	background-color: transparent;\n"
 "	border-image: url(:/Imagenes/Alumno/candadoF.png);\n"
@@ -866,22 +880,22 @@ public:
         groupBox_18->setStyleSheet(QString::fromUtf8(""));
         label_7 = new QLabel(groupBox_18);
         label_7->setObjectName(QString::fromUtf8("label_7"));
-        label_7->setGeometry(QRect(0, 0, 1311, 191));
+        label_7->setGeometry(QRect(0, 0, 852, 124));
         label_7->setStyleSheet(QString::fromUtf8("border-image: url(:/Imagenes/Profesor/barra.png);"));
         tablaMaterias = new QTableView(groupBox_18);
         tablaMaterias->setObjectName(QString::fromUtf8("tablaMaterias"));
-        tablaMaterias->setGeometry(QRect(40, 201, 1221, 391));
+        tablaMaterias->setGeometry(QRect(26, 140, 793, 254));
         tablaMaterias->setStyleSheet(QString::fromUtf8("QTableView {\n"
 "\n"
 "border-radius: 30px;\n"
-"font: 20pt;\n"
+"font: 13pt;\n"
 "background: rgba(224, 222, 225, 120);\n"
 "selection-background-color: rgba(143, 141, 161, 204);\n"
 "selection-color: rgb(243, 241, 244);\n"
 "}\n"
 "\n"
 "QHeaderView::section {\n"
-"font: 20pt;\n"
+"font: 13pt;\n"
 "height: 30px;\n"
 "background: rgb(240, 238, 241);\n"
 "border-radius: 20px;\n"
@@ -889,94 +903,99 @@ public:
 ""));
         label_8 = new QLabel(groupBox_18);
         label_8->setObjectName(QString::fromUtf8("label_8"));
-        label_8->setGeometry(QRect(270, 70, 771, 62));
+        label_8->setGeometry(QRect(175, 45, 501, 40));
         QFont font2;
         font2.setFamily(QString::fromUtf8("MS Shell Dlg 2"));
-        font2.setPointSize(32);
+        font2.setPointSize(20);
         font2.setBold(false);
         font2.setItalic(false);
         font2.setWeight(10);
         label_8->setFont(font2);
         label_8->setStyleSheet(QString::fromUtf8("background-color: transparent;\n"
 "color:white;\n"
-"font: 80 32pt \"MS Shell Dlg 2\";"));
+"font: 80 20pt \"MS Shell Dlg 2\";"));
         materiaEdit1 = new QLineEdit(groupBox_18);
         materiaEdit1->setObjectName(QString::fromUtf8("materiaEdit1"));
-        materiaEdit1->setGeometry(QRect(50, 700, 142, 62));
+        materiaEdit1->setGeometry(QRect(30, 465, 92, 40));
         materiaEdit1->setStyleSheet(QString::fromUtf8("QLineEdit {\n"
 "background: rgba(224, 222, 225, 120);\n"
 "border-radius: 12px;\n"
 "color: black;\n"
-"font-size: 30px;\n"
-"padding-left: 54px;\n"
+"font-size: 19px;\n"
+"padding-left: 35px;\n"
 "}\n"
 ""));
         label_9 = new QLabel(groupBox_18);
         label_9->setObjectName(QString::fromUtf8("label_9"));
-        label_9->setGeometry(QRect(250, 610, 802, 62));
+        label_9->setGeometry(QRect(162, 406, 521, 40));
         QFont font3;
         font3.setFamily(QString::fromUtf8("MS Shell Dlg 2"));
-        font3.setPointSize(24);
+        font3.setPointSize(15);
         font3.setBold(false);
         font3.setItalic(false);
         font3.setWeight(10);
         label_9->setFont(font3);
         label_9->setStyleSheet(QString::fromUtf8("background-color: transparent;\n"
 "color:black;\n"
-"font: 80 24pt \"MS Shell Dlg 2\";"));
+"font: 80 15pt \"MS Shell Dlg 2\";"));
         materiaEdit2 = new QLineEdit(groupBox_18);
         materiaEdit2->setObjectName(QString::fromUtf8("materiaEdit2"));
-        materiaEdit2->setGeometry(QRect(260, 700, 142, 62));
+        materiaEdit2->setGeometry(QRect(160, 465, 92, 40));
         materiaEdit2->setStyleSheet(QString::fromUtf8("QLineEdit {\n"
 "background: rgba(224, 222, 225, 120);\n"
 "border-radius: 12px;\n"
 "color: black;\n"
-"font-size: 30px;\n"
-"padding-left: 54px;\n"
-"}"));
+"font-size: 19px;\n"
+"padding-left: 35px;\n"
+"}\n"
+""));
         materiaEdit3 = new QLineEdit(groupBox_18);
         materiaEdit3->setObjectName(QString::fromUtf8("materiaEdit3"));
-        materiaEdit3->setGeometry(QRect(480, 700, 142, 62));
+        materiaEdit3->setGeometry(QRect(312, 465, 92, 40));
         materiaEdit3->setStyleSheet(QString::fromUtf8("QLineEdit {\n"
 "background: rgba(224, 222, 225, 120);\n"
 "border-radius: 12px;\n"
 "color: black;\n"
-"font-size: 30px;\n"
-"padding-left: 54px;\n"
-"}"));
+"font-size: 19px;\n"
+"padding-left: 35px;\n"
+"}\n"
+""));
         materiaEdit4 = new QLineEdit(groupBox_18);
         materiaEdit4->setObjectName(QString::fromUtf8("materiaEdit4"));
-        materiaEdit4->setGeometry(QRect(690, 700, 140, 62));
+        materiaEdit4->setGeometry(QRect(448, 465, 92, 40));
         materiaEdit4->setStyleSheet(QString::fromUtf8("QLineEdit {\n"
 "background: rgba(224, 222, 225, 120);\n"
 "border-radius: 12px;\n"
 "color: black;\n"
-"font-size: 30px;\n"
-"padding-left: 54px;\n"
-"}"));
+"font-size: 19px;\n"
+"padding-left: 35px;\n"
+"}\n"
+""));
         materiaEdit5 = new QLineEdit(groupBox_18);
         materiaEdit5->setObjectName(QString::fromUtf8("materiaEdit5"));
-        materiaEdit5->setGeometry(QRect(910, 700, 142, 62));
+        materiaEdit5->setGeometry(QRect(591, 465, 92, 40));
         materiaEdit5->setStyleSheet(QString::fromUtf8("QLineEdit {\n"
 "background: rgba(224, 222, 225, 120);\n"
 "border-radius: 12px;\n"
 "color: black;\n"
-"font-size: 30px;\n"
-"padding-left: 54px;\n"
-"}"));
+"font-size: 19px;\n"
+"padding-left: 35px;\n"
+"}\n"
+""));
         materiaEdit6 = new QLineEdit(groupBox_18);
         materiaEdit6->setObjectName(QString::fromUtf8("materiaEdit6"));
-        materiaEdit6->setGeometry(QRect(1120, 700, 142, 62));
+        materiaEdit6->setGeometry(QRect(728, 465, 92, 40));
         materiaEdit6->setStyleSheet(QString::fromUtf8("QLineEdit {\n"
 "background: rgba(224, 222, 225, 120);\n"
 "border-radius: 12px;\n"
 "color: black;\n"
-"font-size: 30px;\n"
-"padding-left: 54px;\n"
-"}"));
+"font-size: 19px;\n"
+"padding-left: 35px;\n"
+"}\n"
+""));
         inscribitButton = new QPushButton(groupBox_18);
         inscribitButton->setObjectName(QString::fromUtf8("inscribitButton"));
-        inscribitButton->setGeometry(QRect(530, 800, 242, 62));
+        inscribitButton->setGeometry(QRect(344, 530, 157, 40));
         QFont font4;
         font4.setBold(true);
         font4.setWeight(75);
@@ -984,7 +1003,7 @@ public:
         inscribitButton->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "color: white;\n"
 "background-color: rgb(49, 51, 64);\n"
-"font-size:28px;\n"
+"font-size:18px;\n"
 "border: 1px solid rgb(49, 51, 64);\n"
 "border-radius: 10px; \n"
 "padding: 2px 4px;\n"
@@ -994,14 +1013,14 @@ public:
         Graficas->setObjectName(QString::fromUtf8("Graficas"));
         groupBox_17 = new QGroupBox(Graficas);
         groupBox_17->setObjectName(QString::fromUtf8("groupBox_17"));
-        groupBox_17->setGeometry(QRect(0, 0, 601, 471));
+        groupBox_17->setGeometry(QRect(0, 0, 851, 621));
         groupBox_17->setStyleSheet(QString::fromUtf8(""));
         stackAlumno->addWidget(Graficas);
         Perfil = new QWidget();
         Perfil->setObjectName(QString::fromUtf8("Perfil"));
         groupBox_16 = new QGroupBox(Perfil);
         groupBox_16->setObjectName(QString::fromUtf8("groupBox_16"));
-        groupBox_16->setGeometry(QRect(0, 0, 801, 641));
+        groupBox_16->setGeometry(QRect(0, 0, 851, 641));
         groupBox_16->setStyleSheet(QString::fromUtf8(""));
         stackAlumno->addWidget(Perfil);
         stackedWidget->addWidget(Alumno);
@@ -1009,7 +1028,7 @@ public:
         Maestro->setObjectName(QString::fromUtf8("Maestro"));
         frame = new QFrame(Maestro);
         frame->setObjectName(QString::fromUtf8("frame"));
-        frame->setGeometry(QRect(0, 0, 342, 1002));
+        frame->setGeometry(QRect(0, 0, 222, 651));
         frame->setStyleSheet(QString::fromUtf8("QFrame {\n"
 "	background-color: #313340;\n"
 "}\n"
@@ -1024,9 +1043,9 @@ public:
         frame->setFrameShadow(QFrame::Raised);
         estudiantes = new QPushButton(frame);
         estudiantes->setObjectName(QString::fromUtf8("estudiantes"));
-        estudiantes->setGeometry(QRect(20, 60, 281, 62));
+        estudiantes->setGeometry(QRect(20, 39, 171, 61));
         estudiantes->setStyleSheet(QString::fromUtf8("QPushButton{\n"
-"font: 24pt \"Arial\";\n"
+"font: 13pt \"Arial\";\n"
 "background-image: url(:/Imagenes/Profesor/Estudiantes32.png);\n"
 "background-repeat: no-repeat;\n"
 "padding-left: 30px;\n"
@@ -1035,7 +1054,7 @@ public:
 "}\n"
 "QPushButton:hover{\n"
 "	\n"
-"	font: 24pt \"Arial\";\n"
+"	font: 13pt \"Arial\";\n"
 "	color: #ffffff;\n"
 "	background-image: url(:/Imagenes/Profesor/Estudiantes_Hover_32.png);\n"
 "background-repeat: no-repeat;\n"
@@ -1045,7 +1064,7 @@ public:
 "\n"
 "QPushButton:pressed{\n"
 "	\n"
-"	font: 24pt \"Arial\";\n"
+"	font: 13pt \"Arial\";\n"
 "	color:  rgb(145, 196, 107);\n"
 "	background-image: url(:/Imagenes/Profesor/Estudiantes_Pressed_32.png);\n"
 "background-repeat: no-repeat;\n"
@@ -1055,40 +1074,9 @@ public:
 "}"));
         materias_2 = new QPushButton(frame);
         materias_2->setObjectName(QString::fromUtf8("materias_2"));
-        materias_2->setGeometry(QRect(20, 200, 231, 31));
+        materias_2->setGeometry(QRect(20, 240, 171, 91));
         materias_2->setStyleSheet(QString::fromUtf8("QPushButton{\n"
-"font: 24pt \"Arial\";\n"
-"background-image: url(:/Imagenes/Profesor/Materias32.png);\n"
-"background-repeat: no-repeat;\n"
-"padding-left: 30px;\n"
-"background-position:center left;\n"
-"\n"
-"}\n"
-"QPushButton:hover{\n"
-"	\n"
-"	font: 24pt \"Arial\";\n"
-"	color: #ffffff;\n"
-"	background-image: url(:/Imagenes/Profesor/Materias_Hover_32.png);\n"
-"background-repeat: no-repeat;\n"
-"padding-left: 30px;\n"
-"background-position:center left;\n"
-"\n"
-"}\n"
-"QPushButton:pressed{\n"
-"	\n"
-"	font: 24pt \"Arial\";\n"
-"	color:  rgb(145, 196, 107);\n"
-"	background-image: url(:/Imagenes/Profesor/Materias_Pressed_32.png);\n"
-"background-repeat: no-repeat;\n"
-"padding-left: 30px;\n"
-"background-position:center left;\n"
-"\n"
-"}"));
-        graficas_2 = new QPushButton(frame);
-        graficas_2->setObjectName(QString::fromUtf8("graficas_2"));
-        graficas_2->setGeometry(QRect(20, 340, 221, 31));
-        graficas_2->setStyleSheet(QString::fromUtf8("QPushButton{\n"
-"font: 24pt \"Arial\";\n"
+"font: 13pt \"Arial\";\n"
 "background-image: url(:/Imagenes/Profesor/Graficas32.png);\n"
 "background-repeat: no-repeat;\n"
 "padding-left: 30px;\n"
@@ -1097,16 +1085,17 @@ public:
 "}\n"
 "QPushButton:hover{\n"
 "	\n"
-"	font: 24pt \"Arial\";\n"
+"	font: 13pt \"Arial\";\n"
 "	color: #ffffff;\n"
 "	background-image: url(:/Imagenes/Profesor/Graficas_Hover_32.png);\n"
 "background-repeat: no-repeat;\n"
 "padding-left: 30px;\n"
 "background-position:center left;\n"
+"\n"
 "}\n"
 "QPushButton:pressed{\n"
 "	\n"
-"	font: 24pt \"Arial\";\n"
+"	font: 13pt \"Arial\";\n"
 "	color:  rgb(145, 196, 107);\n"
 "	background-image: url(:/Imagenes/Profesor/Graficas_Pressed_32.png);\n"
 "background-repeat: no-repeat;\n"
@@ -1114,11 +1103,42 @@ public:
 "background-position:center left;\n"
 "\n"
 "}"));
+        graficas_2 = new QPushButton(frame);
+        graficas_2->setObjectName(QString::fromUtf8("graficas_2"));
+        graficas_2->setGeometry(QRect(20, 140, 171, 71));
+        graficas_2->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"font: 13pt \"Arial\";\n"
+"background-image: url(:/Imagenes/Profesor/Materias32.png);\n"
+"background-repeat: no-repeat;\n"
+"padding-left: 30px;\n"
+"background-position:center left;\n"
+"\n"
+"}\n"
+"QPushButton:hover{\n"
+"	\n"
+"	font: 13pt \"Arial\";\n"
+"	color: #ffffff;\n"
+"    background-image: url(:/Imagenes/Profesor/Materias_Hover_32.png);\n"
+"background-repeat: no-repeat;\n"
+"padding-left: 30px;\n"
+"background-position:center left;\n"
+"}\n"
+"QPushButton:pressed{\n"
+"	\n"
+"	font: 13pt \"Arial\";\n"
+"	color:  rgb(145, 196, 107);\n"
+"	background-image: url(:/Imagenes/Profesor/Materias_Pressed_32.png);\n"
+"background-repeat: no-repeat;\n"
+"padding-left: 30px;\n"
+"background-position:center left;\n"
+"\n"
+"}"));
         perfil_2 = new QPushButton(frame);
         perfil_2->setObjectName(QString::fromUtf8("perfil_2"));
-        perfil_2->setGeometry(QRect(20, 460, 171, 31));
+        perfil_2->setGeometry(QRect(20, 360, 171, 81));
+        perfil_2->setAutoFillBackground(false);
         perfil_2->setStyleSheet(QString::fromUtf8("QPushButton{\n"
-"font: 24pt \"Arial\";\n"
+"font: 13pt \"Arial\";\n"
 "background-image: url(:/Imagenes/Profesor/Perfil32.png);\n"
 "background-repeat: no-repeat;\n"
 "padding-left: 30px;\n"
@@ -1127,7 +1147,7 @@ public:
 "}\n"
 "QPushButton:hover{\n"
 "	\n"
-"	font: 24pt \"Arial\";\n"
+"	font: 13pt \"Arial\";\n"
 "	color: #ffffff;\n"
 "	background-image: url(:/Imagenes/Profesor/Perfil_Hover_32.png);\n"
 "background-repeat: no-repeat;\n"
@@ -1136,7 +1156,7 @@ public:
 "}\n"
 "QPushButton:pressed{\n"
 "	\n"
-"	font: 24pt \"Arial\";\n"
+"	font: 13pt \"Arial\";\n"
 "	color:  rgb(145, 196, 107);\n"
 "	background-image: url(:/Imagenes/Profesor/Perfil_Pressed_32.png);\n"
 "background-repeat: no-repeat;\n"
@@ -1146,9 +1166,9 @@ public:
 "}"));
         cerrar_sesion_2 = new QPushButton(frame);
         cerrar_sesion_2->setObjectName(QString::fromUtf8("cerrar_sesion_2"));
-        cerrar_sesion_2->setGeometry(QRect(40, 880, 301, 62));
+        cerrar_sesion_2->setGeometry(QRect(26, 572, 191, 40));
         cerrar_sesion_2->setStyleSheet(QString::fromUtf8("QPushButton{\n"
-"font: 24pt \"Arial\";\n"
+"font: 15pt \"Arial\";\n"
 "background-image: url(:/Imagenes/Profesor/CerrarSesion32.png);\n"
 "background-repeat: no-repeat;\n"
 "padding-left: 30px;\n"
@@ -1156,7 +1176,7 @@ public:
 "}\n"
 "QPushButton:hover{\n"
 "	\n"
-"	font: 24pt \"Arial\";\n"
+"	font: 15pt \"Arial\";\n"
 "	color: #ffffff;\n"
 "	background-image: url(:/Imagenes/Profesor/CerrarSesion_Hover_32.png);\n"
 "background-repeat: no-repeat;\n"
@@ -1166,7 +1186,7 @@ public:
 "}\n"
 "QPushButton:pressed{\n"
 "	\n"
-"	font: 24pt \"Arial\";\n"
+"	font: 15pt \"Arial\";\n"
 "	color:  rgb(145, 196, 107);\n"
 "	background-image: url(:/Imagenes/Profesor/CerrarSesion_Pressed_32.png);\n"
 "background-repeat: no-repeat;\n"
@@ -1176,25 +1196,25 @@ public:
 "}"));
         frame_13 = new QFrame(Maestro);
         frame_13->setObjectName(QString::fromUtf8("frame_13"));
-        frame_13->setGeometry(QRect(340, 0, 1382, 1002));
+        frame_13->setGeometry(QRect(221, 0, 898, 651));
         frame_13->setStyleSheet(QString::fromUtf8(" background-color: rgb(145, 196, 107);"));
         frame_13->setFrameShape(QFrame::StyledPanel);
         frame_13->setFrameShadow(QFrame::Raised);
         stackProfesor = new QStackedWidget(frame_13);
         stackProfesor->setObjectName(QString::fromUtf8("stackProfesor"));
-        stackProfesor->setGeometry(QRect(20, 20, 1322, 942));
+        stackProfesor->setGeometry(QRect(13, 13, 851, 612));
         stackProfesor->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
         Estudiantes = new QWidget();
         Estudiantes->setObjectName(QString::fromUtf8("Estudiantes"));
         groupBox_3 = new QGroupBox(Estudiantes);
         groupBox_3->setObjectName(QString::fromUtf8("groupBox_3"));
-        groupBox_3->setGeometry(QRect(0, 0, 1322, 942));
+        groupBox_3->setGeometry(QRect(0, 0, 859, 612));
         QFont font5;
         font5.setPointSize(16);
         groupBox_3->setFont(font5);
         Alumnos = new QTableView(groupBox_3);
         Alumnos->setObjectName(QString::fromUtf8("Alumnos"));
-        Alumnos->setGeometry(QRect(42, 250, 1262, 662));
+        Alumnos->setGeometry(QRect(37, 162, 781, 430));
         QFont font6;
         font6.setPointSize(14);
         Alumnos->setFont(font6);
@@ -1207,7 +1227,7 @@ public:
 "}\n"
 "\n"
 "QHeaderView::section {\n"
-"font: 14pt;\n"
+"font: 13pt;\n"
 "height: 30px;\n"
 "background: rgb(240, 238, 241);\n"
 "border-radius: 20px;\n"
@@ -1215,30 +1235,30 @@ public:
 ""));
         label = new QLabel(groupBox_3);
         label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(0, 0, 1331, 221));
+        label->setGeometry(QRect(0, 0, 865, 143));
         label->setStyleSheet(QString::fromUtf8("border-image: url(:/Imagenes/Profesor/barra.png);"));
         Buscar = new QLineEdit(groupBox_3);
         Buscar->setObjectName(QString::fromUtf8("Buscar"));
-        Buscar->setGeometry(QRect(630, 110, 362, 62));
+        Buscar->setGeometry(QRect(409, 71, 235, 40));
         Buscar->setStyleSheet(QString::fromUtf8("QLineEdit {\n"
 "background: rgba(255, 255, 255, 150);\n"
 "border-radius: 15px;\n"
 "color: black;\n"
-"font-size: 30px;\n"
+"font-size: 19px;\n"
 "}\n"
 ""));
         label_3 = new QLabel(groupBox_3);
         label_3->setObjectName(QString::fromUtf8("label_3"));
-        label_3->setGeometry(QRect(1030, 100, 101, 82));
+        label_3->setGeometry(QRect(669, 71, 40, 40));
         label_3->setStyleSheet(QString::fromUtf8("border-image: url(:/Imagenes/Profesor/buscar.png);\n"
 "background-color: transparent;"));
         label_4 = new QLabel(groupBox_3);
         label_4->setObjectName(QString::fromUtf8("label_4"));
-        label_4->setGeometry(QRect(190, 110, 422, 62));
+        label_4->setGeometry(QRect(123, 71, 287, 40));
         label_4->setFont(font2);
         label_4->setStyleSheet(QString::fromUtf8("background-color: transparent;\n"
 "color:white;\n"
-"font: 80 32pt \"MS Shell Dlg 2\";"));
+"font: 80 20pt \"MS Shell Dlg 2\";"));
         stackProfesor->addWidget(Estudiantes);
         Materias_2 = new QWidget();
         Materias_2->setObjectName(QString::fromUtf8("Materias_2"));
@@ -1318,7 +1338,143 @@ public:
         Perfil_2->setObjectName(QString::fromUtf8("Perfil_2"));
         groupBox_6 = new QGroupBox(Perfil_2);
         groupBox_6->setObjectName(QString::fromUtf8("groupBox_6"));
-        groupBox_6->setGeometry(QRect(0, 0, 611, 471));
+        groupBox_6->setGeometry(QRect(0, 0, 851, 621));
+        label_10 = new QLabel(groupBox_6);
+        label_10->setObjectName(QString::fromUtf8("label_10"));
+        label_10->setGeometry(QRect(0, 0, 852, 124));
+        label_10->setStyleSheet(QString::fromUtf8("border-image: url(:/Imagenes/Profesor/barra.png);"));
+        label_11 = new QLabel(groupBox_6);
+        label_11->setObjectName(QString::fromUtf8("label_11"));
+        label_11->setGeometry(QRect(41, 140, 241, 61));
+        QFont font7;
+        font7.setFamily(QString::fromUtf8("MS Shell Dlg 2"));
+        font7.setPointSize(14);
+        font7.setBold(false);
+        font7.setItalic(false);
+        font7.setWeight(10);
+        label_11->setFont(font7);
+        label_11->setStyleSheet(QString::fromUtf8("background-color: transparent;\n"
+"color:black;\n"
+"font: 80 14pt \"MS Shell Dlg 2\";"));
+        label_12 = new QLabel(groupBox_6);
+        label_12->setObjectName(QString::fromUtf8("label_12"));
+        label_12->setGeometry(QRect(90, 45, 681, 40));
+        label_12->setFont(font2);
+        label_12->setStyleSheet(QString::fromUtf8("background-color: transparent;\n"
+"color:white;\n"
+"font: 80 20pt \"MS Shell Dlg 2\";"));
+        groupBox_7 = new QGroupBox(groupBox_6);
+        groupBox_7->setObjectName(QString::fromUtf8("groupBox_7"));
+        groupBox_7->setGeometry(QRect(30, 220, 331, 211));
+        groupBox_7->setStyleSheet(QString::fromUtf8("*{\n"
+"background-color: transparent;\n"
+"border: none;\n"
+"}\n"
+"\n"
+"QGroupBox{\n"
+"background-color: rgba(255, 255, 255, 0.8);\n"
+"border-radius: 3px;\n"
+"\n"
+"}\n"
+"\n"
+"QLineEdit{\n"
+"color: rgb(49, 51, 64);\n"
+"border-bottom: 2px solid rgb(49, 51, 64);\n"
+"border-color: rgb(49, 51, 64);\n"
+"font-size:18px;\n"
+"padding-left: 6px;\n"
+"}"));
+        resetpassNE = new QLineEdit(groupBox_7);
+        resetpassNE->setObjectName(QString::fromUtf8("resetpassNE"));
+        resetpassNE->setGeometry(QRect(10, 30, 301, 31));
+        resetpassNE->setStyleSheet(QString::fromUtf8(""));
+        resetpassNC = new QLineEdit(groupBox_7);
+        resetpassNC->setObjectName(QString::fromUtf8("resetpassNC"));
+        resetpassNC->setGeometry(QRect(10, 110, 301, 31));
+        resetpassNC->setStyleSheet(QString::fromUtf8(""));
+        resetpassNC->setInputMethodHints(Qt::ImhHiddenText|Qt::ImhNoAutoUppercase|Qt::ImhNoPredictiveText|Qt::ImhSensitiveData);
+        resetpassNC->setEchoMode(QLineEdit::Password);
+        resetpassNCR = new QLineEdit(groupBox_7);
+        resetpassNCR->setObjectName(QString::fromUtf8("resetpassNCR"));
+        resetpassNCR->setGeometry(QRect(10, 170, 301, 31));
+        resetpassNCR->setStyleSheet(QString::fromUtf8(""));
+        resetpassNCR->setInputMethodHints(Qt::ImhHiddenText|Qt::ImhNoAutoUppercase|Qt::ImhNoPredictiveText|Qt::ImhSensitiveData);
+        resetpassNCR->setEchoMode(QLineEdit::Password);
+        label_13 = new QLabel(groupBox_6);
+        label_13->setObjectName(QString::fromUtf8("label_13"));
+        label_13->setGeometry(QRect(403, 140, 431, 61));
+        label_13->setFont(font7);
+        label_13->setStyleSheet(QString::fromUtf8("background-color: transparent;\n"
+"color:black;\n"
+"font: 80 14pt \"MS Shell Dlg 2\";"));
+        label_14 = new QLabel(groupBox_6);
+        label_14->setObjectName(QString::fromUtf8("label_14"));
+        label_14->setGeometry(QRect(370, 140, 5, 451));
+        label_14->setStyleSheet(QString::fromUtf8("background-color: rgb(49, 51, 64);"));
+        groupBox_8 = new QGroupBox(groupBox_6);
+        groupBox_8->setObjectName(QString::fromUtf8("groupBox_8"));
+        groupBox_8->setGeometry(QRect(400, 460, 421, 61));
+        groupBox_8->setStyleSheet(QString::fromUtf8("*{\n"
+"background-color: transparent;\n"
+"border: none;\n"
+"}\n"
+"\n"
+"QGroupBox{\n"
+"background-color: rgba(255, 255, 255, 0.8);\n"
+"border-radius: 3px;\n"
+"\n"
+"}\n"
+"\n"
+"QLineEdit{\n"
+"color: rgb(49, 51, 64);\n"
+"border-bottom: 2px solid rgb(49, 51, 64);\n"
+"border-color: rgb(49, 51, 64);\n"
+"font-size:18px;\n"
+"padding-left: 6px;\n"
+"}"));
+        nombreusuariobuscm = new QLineEdit(groupBox_8);
+        nombreusuariobuscm->setObjectName(QString::fromUtf8("nombreusuariobuscm"));
+        nombreusuariobuscm->setGeometry(QRect(10, 10, 401, 31));
+        nombreusuariobuscm->setStyleSheet(QString::fromUtf8(""));
+        cambiarpass = new QPushButton(groupBox_6);
+        cambiarpass->setObjectName(QString::fromUtf8("cambiarpass"));
+        cambiarpass->setGeometry(QRect(101, 480, 181, 31));
+        cambiarpass->setStyleSheet(QString::fromUtf8("color: white;\n"
+"background-color: rgb(49, 51, 64);\n"
+"font-size:18px;\n"
+"border: 1px solid rgb(49, 51, 64);\n"
+"border-radius: 10px; \n"
+"padding: 2px 4px;\n"
+""));
+        searchmat = new QPushButton(groupBox_6);
+        searchmat->setObjectName(QString::fromUtf8("searchmat"));
+        searchmat->setGeometry(QRect(536, 525, 151, 31));
+        searchmat->setStyleSheet(QString::fromUtf8("color: white;\n"
+"background-color: rgb(49, 51, 64);\n"
+"font-size:18px;\n"
+"border: 1px solid rgb(49, 51, 64);\n"
+"border-radius: 10px; \n"
+"padding: 2px 4px;\n"
+""));
+        tablaMatriculas = new QTableView(groupBox_6);
+        tablaMatriculas->setObjectName(QString::fromUtf8("tablaMatriculas"));
+        tablaMatriculas->setGeometry(QRect(400, 211, 431, 241));
+        tablaMatriculas->setStyleSheet(QString::fromUtf8("QTableView {\n"
+"\n"
+"border-radius: 30px;\n"
+"font: 9pt;\n"
+"background: rgba(224, 222, 225, 120);\n"
+"selection-background-color: rgba(143, 141, 161, 204);\n"
+"selection-color: rgb(243, 241, 244);\n"
+"}\n"
+"\n"
+"QHeaderView::section {\n"
+"font: 9pt;\n"
+"height: 30px;\n"
+"background: rgb(240, 238, 241);\n"
+"border-radius: 20px;\n"
+"}\n"
+""));
         stackProfesor->addWidget(Perfil_2);
         stackedWidget->addWidget(Maestro);
         MainWindow->setCentralWidget(centralwidget);
@@ -1404,10 +1560,16 @@ public:
         inscribitButton->setText(QCoreApplication::translate("MainWindow", "INSCRIBIR", nullptr));
         groupBox_17->setTitle(QString());
         groupBox_16->setTitle(QString());
-        estudiantes->setText(QCoreApplication::translate("MainWindow", "Estudiantes", nullptr));
-        materias_2->setText(QCoreApplication::translate("MainWindow", "Materias", nullptr));
-        graficas_2->setText(QCoreApplication::translate("MainWindow", "Gr\303\241ficas", nullptr));
-        perfil_2->setText(QCoreApplication::translate("MainWindow", "Perfil", nullptr));
+        estudiantes->setText(QCoreApplication::translate("MainWindow", "Lista de\n"
+"estudiantes", nullptr));
+        materias_2->setText(QCoreApplication::translate("MainWindow", "Agrupar\n"
+"estudiantes\n"
+"y ver gr\303\241ficas", nullptr));
+        graficas_2->setText(QCoreApplication::translate("MainWindow", "Ocupaci\303\263n\n"
+"de Materias", nullptr));
+        perfil_2->setText(QCoreApplication::translate("MainWindow", "Recuperar\n"
+"acceso de\n"
+"estudiantes", nullptr));
         cerrar_sesion_2->setText(QCoreApplication::translate("MainWindow", "Cerrar Sesi\303\263n", nullptr));
         groupBox_3->setTitle(QString());
         label->setText(QString());
@@ -1426,6 +1588,25 @@ public:
         progressBar_2->setFormat(QString());
         progressBar_3->setFormat(QString());
         groupBox_6->setTitle(QString());
+        label_10->setText(QString());
+        label_11->setText(QCoreApplication::translate("MainWindow", "Cambiar contrase\303\261a del\n"
+"estudiante:", nullptr));
+        label_12->setText(QCoreApplication::translate("MainWindow", "Recuperar acceso de los estudiantes al sistema", nullptr));
+        groupBox_7->setTitle(QString());
+        resetpassNE->setText(QString());
+        resetpassNE->setPlaceholderText(QCoreApplication::translate("MainWindow", "Matr\303\255cula del usuario", nullptr));
+        resetpassNC->setText(QString());
+        resetpassNC->setPlaceholderText(QCoreApplication::translate("MainWindow", "Nueva contrase\303\261a", nullptr));
+        resetpassNCR->setText(QString());
+        resetpassNCR->setPlaceholderText(QCoreApplication::translate("MainWindow", "Repetir nueva contrase\303\261a", nullptr));
+        label_13->setText(QCoreApplication::translate("MainWindow", "Consultar matr\303\255cula por nombre de\n"
+"usuario:", nullptr));
+        label_14->setText(QString());
+        groupBox_8->setTitle(QString());
+        nombreusuariobuscm->setText(QString());
+        nombreusuariobuscm->setPlaceholderText(QCoreApplication::translate("MainWindow", "Inserte nombre del usuario", nullptr));
+        cambiarpass->setText(QCoreApplication::translate("MainWindow", "Cambiar contrase\303\261a", nullptr));
+        searchmat->setText(QCoreApplication::translate("MainWindow", "Buscar matricula", nullptr));
     } // retranslateUi
 
 };

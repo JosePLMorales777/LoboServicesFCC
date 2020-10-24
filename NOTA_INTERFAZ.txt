@@ -1,0 +1,2 @@
+Se redujeron las interfaces al 65% de su tamaño original
+se cambiaran una vez que se termine el proyecto

@@ -78,6 +78,14 @@ private slots:
 
     void on_mater1_clicked();
 
+    void on_cambiarpass_clicked();
+
+    void on_pushButton_2_clicked();
+
+    void limpiartabmatnom();
+
+    void on_searchmat_clicked();
+
 private:
     QString matricula, pass;
     Ui::MainWindow *ui;

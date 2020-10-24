@@ -1621,6 +1621,7 @@ void MainWindow::on_ingresar_clicked(){
 
     if(mat == resultCAl && pa == resultCAL2){
         ui->stackedWidget->setCurrentIndex(1);
+        ui->stackAlumno->setCurrentIndex(0);
 
         matricula = mat;
         qDebug()<< "Matricula autenticada: " << matricula;
@@ -1663,6 +1664,7 @@ void MainWindow::on_ingresar_clicked(){
 
         if(mat == resultCPR && pa == resultCPR2){
             ui->stackedWidget->setCurrentIndex(2);
+            ui->stackProfesor->setCurrentIndex(0);
 
             ui->matricula->clear();
             ui->contra->clear();
@@ -1843,9 +1845,94 @@ void MainWindow::on_graficas_2_clicked(){
     ui->stackProfesor->setCurrentIndex(2);
 }
 void MainWindow::on_perfil_2_clicked(){
+    limpiartabmatnom();
+    ui->nombreusuariobuscm->clear();
+    ui->resetpassNE->clear();
+    ui->resetpassNC->clear();
+    ui->resetpassNCR->clear();
+
     ui->stackProfesor->setCurrentIndex(3);
 }
+void MainWindow::on_cambiarpass_clicked()
+{
+    QString matrUss,nuevcontra,nuevcontrarep;
+
+    matrUss = ui->resetpassNE->text();
+    nuevcontra = ui->resetpassNC->text();
+    nuevcontrarep = ui->resetpassNCR->text();
+
+    /*buscar el nombre de usuario*/
+    QString depositaN, queryUserB = "SELECT Nombre FROM estudiante WHERE matricula = '" + matrUss + "'";
+
+    QSqlQuery obtSiUs;
+    obtSiUs.exec(queryUserB);
+    obtSiUs.next();
+
+    depositaN = obtSiUs.value("Nombre").toString();
+
+    if(depositaN.isEmpty()){
+        QMessageBox::about(this, "Error", "No ha introducido una matrícula válida");
+        return;
+    }
+
+    /*comparar contraseñas*/
+    if(nuevcontra != nuevcontrarep){
+        QMessageBox::about(this, "Error", "Las contraseñas no son iguales");
+        return;
+    }
+
+    /*cambiar contraseña*/
+    QString cambioP = "UPDATE estudiante SET contrasena = '" + nuevcontra + "' WHERE matricula = '" + matrUss + "'";
+
+    QSqlQuery cambPass;
+    cambPass.exec(cambioP);
+    cambPass.next();
+
+    QMessageBox::about(this, "Aviso", "Contraseña cambiada exitosamente");
+
+    ui->resetpassNE->clear();
+    ui->resetpassNC->clear();
+    ui->resetpassNCR->clear();
+}
+void MainWindow::limpiartabmatnom(){
+    QSqlQueryModel *query2;
+
+    query2 = new QSqlQueryModel();
+    query2->setQuery("SELECT matricula as Matricula,Nombre from estudiante WHERE Nombre = '1515'");
+
+    ui->tablaMatriculas->setModel(query2);
+    ui->tablaMatriculas->setColumnWidth(0,91);
+    ui->tablaMatriculas->setColumnWidth(1,340);
+}
+void MainWindow::on_searchmat_clicked()
+{
+    QString alumnobusqueda;
+    alumnobusqueda = ui->nombreusuariobuscm->text();
+
+    if(alumnobusqueda.isEmpty()){
+        QMessageBox::about(this, "Error", "No ha introducido ningún nombre");
+        return;
+    }
+
+    QString queryBusquedaMat = "SELECT matricula as Matricula,Nombre from estudiante WHERE Nombre LIKE '%" + alumnobusqueda + "%'";
+
+    QSqlQueryModel *queryMatriculaBusc;
+
+    queryMatriculaBusc = new QSqlQueryModel();
+    queryMatriculaBusc->setQuery(queryBusquedaMat);
+
+    ui->tablaMatriculas->verticalHeader()->setVisible(false);   //hide header
+    //ui->tablaMatriculas->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    ui->tablaMatriculas->setSelectionBehavior(QAbstractItemView::SelectRows);
+    ui->tablaMatriculas->setModel(queryMatriculaBusc);
+}
 void MainWindow::on_cerrar_sesion_2_clicked(){
+    limpiartabmatnom();
+    ui->nombreusuariobuscm->clear();
+    ui->resetpassNE->clear();
+    ui->resetpassNC->clear();
+    ui->resetpassNCR->clear();
+
     ui->stackedWidget->setCurrentIndex(0);
 }
 
@@ -1904,4 +1991,7 @@ void MainWindow::on_mater1_clicked()
         IndicarMaterias();
     }
 }
+
+
+
 
