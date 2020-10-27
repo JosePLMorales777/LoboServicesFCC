@@ -16,6 +16,11 @@
 #include <QVBoxLayout>
 #include <QScrollArea>
 
+#include <QtCharts>
+#include <QChartView>
+#include <QBarSet>
+#include <QBarSeries>
+
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -85,6 +90,12 @@ private slots:
     void limpiartabmatnom();
 
     void on_searchmat_clicked();
+
+    void graficas();
+
+    void on_semestre_currentIndexChanged(int index);
+
+    void on_mater2_clicked();
 
 private:
     QString matricula, pass;

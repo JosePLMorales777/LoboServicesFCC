@@ -116,6 +116,8 @@ Makefile: ../FCC/FCC.pro ../../../QT/5.14.2/mingw73_32/mkspecs/win32-g++/qmake.c
 		../../../QT/5.14.2/mingw73_32/mkspecs/modules/qt_lib_bluetooth.pri \
 		../../../QT/5.14.2/mingw73_32/mkspecs/modules/qt_lib_bluetooth_private.pri \
 		../../../QT/5.14.2/mingw73_32/mkspecs/modules/qt_lib_bootstrap_private.pri \
+		../../../QT/5.14.2/mingw73_32/mkspecs/modules/qt_lib_charts.pri \
+		../../../QT/5.14.2/mingw73_32/mkspecs/modules/qt_lib_charts_private.pri \
 		../../../QT/5.14.2/mingw73_32/mkspecs/modules/qt_lib_concurrent.pri \
 		../../../QT/5.14.2/mingw73_32/mkspecs/modules/qt_lib_concurrent_private.pri \
 		../../../QT/5.14.2/mingw73_32/mkspecs/modules/qt_lib_core.pri \
@@ -247,6 +249,7 @@ Makefile: ../FCC/FCC.pro ../../../QT/5.14.2/mingw73_32/mkspecs/win32-g++/qmake.c
 		../../../QT/5.14.2/mingw73_32/mkspecs/features/yacc.prf \
 		../../../QT/5.14.2/mingw73_32/mkspecs/features/lex.prf \
 		../FCC/FCC.pro \
+		../../../QT/5.14.2/mingw73_32/lib/Qt5Charts.prl \
 		../../../QT/5.14.2/mingw73_32/lib/Qt5Widgets.prl \
 		../../../QT/5.14.2/mingw73_32/lib/Qt5Gui.prl \
 		../../../QT/5.14.2/mingw73_32/lib/Qt5Sql.prl \
@@ -301,6 +304,8 @@ Makefile: ../FCC/FCC.pro ../../../QT/5.14.2/mingw73_32/mkspecs/win32-g++/qmake.c
 ../../../QT/5.14.2/mingw73_32/mkspecs/modules/qt_lib_bluetooth.pri:
 ../../../QT/5.14.2/mingw73_32/mkspecs/modules/qt_lib_bluetooth_private.pri:
 ../../../QT/5.14.2/mingw73_32/mkspecs/modules/qt_lib_bootstrap_private.pri:
+../../../QT/5.14.2/mingw73_32/mkspecs/modules/qt_lib_charts.pri:
+../../../QT/5.14.2/mingw73_32/mkspecs/modules/qt_lib_charts_private.pri:
 ../../../QT/5.14.2/mingw73_32/mkspecs/modules/qt_lib_concurrent.pri:
 ../../../QT/5.14.2/mingw73_32/mkspecs/modules/qt_lib_concurrent_private.pri:
 ../../../QT/5.14.2/mingw73_32/mkspecs/modules/qt_lib_core.pri:
@@ -432,6 +437,7 @@ Makefile: ../FCC/FCC.pro ../../../QT/5.14.2/mingw73_32/mkspecs/win32-g++/qmake.c
 ../../../QT/5.14.2/mingw73_32/mkspecs/features/yacc.prf:
 ../../../QT/5.14.2/mingw73_32/mkspecs/features/lex.prf:
 ../FCC/FCC.pro:
+../../../QT/5.14.2/mingw73_32/lib/Qt5Charts.prl:
 ../../../QT/5.14.2/mingw73_32/lib/Qt5Widgets.prl:
 ../../../QT/5.14.2/mingw73_32/lib/Qt5Gui.prl:
 ../../../QT/5.14.2/mingw73_32/lib/Qt5Sql.prl:

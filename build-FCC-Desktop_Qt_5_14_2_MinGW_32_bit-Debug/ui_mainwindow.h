@@ -14,11 +14,11 @@
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QFrame>
 #include <QtWidgets/QGroupBox>
+#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
-#include <QtWidgets/QProgressBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStackedWidget>
 #include <QtWidgets/QTableView>
@@ -141,13 +141,11 @@ public:
     QGroupBox *groupBox_4;
     QWidget *Graficas_2;
     QGroupBox *groupBox_5;
-    QComboBox *comboBox;
+    QComboBox *semestre;
     QLabel *label_5;
     QPushButton *buscar;
-    QLabel *label_6;
-    QProgressBar *progressBar;
-    QProgressBar *progressBar_2;
-    QProgressBar *progressBar_3;
+    QFrame *horizontalFrame;
+    QHBoxLayout *horizontalLayout;
     QWidget *Perfil_2;
     QGroupBox *groupBox_6;
     QLabel *label_10;
@@ -1270,69 +1268,36 @@ public:
         Graficas_2->setObjectName(QString::fromUtf8("Graficas_2"));
         groupBox_5 = new QGroupBox(Graficas_2);
         groupBox_5->setObjectName(QString::fromUtf8("groupBox_5"));
-        groupBox_5->setGeometry(QRect(0, 0, 611, 471));
-        comboBox = new QComboBox(groupBox_5);
-        comboBox->addItem(QString());
-        comboBox->addItem(QString());
-        comboBox->addItem(QString());
-        comboBox->setObjectName(QString::fromUtf8("comboBox"));
-        comboBox->setGeometry(QRect(100, 20, 121, 22));
+        groupBox_5->setGeometry(QRect(0, 0, 861, 621));
+        semestre = new QComboBox(groupBox_5);
+        semestre->addItem(QString());
+        semestre->addItem(QString());
+        semestre->addItem(QString());
+        semestre->addItem(QString());
+        semestre->addItem(QString());
+        semestre->addItem(QString());
+        semestre->addItem(QString());
+        semestre->addItem(QString());
+        semestre->addItem(QString());
+        semestre->addItem(QString());
+        semestre->setObjectName(QString::fromUtf8("semestre"));
+        semestre->setGeometry(QRect(170, 40, 251, 41));
+        semestre->setFont(font5);
         label_5 = new QLabel(groupBox_5);
         label_5->setObjectName(QString::fromUtf8("label_5"));
-        label_5->setGeometry(QRect(20, 20, 71, 16));
-        label_5->setStyleSheet(QString::fromUtf8("font: 75 14pt \"Arial\";"));
+        label_5->setGeometry(QRect(20, 40, 141, 41));
+        label_5->setStyleSheet(QString::fromUtf8("font: 75 22pt \"Arial\";"));
         buscar = new QPushButton(groupBox_5);
         buscar->setObjectName(QString::fromUtf8("buscar"));
-        buscar->setGeometry(QRect(250, 20, 75, 23));
-        label_6 = new QLabel(groupBox_5);
-        label_6->setObjectName(QString::fromUtf8("label_6"));
-        label_6->setGeometry(QRect(20, 190, 281, 261));
-        label_6->setStyleSheet(QString::fromUtf8("border-image: url(:/Imagenes/Profesor/grafica.png);"));
-        progressBar = new QProgressBar(groupBox_5);
-        progressBar->setObjectName(QString::fromUtf8("progressBar"));
-        progressBar->setGeometry(QRect(90, 200, 31, 241));
-        progressBar->setStyleSheet(QString::fromUtf8("QProgressBar{\n"
-"	border: 2px solid black;\n"
-"	border-radius: 5px;\n"
-"	background-color: transparent;\n"
-"\n"
-"}\n"
-"\n"
-"QProgressBar::chunk {\n"
-"	background-color: rgb(145, 196, 107);\n"
-"}"));
-        progressBar->setValue(24);
-        progressBar->setOrientation(Qt::Vertical);
-        progressBar_2 = new QProgressBar(groupBox_5);
-        progressBar_2->setObjectName(QString::fromUtf8("progressBar_2"));
-        progressBar_2->setGeometry(QRect(140, 200, 31, 241));
-        progressBar_2->setStyleSheet(QString::fromUtf8("QProgressBar{\n"
-"	border: 2px solid black;\n"
-"	border-radius: 5px;\n"
-"	background-color: transparent;\n"
-"\n"
-"}\n"
-"\n"
-"QProgressBar::chunk {\n"
-"	background-color: rgb(186, 186, 186)\n"
-"}"));
-        progressBar_2->setValue(24);
-        progressBar_2->setOrientation(Qt::Vertical);
-        progressBar_3 = new QProgressBar(groupBox_5);
-        progressBar_3->setObjectName(QString::fromUtf8("progressBar_3"));
-        progressBar_3->setGeometry(QRect(190, 200, 31, 241));
-        progressBar_3->setStyleSheet(QString::fromUtf8("QProgressBar{\n"
-"	border: 2px solid black;\n"
-"	border-radius: 5px;\n"
-"	background-color: transparent;\n"
-"\n"
-"}\n"
-"\n"
-"QProgressBar::chunk {\n"
-"	background-color: rgb(145, 196, 107);\n"
-"}"));
-        progressBar_3->setValue(24);
-        progressBar_3->setOrientation(Qt::Vertical);
+        buscar->setGeometry(QRect(440, 40, 141, 41));
+        QFont font7;
+        font7.setPointSize(18);
+        buscar->setFont(font7);
+        horizontalFrame = new QFrame(groupBox_5);
+        horizontalFrame->setObjectName(QString::fromUtf8("horizontalFrame"));
+        horizontalFrame->setGeometry(QRect(30, 120, 791, 441));
+        horizontalLayout = new QHBoxLayout(horizontalFrame);
+        horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
         stackProfesor->addWidget(Graficas_2);
         Perfil_2 = new QWidget();
         Perfil_2->setObjectName(QString::fromUtf8("Perfil_2"));
@@ -1346,13 +1311,13 @@ public:
         label_11 = new QLabel(groupBox_6);
         label_11->setObjectName(QString::fromUtf8("label_11"));
         label_11->setGeometry(QRect(41, 140, 241, 61));
-        QFont font7;
-        font7.setFamily(QString::fromUtf8("MS Shell Dlg 2"));
-        font7.setPointSize(14);
-        font7.setBold(false);
-        font7.setItalic(false);
-        font7.setWeight(10);
-        label_11->setFont(font7);
+        QFont font8;
+        font8.setFamily(QString::fromUtf8("MS Shell Dlg 2"));
+        font8.setPointSize(14);
+        font8.setBold(false);
+        font8.setItalic(false);
+        font8.setWeight(10);
+        label_11->setFont(font8);
         label_11->setStyleSheet(QString::fromUtf8("background-color: transparent;\n"
 "color:black;\n"
 "font: 80 14pt \"MS Shell Dlg 2\";"));
@@ -1403,7 +1368,7 @@ public:
         label_13 = new QLabel(groupBox_6);
         label_13->setObjectName(QString::fromUtf8("label_13"));
         label_13->setGeometry(QRect(403, 140, 431, 61));
-        label_13->setFont(font7);
+        label_13->setFont(font8);
         label_13->setStyleSheet(QString::fromUtf8("background-color: transparent;\n"
 "color:black;\n"
 "font: 80 14pt \"MS Shell Dlg 2\";"));
@@ -1577,16 +1542,19 @@ public:
         label_4->setText(QCoreApplication::translate("MainWindow", "Buscar Alumnos:", nullptr));
         groupBox_4->setTitle(QString());
         groupBox_5->setTitle(QString());
-        comboBox->setItemText(0, QCoreApplication::translate("MainWindow", "Matematicas", nullptr));
-        comboBox->setItemText(1, QCoreApplication::translate("MainWindow", "Algebra Superior", nullptr));
-        comboBox->setItemText(2, QCoreApplication::translate("MainWindow", "Metodologia de la programacion", nullptr));
+        semestre->setItemText(0, QCoreApplication::translate("MainWindow", "1er Semestre", nullptr));
+        semestre->setItemText(1, QCoreApplication::translate("MainWindow", "2do Semestre", nullptr));
+        semestre->setItemText(2, QCoreApplication::translate("MainWindow", "3er Semestre", nullptr));
+        semestre->setItemText(3, QCoreApplication::translate("MainWindow", "4to Semestre", nullptr));
+        semestre->setItemText(4, QCoreApplication::translate("MainWindow", "5to Semestre", nullptr));
+        semestre->setItemText(5, QCoreApplication::translate("MainWindow", "6to Semestre", nullptr));
+        semestre->setItemText(6, QCoreApplication::translate("MainWindow", "7mo Semestre", nullptr));
+        semestre->setItemText(7, QCoreApplication::translate("MainWindow", "8vo Semestre", nullptr));
+        semestre->setItemText(8, QCoreApplication::translate("MainWindow", "9no Semestre", nullptr));
+        semestre->setItemText(9, QCoreApplication::translate("MainWindow", "10mo Semestre", nullptr));
 
         label_5->setText(QCoreApplication::translate("MainWindow", "Materia:", nullptr));
         buscar->setText(QCoreApplication::translate("MainWindow", "Buscar", nullptr));
-        label_6->setText(QString());
-        progressBar->setFormat(QString());
-        progressBar_2->setFormat(QString());
-        progressBar_3->setFormat(QString());
         groupBox_6->setTitle(QString());
         label_10->setText(QString());
         label_11->setText(QCoreApplication::translate("MainWindow", "Cambiar contrase\303\261a del\n"
