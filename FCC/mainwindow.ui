@@ -2384,7 +2384,22 @@ font: 80 20pt &quot;MS Shell Dlg 2&quot;;</string>
           </item>
           <item>
            <property name="text">
+            <string>Optativas I</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
             <string>9no Semestre</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Optativas II</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Optativas DESIT</string>
            </property>
           </item>
           <item>

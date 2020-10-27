@@ -1855,6 +1855,8 @@ void MainWindow::graficas(){
 
     QChart *chart = new QChart();
 
+    int sumavalores;
+
     if(semestre=="1er Semestre"){
         int materias = 1, contmat = 0,mat[5];
         QString nombmat[5];
@@ -1881,6 +1883,7 @@ void MainWindow::graficas(){
         }
 
         qDebug() << mat[0] << mat[1] << mat[2] << mat[3] << mat[4];
+        sumavalores = mat[0] + mat[1] + mat[2] + mat[3] + mat[4];
 
         *set0 << mat[0] << mat[1] << mat[2] << mat[3] << mat[4];
 
@@ -1916,6 +1919,7 @@ void MainWindow::graficas(){
         }
 
         qDebug() << mat[0] << mat[1] << mat[2] << mat[3] << mat[4] << mat[5];
+        sumavalores = mat[0] + mat[1] + mat[2] + mat[3] + mat[4] + mat[5];
 
         *set0 << mat[0] << mat[1] << mat[2] << mat[3] << mat[4] << mat[5];
 
@@ -1927,73 +1931,404 @@ void MainWindow::graficas(){
     }
     if(semestre=="3er Semestre"){
         int materias = 12, contmat = 0,mat[6];
+        QString nombmat[6];
 
         while(materias <= 17){
-            qDebug() << contmat;
+            QString queryMatOcup = "SELECT sum(encurso) AS suma FROM infomateria WHERE encurso = 1 AND idMateria = '" + QString::number(materias) + "'";
+
+            QSqlQuery queryMOcup;
+            queryMOcup.exec(queryMatOcup);
+            queryMOcup.next();
+
+            mat[contmat] = queryMOcup.value("suma").toInt();
+
+            QString matNomb = "SELECT Nombre FROM materia WHERE idMateria = '" + QString::number(materias) + "'";
+
+            QSqlQuery queryNombMat;
+            queryNombMat.exec(matNomb);
+            queryNombMat.next();
+
+            nombmat[contmat] = queryNombMat.value("Nombre").toString();
 
             contmat = contmat + 1;
             materias = materias + 1;
         }
 
-        return;
+        qDebug() << mat[0] << mat[1] << mat[2] << mat[3] << mat[4] << mat[5];
+        sumavalores = mat[0] + mat[1] + mat[2] + mat[3] + mat[4] + mat[5];
+
+        *set0 << mat[0] << mat[1] << mat[2] << mat[3] << mat[4] << mat[5];
+
+        series->append(set0);
+
+        categories << nombmat[0] << nombmat[1] << nombmat[2] << nombmat[3] << nombmat[4] << nombmat[5];
+
+        chart->setTitle("Materias del Tercer Semestre");
     }
     if(semestre=="4to Semestre"){
         int materias = 18, contmat = 0,mat[5];
+        QString nombmat[5];
 
         while(materias <= 22){
-            qDebug() << contmat;
+            QString queryMatOcup = "SELECT sum(encurso) AS suma FROM infomateria WHERE encurso = 1 AND idMateria = '" + QString::number(materias) + "'";
+
+            QSqlQuery queryMOcup;
+            queryMOcup.exec(queryMatOcup);
+            queryMOcup.next();
+
+            mat[contmat] = queryMOcup.value("suma").toInt();
+
+            QString matNomb = "SELECT Nombre FROM materia WHERE idMateria = '" + QString::number(materias) + "'";
+
+            QSqlQuery queryNombMat;
+            queryNombMat.exec(matNomb);
+            queryNombMat.next();
+
+            nombmat[contmat] = queryNombMat.value("Nombre").toString();
 
             contmat = contmat + 1;
             materias = materias + 1;
         }
 
-        return;
+        qDebug() << mat[0] << mat[1] << mat[2] << mat[3] << mat[4];
+        sumavalores = mat[0] + mat[1] + mat[2] + mat[3] + mat[4];
+
+        *set0 << mat[0] << mat[1] << mat[2] << mat[3] << mat[4];
+
+        series->append(set0);
+
+        categories << nombmat[0] << nombmat[1] << nombmat[2] << nombmat[3] << nombmat[4];
+
+        chart->setTitle("Materias del Cuarto Semestre");
     }
     if(semestre=="5to Semestre"){
         int materias = 23, contmat = 0,mat[5];
+        QString nombmat[5];
 
         while(materias <= 27){
-            qDebug() << contmat;
+            QString queryMatOcup = "SELECT sum(encurso) AS suma FROM infomateria WHERE encurso = 1 AND idMateria = '" + QString::number(materias) + "'";
+
+            QSqlQuery queryMOcup;
+            queryMOcup.exec(queryMatOcup);
+            queryMOcup.next();
+
+            mat[contmat] = queryMOcup.value("suma").toInt();
+
+            QString matNomb = "SELECT Nombre FROM materia WHERE idMateria = '" + QString::number(materias) + "'";
+
+            QSqlQuery queryNombMat;
+            queryNombMat.exec(matNomb);
+            queryNombMat.next();
+
+            nombmat[contmat] = queryNombMat.value("Nombre").toString();
 
             contmat = contmat + 1;
             materias = materias + 1;
         }
 
-        return;
+        qDebug() << mat[0] << mat[1] << mat[2] << mat[3] << mat[4];
+        sumavalores = mat[0] + mat[1] + mat[2] + mat[3] + mat[4];
+
+        *set0 << mat[0] << mat[1] << mat[2] << mat[3] << mat[4];
+
+        series->append(set0);
+
+        categories << nombmat[0] << nombmat[1] << nombmat[2] << nombmat[3] << nombmat[4];
+
+        chart->setTitle("Materias del Quinto Semestre");
     }
     if(semestre=="6to Semestre"){
         int materias = 28, contmat = 0,mat[5];
+        QString nombmat[5];
 
         while(materias <= 32){
-            qDebug() << contmat;
+            QString queryMatOcup = "SELECT sum(encurso) AS suma FROM infomateria WHERE encurso = 1 AND idMateria = '" + QString::number(materias) + "'";
+
+            QSqlQuery queryMOcup;
+            queryMOcup.exec(queryMatOcup);
+            queryMOcup.next();
+
+            mat[contmat] = queryMOcup.value("suma").toInt();
+
+            QString matNomb = "SELECT Nombre FROM materia WHERE idMateria = '" + QString::number(materias) + "'";
+
+            QSqlQuery queryNombMat;
+            queryNombMat.exec(matNomb);
+            queryNombMat.next();
+
+            nombmat[contmat] = queryNombMat.value("Nombre").toString();
 
             contmat = contmat + 1;
             materias = materias + 1;
         }
 
-        return;
+        qDebug() << mat[0] << mat[1] << mat[2] << mat[3] << mat[4];
+        sumavalores = mat[0] + mat[1] + mat[2] + mat[3] + mat[4];
+
+        *set0 << mat[0] << mat[1] << mat[2] << mat[3] << mat[4];
+
+        series->append(set0);
+
+        categories << nombmat[0] << nombmat[1] << nombmat[2] << nombmat[3] << nombmat[4];
+
+        chart->setTitle("Materias del Sexto Semestre");
     }
     if(semestre=="7mo Semestre"){
         int materias = 33, contmat = 0,mat[5];
+        QString nombmat[5];
 
         while(materias <= 37){
-            qDebug() << contmat;
+            QString queryMatOcup = "SELECT sum(encurso) AS suma FROM infomateria WHERE encurso = 1 AND idMateria = '" + QString::number(materias) + "'";
+
+            QSqlQuery queryMOcup;
+            queryMOcup.exec(queryMatOcup);
+            queryMOcup.next();
+
+            mat[contmat] = queryMOcup.value("suma").toInt();
+
+            QString matNomb = "SELECT Nombre FROM materia WHERE idMateria = '" + QString::number(materias) + "'";
+
+            QSqlQuery queryNombMat;
+            queryNombMat.exec(matNomb);
+            queryNombMat.next();
+
+            nombmat[contmat] = queryNombMat.value("Nombre").toString();
 
             contmat = contmat + 1;
             materias = materias + 1;
         }
 
-        return;
+        qDebug() << mat[0] << mat[1] << mat[2] << mat[3] << mat[4];
+        sumavalores = mat[0] + mat[1] + mat[2] + mat[3] + mat[4];
+
+        *set0 << mat[0] << mat[1] << mat[2] << mat[3] << mat[4];
+
+        series->append(set0);
+
+        categories << nombmat[0] << nombmat[1] << nombmat[2] << nombmat[3] << nombmat[4];
+
+        chart->setTitle("Materias del Séptimo Semestre");
     }
     if(semestre=="8vo Semestre"){
-        return;
+        int materias = 38, contmat = 0,mat[5];
+        QString nombmat[5];
+
+        while(materias <= 42){
+            QString queryMatOcup = "SELECT sum(encurso) AS suma FROM infomateria WHERE encurso = 1 AND idMateria = '" + QString::number(materias) + "'";
+
+            QSqlQuery queryMOcup;
+            queryMOcup.exec(queryMatOcup);
+            queryMOcup.next();
+
+            mat[contmat] = queryMOcup.value("suma").toInt();
+
+            QString matNomb = "SELECT Nombre FROM materia WHERE idMateria = '" + QString::number(materias) + "'";
+
+            QSqlQuery queryNombMat;
+            queryNombMat.exec(matNomb);
+            queryNombMat.next();
+
+            nombmat[contmat] = queryNombMat.value("Nombre").toString();
+
+            contmat = contmat + 1;
+            materias = materias + 1;
+        }
+
+        qDebug() << mat[0] << mat[1] << mat[2] << mat[3] << mat[4];
+        sumavalores = mat[0] + mat[1] + mat[2] + mat[3] + mat[4];
+
+        *set0 << mat[0] << mat[1] << mat[2] << mat[3] << mat[4];
+
+        series->append(set0);
+
+        categories << nombmat[0] << nombmat[1] << nombmat[2] << nombmat[3] << nombmat[4];
+
+        chart->setTitle("Materias del Octavo Semestre");
+    }
+    if(semestre=="Optativas I"){
+        int materias = 43, contmat = 0,mat[12];
+        QString nombmat[12];
+
+        while(materias <= 54){
+            QString queryMatOcup = "SELECT sum(encurso) AS suma FROM infomateria WHERE encurso = 1 AND idMateria = '" + QString::number(materias) + "'";
+
+            QSqlQuery queryMOcup;
+            queryMOcup.exec(queryMatOcup);
+            queryMOcup.next();
+
+            mat[contmat] = queryMOcup.value("suma").toInt();
+
+            QString matNomb = "SELECT Nombre FROM materia WHERE idMateria = '" + QString::number(materias) + "'";
+
+            QSqlQuery queryNombMat;
+            queryNombMat.exec(matNomb);
+            queryNombMat.next();
+
+            nombmat[contmat] = queryNombMat.value("Nombre").toString();
+
+            contmat = contmat + 1;
+            materias = materias + 1;
+        }
+
+        qDebug() << mat[0] << mat[1] << mat[2] << mat[3] << mat[4] << mat[5] << mat[6] << mat[7] << mat[8] << mat[9] << mat[10] << mat[11];
+        sumavalores = mat[0] + mat[1] + mat[2] + mat[3] + mat[4] + mat[5] + mat[6] + mat[7] + mat[8] + mat[9] + mat[10] + mat[11];
+
+        *set0 << mat[0] << mat[1] << mat[2] << mat[3] << mat[4] << mat[5] << mat[6] << mat[7] << mat[8] << mat[9] << mat[10] << mat[11];
+
+        series->append(set0);
+
+        categories << nombmat[0] << nombmat[1] << nombmat[2] << nombmat[3] << nombmat[4] << nombmat[5] << nombmat[6] << nombmat[7] << nombmat[8] << nombmat[9] << nombmat[10] << nombmat[11];
+
+        chart->setTitle("Materias del Grupo Optativas I");
     }
     if(semestre=="9no Semestre"){
-        return;
+        int materias = 55, contmat = 0,mat[3];
+        QString nombmat[3];
+
+        while(materias <= 57){
+            QString queryMatOcup = "SELECT sum(encurso) AS suma FROM infomateria WHERE encurso = 1 AND idMateria = '" + QString::number(materias) + "'";
+
+            QSqlQuery queryMOcup;
+            queryMOcup.exec(queryMatOcup);
+            queryMOcup.next();
+
+            mat[contmat] = queryMOcup.value("suma").toInt();
+
+            QString matNomb = "SELECT Nombre FROM materia WHERE idMateria = '" + QString::number(materias) + "'";
+
+            QSqlQuery queryNombMat;
+            queryNombMat.exec(matNomb);
+            queryNombMat.next();
+
+            nombmat[contmat] = queryNombMat.value("Nombre").toString();
+
+            contmat = contmat + 1;
+            materias = materias + 1;
+        }
+
+        qDebug() << mat[0] << mat[1] << mat[2];
+        sumavalores = mat[0] + mat[1] + mat[2];
+
+        *set0 << mat[0] << mat[1] << mat[2];
+
+        series->append(set0);
+
+        categories << nombmat[0] << nombmat[1] << nombmat[2];
+
+        chart->setTitle("Materias del Noveno Semestre");
+    }
+    if(semestre=="Optativas II"){
+        int materias = 58, contmat = 0,mat[11];
+        QString nombmat[11];
+
+        while(materias <= 68){
+            QString queryMatOcup = "SELECT sum(encurso) AS suma FROM infomateria WHERE encurso = 1 AND idMateria = '" + QString::number(materias) + "'";
+
+            QSqlQuery queryMOcup;
+            queryMOcup.exec(queryMatOcup);
+            queryMOcup.next();
+
+            mat[contmat] = queryMOcup.value("suma").toInt();
+
+            QString matNomb = "SELECT Nombre FROM materia WHERE idMateria = '" + QString::number(materias) + "'";
+
+            QSqlQuery queryNombMat;
+            queryNombMat.exec(matNomb);
+            queryNombMat.next();
+
+            nombmat[contmat] = queryNombMat.value("Nombre").toString();
+
+            contmat = contmat + 1;
+            materias = materias + 1;
+        }
+
+        qDebug() << mat[0] << mat[1] << mat[2] << mat[3] << mat[4] << mat[5] << mat[6] << mat[7] << mat[8] << mat[9] << mat[10];
+        sumavalores = mat[0] + mat[1] + mat[2] + mat[3] + mat[4] + mat[5] + mat[6] + mat[7] + mat[8] + mat[9] + mat[10];
+
+        *set0 << mat[0] << mat[1] << mat[2] << mat[3] << mat[4] << mat[5] << mat[6] << mat[7] << mat[8] << mat[9] << mat[10];
+
+        series->append(set0);
+
+        categories << nombmat[0] << nombmat[1] << nombmat[2] << nombmat[3] << nombmat[4] << nombmat[5] << nombmat[6] << nombmat[7] << nombmat[8] << nombmat[9] << nombmat[10];
+
+        chart->setTitle("Materias del Grupo Optativas II");
+    }
+    if(semestre=="Optativas DESIT"){
+        int materias = 69, contmat = 0,mat[3];
+        QString nombmat[3];
+
+        while(materias <= 71){
+            QString queryMatOcup = "SELECT sum(encurso) AS suma FROM infomateria WHERE encurso = 1 AND idMateria = '" + QString::number(materias) + "'";
+
+            QSqlQuery queryMOcup;
+            queryMOcup.exec(queryMatOcup);
+            queryMOcup.next();
+
+            mat[contmat] = queryMOcup.value("suma").toInt();
+
+            QString matNomb = "SELECT Nombre FROM materia WHERE idMateria = '" + QString::number(materias) + "'";
+
+            QSqlQuery queryNombMat;
+            queryNombMat.exec(matNomb);
+            queryNombMat.next();
+
+            nombmat[contmat] = queryNombMat.value("Nombre").toString();
+
+            contmat = contmat + 1;
+            materias = materias + 1;
+        }
+
+        qDebug() << mat[0] << mat[1] << mat[2];
+        sumavalores = mat[0] + mat[1] + mat[2];
+
+        *set0 << mat[0] << mat[1] << mat[2];
+
+        series->append(set0);
+
+        categories << nombmat[0] << nombmat[1] << nombmat[2];
+
+        chart->setTitle("Materias del Grupo Optativas DESIT");
     }
     if(semestre=="10mo Semestre"){
-        return;
+        int materias = 72, contmat = 0,mat[2];
+        QString nombmat[2];
+
+        while(materias <= 73){
+            QString queryMatOcup = "SELECT sum(encurso) AS suma FROM infomateria WHERE encurso = 1 AND idMateria = '" + QString::number(materias) + "'";
+
+            QSqlQuery queryMOcup;
+            queryMOcup.exec(queryMatOcup);
+            queryMOcup.next();
+
+            mat[contmat] = queryMOcup.value("suma").toInt();
+
+            QString matNomb = "SELECT Nombre FROM materia WHERE idMateria = '" + QString::number(materias) + "'";
+
+            QSqlQuery queryNombMat;
+            queryNombMat.exec(matNomb);
+            queryNombMat.next();
+
+            nombmat[contmat] = queryNombMat.value("Nombre").toString();
+
+            contmat = contmat + 1;
+            materias = materias + 1;
+        }
+
+        qDebug() << mat[0] << mat[1];
+        sumavalores = mat[0] + mat[1];
+
+        *set0 << mat[0] << mat[1];
+
+        series->append(set0);
+
+        categories << nombmat[0] << nombmat[1];
+
+        chart->setTitle("Materias del Décimo Semestre");
     }
+
+    qDebug() << sumavalores;
+
+    series->setLabelsVisible(true);
 
     chart->addSeries(series);
     chart->setAnimationOptions(QChart::SeriesAnimations);
@@ -2005,7 +2340,8 @@ void MainWindow::graficas(){
     series->attachAxis(axisX);
 
     QValueAxis *axisY = new QValueAxis();
-    axisY->setRange(0,15);
+    axisY->setRange(0,20);
+    axisY->setTickCount(5);
     chart->addAxis(axisY, Qt::AlignLeft);
     series->attachAxis(axisY);
 
@@ -2178,6 +2514,165 @@ void MainWindow::on_mater2_clicked()
 {
     /*Verificar materia*/
     QString numMat = "2";
+
+    QString siMateria = "SELECT cursada,encurso,disponible,ninguno FROM infomateria WHERE idMateria = '" + numMat + "' AND matricula = '" + matricula + "'";
+
+    qDebug() << siMateria;
+
+    QSqlQuery sMateria;
+    sMateria.exec(siMateria);
+    sMateria.next();
+
+    int curs = sMateria.value("cursada").toInt();
+    int encur = sMateria.value("encurso").toInt();
+    int disp = sMateria.value("disponible").toInt();
+    int ning = sMateria.value("ninguno").toInt();
+
+    qDebug() << curs << encur << disp << ning;
+
+    if(curs == 0 && encur == 1 && disp == 0 && ning == 0){
+        QMessageBox::StandardButton terminada;
+        terminada = QMessageBox::question(this, "Materia cursada", "¿Desea indicar que ha cursado esta materia?", QMessageBox::Yes|QMessageBox::No);
+
+        if(terminada == QMessageBox::Yes){
+            /*Actualizar datos materia*/
+            QString actDatMat = "UPDATE infomateria SET cursada = 1, encurso = 0, disponible = 0, ninguno = 0 WHERE idMateria = '" + numMat + "' AND matricula = '" + matricula + "'";
+            qDebug() << actDatMat;
+
+            QSqlQuery acDatM;
+            acDatM.exec(actDatMat);
+            acDatM.next();
+
+            /*Actualizar requisitos*/
+            QString actDatMat2 = "SELECT idMateria1,idMateria2 FROM requisito WHERE idMateria1 = '" + numMat + "'";
+
+            QSqlQuery acDM2;
+            acDM2.exec(actDatMat2);
+
+            while (acDM2.next()) {
+                QString matSigM = acDM2.value("idMateria2").toString();
+
+                QString actInfoSig = "UPDATE infomateria SET cursada = 0, encurso = 0, disponible = 1, ninguno = 0 WHERE idMateria = '" + matSigM + "' AND matricula = '" + matricula + "'";
+
+                QSqlQuery aInfS;
+                aInfS.exec(actInfoSig);
+                aInfS.next();
+            }
+        }
+
+        IndicarMaterias();
+    }
+}
+void MainWindow::on_mater3_clicked()
+{
+    /*Verificar materia*/
+    QString numMat = "3";
+
+    QString siMateria = "SELECT cursada,encurso,disponible,ninguno FROM infomateria WHERE idMateria = '" + numMat + "' AND matricula = '" + matricula + "'";
+
+    qDebug() << siMateria;
+
+    QSqlQuery sMateria;
+    sMateria.exec(siMateria);
+    sMateria.next();
+
+    int curs = sMateria.value("cursada").toInt();
+    int encur = sMateria.value("encurso").toInt();
+    int disp = sMateria.value("disponible").toInt();
+    int ning = sMateria.value("ninguno").toInt();
+
+    qDebug() << curs << encur << disp << ning;
+
+    if(curs == 0 && encur == 1 && disp == 0 && ning == 0){
+        QMessageBox::StandardButton terminada;
+        terminada = QMessageBox::question(this, "Materia cursada", "¿Desea indicar que ha cursado esta materia?", QMessageBox::Yes|QMessageBox::No);
+
+        if(terminada == QMessageBox::Yes){
+            /*Actualizar datos materia*/
+            QString actDatMat = "UPDATE infomateria SET cursada = 1, encurso = 0, disponible = 0, ninguno = 0 WHERE idMateria = '" + numMat + "' AND matricula = '" + matricula + "'";
+            qDebug() << actDatMat;
+
+            QSqlQuery acDatM;
+            acDatM.exec(actDatMat);
+            acDatM.next();
+
+            /*Actualizar requisitos*/
+            QString actDatMat2 = "SELECT idMateria1,idMateria2 FROM requisito WHERE idMateria1 = '" + numMat + "'";
+
+            QSqlQuery acDM2;
+            acDM2.exec(actDatMat2);
+
+            while (acDM2.next()) {
+                QString matSigM = acDM2.value("idMateria2").toString();
+
+                QString actInfoSig = "UPDATE infomateria SET cursada = 0, encurso = 0, disponible = 1, ninguno = 0 WHERE idMateria = '" + matSigM + "' AND matricula = '" + matricula + "'";
+
+                QSqlQuery aInfS;
+                aInfS.exec(actInfoSig);
+                aInfS.next();
+            }
+        }
+
+        IndicarMaterias();
+    }
+}
+void MainWindow::on_mater4_clicked()
+{
+    /*Verificar materia*/
+    QString numMat = "4";
+
+    QString siMateria = "SELECT cursada,encurso,disponible,ninguno FROM infomateria WHERE idMateria = '" + numMat + "' AND matricula = '" + matricula + "'";
+
+    qDebug() << siMateria;
+
+    QSqlQuery sMateria;
+    sMateria.exec(siMateria);
+    sMateria.next();
+
+    int curs = sMateria.value("cursada").toInt();
+    int encur = sMateria.value("encurso").toInt();
+    int disp = sMateria.value("disponible").toInt();
+    int ning = sMateria.value("ninguno").toInt();
+
+    qDebug() << curs << encur << disp << ning;
+
+    if(curs == 0 && encur == 1 && disp == 0 && ning == 0){
+        QMessageBox::StandardButton terminada;
+        terminada = QMessageBox::question(this, "Materia cursada", "¿Desea indicar que ha cursado esta materia?", QMessageBox::Yes|QMessageBox::No);
+
+        if(terminada == QMessageBox::Yes){
+            /*Actualizar datos materia*/
+            QString actDatMat = "UPDATE infomateria SET cursada = 1, encurso = 0, disponible = 0, ninguno = 0 WHERE idMateria = '" + numMat + "' AND matricula = '" + matricula + "'";
+            qDebug() << actDatMat;
+
+            QSqlQuery acDatM;
+            acDatM.exec(actDatMat);
+            acDatM.next();
+
+            /*Actualizar requisitos*/
+            QString actDatMat2 = "SELECT idMateria1,idMateria2 FROM requisito WHERE idMateria1 = '" + numMat + "'";
+
+            QSqlQuery acDM2;
+            acDM2.exec(actDatMat2);
+
+            while (acDM2.next()) {
+                QString matSigM = acDM2.value("idMateria2").toString();
+
+                QString actInfoSig = "UPDATE infomateria SET cursada = 0, encurso = 0, disponible = 1, ninguno = 0 WHERE idMateria = '" + matSigM + "' AND matricula = '" + matricula + "'";
+
+                QSqlQuery aInfS;
+                aInfS.exec(actInfoSig);
+                aInfS.next();
+            }
+        }
+
+        IndicarMaterias();
+    }
+}
+void MainWindow::on_mater5_clicked()
+{
+    /*Verificar materia*/
+    QString numMat = "5";
 
     QString siMateria = "SELECT cursada,encurso,disponible,ninguno FROM infomateria WHERE idMateria = '" + numMat + "' AND matricula = '" + matricula + "'";
 

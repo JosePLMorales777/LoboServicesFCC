@@ -97,6 +97,12 @@ private slots:
 
     void on_mater2_clicked();
 
+    void on_mater3_clicked();
+
+    void on_mater4_clicked();
+
+    void on_mater5_clicked();
+
 private:
     QString matricula, pass;
     Ui::MainWindow *ui;

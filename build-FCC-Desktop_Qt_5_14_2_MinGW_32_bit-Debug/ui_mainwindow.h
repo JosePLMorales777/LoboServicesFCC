@@ -1280,6 +1280,9 @@ public:
         semestre->addItem(QString());
         semestre->addItem(QString());
         semestre->addItem(QString());
+        semestre->addItem(QString());
+        semestre->addItem(QString());
+        semestre->addItem(QString());
         semestre->setObjectName(QString::fromUtf8("semestre"));
         semestre->setGeometry(QRect(170, 40, 251, 41));
         semestre->setFont(font5);
@@ -1550,8 +1553,11 @@ public:
         semestre->setItemText(5, QCoreApplication::translate("MainWindow", "6to Semestre", nullptr));
         semestre->setItemText(6, QCoreApplication::translate("MainWindow", "7mo Semestre", nullptr));
         semestre->setItemText(7, QCoreApplication::translate("MainWindow", "8vo Semestre", nullptr));
-        semestre->setItemText(8, QCoreApplication::translate("MainWindow", "9no Semestre", nullptr));
-        semestre->setItemText(9, QCoreApplication::translate("MainWindow", "10mo Semestre", nullptr));
+        semestre->setItemText(8, QCoreApplication::translate("MainWindow", "Optativas I", nullptr));
+        semestre->setItemText(9, QCoreApplication::translate("MainWindow", "9no Semestre", nullptr));
+        semestre->setItemText(10, QCoreApplication::translate("MainWindow", "Optativas II", nullptr));
+        semestre->setItemText(11, QCoreApplication::translate("MainWindow", "Optativas DESIT", nullptr));
+        semestre->setItemText(12, QCoreApplication::translate("MainWindow", "10mo Semestre", nullptr));
 
         label_5->setText(QCoreApplication::translate("MainWindow", "Materia:", nullptr));
         buscar->setText(QCoreApplication::translate("MainWindow", "Buscar", nullptr));
