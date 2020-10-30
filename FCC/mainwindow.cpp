@@ -3310,3 +3310,62 @@ void MainWindow::on_mater15_clicked()
         IndicarMaterias();
     }
 }
+
+void MainWindow::on_mater43_clicked()
+{
+    /*Botón correspondiente a OPTATIVAS I*/
+    QString obtMatOPI = "SELECT idMateria FROM materia WHERE optativaI = 1";
+
+    QSqlQuery obMOPI;
+    obMOPI.exec(obtMatOPI);
+
+    while(obMOPI.next()){
+        QString Mat = obMOPI.value("idMateria").toString();
+
+        QString obEOPI = "SELECT cursada,encurso,disponible,ninguno FROM infomateria WHERE idMateria = '" + Mat + "' AND matricula = '" + matricula + "'";
+
+        QSqlQuery oEOPI;
+        oEOPI.exec(obEOPI);
+        oEOPI.next();
+
+        int curs = oEOPI.value("cursada").toInt();
+        int encur = oEOPI.value("encurso").toInt();
+        int disp = oEOPI.value("disponible").toInt();
+        int ning = oEOPI.value("ninguno").toInt();
+
+        qDebug() << curs << encur << disp << ning;
+
+        if(curs == 0 && encur == 1 && disp == 0 && ning == 0){
+            QMessageBox::StandardButton terminada;
+            terminada = QMessageBox::question(this, "Materia cursada", "¿Desea indicar que ha cursado esta materia?", QMessageBox::Yes|QMessageBox::No);
+
+            if(terminada == QMessageBox::Yes){
+                /*Actualizar datos materia*/
+                QString actDatMat = "UPDATE infomateria SET cursada = 1, encurso = 0, disponible = 0, ninguno = 0 WHERE idMateria = '" + Mat + "' AND matricula = '" + matricula + "'";
+                qDebug() << actDatMat;
+
+                QSqlQuery acDatM;
+                acDatM.exec(actDatMat);
+                acDatM.next();
+
+                /*Actualizar requisitos*/
+                QString actDatMat2 = "SELECT idMateria1,idMateria2 FROM requisito WHERE idMateria1 = '" + Mat + "'";
+
+                QSqlQuery acDM2;
+                acDM2.exec(actDatMat2);
+
+                while (acDM2.next()) {
+                    QString matSigM = acDM2.value("idMateria2").toString();
+
+                    QString actInfoSig = "UPDATE infomateria SET cursada = 0, encurso = 0, disponible = 1, ninguno = 0 WHERE idMateria = '" + matSigM + "' AND matricula = '" + matricula + "'";
+
+                    QSqlQuery aInfS;
+                    aInfS.exec(actInfoSig);
+                    aInfS.next();
+                }
+
+                IndicarMaterias();
+            }
+        }
+    }
+}

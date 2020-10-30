@@ -123,6 +123,8 @@ private slots:
 
     void on_mater15_clicked();
 
+    void on_mater43_clicked();
+
 private:
     QString matricula, pass;
     Ui::MainWindow *ui;
