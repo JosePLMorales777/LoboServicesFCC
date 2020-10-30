@@ -2342,6 +2342,10 @@ font: 80 20pt &quot;MS Shell Dlg 2&quot;;</string>
             <pointsize>16</pointsize>
            </font>
           </property>
+          <property name="styleSheet">
+           <string notr="true">background: rgba(255, 255, 255, 150);
+border-radius: 15px;</string>
+          </property>
           <item>
            <property name="text">
             <string>1er Semestre</string>
@@ -2418,41 +2422,73 @@ font: 80 20pt &quot;MS Shell Dlg 2&quot;;</string>
            </rect>
           </property>
           <property name="styleSheet">
-           <string notr="true">font: 75 22pt &quot;Arial&quot;;</string>
+           <string notr="true">background-color: transparent;
+color:white;
+font: 80 20pt &quot;MS Shell Dlg 2&quot;;</string>
           </property>
           <property name="text">
            <string>Materia:</string>
           </property>
          </widget>
-         <widget class="QPushButton" name="buscar">
+         <widget class="QFrame" name="horizontalFrame">
           <property name="geometry">
            <rect>
-            <x>440</x>
-            <y>40</y>
-            <width>141</width>
+            <x>-10</x>
+            <y>160</y>
+            <width>871</width>
+            <height>501</height>
+           </rect>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout"/>
+         </widget>
+         <widget class="QLabel" name="labelMaterias">
+          <property name="geometry">
+           <rect>
+            <x>200</x>
+            <y>140</y>
+            <width>511</width>
             <height>41</height>
            </rect>
           </property>
           <property name="font">
            <font>
+            <family>Arial</family>
             <pointsize>18</pointsize>
+            <weight>9</weight>
+            <italic>false</italic>
+            <bold>false</bold>
            </font>
           </property>
+          <property name="styleSheet">
+           <string notr="true">font: 75 18pt &quot;Arial&quot;;
+background-color: transparent;
+</string>
+          </property>
           <property name="text">
-           <string>Buscar</string>
+           <string>Materia:</string>
           </property>
          </widget>
-         <widget class="QFrame" name="horizontalFrame">
+         <widget class="QLabel" name="label_6">
           <property name="geometry">
            <rect>
-            <x>30</x>
-            <y>120</y>
-            <width>791</width>
-            <height>441</height>
+            <x>-10</x>
+            <y>0</y>
+            <width>865</width>
+            <height>121</height>
            </rect>
           </property>
-          <layout class="QHBoxLayout" name="horizontalLayout"/>
+          <property name="styleSheet">
+           <string notr="true">border-image: url(:/Imagenes/Profesor/barra.png);</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
          </widget>
+         <zorder>label_6</zorder>
+         <zorder>semestre</zorder>
+         <zorder>label_5</zorder>
+         <zorder>horizontalFrame</zorder>
+         <zorder>labelMaterias</zorder>
         </widget>
        </widget>
        <widget class="QWidget" name="Perfil_2">

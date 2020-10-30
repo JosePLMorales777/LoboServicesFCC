@@ -15,7 +15,7 @@
 #include<QtGui>
 #include <QVBoxLayout>
 #include <QScrollArea>
-
+#include <QList>
 #include <QtCharts>
 #include <QChartView>
 #include <QBarSet>
@@ -102,6 +102,26 @@ private slots:
     void on_mater4_clicked();
 
     void on_mater5_clicked();
+
+    void on_mater6_clicked();
+
+    void on_mater7_clicked();
+
+    void on_mater8_clicked();
+
+    void on_mater9_clicked();
+
+    void on_mater10_clicked();
+
+    void on_mater11_clicked();
+
+    void on_mater12_clicked();
+
+    void on_mater13_clicked();
+
+    void on_mater14_clicked();
+
+    void on_mater15_clicked();
 
 private:
     QString matricula, pass;

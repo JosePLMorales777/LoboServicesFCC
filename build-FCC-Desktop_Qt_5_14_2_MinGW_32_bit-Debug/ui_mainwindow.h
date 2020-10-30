@@ -143,9 +143,10 @@ public:
     QGroupBox *groupBox_5;
     QComboBox *semestre;
     QLabel *label_5;
-    QPushButton *buscar;
     QFrame *horizontalFrame;
     QHBoxLayout *horizontalLayout;
+    QLabel *labelMaterias;
+    QLabel *label_6;
     QWidget *Perfil_2;
     QGroupBox *groupBox_6;
     QLabel *label_10;
@@ -1286,21 +1287,41 @@ public:
         semestre->setObjectName(QString::fromUtf8("semestre"));
         semestre->setGeometry(QRect(170, 40, 251, 41));
         semestre->setFont(font5);
+        semestre->setStyleSheet(QString::fromUtf8("background: rgba(255, 255, 255, 150);\n"
+"border-radius: 15px;"));
         label_5 = new QLabel(groupBox_5);
         label_5->setObjectName(QString::fromUtf8("label_5"));
         label_5->setGeometry(QRect(20, 40, 141, 41));
-        label_5->setStyleSheet(QString::fromUtf8("font: 75 22pt \"Arial\";"));
-        buscar = new QPushButton(groupBox_5);
-        buscar->setObjectName(QString::fromUtf8("buscar"));
-        buscar->setGeometry(QRect(440, 40, 141, 41));
-        QFont font7;
-        font7.setPointSize(18);
-        buscar->setFont(font7);
+        label_5->setStyleSheet(QString::fromUtf8("background-color: transparent;\n"
+"color:white;\n"
+"font: 80 20pt \"MS Shell Dlg 2\";"));
         horizontalFrame = new QFrame(groupBox_5);
         horizontalFrame->setObjectName(QString::fromUtf8("horizontalFrame"));
-        horizontalFrame->setGeometry(QRect(30, 120, 791, 441));
+        horizontalFrame->setGeometry(QRect(-10, 160, 871, 501));
         horizontalLayout = new QHBoxLayout(horizontalFrame);
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
+        labelMaterias = new QLabel(groupBox_5);
+        labelMaterias->setObjectName(QString::fromUtf8("labelMaterias"));
+        labelMaterias->setGeometry(QRect(200, 140, 511, 41));
+        QFont font7;
+        font7.setFamily(QString::fromUtf8("Arial"));
+        font7.setPointSize(18);
+        font7.setBold(false);
+        font7.setItalic(false);
+        font7.setWeight(9);
+        labelMaterias->setFont(font7);
+        labelMaterias->setStyleSheet(QString::fromUtf8("font: 75 18pt \"Arial\";\n"
+"background-color: transparent;\n"
+""));
+        label_6 = new QLabel(groupBox_5);
+        label_6->setObjectName(QString::fromUtf8("label_6"));
+        label_6->setGeometry(QRect(-10, 0, 865, 121));
+        label_6->setStyleSheet(QString::fromUtf8("border-image: url(:/Imagenes/Profesor/barra.png);"));
+        label_6->raise();
+        semestre->raise();
+        label_5->raise();
+        horizontalFrame->raise();
+        labelMaterias->raise();
         stackProfesor->addWidget(Graficas_2);
         Perfil_2 = new QWidget();
         Perfil_2->setObjectName(QString::fromUtf8("Perfil_2"));
@@ -1560,7 +1581,8 @@ public:
         semestre->setItemText(12, QCoreApplication::translate("MainWindow", "10mo Semestre", nullptr));
 
         label_5->setText(QCoreApplication::translate("MainWindow", "Materia:", nullptr));
-        buscar->setText(QCoreApplication::translate("MainWindow", "Buscar", nullptr));
+        labelMaterias->setText(QCoreApplication::translate("MainWindow", "Materia:", nullptr));
+        label_6->setText(QString());
         groupBox_6->setTitle(QString());
         label_10->setText(QString());
         label_11->setText(QCoreApplication::translate("MainWindow", "Cambiar contrase\303\261a del\n"
