@@ -619,10 +619,10 @@ void MainWindow::IndicarMaterias(){
         if(enc17==1){
             ui->mater17->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/libretaF.png);");
         }
-        if(disp16==1){
+        if(disp17==1){
             ui->mater17->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/disponibleF.png);");
         }
-        if(ning16==1){
+        if(ning17==1){
             ui->mater17->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/candadoF.png);");
         }
     /**/
@@ -1819,10 +1819,10 @@ void MainWindow::on_inscribitButton_clicked()
                 /*OPTATIVA DESIT*/
                 if(OP1 == 0 && OP2 == 0 && OPD == 1){
                     /*Desactivar las otras optativas*/
-                    QString desacOP2 = "UPDATE infomateria SET ninguno = 1, disponible = 0, cursada = 0, encurso = 0 WHERE idMateria >= 69 AND idMateria <= 71 AND idMateria != '" + mat[icont1] + "' AND matricula = '" + matricula + "'";
-                    QSqlQuery desOP2;
-                    desOP2.exec(desacOP2);
-                    desOP2.next();
+                    QString desacOPD = "UPDATE infomateria SET ninguno = 1, disponible = 0, cursada = 0, encurso = 0 WHERE idMateria >= 69 AND idMateria <= 71 AND idMateria != '" + mat[icont1] + "' AND matricula = '" + matricula + "'";
+                    QSqlQuery desOPD;
+                    desOPD.exec(desacOPD);
+                    desOPD.next();
 
                     /*Cargar la optativa*/
                     QString tomarMat = "UPDATE infomateria SET cursada = 0, encurso = 1, disponible = 0, ninguno = 0 WHERE idMateria = '" + mat[icont1] + "' AND matricula = '" + matricula + "'";
@@ -3044,23 +3044,11 @@ void MainWindow::on_mater47_clicked()
                 while (acDM2.next()) {
                     QString matSigM = acDM2.value("idMateria2").toString();
 
-                    if(matSigM=="73"){
-                        QString lp = ui->mater32->styleSheet();
+                    QString actInfoSig = "UPDATE infomateria SET cursada = 0, encurso = 0, disponible = 1, ninguno = 0 WHERE idMateria = '" + matSigM + "' AND matricula = '" + matricula + "'";
 
-                        if(lp == "background-color: transparent; border-image: url(:/Imagenes/Alumno/palomitaF.png);"){
-                            QString actInfoSig = "UPDATE infomateria SET cursada = 0, encurso = 0, disponible = 1, ninguno = 0 WHERE idMateria = '" + matSigM + "' AND matricula = '" + matricula + "'";
-
-                            QSqlQuery aInfS;
-                            aInfS.exec(actInfoSig);
-                            aInfS.next();
-                        }
-                    }else{
-                        QString actInfoSig = "UPDATE infomateria SET cursada = 0, encurso = 0, disponible = 1, ninguno = 0 WHERE idMateria = '" + matSigM + "' AND matricula = '" + matricula + "'";
-
-                        QSqlQuery aInfS;
-                        aInfS.exec(actInfoSig);
-                        aInfS.next();
-                    }
+                    QSqlQuery aInfS;
+                    aInfS.exec(actInfoSig);
+                    aInfS.next();
                 }
 
                 IndicarMaterias();
