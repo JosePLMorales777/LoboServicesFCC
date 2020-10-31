@@ -95,6 +95,8 @@ private slots:
 
     void on_semestre_currentIndexChanged(int index);
 
+    void botones(QString matMateria);
+
     void on_mater2_clicked();
 
     void on_mater3_clicked();
@@ -124,6 +126,74 @@ private slots:
     void on_mater15_clicked();
 
     void on_mater43_clicked();
+
+    void on_mater16_clicked();
+
+    void on_mater17_clicked();
+
+    void on_mater18_clicked();
+
+    void on_mater19_clicked();
+
+    void on_mater20_clicked();
+
+    void on_mater21_clicked();
+
+    void on_mater22_clicked();
+
+    void on_mater23_clicked();
+
+    void on_mater24_clicked();
+
+    void on_mater25_clicked();
+
+    void on_mater26_clicked();
+
+    void on_mater27_clicked();
+
+    void on_mater28_clicked();
+
+    void on_mater29_clicked();
+
+    void on_mater30_clicked();
+
+    void on_mater31_clicked();
+
+    void on_mater32_clicked();
+
+    void on_mater33_clicked();
+
+    void on_mater34_clicked();
+
+    void on_mater35_clicked();
+
+    void on_mater36_clicked();
+
+    void on_mater37_clicked();
+
+    void on_mater38_clicked();
+
+    void on_mater39_clicked();
+
+    void on_mater40_clicked();
+
+    void on_mater41_clicked();
+
+    void on_mater42_clicked();
+
+    void on_mater44_clicked();
+
+    void on_mater45_clicked();
+
+    void on_mater46_clicked();
+
+    void on_mater47_clicked();
+
+    void on_mater48_clicked();
+
+    void on_mater49_clicked();
+
+    void on_mater50_clicked();
 
 private:
     QString matricula, pass;

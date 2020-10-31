@@ -54,7 +54,7 @@ void MainWindow::CargarMateriasAlumo(){
     /*aqui se cargan las materias de primer semestre*/
     while (contCM <= 5) {
         QString idMater = QString::number(contCM);
-        QString insertMAT1 = "INSERT INTO infomateria(matricula,idMateria,cursada,encurso,disponible,ninguno) VALUES ('" + matricula + "','" + idMater + "',0,0,1,0)";
+        QString insertMAT1 = "INSERT INTO infomateria(matricula,idMateria,cursada,encurso,disponible,ninguno) VALUES ('" + matricula + "','" + idMater + "',0,1,0,0)";
 
         QSqlQuery insertMateria1;
         insertMateria1.exec(insertMAT1);
@@ -595,6 +595,35 @@ void MainWindow::IndicarMaterias(){
         }
         if(ning16==1){
             ui->mater16->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/candadoF.png);");
+        }
+    /**/
+
+    /**/
+        QString mat17 = "SELECT cursada,encurso,disponible,ninguno FROM infomateria WHERE matricula = '" + matricula + "' AND idMateria = 17";
+
+        QSqlQuery mater17;
+        mater17.exec(mat17);
+        mater17.next();
+
+        int curs17,enc17,disp17,ning17;
+        curs17 = mater17.value("cursada").toInt();
+        enc17 = mater17.value("encurso").toInt();
+        disp17 = mater17.value("disponible").toInt();
+        ning17 = mater17.value("ninguno").toInt();
+
+        qDebug()<< curs17 << enc17 << disp17 << ning17;
+
+        if(curs17==1){
+            ui->mater17->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/palomitaF.png);");
+        }
+        if(enc17==1){
+            ui->mater17->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/libretaF.png);");
+        }
+        if(disp16==1){
+            ui->mater17->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/disponibleF.png);");
+        }
+        if(ning16==1){
+            ui->mater17->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/candadoF.png);");
         }
     /**/
 
@@ -1576,16 +1605,16 @@ void MainWindow::IndicarMaterias(){
         qDebug()<< curs50 << enc50 << disp50 << ning50;
 
         if(curs50==1){
-            ui->pushButton_41->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/palomitaF.png);");
+            ui->mater50->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/palomitaF.png);");
         }
         if(enc50==1){
-            ui->pushButton_41->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/libretaF.png);");
+            ui->mater50->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/libretaF.png);");
         }
         if(disp50==1){
-            ui->pushButton_41->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/disponibleF.png);");
+            ui->mater50->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/disponibleF.png);");
         }
         if(ning50==1){
-            ui->pushButton_41->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/candadoF.png);");
+            ui->mater50->setStyleSheet("background-color: transparent; border-image: url(:/Imagenes/Alumno/candadoF.png);");
         }
     /**/
 
@@ -2474,10 +2503,9 @@ void MainWindow::on_cerrar_sesion_2_clicked(){
 
 //----------------------- Botones del mapa --------------------------
 
-void MainWindow::on_mater1_clicked()
-{
+void MainWindow::botones(QString matMateria){
     /*Verificar materia*/
-    QString numMat = "1";
+    QString numMat = matMateria;
 
     QString siMateria = "SELECT cursada,encurso,disponible,ninguno FROM infomateria WHERE idMateria = '" + numMat + "' AND matricula = '" + matricula + "'";
 
@@ -2516,6 +2544,8 @@ void MainWindow::on_mater1_clicked()
             while (acDM2.next()) {
                 QString matSigM = acDM2.value("idMateria2").toString();
 
+                qDebug() << matSigM;
+
                 QString actInfoSig = "UPDATE infomateria SET cursada = 0, encurso = 0, disponible = 1, ninguno = 0 WHERE idMateria = '" + matSigM + "' AND matricula = '" + matricula + "'";
 
                 QSqlQuery aInfS;
@@ -2526,324 +2556,35 @@ void MainWindow::on_mater1_clicked()
 
         IndicarMaterias();
     }
+}
+
+void MainWindow::on_mater1_clicked()
+{
+    botones("1");
 }
 void MainWindow::on_mater2_clicked()
 {
-    /*Verificar materia*/
-    QString numMat = "2";
-
-    QString siMateria = "SELECT cursada,encurso,disponible,ninguno FROM infomateria WHERE idMateria = '" + numMat + "' AND matricula = '" + matricula + "'";
-
-    qDebug() << siMateria;
-
-    QSqlQuery sMateria;
-    sMateria.exec(siMateria);
-    sMateria.next();
-
-    int curs = sMateria.value("cursada").toInt();
-    int encur = sMateria.value("encurso").toInt();
-    int disp = sMateria.value("disponible").toInt();
-    int ning = sMateria.value("ninguno").toInt();
-
-    qDebug() << curs << encur << disp << ning;
-
-    if(curs == 0 && encur == 1 && disp == 0 && ning == 0){
-        QMessageBox::StandardButton terminada;
-        terminada = QMessageBox::question(this, "Materia cursada", "¿Desea indicar que ha cursado esta materia?", QMessageBox::Yes|QMessageBox::No);
-
-        if(terminada == QMessageBox::Yes){
-            /*Actualizar datos materia*/
-            QString actDatMat = "UPDATE infomateria SET cursada = 1, encurso = 0, disponible = 0, ninguno = 0 WHERE idMateria = '" + numMat + "' AND matricula = '" + matricula + "'";
-            qDebug() << actDatMat;
-
-            QSqlQuery acDatM;
-            acDatM.exec(actDatMat);
-            acDatM.next();
-
-            /*Actualizar requisitos*/
-            QString actDatMat2 = "SELECT idMateria1,idMateria2 FROM requisito WHERE idMateria1 = '" + numMat + "'";
-
-            QSqlQuery acDM2;
-            acDM2.exec(actDatMat2);
-
-            while (acDM2.next()) {
-                QString matSigM = acDM2.value("idMateria2").toString();
-
-                QString actInfoSig = "UPDATE infomateria SET cursada = 0, encurso = 0, disponible = 1, ninguno = 0 WHERE idMateria = '" + matSigM + "' AND matricula = '" + matricula + "'";
-
-                QSqlQuery aInfS;
-                aInfS.exec(actInfoSig);
-                aInfS.next();
-            }
-        }
-
-        IndicarMaterias();
-    }
+    botones("2");
 }
 void MainWindow::on_mater3_clicked()
 {
-    /*Verificar materia*/
-    QString numMat = "3";
-
-    QString siMateria = "SELECT cursada,encurso,disponible,ninguno FROM infomateria WHERE idMateria = '" + numMat + "' AND matricula = '" + matricula + "'";
-
-    qDebug() << siMateria;
-
-    QSqlQuery sMateria;
-    sMateria.exec(siMateria);
-    sMateria.next();
-
-    int curs = sMateria.value("cursada").toInt();
-    int encur = sMateria.value("encurso").toInt();
-    int disp = sMateria.value("disponible").toInt();
-    int ning = sMateria.value("ninguno").toInt();
-
-    qDebug() << curs << encur << disp << ning;
-
-    if(curs == 0 && encur == 1 && disp == 0 && ning == 0){
-        QMessageBox::StandardButton terminada;
-        terminada = QMessageBox::question(this, "Materia cursada", "¿Desea indicar que ha cursado esta materia?", QMessageBox::Yes|QMessageBox::No);
-
-        if(terminada == QMessageBox::Yes){
-            /*Actualizar datos materia*/
-            QString actDatMat = "UPDATE infomateria SET cursada = 1, encurso = 0, disponible = 0, ninguno = 0 WHERE idMateria = '" + numMat + "' AND matricula = '" + matricula + "'";
-            qDebug() << actDatMat;
-
-            QSqlQuery acDatM;
-            acDatM.exec(actDatMat);
-            acDatM.next();
-
-            /*Actualizar requisitos*/
-            QString actDatMat2 = "SELECT idMateria1,idMateria2 FROM requisito WHERE idMateria1 = '" + numMat + "'";
-
-            QSqlQuery acDM2;
-            acDM2.exec(actDatMat2);
-
-            while (acDM2.next()) {
-                QString matSigM = acDM2.value("idMateria2").toString();
-
-                QString actInfoSig = "UPDATE infomateria SET cursada = 0, encurso = 0, disponible = 1, ninguno = 0 WHERE idMateria = '" + matSigM + "' AND matricula = '" + matricula + "'";
-
-                QSqlQuery aInfS;
-                aInfS.exec(actInfoSig);
-                aInfS.next();
-            }
-        }
-
-        IndicarMaterias();
-    }
+    botones("3");
 }
 void MainWindow::on_mater4_clicked()
 {
-    /*Verificar materia*/
-    QString numMat = "4";
-
-    QString siMateria = "SELECT cursada,encurso,disponible,ninguno FROM infomateria WHERE idMateria = '" + numMat + "' AND matricula = '" + matricula + "'";
-
-    qDebug() << siMateria;
-
-    QSqlQuery sMateria;
-    sMateria.exec(siMateria);
-    sMateria.next();
-
-    int curs = sMateria.value("cursada").toInt();
-    int encur = sMateria.value("encurso").toInt();
-    int disp = sMateria.value("disponible").toInt();
-    int ning = sMateria.value("ninguno").toInt();
-
-    qDebug() << curs << encur << disp << ning;
-
-    if(curs == 0 && encur == 1 && disp == 0 && ning == 0){
-        QMessageBox::StandardButton terminada;
-        terminada = QMessageBox::question(this, "Materia cursada", "¿Desea indicar que ha cursado esta materia?", QMessageBox::Yes|QMessageBox::No);
-
-        if(terminada == QMessageBox::Yes){
-            /*Actualizar datos materia*/
-            QString actDatMat = "UPDATE infomateria SET cursada = 1, encurso = 0, disponible = 0, ninguno = 0 WHERE idMateria = '" + numMat + "' AND matricula = '" + matricula + "'";
-            qDebug() << actDatMat;
-
-            QSqlQuery acDatM;
-            acDatM.exec(actDatMat);
-            acDatM.next();
-
-            /*Actualizar requisitos*/
-            QString actDatMat2 = "SELECT idMateria1,idMateria2 FROM requisito WHERE idMateria1 = '" + numMat + "'";
-
-            QSqlQuery acDM2;
-            acDM2.exec(actDatMat2);
-
-            while (acDM2.next()) {
-                QString matSigM = acDM2.value("idMateria2").toString();
-
-                QString actInfoSig = "UPDATE infomateria SET cursada = 0, encurso = 0, disponible = 1, ninguno = 0 WHERE idMateria = '" + matSigM + "' AND matricula = '" + matricula + "'";
-
-                QSqlQuery aInfS;
-                aInfS.exec(actInfoSig);
-                aInfS.next();
-            }
-        }
-
-        IndicarMaterias();
-    }
+    botones("4");
 }
 void MainWindow::on_mater5_clicked()
 {
-    /*Verificar materia*/
-    QString numMat = "5";
-
-    QString siMateria = "SELECT cursada,encurso,disponible,ninguno FROM infomateria WHERE idMateria = '" + numMat + "' AND matricula = '" + matricula + "'";
-
-    qDebug() << siMateria;
-
-    QSqlQuery sMateria;
-    sMateria.exec(siMateria);
-    sMateria.next();
-
-    int curs = sMateria.value("cursada").toInt();
-    int encur = sMateria.value("encurso").toInt();
-    int disp = sMateria.value("disponible").toInt();
-    int ning = sMateria.value("ninguno").toInt();
-
-    qDebug() << curs << encur << disp << ning;
-
-    if(curs == 0 && encur == 1 && disp == 0 && ning == 0){
-        QMessageBox::StandardButton terminada;
-        terminada = QMessageBox::question(this, "Materia cursada", "¿Desea indicar que ha cursado esta materia?", QMessageBox::Yes|QMessageBox::No);
-
-        if(terminada == QMessageBox::Yes){
-            /*Actualizar datos materia*/
-            QString actDatMat = "UPDATE infomateria SET cursada = 1, encurso = 0, disponible = 0, ninguno = 0 WHERE idMateria = '" + numMat + "' AND matricula = '" + matricula + "'";
-            qDebug() << actDatMat;
-
-            QSqlQuery acDatM;
-            acDatM.exec(actDatMat);
-            acDatM.next();
-
-            /*Actualizar requisitos*/
-            QString actDatMat2 = "SELECT idMateria1,idMateria2 FROM requisito WHERE idMateria1 = '" + numMat + "'";
-
-            QSqlQuery acDM2;
-            acDM2.exec(actDatMat2);
-
-            while (acDM2.next()) {
-                QString matSigM = acDM2.value("idMateria2").toString();
-
-                QString actInfoSig = "UPDATE infomateria SET cursada = 0, encurso = 0, disponible = 1, ninguno = 0 WHERE idMateria = '" + matSigM + "' AND matricula = '" + matricula + "'";
-
-                QSqlQuery aInfS;
-                aInfS.exec(actInfoSig);
-                aInfS.next();
-            }
-        }
-
-        IndicarMaterias();
-    }
+    botones("5");
 }
 void MainWindow::on_mater6_clicked()
 {
-    /*Verificar materia*/
-    QString numMat = "6";
-
-    QString siMateria = "SELECT cursada,encurso,disponible,ninguno FROM infomateria WHERE idMateria = '" + numMat + "' AND matricula = '" + matricula + "'";
-
-    qDebug() << siMateria;
-
-    QSqlQuery sMateria;
-    sMateria.exec(siMateria);
-    sMateria.next();
-
-    int curs = sMateria.value("cursada").toInt();
-    int encur = sMateria.value("encurso").toInt();
-    int disp = sMateria.value("disponible").toInt();
-    int ning = sMateria.value("ninguno").toInt();
-
-    qDebug() << curs << encur << disp << ning;
-
-    if(curs == 0 && encur == 1 && disp == 0 && ning == 0){
-        QMessageBox::StandardButton terminada;
-        terminada = QMessageBox::question(this, "Materia cursada", "¿Desea indicar que ha cursado esta materia?", QMessageBox::Yes|QMessageBox::No);
-
-        if(terminada == QMessageBox::Yes){
-            /*Actualizar datos materia*/
-            QString actDatMat = "UPDATE infomateria SET cursada = 1, encurso = 0, disponible = 0, ninguno = 0 WHERE idMateria = '" + numMat + "' AND matricula = '" + matricula + "'";
-            qDebug() << actDatMat;
-
-            QSqlQuery acDatM;
-            acDatM.exec(actDatMat);
-            acDatM.next();
-
-            /*Actualizar requisitos*/
-            QString actDatMat2 = "SELECT idMateria1,idMateria2 FROM requisito WHERE idMateria1 = '" + numMat + "'";
-
-            QSqlQuery acDM2;
-            acDM2.exec(actDatMat2);
-
-            while (acDM2.next()) {
-                QString matSigM = acDM2.value("idMateria2").toString();
-
-                QString actInfoSig = "UPDATE infomateria SET cursada = 0, encurso = 0, disponible = 1, ninguno = 0 WHERE idMateria = '" + matSigM + "' AND matricula = '" + matricula + "'";
-
-                QSqlQuery aInfS;
-                aInfS.exec(actInfoSig);
-                aInfS.next();
-            }
-        }
-
-        IndicarMaterias();
-    }
+    botones("6");
 }
 void MainWindow::on_mater7_clicked()
 {
-    /*Verificar materia*/
-    QString numMat = "7";
-
-    QString siMateria = "SELECT cursada,encurso,disponible,ninguno FROM infomateria WHERE idMateria = '" + numMat + "' AND matricula = '" + matricula + "'";
-
-    qDebug() << siMateria;
-
-    QSqlQuery sMateria;
-    sMateria.exec(siMateria);
-    sMateria.next();
-
-    int curs = sMateria.value("cursada").toInt();
-    int encur = sMateria.value("encurso").toInt();
-    int disp = sMateria.value("disponible").toInt();
-    int ning = sMateria.value("ninguno").toInt();
-
-    qDebug() << curs << encur << disp << ning;
-
-    if(curs == 0 && encur == 1 && disp == 0 && ning == 0){
-        QMessageBox::StandardButton terminada;
-        terminada = QMessageBox::question(this, "Materia cursada", "¿Desea indicar que ha cursado esta materia?", QMessageBox::Yes|QMessageBox::No);
-
-        if(terminada == QMessageBox::Yes){
-            /*Actualizar datos materia*/
-            QString actDatMat = "UPDATE infomateria SET cursada = 1, encurso = 0, disponible = 0, ninguno = 0 WHERE idMateria = '" + numMat + "' AND matricula = '" + matricula + "'";
-            qDebug() << actDatMat;
-
-            QSqlQuery acDatM;
-            acDatM.exec(actDatMat);
-            acDatM.next();
-
-            /*Actualizar requisitos*/
-            QString actDatMat2 = "SELECT idMateria1,idMateria2 FROM requisito WHERE idMateria1 = '" + numMat + "'";
-
-            QSqlQuery acDM2;
-            acDM2.exec(actDatMat2);
-
-            while (acDM2.next()) {
-                QString matSigM = acDM2.value("idMateria2").toString();
-
-                QString actInfoSig = "UPDATE infomateria SET cursada = 0, encurso = 0, disponible = 1, ninguno = 0 WHERE idMateria = '" + matSigM + "' AND matricula = '" + matricula + "'";
-
-                QSqlQuery aInfS;
-                aInfS.exec(actInfoSig);
-                aInfS.next();
-            }
-        }
-
-        IndicarMaterias();
-    }
+    botones("7");
 }
 void MainWindow::on_mater8_clicked()
 {
@@ -2919,323 +2660,29 @@ void MainWindow::on_mater8_clicked()
 }
 void MainWindow::on_mater9_clicked()
 {
-    /*Verificar materia*/
-    QString numMat = "9";
-
-    QString siMateria = "SELECT cursada,encurso,disponible,ninguno FROM infomateria WHERE idMateria = '" + numMat + "' AND matricula = '" + matricula + "'";
-
-    qDebug() << siMateria;
-
-    QSqlQuery sMateria;
-    sMateria.exec(siMateria);
-    sMateria.next();
-
-    int curs = sMateria.value("cursada").toInt();
-    int encur = sMateria.value("encurso").toInt();
-    int disp = sMateria.value("disponible").toInt();
-    int ning = sMateria.value("ninguno").toInt();
-
-    qDebug() << curs << encur << disp << ning;
-
-    if(curs == 0 && encur == 1 && disp == 0 && ning == 0){
-        QMessageBox::StandardButton terminada;
-        terminada = QMessageBox::question(this, "Materia cursada", "¿Desea indicar que ha cursado esta materia?", QMessageBox::Yes|QMessageBox::No);
-
-        if(terminada == QMessageBox::Yes){
-            /*Actualizar datos materia*/
-            QString actDatMat = "UPDATE infomateria SET cursada = 1, encurso = 0, disponible = 0, ninguno = 0 WHERE idMateria = '" + numMat + "' AND matricula = '" + matricula + "'";
-            qDebug() << actDatMat;
-
-            QSqlQuery acDatM;
-            acDatM.exec(actDatMat);
-            acDatM.next();
-
-            /*Actualizar requisitos*/
-            QString actDatMat2 = "SELECT idMateria1,idMateria2 FROM requisito WHERE idMateria1 = '" + numMat + "'";
-
-            QSqlQuery acDM2;
-            acDM2.exec(actDatMat2);
-
-            while (acDM2.next()) {
-                QString matSigM = acDM2.value("idMateria2").toString();
-
-                QString actInfoSig = "UPDATE infomateria SET cursada = 0, encurso = 0, disponible = 1, ninguno = 0 WHERE idMateria = '" + matSigM + "' AND matricula = '" + matricula + "'";
-
-                QSqlQuery aInfS;
-                aInfS.exec(actInfoSig);
-                aInfS.next();
-            }
-        }
-
-        IndicarMaterias();
-    }
+    botones("9");
 }
 void MainWindow::on_mater10_clicked()
 {
-    /*Verificar materia*/
-    QString numMat = "10";
-
-    QString siMateria = "SELECT cursada,encurso,disponible,ninguno FROM infomateria WHERE idMateria = '" + numMat + "' AND matricula = '" + matricula + "'";
-
-    qDebug() << siMateria;
-
-    QSqlQuery sMateria;
-    sMateria.exec(siMateria);
-    sMateria.next();
-
-    int curs = sMateria.value("cursada").toInt();
-    int encur = sMateria.value("encurso").toInt();
-    int disp = sMateria.value("disponible").toInt();
-    int ning = sMateria.value("ninguno").toInt();
-
-    qDebug() << curs << encur << disp << ning;
-
-    if(curs == 0 && encur == 1 && disp == 0 && ning == 0){
-        QMessageBox::StandardButton terminada;
-        terminada = QMessageBox::question(this, "Materia cursada", "¿Desea indicar que ha cursado esta materia?", QMessageBox::Yes|QMessageBox::No);
-
-        if(terminada == QMessageBox::Yes){
-            /*Actualizar datos materia*/
-            QString actDatMat = "UPDATE infomateria SET cursada = 1, encurso = 0, disponible = 0, ninguno = 0 WHERE idMateria = '" + numMat + "' AND matricula = '" + matricula + "'";
-            qDebug() << actDatMat;
-
-            QSqlQuery acDatM;
-            acDatM.exec(actDatMat);
-            acDatM.next();
-
-            /*Actualizar requisitos*/
-            QString actDatMat2 = "SELECT idMateria1,idMateria2 FROM requisito WHERE idMateria1 = '" + numMat + "'";
-
-            QSqlQuery acDM2;
-            acDM2.exec(actDatMat2);
-
-            while (acDM2.next()) {
-                QString matSigM = acDM2.value("idMateria2").toString();
-
-                QString actInfoSig = "UPDATE infomateria SET cursada = 0, encurso = 0, disponible = 1, ninguno = 0 WHERE idMateria = '" + matSigM + "' AND matricula = '" + matricula + "'";
-
-                QSqlQuery aInfS;
-                aInfS.exec(actInfoSig);
-                aInfS.next();
-            }
-        }
-
-        IndicarMaterias();
-    }
+    botones("10");
 }
 void MainWindow::on_mater11_clicked()
 {
-    /*Verificar materia*/
-    QString numMat = "11";
-
-    QString siMateria = "SELECT cursada,encurso,disponible,ninguno FROM infomateria WHERE idMateria = '" + numMat + "' AND matricula = '" + matricula + "'";
-
-    qDebug() << siMateria;
-
-    QSqlQuery sMateria;
-    sMateria.exec(siMateria);
-    sMateria.next();
-
-    int curs = sMateria.value("cursada").toInt();
-    int encur = sMateria.value("encurso").toInt();
-    int disp = sMateria.value("disponible").toInt();
-    int ning = sMateria.value("ninguno").toInt();
-
-    qDebug() << curs << encur << disp << ning;
-
-    if(curs == 0 && encur == 1 && disp == 0 && ning == 0){
-        QMessageBox::StandardButton terminada;
-        terminada = QMessageBox::question(this, "Materia cursada", "¿Desea indicar que ha cursado esta materia?", QMessageBox::Yes|QMessageBox::No);
-
-        if(terminada == QMessageBox::Yes){
-            /*Actualizar datos materia*/
-            QString actDatMat = "UPDATE infomateria SET cursada = 1, encurso = 0, disponible = 0, ninguno = 0 WHERE idMateria = '" + numMat + "' AND matricula = '" + matricula + "'";
-            qDebug() << actDatMat;
-
-            QSqlQuery acDatM;
-            acDatM.exec(actDatMat);
-            acDatM.next();
-
-            /*Actualizar requisitos*/
-            QString actDatMat2 = "SELECT idMateria1,idMateria2 FROM requisito WHERE idMateria1 = '" + numMat + "'";
-
-            QSqlQuery acDM2;
-            acDM2.exec(actDatMat2);
-
-            while (acDM2.next()) {
-                QString matSigM = acDM2.value("idMateria2").toString();
-
-                QString actInfoSig = "UPDATE infomateria SET cursada = 0, encurso = 0, disponible = 1, ninguno = 0 WHERE idMateria = '" + matSigM + "' AND matricula = '" + matricula + "'";
-
-                QSqlQuery aInfS;
-                aInfS.exec(actInfoSig);
-                aInfS.next();
-            }
-        }
-
-        IndicarMaterias();
-    }
+    botones("11");
 }
 
 void MainWindow::on_mater12_clicked()
 {
-    /*Verificar materia*/
-    QString numMat = "12";
-
-    QString siMateria = "SELECT cursada,encurso,disponible,ninguno FROM infomateria WHERE idMateria = '" + numMat + "' AND matricula = '" + matricula + "'";
-
-    qDebug() << siMateria;
-
-    QSqlQuery sMateria;
-    sMateria.exec(siMateria);
-    sMateria.next();
-
-    int curs = sMateria.value("cursada").toInt();
-    int encur = sMateria.value("encurso").toInt();
-    int disp = sMateria.value("disponible").toInt();
-    int ning = sMateria.value("ninguno").toInt();
-
-    qDebug() << curs << encur << disp << ning;
-
-    if(curs == 0 && encur == 1 && disp == 0 && ning == 0){
-        QMessageBox::StandardButton terminada;
-        terminada = QMessageBox::question(this, "Materia cursada", "¿Desea indicar que ha cursado esta materia?", QMessageBox::Yes|QMessageBox::No);
-
-        if(terminada == QMessageBox::Yes){
-            /*Actualizar datos materia*/
-            QString actDatMat = "UPDATE infomateria SET cursada = 1, encurso = 0, disponible = 0, ninguno = 0 WHERE idMateria = '" + numMat + "' AND matricula = '" + matricula + "'";
-            qDebug() << actDatMat;
-
-            QSqlQuery acDatM;
-            acDatM.exec(actDatMat);
-            acDatM.next();
-
-            /*Actualizar requisitos*/
-            QString actDatMat2 = "SELECT idMateria1,idMateria2 FROM requisito WHERE idMateria1 = '" + numMat + "'";
-
-            QSqlQuery acDM2;
-            acDM2.exec(actDatMat2);
-
-            while (acDM2.next()) {
-                QString matSigM = acDM2.value("idMateria2").toString();
-
-                QString actInfoSig = "UPDATE infomateria SET cursada = 0, encurso = 0, disponible = 1, ninguno = 0 WHERE idMateria = '" + matSigM + "' AND matricula = '" + matricula + "'";
-
-                QSqlQuery aInfS;
-                aInfS.exec(actInfoSig);
-                aInfS.next();
-            }
-        }
-
-        IndicarMaterias();
-    }
+    botones("12");
 }
 void MainWindow::on_mater13_clicked()
 {
-    /*Verificar materia*/
-    QString numMat = "13";
-
-    QString siMateria = "SELECT cursada,encurso,disponible,ninguno FROM infomateria WHERE idMateria = '" + numMat + "' AND matricula = '" + matricula + "'";
-
-    qDebug() << siMateria;
-
-    QSqlQuery sMateria;
-    sMateria.exec(siMateria);
-    sMateria.next();
-
-    int curs = sMateria.value("cursada").toInt();
-    int encur = sMateria.value("encurso").toInt();
-    int disp = sMateria.value("disponible").toInt();
-    int ning = sMateria.value("ninguno").toInt();
-
-    qDebug() << curs << encur << disp << ning;
-
-    if(curs == 0 && encur == 1 && disp == 0 && ning == 0){
-        QMessageBox::StandardButton terminada;
-        terminada = QMessageBox::question(this, "Materia cursada", "¿Desea indicar que ha cursado esta materia?", QMessageBox::Yes|QMessageBox::No);
-
-        if(terminada == QMessageBox::Yes){
-            /*Actualizar datos materia*/
-            QString actDatMat = "UPDATE infomateria SET cursada = 1, encurso = 0, disponible = 0, ninguno = 0 WHERE idMateria = '" + numMat + "' AND matricula = '" + matricula + "'";
-            qDebug() << actDatMat;
-
-            QSqlQuery acDatM;
-            acDatM.exec(actDatMat);
-            acDatM.next();
-
-            /*Actualizar requisitos*/
-            QString actDatMat2 = "SELECT idMateria1,idMateria2 FROM requisito WHERE idMateria1 = '" + numMat + "'";
-
-            QSqlQuery acDM2;
-            acDM2.exec(actDatMat2);
-
-            while (acDM2.next()) {
-                QString matSigM = acDM2.value("idMateria2").toString();
-
-                QString actInfoSig = "UPDATE infomateria SET cursada = 0, encurso = 0, disponible = 1, ninguno = 0 WHERE idMateria = '" + matSigM + "' AND matricula = '" + matricula + "'";
-
-                QSqlQuery aInfS;
-                aInfS.exec(actInfoSig);
-                aInfS.next();
-            }
-        }
-
-        IndicarMaterias();
-    }
+    botones("13");
 }
 
 void MainWindow::on_mater14_clicked()
 {
-    /*Verificar materia*/
-    QString numMat = "14";
-
-    QString siMateria = "SELECT cursada,encurso,disponible,ninguno FROM infomateria WHERE idMateria = '" + numMat + "' AND matricula = '" + matricula + "'";
-
-    qDebug() << siMateria;
-
-    QSqlQuery sMateria;
-    sMateria.exec(siMateria);
-    sMateria.next();
-
-    int curs = sMateria.value("cursada").toInt();
-    int encur = sMateria.value("encurso").toInt();
-    int disp = sMateria.value("disponible").toInt();
-    int ning = sMateria.value("ninguno").toInt();
-
-    qDebug() << curs << encur << disp << ning;
-
-    if(curs == 0 && encur == 1 && disp == 0 && ning == 0){
-        QMessageBox::StandardButton terminada;
-        terminada = QMessageBox::question(this, "Materia cursada", "¿Desea indicar que ha cursado esta materia?", QMessageBox::Yes|QMessageBox::No);
-
-        if(terminada == QMessageBox::Yes){
-            /*Actualizar datos materia*/
-            QString actDatMat = "UPDATE infomateria SET cursada = 1, encurso = 0, disponible = 0, ninguno = 0 WHERE idMateria = '" + numMat + "' AND matricula = '" + matricula + "'";
-            qDebug() << actDatMat;
-
-            QSqlQuery acDatM;
-            acDatM.exec(actDatMat);
-            acDatM.next();
-
-            /*Actualizar requisitos*/
-            QString actDatMat2 = "SELECT idMateria1,idMateria2 FROM requisito WHERE idMateria1 = '" + numMat + "'";
-
-            QSqlQuery acDM2;
-            acDM2.exec(actDatMat2);
-
-            while (acDM2.next()) {
-                QString matSigM = acDM2.value("idMateria2").toString();
-
-                QString actInfoSig = "UPDATE infomateria SET cursada = 0, encurso = 0, disponible = 1, ninguno = 0 WHERE idMateria = '" + matSigM + "' AND matricula = '" + matricula + "'";
-
-                QSqlQuery aInfS;
-                aInfS.exec(actInfoSig);
-                aInfS.next();
-            }
-        }
-
-        IndicarMaterias();
-    }
+    botones("14");
 }
 
 void MainWindow::on_mater15_clicked()
@@ -3310,7 +2757,177 @@ void MainWindow::on_mater15_clicked()
         IndicarMaterias();
     }
 }
+void MainWindow::on_mater16_clicked()
+{
+    botones("16");
+}
+void MainWindow::on_mater17_clicked()
+{
+    botones("17");
+}
+void MainWindow::on_mater18_clicked()
+{
+    botones("18");
+}
+void MainWindow::on_mater19_clicked()
+{
+    botones("19");
+}
+void MainWindow::on_mater20_clicked()
+{
+    botones("20");
+}
+void MainWindow::on_mater21_clicked()
+{
+    botones("21");
+}
+void MainWindow::on_mater22_clicked()
+{
+    botones("22");
+}
+void MainWindow::on_mater23_clicked()
+{
+    botones("23");
+}
+void MainWindow::on_mater24_clicked()
+{
+    botones("24");
+}
+void MainWindow::on_mater25_clicked()
+{
+    botones("25");
+}
+void MainWindow::on_mater26_clicked()
+{
+    botones("26");
+}
+void MainWindow::on_mater27_clicked()
+{
+    botones("27");
+}
+void MainWindow::on_mater28_clicked()
+{
+    botones("28");
+}
+void MainWindow::on_mater29_clicked()
+{
+    botones("29");
+}
+void MainWindow::on_mater30_clicked()
+{
+    botones("30");
+}
+void MainWindow::on_mater31_clicked()
+{
+    botones("31");
+}
+void MainWindow::on_mater32_clicked()
+{
+    /*Verificar materia*/
+    QString numMat = "32";
 
+    QString siMateria = "SELECT cursada,encurso,disponible,ninguno FROM infomateria WHERE idMateria = '" + numMat + "' AND matricula = '" + matricula + "'";
+
+    qDebug() << siMateria;
+
+    QSqlQuery sMateria;
+    sMateria.exec(siMateria);
+    sMateria.next();
+
+    int curs = sMateria.value("cursada").toInt();
+    int encur = sMateria.value("encurso").toInt();
+    int disp = sMateria.value("disponible").toInt();
+    int ning = sMateria.value("ninguno").toInt();
+
+    qDebug() << curs << encur << disp << ning;
+
+    if(curs == 0 && encur == 1 && disp == 0 && ning == 0){
+        QMessageBox::StandardButton terminada;
+        terminada = QMessageBox::question(this, "Materia cursada", "¿Desea indicar que ha cursado esta materia?", QMessageBox::Yes|QMessageBox::No);
+
+        if(terminada == QMessageBox::Yes){
+            /*Actualizar datos materia*/
+            QString actDatMat = "UPDATE infomateria SET cursada = 1, encurso = 0, disponible = 0, ninguno = 0 WHERE idMateria = '" + numMat + "' AND matricula = '" + matricula + "'";
+            qDebug() << actDatMat;
+
+            QSqlQuery acDatM;
+            acDatM.exec(actDatMat);
+            acDatM.next();
+
+            /*Actualizar requisitos*/
+            QString actDatMat2 = "SELECT idMateria1,idMateria2 FROM requisito WHERE idMateria1 = '" + numMat + "'";
+
+            QSqlQuery acDM2;
+            acDM2.exec(actDatMat2);
+
+            while (acDM2.next()) {
+
+                QString matSigM = acDM2.value("idMateria2").toString();
+
+                if(matSigM=="73"){
+                    QString lp = ui->mater47->styleSheet();
+
+                    if(lp == "background-color: transparent; border-image: url(:/Imagenes/Alumno/palomitaF.png);"){
+                        QString actInfoSig = "UPDATE infomateria SET cursada = 0, encurso = 0, disponible = 1, ninguno = 0 WHERE idMateria = '" + matSigM + "' AND matricula = '" + matricula + "'";
+
+                        QSqlQuery aInfS;
+                        aInfS.exec(actInfoSig);
+                        aInfS.next();
+                    }
+                }else{
+                    QString actInfoSig = "UPDATE infomateria SET cursada = 0, encurso = 0, disponible = 1, ninguno = 0 WHERE idMateria = '" + matSigM + "' AND matricula = '" + matricula + "'";
+
+                    QSqlQuery aInfS;
+                    aInfS.exec(actInfoSig);
+                    aInfS.next();
+                }
+            }
+        }
+
+        IndicarMaterias();
+    }
+}
+void MainWindow::on_mater33_clicked()
+{
+    botones("33");
+}
+void MainWindow::on_mater34_clicked()
+{
+    botones("34");
+}
+void MainWindow::on_mater35_clicked()
+{
+    botones("35");
+}
+void MainWindow::on_mater36_clicked()
+{
+    botones("36");
+}
+void MainWindow::on_mater37_clicked()
+{
+    botones("37");
+}
+void MainWindow::on_mater38_clicked()
+{
+    botones("38");
+}
+void MainWindow::on_mater39_clicked()
+{
+    botones("39");
+}
+
+void MainWindow::on_mater40_clicked()
+{
+    botones("40");
+}
+void MainWindow::on_mater41_clicked()
+{
+    botones("41");
+}
+void MainWindow::on_mater42_clicked()
+{
+    botones("42");
+}
 void MainWindow::on_mater43_clicked()
 {
     /*Botón correspondiente a OPTATIVAS I*/
@@ -3368,4 +2985,153 @@ void MainWindow::on_mater43_clicked()
             }
         }
     }
+}
+void MainWindow::on_mater44_clicked()
+{
+    botones("55");
+}
+void MainWindow::on_mater45_clicked()
+{
+    botones("56");
+}
+void MainWindow::on_mater46_clicked()
+{
+    botones("57");
+}
+void MainWindow::on_mater47_clicked()
+{
+    /*Botón correspondiente a OPTATIVAS I*/
+    QString obtMatOPI = "SELECT idMateria FROM materia WHERE optativaII = 1";
+
+    QSqlQuery obMOPI;
+    obMOPI.exec(obtMatOPI);
+
+    while(obMOPI.next()){
+        QString Mat = obMOPI.value("idMateria").toString();
+
+        QString obEOPI = "SELECT cursada,encurso,disponible,ninguno FROM infomateria WHERE idMateria = '" + Mat + "' AND matricula = '" + matricula + "'";
+
+        QSqlQuery oEOPI;
+        oEOPI.exec(obEOPI);
+        oEOPI.next();
+
+        int curs = oEOPI.value("cursada").toInt();
+        int encur = oEOPI.value("encurso").toInt();
+        int disp = oEOPI.value("disponible").toInt();
+        int ning = oEOPI.value("ninguno").toInt();
+
+        qDebug() << curs << encur << disp << ning;
+
+        if(curs == 0 && encur == 1 && disp == 0 && ning == 0){
+            QMessageBox::StandardButton terminada;
+            terminada = QMessageBox::question(this, "Materia cursada", "¿Desea indicar que ha cursado esta materia?", QMessageBox::Yes|QMessageBox::No);
+
+            if(terminada == QMessageBox::Yes){
+                /*Actualizar datos materia*/
+                QString actDatMat = "UPDATE infomateria SET cursada = 1, encurso = 0, disponible = 0, ninguno = 0 WHERE idMateria = '" + Mat + "' AND matricula = '" + matricula + "'";
+                qDebug() << actDatMat;
+
+                QSqlQuery acDatM;
+                acDatM.exec(actDatMat);
+                acDatM.next();
+
+                /*Actualizar requisitos*/
+                QString actDatMat2 = "SELECT idMateria1,idMateria2 FROM requisito WHERE idMateria1 = '" + Mat + "'";
+
+                QSqlQuery acDM2;
+                acDM2.exec(actDatMat2);
+
+                while (acDM2.next()) {
+                    QString matSigM = acDM2.value("idMateria2").toString();
+
+                    if(matSigM=="73"){
+                        QString lp = ui->mater32->styleSheet();
+
+                        if(lp == "background-color: transparent; border-image: url(:/Imagenes/Alumno/palomitaF.png);"){
+                            QString actInfoSig = "UPDATE infomateria SET cursada = 0, encurso = 0, disponible = 1, ninguno = 0 WHERE idMateria = '" + matSigM + "' AND matricula = '" + matricula + "'";
+
+                            QSqlQuery aInfS;
+                            aInfS.exec(actInfoSig);
+                            aInfS.next();
+                        }
+                    }else{
+                        QString actInfoSig = "UPDATE infomateria SET cursada = 0, encurso = 0, disponible = 1, ninguno = 0 WHERE idMateria = '" + matSigM + "' AND matricula = '" + matricula + "'";
+
+                        QSqlQuery aInfS;
+                        aInfS.exec(actInfoSig);
+                        aInfS.next();
+                    }
+                }
+
+                IndicarMaterias();
+            }
+        }
+    }
+}
+void MainWindow::on_mater48_clicked()
+{
+    /*Botón correspondiente a OPTATIVAS I*/
+    QString obtMatOPI = "SELECT idMateria FROM materia WHERE optativaDESIT = 1";
+
+    QSqlQuery obMOPI;
+    obMOPI.exec(obtMatOPI);
+
+    while(obMOPI.next()){
+        QString Mat = obMOPI.value("idMateria").toString();
+
+        QString obEOPI = "SELECT cursada,encurso,disponible,ninguno FROM infomateria WHERE idMateria = '" + Mat + "' AND matricula = '" + matricula + "'";
+
+        QSqlQuery oEOPI;
+        oEOPI.exec(obEOPI);
+        oEOPI.next();
+
+        int curs = oEOPI.value("cursada").toInt();
+        int encur = oEOPI.value("encurso").toInt();
+        int disp = oEOPI.value("disponible").toInt();
+        int ning = oEOPI.value("ninguno").toInt();
+
+        qDebug() << curs << encur << disp << ning;
+
+        if(curs == 0 && encur == 1 && disp == 0 && ning == 0){
+            QMessageBox::StandardButton terminada;
+            terminada = QMessageBox::question(this, "Materia cursada", "¿Desea indicar que ha cursado esta materia?", QMessageBox::Yes|QMessageBox::No);
+
+            if(terminada == QMessageBox::Yes){
+                /*Actualizar datos materia*/
+                QString actDatMat = "UPDATE infomateria SET cursada = 1, encurso = 0, disponible = 0, ninguno = 0 WHERE idMateria = '" + Mat + "' AND matricula = '" + matricula + "'";
+                qDebug() << actDatMat;
+
+                QSqlQuery acDatM;
+                acDatM.exec(actDatMat);
+                acDatM.next();
+
+                /*Actualizar requisitos*/
+                QString actDatMat2 = "SELECT idMateria1,idMateria2 FROM requisito WHERE idMateria1 = '" + Mat + "'";
+
+                QSqlQuery acDM2;
+                acDM2.exec(actDatMat2);
+
+                while (acDM2.next()) {
+                    QString matSigM = acDM2.value("idMateria2").toString();
+
+                    QString actInfoSig = "UPDATE infomateria SET cursada = 0, encurso = 0, disponible = 1, ninguno = 0 WHERE idMateria = '" + matSigM + "' AND matricula = '" + matricula + "'";
+
+                    QSqlQuery aInfS;
+                    aInfS.exec(actInfoSig);
+                    aInfS.next();
+                }
+
+                IndicarMaterias();
+            }
+        }
+    }
+}
+void MainWindow::on_mater49_clicked()
+{
+    botones("72");
+}
+
+void MainWindow::on_mater50_clicked()
+{
+    botones("73");
 }

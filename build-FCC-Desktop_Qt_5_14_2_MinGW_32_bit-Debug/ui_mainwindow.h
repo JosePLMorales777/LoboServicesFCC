@@ -94,7 +94,7 @@ public:
     QPushButton *mater36;
     QPushButton *mater43;
     QPushButton *mater47;
-    QPushButton *pushButton_41;
+    QPushButton *mater50;
     QPushButton *mater46;
     QPushButton *mater49;
     QPushButton *mater48;
@@ -790,10 +790,10 @@ public:
 "	border-image: url(:/Imagenes/Alumno/candadoF.png);\n"
 "}\n"
 ""));
-        pushButton_41 = new QPushButton(groupBox_2);
-        pushButton_41->setObjectName(QString::fromUtf8("pushButton_41"));
-        pushButton_41->setGeometry(QRect(812, 435, 33, 33));
-        pushButton_41->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+        mater50 = new QPushButton(groupBox_2);
+        mater50->setObjectName(QString::fromUtf8("mater50"));
+        mater50->setGeometry(QRect(812, 435, 33, 33));
+        mater50->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "	background-color: transparent;\n"
 "	border-image: url(:/Imagenes/Alumno/candadoF.png);\n"
 "}\n"
@@ -1532,7 +1532,7 @@ public:
         mater36->setText(QString());
         mater43->setText(QString());
         mater47->setText(QString());
-        pushButton_41->setText(QString());
+        mater50->setText(QString());
         mater46->setText(QString());
         mater49->setText(QString());
         mater48->setText(QString());

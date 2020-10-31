@@ -1382,7 +1382,7 @@ background-position:center left;
            <string/>
           </property>
          </widget>
-         <widget class="QPushButton" name="pushButton_41">
+         <widget class="QPushButton" name="mater50">
           <property name="geometry">
            <rect>
             <x>812</x>
