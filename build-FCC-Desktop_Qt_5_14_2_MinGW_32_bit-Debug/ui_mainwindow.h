@@ -104,6 +104,7 @@ public:
     QPushButton *mater39;
     QPushButton *mater44;
     QPushButton *mater45;
+    QLabel *label_15;
     QWidget *Materias;
     QGroupBox *groupBox_18;
     QLabel *label_7;
@@ -870,6 +871,10 @@ public:
 "	border-image: url(:/Imagenes/Alumno/candadoF.png);\n"
 "}\n"
 ""));
+        label_15 = new QLabel(groupBox_2);
+        label_15->setObjectName(QString::fromUtf8("label_15"));
+        label_15->setGeometry(QRect(390, 430, 231, 151));
+        label_15->setStyleSheet(QString::fromUtf8("border-image: url(:/Imagenes/Alumno/simbologia.jpg);"));
         stackAlumno->addWidget(Mapa);
         Materias = new QWidget();
         Materias->setObjectName(QString::fromUtf8("Materias"));
@@ -1542,6 +1547,7 @@ public:
         mater39->setText(QString());
         mater44->setText(QString());
         mater45->setText(QString());
+        label_15->setText(QString());
         groupBox_18->setTitle(QString());
         label_7->setText(QString());
         label_8->setText(QCoreApplication::translate("MainWindow", "Seleccionar materias para cursar", nullptr));

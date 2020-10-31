@@ -1582,6 +1582,22 @@ background-position:center left;
            <string/>
           </property>
          </widget>
+         <widget class="QLabel" name="label_15">
+          <property name="geometry">
+           <rect>
+            <x>390</x>
+            <y>430</y>
+            <width>231</width>
+            <height>151</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border-image: url(:/Imagenes/Alumno/simbologia.jpg);</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
         </widget>
        </widget>
        <widget class="QWidget" name="Materias">
