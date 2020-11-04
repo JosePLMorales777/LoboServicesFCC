@@ -97,6 +97,8 @@ private slots:
 
     void botones(QString matMateria);
 
+    void botonesinfo(QPushButton *botn);
+
     void on_mater2_clicked();
 
     void on_mater3_clicked();

@@ -2557,37 +2557,68 @@ void MainWindow::botones(QString matMateria){
         IndicarMaterias();
     }
 }
+void MainWindow::botonesinfo(QPushButton *botn){
+    QString lp = botn->styleSheet();
 
+    qDebug() << lp;
+
+    if(lp == "background-color: transparent; border-image: url(:/Imagenes/Alumno/palomitaF.png);"){
+        QMessageBox::about(this, "Aviso", "Esta materia ya fue cursada");
+    }
+    if(lp == "background-color: transparent; border-image: url(:/Imagenes/Alumno/disponibleF.png);"){
+        QMessageBox::about(this, "Aviso", "Esta materia está disponible para inscribir");
+    }
+    if(lp == "background-color: transparent; border-image: url(:/Imagenes/Alumno/candadoF.png);"){
+        QMessageBox::about(this, "Aviso", "Esta materia aun no está disponible para inscribir");
+    }
+}
 void MainWindow::on_mater1_clicked()
 {
+    QPushButton *boton = ui->mater1;
+    botonesinfo(boton);
     botones("1");
 }
 void MainWindow::on_mater2_clicked()
 {
+    QPushButton *boton = ui->mater2;
+    botonesinfo(boton);
     botones("2");
 }
 void MainWindow::on_mater3_clicked()
 {
+    QPushButton *boton = ui->mater3;
+    botonesinfo(boton);
     botones("3");
 }
 void MainWindow::on_mater4_clicked()
 {
+    QPushButton *boton = ui->mater4;
+    botonesinfo(boton);
     botones("4");
 }
 void MainWindow::on_mater5_clicked()
 {
+    QPushButton *boton = ui->mater5;
+    botonesinfo(boton);
     botones("5");
 }
 void MainWindow::on_mater6_clicked()
 {
+    QPushButton *boton = ui->mater6;
+    botonesinfo(boton);
     botones("6");
 }
 void MainWindow::on_mater7_clicked()
 {
+    QPushButton *boton = ui->mater7;
+    botonesinfo(boton);
     botones("7");
 }
 void MainWindow::on_mater8_clicked()
 {
+    QPushButton *boton = ui->mater8;
+    botonesinfo(boton);
+
     /*Verificar materia*/
     QString numMat = "8";
 
@@ -2660,14 +2691,20 @@ void MainWindow::on_mater8_clicked()
 }
 void MainWindow::on_mater9_clicked()
 {
+    QPushButton *boton = ui->mater9;
+    botonesinfo(boton);
     botones("9");
 }
 void MainWindow::on_mater10_clicked()
 {
+    QPushButton *boton = ui->mater10;
+    botonesinfo(boton);
     botones("10");
 }
 void MainWindow::on_mater11_clicked()
 {
+    QPushButton *boton = ui->mater11;
+    botonesinfo(boton);
     botones("11");
 }
 

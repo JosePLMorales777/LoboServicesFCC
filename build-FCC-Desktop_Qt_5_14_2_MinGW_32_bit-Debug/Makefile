@@ -250,9 +250,12 @@ Makefile: ../FCC/FCC.pro ../../../QT/5.14.2/mingw73_32/mkspecs/win32-g++/qmake.c
 		../../../QT/5.14.2/mingw73_32/mkspecs/features/lex.prf \
 		../FCC/FCC.pro \
 		../../../QT/5.14.2/mingw73_32/lib/Qt5Charts.prl \
+		../../../QT/5.14.2/mingw73_32/lib/Qt5PrintSupport.prl \
 		../../../QT/5.14.2/mingw73_32/lib/Qt5Widgets.prl \
+		../../../QT/5.14.2/mingw73_32/lib/Qt5Multimedia.prl \
 		../../../QT/5.14.2/mingw73_32/lib/Qt5Gui.prl \
 		../../../QT/5.14.2/mingw73_32/lib/Qt5Sql.prl \
+		../../../QT/5.14.2/mingw73_32/lib/Qt5Network.prl \
 		../../../QT/5.14.2/mingw73_32/lib/Qt5Core.prl \
 		../../../QT/5.14.2/mingw73_32/lib/qtmain.prl \
 		../../../QT/5.14.2/mingw73_32/mkspecs/features/build_pass.prf \
@@ -438,9 +441,12 @@ Makefile: ../FCC/FCC.pro ../../../QT/5.14.2/mingw73_32/mkspecs/win32-g++/qmake.c
 ../../../QT/5.14.2/mingw73_32/mkspecs/features/lex.prf:
 ../FCC/FCC.pro:
 ../../../QT/5.14.2/mingw73_32/lib/Qt5Charts.prl:
+../../../QT/5.14.2/mingw73_32/lib/Qt5PrintSupport.prl:
 ../../../QT/5.14.2/mingw73_32/lib/Qt5Widgets.prl:
+../../../QT/5.14.2/mingw73_32/lib/Qt5Multimedia.prl:
 ../../../QT/5.14.2/mingw73_32/lib/Qt5Gui.prl:
 ../../../QT/5.14.2/mingw73_32/lib/Qt5Sql.prl:
+../../../QT/5.14.2/mingw73_32/lib/Qt5Network.prl:
 ../../../QT/5.14.2/mingw73_32/lib/Qt5Core.prl:
 ../../../QT/5.14.2/mingw73_32/lib/qtmain.prl:
 ../../../QT/5.14.2/mingw73_32/mkspecs/features/build_pass.prf:
