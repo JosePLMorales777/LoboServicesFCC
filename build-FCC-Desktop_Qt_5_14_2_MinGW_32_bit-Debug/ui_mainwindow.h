@@ -188,7 +188,7 @@ public:
 "	font-size:14px;\n"
 "	border: 1px solid #1a237e;\n"
 "	border-radius: 10px; \n"
-"	padding: 2px 4px;\n"
+"	padding: 2px 15px;\n"
 "}"));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
