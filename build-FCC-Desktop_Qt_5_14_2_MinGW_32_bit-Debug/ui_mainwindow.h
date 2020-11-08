@@ -175,6 +175,21 @@ public:
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(MainWindow->sizePolicy().hasHeightForWidth());
         MainWindow->setSizePolicy(sizePolicy);
+        MainWindow->setStyleSheet(QString::fromUtf8("QMessageBox{\n"
+"	background-color: white;\n"
+"	font-family: rubik;\n"
+"	font-size: 15px;\n"
+"	color: rgb(40, 53, 147);\n"
+"}\n"
+"\n"
+"QPushButton{\n"
+"	color: white;\n"
+"	background-color: rgb(47, 64, 47);\n"
+"	font-size:14px;\n"
+"	border: 1px solid #1a237e;\n"
+"	border-radius: 10px; \n"
+"	padding: 2px 4px;\n"
+"}"));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         stackedWidget = new QStackedWidget(centralwidget);
