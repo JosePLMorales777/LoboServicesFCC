@@ -1,10 +1,30 @@
 <RCC>
     <qresource prefix="/">
+        <file>Imagenes/Alumno/candado.png</file>
+        <file>Imagenes/Alumno/candadoF.png</file>
+        <file>Imagenes/Alumno/disponible.png</file>
+        <file>Imagenes/Alumno/disponible2.png</file>
+        <file>Imagenes/Alumno/disponible3.png</file>
+        <file>Imagenes/Alumno/disponibleF.png</file>
+        <file>Imagenes/Alumno/fondo1.jpg</file>
+        <file>Imagenes/Alumno/fondo2.jpg</file>
+        <file>Imagenes/Alumno/fondo3.jpg</file>
+        <file>Imagenes/Alumno/fondo4.jpg</file>
+        <file>Imagenes/Alumno/libreta.png</file>
+        <file>Imagenes/Alumno/libreta2.png</file>
+        <file>Imagenes/Alumno/libreta3.png</file>
+        <file>Imagenes/Alumno/libretaF.png</file>
         <file>Imagenes/Alumno/logo.gif</file>
+        <file>Imagenes/Alumno/logo.png</file>
         <file>Imagenes/Alumno/mapa.jpg</file>
         <file>Imagenes/Alumno/Mapa_Hover_32.png</file>
+        <file>Imagenes/Alumno/Mapa_ICC.jpg</file>
         <file>Imagenes/Alumno/Mapa_Pressed_32.png</file>
         <file>Imagenes/Alumno/Mapa32.png</file>
+        <file>Imagenes/Alumno/palomita.png</file>
+        <file>Imagenes/Alumno/palomita2.png</file>
+        <file>Imagenes/Alumno/palomitaF.png</file>
+        <file>Imagenes/Alumno/simbologia.jpg</file>
         <file>Imagenes/Alumno/user.png</file>
         <file>Imagenes/Profesor/barra.png</file>
         <file>Imagenes/Profesor/buscar.png</file>
@@ -25,21 +45,5 @@
         <file>Imagenes/Profesor/Perfil_Hover_32.png</file>
         <file>Imagenes/Profesor/Perfil_Pressed_32.png</file>
         <file>Imagenes/Profesor/Perfil32.png</file>
-        <file>Imagenes/Alumno/Mapa_ICC.jpg</file>
-        <file>Imagenes/Alumno/candado.png</file>
-        <file>Imagenes/Alumno/disponible.png</file>
-        <file>Imagenes/Alumno/libreta.png</file>
-        <file>Imagenes/Alumno/palomita.png</file>
-        <file>Imagenes/Alumno/disponible2.png</file>
-        <file>Imagenes/Alumno/libreta2.png</file>
-        <file>Imagenes/Alumno/palomita2.png</file>
-        <file>Imagenes/Alumno/disponible3.png</file>
-        <file>Imagenes/Alumno/libreta3.png</file>
-        <file>Imagenes/Alumno/disponibleF.png</file>
-        <file>Imagenes/Alumno/candadoF.png</file>
-        <file>Imagenes/Alumno/libretaF.png</file>
-        <file>Imagenes/Alumno/palomitaF.png</file>
-        <file>C:/Users/52951.DESKTOP-33Q653N/Desktop/mapaadaptado.png</file>
-        <file>Imagenes/Alumno/simbologia.jpg</file>
     </qresource>
 </RCC>

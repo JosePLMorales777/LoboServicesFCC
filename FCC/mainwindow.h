@@ -20,6 +20,8 @@
 #include <QChartView>
 #include <QBarSet>
 #include <QBarSeries>
+#include <cstdlib>
+#include <QTimer>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -34,12 +36,20 @@ public:
     ~MainWindow();
 
     QSqlQueryModel *query;
+    int nFoto;
+    QTimer* timer;
 
     void AgregarDatos();
 
     QStringList ObtenerDatos();
 
     void Limpiar();
+
+    void AgregarDatos2();
+
+    QStringList ObtenerDatos2();
+
+    void Limpiar2();
 
 private slots:
 
@@ -51,9 +61,13 @@ private slots:
 
     void BuscarAlumno();
 
+     void BuscarAlumno2();
+
     void CargarTablaMaterias();
 
     void IndicarMaterias();
+
+    void AnadirGrupo();
 
     void on_ingresar_clicked();
 
@@ -85,11 +99,7 @@ private slots:
 
     void on_cambiarpass_clicked();
 
-    void on_pushButton_2_clicked();
-
-    void limpiartabmatnom();
-
-    void on_searchmat_clicked();
+    void tablaAlumnxGrup();
 
     void graficas();
 
@@ -196,6 +206,8 @@ private slots:
     void on_mater49_clicked();
 
     void on_mater50_clicked();
+
+    void on_grupo_currentIndexChanged(int index);
 
 private:
     QString matricula, pass;

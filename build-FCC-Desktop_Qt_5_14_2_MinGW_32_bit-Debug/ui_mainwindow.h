@@ -13,6 +13,7 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QFrame>
+#include <QtWidgets/QGridLayout>
 #include <QtWidgets/QGroupBox>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
@@ -20,6 +21,7 @@
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QStackedWidget>
 #include <QtWidgets/QTableView>
 #include <QtWidgets/QWidget>
@@ -32,16 +34,19 @@ public:
     QWidget *centralwidget;
     QStackedWidget *stackedWidget;
     QWidget *Inicio;
-    QGroupBox *groupBox;
-    QFrame *frame_9;
-    QLabel *logo;
     QFrame *frame_8;
-    QLabel *label_2;
+    QLabel *label_fondo;
+    QFrame *frame_2;
     QGroupBox *groupBox_14;
-    QLineEdit *contra;
-    QLineEdit *matricula;
     QPushButton *ingresar;
+    QLabel *logo;
+    QWidget *gridLayoutWidget;
+    QGridLayout *gridLayout;
+    QLineEdit *matricula;
+    QSpacerItem *verticalSpacer;
+    QLineEdit *contra;
     QLabel *lb_iniciarSesion_2;
+    QSpacerItem *verticalSpacer_2;
     QWidget *Alumno;
     QFrame *frame_11;
     QPushButton *mapa;
@@ -140,6 +145,14 @@ public:
     QLabel *label_4;
     QWidget *Materias_2;
     QGroupBox *groupBox_4;
+    QLabel *label_16;
+    QLabel *label_17;
+    QComboBox *grupo;
+    QLabel *label_18;
+    QLabel *label_19;
+    QTableView *alumnosxgrupo;
+    QLabel *label_20;
+    QComboBox *comboBox;
     QWidget *Graficas_2;
     QGroupBox *groupBox_5;
     QComboBox *semestre;
@@ -162,14 +175,13 @@ public:
     QGroupBox *groupBox_8;
     QLineEdit *nombreusuariobuscm;
     QPushButton *cambiarpass;
-    QPushButton *searchmat;
     QTableView *tablaMatriculas;
 
     void setupUi(QMainWindow *MainWindow)
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(1103, 643);
+        MainWindow->resize(1118, 651);
         QSizePolicy sizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
@@ -197,65 +209,55 @@ public:
         stackedWidget->setGeometry(QRect(0, 0, 1702, 1002));
         Inicio = new QWidget();
         Inicio->setObjectName(QString::fromUtf8("Inicio"));
-        groupBox = new QGroupBox(Inicio);
-        groupBox->setObjectName(QString::fromUtf8("groupBox"));
-        groupBox->setGeometry(QRect(0, 0, 1700, 1022));
-        groupBox->setStyleSheet(QString::fromUtf8("background-color: rgb(49, 51, 64);"));
-        frame_9 = new QFrame(groupBox);
-        frame_9->setObjectName(QString::fromUtf8("frame_9"));
-        frame_9->setGeometry(QRect(13, 13, 547, 612));
-        frame_9->setStyleSheet(QString::fromUtf8("QFrame{\n"
-"	 background-color: rgb(145, 196, 107);\n"
-"	font: 12pt \"Arial\";\n"
-"}\n"
-""));
-        frame_9->setFrameShape(QFrame::StyledPanel);
-        frame_9->setFrameShadow(QFrame::Raised);
-        logo = new QLabel(frame_9);
-        logo->setObjectName(QString::fromUtf8("logo"));
-        logo->setGeometry(QRect(39, 91, 404, 378));
-        logo->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);\n"
-""));
-        frame_8 = new QFrame(groupBox);
+        frame_8 = new QFrame(Inicio);
         frame_8->setObjectName(QString::fromUtf8("frame_8"));
-        frame_8->setGeometry(QRect(572, 13, 511, 611));
+        frame_8->setGeometry(QRect(270, 0, 851, 661));
         frame_8->setStyleSheet(QString::fromUtf8("QFrame{\n"
-"	background-color: rgb(255, 255, 255);\n"
+"	background-color: white;\n"
 "	font: 20pt \"Arial\";\n"
 "\n"
 "}\n"
 ""));
         frame_8->setFrameShape(QFrame::StyledPanel);
         frame_8->setFrameShadow(QFrame::Raised);
-        label_2 = new QLabel(frame_8);
-        label_2->setObjectName(QString::fromUtf8("label_2"));
-        label_2->setGeometry(QRect(130, 20, 222, 196));
-        label_2->setStyleSheet(QString::fromUtf8("\n"
-"border-image: url(:/Imagenes/Alumno/user.png);"));
-        groupBox_14 = new QGroupBox(frame_8);
+        label_fondo = new QLabel(frame_8);
+        label_fondo->setObjectName(QString::fromUtf8("label_fondo"));
+        label_fondo->setGeometry(QRect(0, 0, 851, 651));
+        label_fondo->setStyleSheet(QString::fromUtf8("\n"
+"border-image: url(:/Imagenes/Alumno/fondo1.jpg);"));
+        frame_2 = new QFrame(Inicio);
+        frame_2->setObjectName(QString::fromUtf8("frame_2"));
+        frame_2->setGeometry(QRect(0, 0, 271, 651));
+        frame_2->setStyleSheet(QString::fromUtf8("background-color: #7cb354;\n"
+"/*rgb(49, 51, 64);*/"));
+        frame_2->setFrameShape(QFrame::StyledPanel);
+        frame_2->setFrameShadow(QFrame::Raised);
+        groupBox_14 = new QGroupBox(frame_2);
         groupBox_14->setObjectName(QString::fromUtf8("groupBox_14"));
-        groupBox_14->setGeometry(QRect(39, 280, 622, 421));
+        groupBox_14->setGeometry(QRect(10, 10, 251, 631));
         groupBox_14->setStyleSheet(QString::fromUtf8("*{\n"
 "background-color: transparent;\n"
 "border: none;\n"
 "}\n"
 "\n"
+"\n"
+"\n"
 "QGroupBox{\n"
-"background-color: rgba(255, 255, 255, 0.8);\n"
+"background-color: rgb(239, 239, 239);\n"
 "border-radius: 3px;\n"
 "\n"
 "}\n"
 "\n"
 "QLineEdit{\n"
-"color: rgb(49, 51, 64);\n"
-"border-bottom: 2px solid rgb(49, 51, 64);\n"
-"border-color: rgb(49, 51, 64);\n"
+"color: black;\n"
+"border-bottom: 2px solid black;\n"
+"border-color: black ;\n"
 "font-size:18px;\n"
 "padding-left: 6px;\n"
 "}\n"
 "\n"
 "QPushButton{\n"
-"color: white;\n"
+"color:  white;\n"
 "background-color: rgb(49, 51, 64);\n"
 "font-size:18px;\n"
 "border: 1px solid rgb(49, 51, 64);\n"
@@ -265,26 +267,45 @@ public:
 "\n"
 "\n"
 ""));
-        contra = new QLineEdit(groupBox_14);
-        contra->setObjectName(QString::fromUtf8("contra"));
-        contra->setGeometry(QRect(52, 70, 326, 35));
-        contra->setStyleSheet(QString::fromUtf8(""));
-        contra->setEchoMode(QLineEdit::Password);
-        matricula = new QLineEdit(groupBox_14);
-        matricula->setObjectName(QString::fromUtf8("matricula"));
-        matricula->setGeometry(QRect(52, 13, 326, 35));
-        QFont font;
-        matricula->setFont(font);
-        matricula->setStyleSheet(QString::fromUtf8(""));
         ingresar = new QPushButton(groupBox_14);
         ingresar->setObjectName(QString::fromUtf8("ingresar"));
-        ingresar->setGeometry(QRect(117, 143, 195, 35));
+        ingresar->setGeometry(QRect(50, 360, 150, 31));
         ingresar->setMinimumSize(QSize(150, 27));
         ingresar->setMaximumSize(QSize(300, 54));
         ingresar->setStyleSheet(QString::fromUtf8(""));
-        lb_iniciarSesion_2 = new QLabel(frame_8);
+        logo = new QLabel(groupBox_14);
+        logo->setObjectName(QString::fromUtf8("logo"));
+        logo->setGeometry(QRect(30, 10, 181, 181));
+        logo->setStyleSheet(QString::fromUtf8("border-image: url(:/Imagenes/Alumno/logo.png);\n"
+"background-color: rgb(255, 255, 255, 0.9);\n"
+""));
+        gridLayoutWidget = new QWidget(groupBox_14);
+        gridLayoutWidget->setObjectName(QString::fromUtf8("gridLayoutWidget"));
+        gridLayoutWidget->setGeometry(QRect(20, 200, 221, 142));
+        gridLayout = new QGridLayout(gridLayoutWidget);
+        gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
+        gridLayout->setContentsMargins(0, 0, 0, 0);
+        matricula = new QLineEdit(gridLayoutWidget);
+        matricula->setObjectName(QString::fromUtf8("matricula"));
+        QFont font;
+        matricula->setFont(font);
+        matricula->setStyleSheet(QString::fromUtf8(""));
+
+        gridLayout->addWidget(matricula, 4, 0, 1, 1);
+
+        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        gridLayout->addItem(verticalSpacer, 2, 0, 1, 1);
+
+        contra = new QLineEdit(gridLayoutWidget);
+        contra->setObjectName(QString::fromUtf8("contra"));
+        contra->setStyleSheet(QString::fromUtf8(""));
+        contra->setEchoMode(QLineEdit::Password);
+
+        gridLayout->addWidget(contra, 6, 0, 1, 1);
+
+        lb_iniciarSesion_2 = new QLabel(gridLayoutWidget);
         lb_iniciarSesion_2->setObjectName(QString::fromUtf8("lb_iniciarSesion_2"));
-        lb_iniciarSesion_2->setGeometry(QRect(52, 210, 378, 65));
         QFont font1;
         font1.setFamily(QString::fromUtf8("Arial"));
         font1.setPointSize(20);
@@ -292,8 +313,16 @@ public:
         font1.setItalic(false);
         font1.setWeight(50);
         lb_iniciarSesion_2->setFont(font1);
-        lb_iniciarSesion_2->setStyleSheet(QString::fromUtf8("background-color: transparent;"));
+        lb_iniciarSesion_2->setStyleSheet(QString::fromUtf8("background-color: transparent;\n"
+"color:  black;"));
         lb_iniciarSesion_2->setAlignment(Qt::AlignCenter);
+
+        gridLayout->addWidget(lb_iniciarSesion_2, 1, 0, 1, 1);
+
+        verticalSpacer_2 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        gridLayout->addItem(verticalSpacer_2, 5, 0, 1, 1);
+
         stackedWidget->addWidget(Inicio);
         Alumno = new QWidget();
         Alumno->setObjectName(QString::fromUtf8("Alumno"));
@@ -468,19 +497,19 @@ public:
 "}"));
         frame_12 = new QFrame(Alumno);
         frame_12->setObjectName(QString::fromUtf8("frame_12"));
-        frame_12->setGeometry(QRect(234, 0, 871, 651));
-        frame_12->setStyleSheet(QString::fromUtf8(" background-color: rgb(145, 196, 107);"));
+        frame_12->setGeometry(QRect(234, 0, 891, 651));
+        frame_12->setStyleSheet(QString::fromUtf8(" background-color:  #7cb354;"));
         frame_12->setFrameShape(QFrame::StyledPanel);
         frame_12->setFrameShadow(QFrame::Raised);
         stackAlumno = new QStackedWidget(frame_12);
         stackAlumno->setObjectName(QString::fromUtf8("stackAlumno"));
-        stackAlumno->setGeometry(QRect(13, 13, 846, 612));
+        stackAlumno->setGeometry(QRect(13, 13, 861, 621));
         stackAlumno->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
         Mapa = new QWidget();
         Mapa->setObjectName(QString::fromUtf8("Mapa"));
         groupBox_2 = new QGroupBox(Mapa);
         groupBox_2->setObjectName(QString::fromUtf8("groupBox_2"));
-        groupBox_2->setGeometry(QRect(0, 5, 858, 611));
+        groupBox_2->setGeometry(QRect(0, -5, 861, 631));
         groupBox_2->setStyleSheet(QString::fromUtf8(""));
         mapaGRAFICO = new QLabel(groupBox_2);
         mapaGRAFICO->setObjectName(QString::fromUtf8("mapaGRAFICO"));
@@ -896,7 +925,14 @@ public:
         groupBox_18 = new QGroupBox(Materias);
         groupBox_18->setObjectName(QString::fromUtf8("groupBox_18"));
         groupBox_18->setGeometry(QRect(0, 0, 1311, 951));
-        groupBox_18->setStyleSheet(QString::fromUtf8(""));
+        groupBox_18->setStyleSheet(QString::fromUtf8("QLineEdit {\n"
+"background: rgba(0,0,0,115);\n"
+"border-radius: 12px;\n"
+"color: black;\n"
+"font-size: 19px;\n"
+"padding-left: 35px;\n"
+"}\n"
+""));
         label_7 = new QLabel(groupBox_18);
         label_7->setObjectName(QString::fromUtf8("label_7"));
         label_7->setGeometry(QRect(0, 0, 852, 124));
@@ -904,22 +940,21 @@ public:
         tablaMaterias = new QTableView(groupBox_18);
         tablaMaterias->setObjectName(QString::fromUtf8("tablaMaterias"));
         tablaMaterias->setGeometry(QRect(26, 140, 793, 254));
-        tablaMaterias->setStyleSheet(QString::fromUtf8("QTableView {\n"
-"\n"
-"border-radius: 30px;\n"
-"font: 13pt;\n"
-"background: rgba(224, 222, 225, 120);\n"
-"selection-background-color: rgba(143, 141, 161, 204);\n"
-"selection-color: rgb(243, 241, 244);\n"
+        tablaMaterias->setStyleSheet(QString::fromUtf8("QTableView{ \n"
+"   background-color: white; \n"
+"   color: black; \n"
+"   border : 1px solid black; \n"
+"   font: 13pt; \n"
+"   height: 30px;\n"
 "}\n"
 "\n"
-"QHeaderView::section {\n"
-"font: 13pt;\n"
-"height: 30px;\n"
-"background: rgb(240, 238, 241);\n"
-"border-radius: 20px;\n"
-"}\n"
-""));
+"QHeaderView::section { \n"
+"    background-color: rgb(49, 51, 64); \n"
+"    color: white; \n"
+"    border : 1px solid black; \n"
+"    font: 13pt;                                \n"
+"	height: 30px;\n"
+"}"));
         label_8 = new QLabel(groupBox_18);
         label_8->setObjectName(QString::fromUtf8("label_8"));
         label_8->setGeometry(QRect(175, 45, 501, 40));
@@ -936,14 +971,7 @@ public:
         materiaEdit1 = new QLineEdit(groupBox_18);
         materiaEdit1->setObjectName(QString::fromUtf8("materiaEdit1"));
         materiaEdit1->setGeometry(QRect(30, 465, 92, 40));
-        materiaEdit1->setStyleSheet(QString::fromUtf8("QLineEdit {\n"
-"background: rgba(224, 222, 225, 120);\n"
-"border-radius: 12px;\n"
-"color: black;\n"
-"font-size: 19px;\n"
-"padding-left: 35px;\n"
-"}\n"
-""));
+        materiaEdit1->setStyleSheet(QString::fromUtf8(""));
         label_9 = new QLabel(groupBox_18);
         label_9->setObjectName(QString::fromUtf8("label_9"));
         label_9->setGeometry(QRect(162, 406, 521, 40));
@@ -960,58 +988,23 @@ public:
         materiaEdit2 = new QLineEdit(groupBox_18);
         materiaEdit2->setObjectName(QString::fromUtf8("materiaEdit2"));
         materiaEdit2->setGeometry(QRect(160, 465, 92, 40));
-        materiaEdit2->setStyleSheet(QString::fromUtf8("QLineEdit {\n"
-"background: rgba(224, 222, 225, 120);\n"
-"border-radius: 12px;\n"
-"color: black;\n"
-"font-size: 19px;\n"
-"padding-left: 35px;\n"
-"}\n"
-""));
+        materiaEdit2->setStyleSheet(QString::fromUtf8(""));
         materiaEdit3 = new QLineEdit(groupBox_18);
         materiaEdit3->setObjectName(QString::fromUtf8("materiaEdit3"));
         materiaEdit3->setGeometry(QRect(312, 465, 92, 40));
-        materiaEdit3->setStyleSheet(QString::fromUtf8("QLineEdit {\n"
-"background: rgba(224, 222, 225, 120);\n"
-"border-radius: 12px;\n"
-"color: black;\n"
-"font-size: 19px;\n"
-"padding-left: 35px;\n"
-"}\n"
-""));
+        materiaEdit3->setStyleSheet(QString::fromUtf8(""));
         materiaEdit4 = new QLineEdit(groupBox_18);
         materiaEdit4->setObjectName(QString::fromUtf8("materiaEdit4"));
         materiaEdit4->setGeometry(QRect(448, 465, 92, 40));
-        materiaEdit4->setStyleSheet(QString::fromUtf8("QLineEdit {\n"
-"background: rgba(224, 222, 225, 120);\n"
-"border-radius: 12px;\n"
-"color: black;\n"
-"font-size: 19px;\n"
-"padding-left: 35px;\n"
-"}\n"
-""));
+        materiaEdit4->setStyleSheet(QString::fromUtf8(""));
         materiaEdit5 = new QLineEdit(groupBox_18);
         materiaEdit5->setObjectName(QString::fromUtf8("materiaEdit5"));
         materiaEdit5->setGeometry(QRect(591, 465, 92, 40));
-        materiaEdit5->setStyleSheet(QString::fromUtf8("QLineEdit {\n"
-"background: rgba(224, 222, 225, 120);\n"
-"border-radius: 12px;\n"
-"color: black;\n"
-"font-size: 19px;\n"
-"padding-left: 35px;\n"
-"}\n"
-""));
+        materiaEdit5->setStyleSheet(QString::fromUtf8(""));
         materiaEdit6 = new QLineEdit(groupBox_18);
         materiaEdit6->setObjectName(QString::fromUtf8("materiaEdit6"));
         materiaEdit6->setGeometry(QRect(728, 465, 92, 40));
-        materiaEdit6->setStyleSheet(QString::fromUtf8("QLineEdit {\n"
-"background: rgba(224, 222, 225, 120);\n"
-"border-radius: 12px;\n"
-"color: black;\n"
-"font-size: 19px;\n"
-"padding-left: 35px;\n"
-"}\n"
-""));
+        materiaEdit6->setStyleSheet(QString::fromUtf8(""));
         inscribitButton = new QPushButton(groupBox_18);
         inscribitButton->setObjectName(QString::fromUtf8("inscribitButton"));
         inscribitButton->setGeometry(QRect(344, 530, 157, 40));
@@ -1185,9 +1178,16 @@ public:
 "}"));
         cerrar_sesion_2 = new QPushButton(frame);
         cerrar_sesion_2->setObjectName(QString::fromUtf8("cerrar_sesion_2"));
-        cerrar_sesion_2->setGeometry(QRect(26, 572, 191, 40));
+        cerrar_sesion_2->setGeometry(QRect(40, 572, 191, 40));
+        QFont font5;
+        font5.setFamily(QString::fromUtf8("Arial"));
+        font5.setPointSize(13);
+        font5.setBold(false);
+        font5.setItalic(false);
+        font5.setWeight(50);
+        cerrar_sesion_2->setFont(font5);
         cerrar_sesion_2->setStyleSheet(QString::fromUtf8("QPushButton{\n"
-"font: 15pt \"Arial\";\n"
+"font: 13pt \"Arial\";\n"
 "background-image: url(:/Imagenes/Profesor/CerrarSesion32.png);\n"
 "background-repeat: no-repeat;\n"
 "padding-left: 30px;\n"
@@ -1195,7 +1195,7 @@ public:
 "}\n"
 "QPushButton:hover{\n"
 "	\n"
-"	font: 15pt \"Arial\";\n"
+"	font: 13pt \"Arial\";\n"
 "	color: #ffffff;\n"
 "	background-image: url(:/Imagenes/Profesor/CerrarSesion_Hover_32.png);\n"
 "background-repeat: no-repeat;\n"
@@ -1205,7 +1205,7 @@ public:
 "}\n"
 "QPushButton:pressed{\n"
 "	\n"
-"	font: 15pt \"Arial\";\n"
+"	font: 13pt \"Arial\";\n"
 "	color:  rgb(145, 196, 107);\n"
 "	background-image: url(:/Imagenes/Profesor/CerrarSesion_Pressed_32.png);\n"
 "background-repeat: no-repeat;\n"
@@ -1215,42 +1215,50 @@ public:
 "}"));
         frame_13 = new QFrame(Maestro);
         frame_13->setObjectName(QString::fromUtf8("frame_13"));
-        frame_13->setGeometry(QRect(221, 0, 898, 651));
-        frame_13->setStyleSheet(QString::fromUtf8(" background-color: rgb(145, 196, 107);"));
+        frame_13->setGeometry(QRect(220, 0, 898, 651));
+        frame_13->setStyleSheet(QString::fromUtf8(" background-color: #7cb354;"));
         frame_13->setFrameShape(QFrame::StyledPanel);
         frame_13->setFrameShadow(QFrame::Raised);
         stackProfesor = new QStackedWidget(frame_13);
         stackProfesor->setObjectName(QString::fromUtf8("stackProfesor"));
-        stackProfesor->setGeometry(QRect(13, 13, 851, 612));
+        stackProfesor->setGeometry(QRect(13, 13, 871, 621));
         stackProfesor->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
         Estudiantes = new QWidget();
         Estudiantes->setObjectName(QString::fromUtf8("Estudiantes"));
         groupBox_3 = new QGroupBox(Estudiantes);
         groupBox_3->setObjectName(QString::fromUtf8("groupBox_3"));
-        groupBox_3->setGeometry(QRect(0, 0, 859, 612));
-        QFont font5;
-        font5.setPointSize(16);
-        groupBox_3->setFont(font5);
+        groupBox_3->setGeometry(QRect(0, 0, 871, 621));
+        QFont font6;
+        font6.setPointSize(16);
+        groupBox_3->setFont(font6);
         Alumnos = new QTableView(groupBox_3);
         Alumnos->setObjectName(QString::fromUtf8("Alumnos"));
-        Alumnos->setGeometry(QRect(37, 162, 781, 430));
-        QFont font6;
-        font6.setPointSize(14);
-        Alumnos->setFont(font6);
-        Alumnos->setStyleSheet(QString::fromUtf8("QTableView {\n"
-"\n"
-"border-radius: 30px;\n"
-"background: rgba(224, 222, 225, 120);\n"
-"selection-background-color: rgba(143, 141, 161, 204);\n"
-"selection-color: rgb(243, 241, 244);\n"
+        Alumnos->setGeometry(QRect(50, 160, 781, 430));
+        QFont font7;
+        font7.setPointSize(13);
+        font7.setBold(false);
+        font7.setItalic(false);
+        font7.setWeight(50);
+        Alumnos->setFont(font7);
+        Alumnos->setStyleSheet(QString::fromUtf8("QTableView{ \n"
+"   background-color: white; \n"
+"   color: black; \n"
+"   border : 1px solid black; \n"
+"   font: 13pt; \n"
+"   height: 30px;\n"
+"	selection-background-color:  #7cb354;\n"
 "}\n"
 "\n"
-"QHeaderView::section {\n"
-"font: 13pt;\n"
-"height: 30px;\n"
-"background: rgb(240, 238, 241);\n"
-"border-radius: 20px;\n"
+"QHeaderView::section { \n"
+"    background-color: rgb(49, 51, 64); \n"
+"    color: white; \n"
+"    border : 1px solid black; \n"
+"    font: 13pt;                                \n"
+"	height: 30px;\n"
+"	selection-background-color:  #7cb354;\n"
 "}\n"
+"\n"
+"\n"
 ""));
         label = new QLabel(groupBox_3);
         label->setObjectName(QString::fromUtf8("label"));
@@ -1283,13 +1291,107 @@ public:
         Materias_2->setObjectName(QString::fromUtf8("Materias_2"));
         groupBox_4 = new QGroupBox(Materias_2);
         groupBox_4->setObjectName(QString::fromUtf8("groupBox_4"));
-        groupBox_4->setGeometry(QRect(0, 0, 611, 471));
+        groupBox_4->setGeometry(QRect(0, 0, 851, 621));
+        label_16 = new QLabel(groupBox_4);
+        label_16->setObjectName(QString::fromUtf8("label_16"));
+        label_16->setGeometry(QRect(0, 0, 865, 121));
+        label_16->setStyleSheet(QString::fromUtf8("border-image: url(:/Imagenes/Profesor/barra.png);"));
+        label_17 = new QLabel(groupBox_4);
+        label_17->setObjectName(QString::fromUtf8("label_17"));
+        label_17->setGeometry(QRect(30, 40, 391, 41));
+        label_17->setFont(font2);
+        label_17->setStyleSheet(QString::fromUtf8("background-color: transparent;\n"
+"color:white;\n"
+"font: 80 20pt \"MS Shell Dlg 2\";"));
+        grupo = new QComboBox(groupBox_4);
+        grupo->addItem(QString());
+        grupo->addItem(QString());
+        grupo->addItem(QString());
+        grupo->addItem(QString());
+        grupo->addItem(QString());
+        grupo->addItem(QString());
+        grupo->addItem(QString());
+        grupo->addItem(QString());
+        grupo->addItem(QString());
+        grupo->addItem(QString());
+        grupo->addItem(QString());
+        grupo->addItem(QString());
+        grupo->addItem(QString());
+        grupo->addItem(QString());
+        grupo->addItem(QString());
+        grupo->addItem(QString());
+        grupo->addItem(QString());
+        grupo->addItem(QString());
+        grupo->setObjectName(QString::fromUtf8("grupo"));
+        grupo->setGeometry(QRect(430, 40, 131, 41));
+        QFont font8;
+        font8.setPointSize(18);
+        font8.setBold(false);
+        font8.setWeight(50);
+        grupo->setFont(font8);
+        grupo->setStyleSheet(QString::fromUtf8("background: rgba(255, 255, 255, 150);\n"
+"border-radius: 15px;\n"
+"padding-left: 50px;\n"
+""));
+        label_18 = new QLabel(groupBox_4);
+        label_18->setObjectName(QString::fromUtf8("label_18"));
+        label_18->setGeometry(QRect(63, 150, 221, 51));
+        QFont font9;
+        font9.setFamily(QString::fromUtf8("MS Shell Dlg 2"));
+        font9.setPointSize(14);
+        font9.setBold(false);
+        font9.setItalic(false);
+        font9.setUnderline(true);
+        font9.setWeight(10);
+        label_18->setFont(font9);
+        label_18->setStyleSheet(QString::fromUtf8("background-color: transparent;\n"
+"color:black;\n"
+"font: 80 14pt \"MS Shell Dlg 2\";"));
+        label_19 = new QLabel(groupBox_4);
+        label_19->setObjectName(QString::fromUtf8("label_19"));
+        label_19->setGeometry(QRect(350, 140, 8, 451));
+        label_19->setStyleSheet(QString::fromUtf8("background-color: rgb(49, 51, 64);"));
+        alumnosxgrupo = new QTableView(groupBox_4);
+        alumnosxgrupo->setObjectName(QString::fromUtf8("alumnosxgrupo"));
+        alumnosxgrupo->setGeometry(QRect(15, 210, 321, 341));
+        alumnosxgrupo->setStyleSheet(QString::fromUtf8("QTableView{ \n"
+"   background-color: white; \n"
+"   color: black; \n"
+"   border : 1px solid black; \n"
+"   font: 13pt; \n"
+"   height: 30px;\n"
+"}\n"
+"\n"
+"QHeaderView::section { \n"
+"    background-color: rgb(49, 51, 64); \n"
+"    color: white; \n"
+"    border : 1px solid black; \n"
+"    font: 13pt;                                \n"
+"	height: 30px;\n"
+"}"));
+        label_20 = new QLabel(groupBox_4);
+        label_20->setObjectName(QString::fromUtf8("label_20"));
+        label_20->setGeometry(QRect(370, 150, 201, 51));
+        QFont font10;
+        font10.setFamily(QString::fromUtf8("MS Shell Dlg 2"));
+        font10.setPointSize(14);
+        font10.setBold(false);
+        font10.setItalic(false);
+        font10.setUnderline(false);
+        font10.setWeight(10);
+        label_20->setFont(font10);
+        label_20->setStyleSheet(QString::fromUtf8("background-color: transparent;\n"
+"color:black;\n"
+"font: 80 14pt \"MS Shell Dlg 2\";"));
+        comboBox = new QComboBox(groupBox_4);
+        comboBox->setObjectName(QString::fromUtf8("comboBox"));
+        comboBox->setGeometry(QRect(580, 160, 251, 31));
         stackProfesor->addWidget(Materias_2);
         Graficas_2 = new QWidget();
         Graficas_2->setObjectName(QString::fromUtf8("Graficas_2"));
         groupBox_5 = new QGroupBox(Graficas_2);
         groupBox_5->setObjectName(QString::fromUtf8("groupBox_5"));
-        groupBox_5->setGeometry(QRect(0, 0, 861, 621));
+        groupBox_5->setGeometry(QRect(0, 0, 871, 631));
         semestre = new QComboBox(groupBox_5);
         semestre->addItem(QString());
         semestre->addItem(QString());
@@ -1306,7 +1408,7 @@ public:
         semestre->addItem(QString());
         semestre->setObjectName(QString::fromUtf8("semestre"));
         semestre->setGeometry(QRect(170, 40, 251, 41));
-        semestre->setFont(font5);
+        semestre->setFont(font6);
         semestre->setStyleSheet(QString::fromUtf8("background: rgba(255, 255, 255, 150);\n"
 "border-radius: 15px;"));
         label_5 = new QLabel(groupBox_5);
@@ -1317,19 +1419,19 @@ public:
 "font: 80 20pt \"MS Shell Dlg 2\";"));
         horizontalFrame = new QFrame(groupBox_5);
         horizontalFrame->setObjectName(QString::fromUtf8("horizontalFrame"));
-        horizontalFrame->setGeometry(QRect(-10, 160, 871, 501));
+        horizontalFrame->setGeometry(QRect(10, 160, 851, 451));
         horizontalLayout = new QHBoxLayout(horizontalFrame);
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
         labelMaterias = new QLabel(groupBox_5);
         labelMaterias->setObjectName(QString::fromUtf8("labelMaterias"));
-        labelMaterias->setGeometry(QRect(200, 140, 511, 41));
-        QFont font7;
-        font7.setFamily(QString::fromUtf8("Arial"));
-        font7.setPointSize(18);
-        font7.setBold(false);
-        font7.setItalic(false);
-        font7.setWeight(9);
-        labelMaterias->setFont(font7);
+        labelMaterias->setGeometry(QRect(170, 120, 511, 41));
+        QFont font11;
+        font11.setFamily(QString::fromUtf8("Arial"));
+        font11.setPointSize(18);
+        font11.setBold(false);
+        font11.setItalic(false);
+        font11.setWeight(9);
+        labelMaterias->setFont(font11);
         labelMaterias->setStyleSheet(QString::fromUtf8("font: 75 18pt \"Arial\";\n"
 "background-color: transparent;\n"
 ""));
@@ -1347,21 +1449,21 @@ public:
         Perfil_2->setObjectName(QString::fromUtf8("Perfil_2"));
         groupBox_6 = new QGroupBox(Perfil_2);
         groupBox_6->setObjectName(QString::fromUtf8("groupBox_6"));
-        groupBox_6->setGeometry(QRect(0, 0, 851, 621));
+        groupBox_6->setGeometry(QRect(0, 0, 871, 621));
         label_10 = new QLabel(groupBox_6);
         label_10->setObjectName(QString::fromUtf8("label_10"));
-        label_10->setGeometry(QRect(0, 0, 852, 124));
+        label_10->setGeometry(QRect(0, 0, 871, 124));
         label_10->setStyleSheet(QString::fromUtf8("border-image: url(:/Imagenes/Profesor/barra.png);"));
         label_11 = new QLabel(groupBox_6);
         label_11->setObjectName(QString::fromUtf8("label_11"));
         label_11->setGeometry(QRect(41, 140, 241, 61));
-        QFont font8;
-        font8.setFamily(QString::fromUtf8("MS Shell Dlg 2"));
-        font8.setPointSize(14);
-        font8.setBold(false);
-        font8.setItalic(false);
-        font8.setWeight(10);
-        label_11->setFont(font8);
+        QFont font12;
+        font12.setFamily(QString::fromUtf8("MS Shell Dlg 2"));
+        font12.setPointSize(14);
+        font12.setBold(false);
+        font12.setItalic(false);
+        font12.setWeight(10);
+        label_11->setFont(font12);
         label_11->setStyleSheet(QString::fromUtf8("background-color: transparent;\n"
 "color:black;\n"
 "font: 80 14pt \"MS Shell Dlg 2\";"));
@@ -1412,7 +1514,7 @@ public:
         label_13 = new QLabel(groupBox_6);
         label_13->setObjectName(QString::fromUtf8("label_13"));
         label_13->setGeometry(QRect(403, 140, 431, 61));
-        label_13->setFont(font8);
+        label_13->setFont(font12);
         label_13->setStyleSheet(QString::fromUtf8("background-color: transparent;\n"
 "color:black;\n"
 "font: 80 14pt \"MS Shell Dlg 2\";"));
@@ -1422,7 +1524,7 @@ public:
         label_14->setStyleSheet(QString::fromUtf8("background-color: rgb(49, 51, 64);"));
         groupBox_8 = new QGroupBox(groupBox_6);
         groupBox_8->setObjectName(QString::fromUtf8("groupBox_8"));
-        groupBox_8->setGeometry(QRect(400, 460, 421, 61));
+        groupBox_8->setGeometry(QRect(400, 220, 461, 61));
         groupBox_8->setStyleSheet(QString::fromUtf8("*{\n"
 "background-color: transparent;\n"
 "border: none;\n"
@@ -1440,11 +1542,18 @@ public:
 "border-color: rgb(49, 51, 64);\n"
 "font-size:18px;\n"
 "padding-left: 6px;\n"
-"}"));
+"}\n"
+""));
         nombreusuariobuscm = new QLineEdit(groupBox_8);
         nombreusuariobuscm->setObjectName(QString::fromUtf8("nombreusuariobuscm"));
-        nombreusuariobuscm->setGeometry(QRect(10, 10, 401, 31));
-        nombreusuariobuscm->setStyleSheet(QString::fromUtf8(""));
+        nombreusuariobuscm->setGeometry(QRect(0, 10, 441, 31));
+        nombreusuariobuscm->setStyleSheet(QString::fromUtf8("QLineEdit{\n"
+"color: rgb(49, 51, 64);\n"
+"border-bottom: 2px solid rgb(49, 51, 64);\n"
+"border-color: rgb(49, 51, 64);\n"
+"font-size:18px;\n"
+"padding-left: 6px;\n"
+"}"));
         cambiarpass = new QPushButton(groupBox_6);
         cambiarpass->setObjectName(QString::fromUtf8("cambiarpass"));
         cambiarpass->setGeometry(QRect(101, 480, 181, 31));
@@ -1455,35 +1564,24 @@ public:
 "border-radius: 10px; \n"
 "padding: 2px 4px;\n"
 ""));
-        searchmat = new QPushButton(groupBox_6);
-        searchmat->setObjectName(QString::fromUtf8("searchmat"));
-        searchmat->setGeometry(QRect(536, 525, 151, 31));
-        searchmat->setStyleSheet(QString::fromUtf8("color: white;\n"
-"background-color: rgb(49, 51, 64);\n"
-"font-size:18px;\n"
-"border: 1px solid rgb(49, 51, 64);\n"
-"border-radius: 10px; \n"
-"padding: 2px 4px;\n"
-""));
         tablaMatriculas = new QTableView(groupBox_6);
         tablaMatriculas->setObjectName(QString::fromUtf8("tablaMatriculas"));
-        tablaMatriculas->setGeometry(QRect(400, 211, 431, 241));
-        tablaMatriculas->setStyleSheet(QString::fromUtf8("QTableView {\n"
-"\n"
-"border-radius: 30px;\n"
-"font: 9pt;\n"
-"background: rgba(224, 222, 225, 120);\n"
-"selection-background-color: rgba(143, 141, 161, 204);\n"
-"selection-color: rgb(243, 241, 244);\n"
+        tablaMatriculas->setGeometry(QRect(400, 290, 441, 301));
+        tablaMatriculas->setStyleSheet(QString::fromUtf8("QTableView{ \n"
+"   background-color: white; \n"
+"   color: black; \n"
+"   border : 1px solid black; \n"
+"   font: 13pt; \n"
+"   height: 30px;\n"
 "}\n"
 "\n"
-"QHeaderView::section {\n"
-"font: 9pt;\n"
-"height: 30px;\n"
-"background: rgb(240, 238, 241);\n"
-"border-radius: 20px;\n"
-"}\n"
-""));
+"QHeaderView::section { \n"
+"    background-color: rgb(49, 51, 64); \n"
+"    color: white; \n"
+"    border : 1px solid black; \n"
+"    font: 13pt;                                \n"
+"	height: 30px;\n"
+"}"));
         stackProfesor->addWidget(Perfil_2);
         stackedWidget->addWidget(Maestro);
         MainWindow->setCentralWidget(centralwidget);
@@ -1496,14 +1594,13 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
-        groupBox->setTitle(QString());
-        logo->setText(QString());
-        label_2->setText(QString());
+        label_fondo->setText(QString());
         groupBox_14->setTitle(QString());
-        contra->setPlaceholderText(QCoreApplication::translate("MainWindow", "Contrase\303\261a", nullptr));
+        ingresar->setText(QCoreApplication::translate("MainWindow", "Ingresar", nullptr));
+        logo->setText(QString());
         matricula->setText(QString());
         matricula->setPlaceholderText(QCoreApplication::translate("MainWindow", "Matricula", nullptr));
-        ingresar->setText(QCoreApplication::translate("MainWindow", "Ingresar", nullptr));
+        contra->setPlaceholderText(QCoreApplication::translate("MainWindow", "Contrase\303\261a", nullptr));
         lb_iniciarSesion_2->setText(QCoreApplication::translate("MainWindow", "Iniciar sesi\303\263n", nullptr));
         mapa->setText(QCoreApplication::translate("MainWindow", "Mapa", nullptr));
         materias->setText(QCoreApplication::translate("MainWindow", "Materias", nullptr));
@@ -1586,6 +1683,30 @@ public:
         label_3->setText(QString());
         label_4->setText(QCoreApplication::translate("MainWindow", "Buscar Alumnos:", nullptr));
         groupBox_4->setTitle(QString());
+        label_16->setText(QString());
+        label_17->setText(QCoreApplication::translate("MainWindow", "Elija el n\303\272mero del grupo:", nullptr));
+        grupo->setItemText(0, QCoreApplication::translate("MainWindow", "1", nullptr));
+        grupo->setItemText(1, QCoreApplication::translate("MainWindow", "2", nullptr));
+        grupo->setItemText(2, QCoreApplication::translate("MainWindow", "3", nullptr));
+        grupo->setItemText(3, QCoreApplication::translate("MainWindow", "4", nullptr));
+        grupo->setItemText(4, QCoreApplication::translate("MainWindow", "5", nullptr));
+        grupo->setItemText(5, QCoreApplication::translate("MainWindow", "6", nullptr));
+        grupo->setItemText(6, QCoreApplication::translate("MainWindow", "7", nullptr));
+        grupo->setItemText(7, QCoreApplication::translate("MainWindow", "8", nullptr));
+        grupo->setItemText(8, QCoreApplication::translate("MainWindow", "9", nullptr));
+        grupo->setItemText(9, QCoreApplication::translate("MainWindow", "10", nullptr));
+        grupo->setItemText(10, QCoreApplication::translate("MainWindow", "11", nullptr));
+        grupo->setItemText(11, QCoreApplication::translate("MainWindow", "12", nullptr));
+        grupo->setItemText(12, QCoreApplication::translate("MainWindow", "13", nullptr));
+        grupo->setItemText(13, QCoreApplication::translate("MainWindow", "14", nullptr));
+        grupo->setItemText(14, QCoreApplication::translate("MainWindow", "15", nullptr));
+        grupo->setItemText(15, QCoreApplication::translate("MainWindow", "16", nullptr));
+        grupo->setItemText(16, QCoreApplication::translate("MainWindow", "17", nullptr));
+        grupo->setItemText(17, QCoreApplication::translate("MainWindow", "18", nullptr));
+
+        label_18->setText(QCoreApplication::translate("MainWindow", "Alumnos en el grupo:", nullptr));
+        label_19->setText(QString());
+        label_20->setText(QCoreApplication::translate("MainWindow", "Seleccionar gr\303\241fica", nullptr));
         groupBox_5->setTitle(QString());
         semestre->setItemText(0, QCoreApplication::translate("MainWindow", "1er Semestre", nullptr));
         semestre->setItemText(1, QCoreApplication::translate("MainWindow", "2do Semestre", nullptr));
@@ -1602,7 +1723,7 @@ public:
         semestre->setItemText(12, QCoreApplication::translate("MainWindow", "10mo Semestre", nullptr));
 
         label_5->setText(QCoreApplication::translate("MainWindow", "Materia:", nullptr));
-        labelMaterias->setText(QCoreApplication::translate("MainWindow", "Materia:", nullptr));
+        labelMaterias->setText(QString());
         label_6->setText(QString());
         groupBox_6->setTitle(QString());
         label_10->setText(QString());
@@ -1623,7 +1744,6 @@ public:
         nombreusuariobuscm->setText(QString());
         nombreusuariobuscm->setPlaceholderText(QCoreApplication::translate("MainWindow", "Inserte nombre del usuario", nullptr));
         cambiarpass->setText(QCoreApplication::translate("MainWindow", "Cambiar contrase\303\261a", nullptr));
-        searchmat->setText(QCoreApplication::translate("MainWindow", "Buscar matricula", nullptr));
     } // retranslateUi
 
 };

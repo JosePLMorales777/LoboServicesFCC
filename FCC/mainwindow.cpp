@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include <QModelIndex>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -8,27 +9,54 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
 
     BaseDatos();
-    Movie();
+
+    timer=new QTimer(this);
+    nFoto=1;
+    connect(timer, SIGNAL(timeout()), this, SLOT(Movie()));
+    timer->start(4000);
     BuscarAlumno();
-    connect(ui->Buscar, SIGNAL(textChanged(QString)),this, SLOT(BuscarAlumno()));
     AgregarDatos();
     Limpiar();
+
+    BuscarAlumno2();
+    AgregarDatos2();
+    Limpiar2();
+
+    connect(ui->Buscar, SIGNAL(textChanged(QString)),this, SLOT(BuscarAlumno()));
+    connect(ui->nombreusuariobuscm, SIGNAL(textChanged(QString)),this, SLOT(BuscarAlumno2()));
+
 }
+
 
 MainWindow::~MainWindow()
 {
     delete ui;
 }
-
 void MainWindow::Movie(){
-    QMovie * movie = new QMovie();
-    movie->setFileName(":/Imagenes/Alumno/logo.gif");
-    movie->start();
-    ui->logo->setMovie(movie);
-    ui->logo->setScaledContents(true);
-    ui->logo->setSizePolicy(QSizePolicy::Ignored, QSizePolicy::Ignored);
+    QString filename;
+    switch(nFoto){
+        case 1:{
+            filename=":/Imagenes/Alumno/fondo1.jpg";
+            break;
+        }
+        case 2:{
+            filename=":/Imagenes/Alumno/fondo2.jpg";
+            break;
+        }
+        case 3:{
+            filename=":/Imagenes/Alumno/fondo3.jpg";
+            break;
+        }
+        default:{
+            filename=":/Imagenes/Alumno/fondo1.jpg";
+            break;
+        }
+    }
+    nFoto++;
+    nFoto%=4;
+    if(nFoto==0)nFoto++;
+     ui->label_fondo->setStyleSheet("border-image: url('"+filename+"'); }");
 }
-
 void MainWindow::BaseDatos(){
     QSqlDatabase db;
 
@@ -45,7 +73,6 @@ void MainWindow::BaseDatos(){
         query->setQuery("select matricula as Matricula, Nombre from estudiante order by Nombre ASC; ");
     }
 }
-
 void MainWindow::CargarMateriasAlumo(){
     qDebug() << "Cargando materias...";
 
@@ -75,14 +102,49 @@ void MainWindow::CargarMateriasAlumo(){
         contCM = contCM + 1;
     }
 }
+void MainWindow::AnadirGrupo(){
+    QString verifGrup = "SELECT grupo FROM estudiante WHERE matricula = '" + matricula + "'";
 
-void MainWindow::AgregarDatos(){
-    ui->Alumnos->verticalHeader()->setVisible(false);   //hide header
-    ui->Alumnos->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
-    ui->Alumnos->setSelectionBehavior(QAbstractItemView::SelectRows);
-    ui->Alumnos->setModel(query);
+    QSqlQuery verifG;
+    verifG.exec(verifGrup);
+    verifG.next();
+
+    QString grupo = verifG.value("grupo").toString();
+
+    qDebug() << "Grupo: " << grupo;
+
+    if(grupo == "0"){
+        qDebug() << "Asignando grupo...";
+
+        int grupoDisponible = 0;
+
+        while (grupoDisponible == 0) {
+            int asignGrup = rand() % 18 + 1;
+            qDebug() << "Posible grupo asignado: " << asignGrup;
+
+            QString grupD = "SELECT COUNT(*) AS numero FROM estudiante WHERE grupo = '" + QString::number(asignGrup) + "'";
+
+            QSqlQuery gpD;
+            gpD.exec(grupD);
+            gpD.next();
+
+            int numAlumn = gpD.value("numero").toInt();
+            qDebug() << "Ocupacion de posible grupo asignado: " << numAlumn;
+
+            if(numAlumn < 41){
+                QString asignarGrupo = "UPDATE estudiante SET grupo = '" + QString::number(asignGrup) + "' WHERE matricula = '" + matricula + "'";
+
+                QSqlQuery asGrup;
+                asGrup.exec(asignarGrupo);
+                asGrup.next();
+
+                qDebug() << "Grupo asignado: " << asignGrup;
+
+                grupoDisponible = 1;
+            }
+        }
+    }
 }
-
 QStringList MainWindow::ObtenerDatos(){
     QStringList rowData;
     int row = ui->Alumnos->currentIndex().row();
@@ -92,9 +154,9 @@ QStringList MainWindow::ObtenerDatos(){
         rowData << model->index(row, 0).data().toString();
         rowData << model->index(row, 1).data().toString();
     }
+    qDebug()<< rowData;
     return rowData;
 }
-
 void MainWindow::BuscarAlumno(){
 
     QSqlQueryModel *model = new QSqlQueryModel;
@@ -105,7 +167,12 @@ void MainWindow::BuscarAlumno(){
     ui->Alumnos->setModel(model);
 
 }
-
+void MainWindow::AgregarDatos(){
+    ui->Alumnos->verticalHeader()->setVisible(false);   //hide header
+    ui->Alumnos->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    ui->Alumnos->setSelectionBehavior(QAbstractItemView::SelectRows);
+    ui->Alumnos->setModel(query);
+}
 void MainWindow::Limpiar(){
     QAbstractItemModel *model = ui->Alumnos->model();
     int rowCount = model->rowCount();
@@ -114,9 +181,8 @@ void MainWindow::Limpiar(){
     }
     AgregarDatos();
 }
-
 void MainWindow::CargarTablaMaterias(){
-    QString materDips = "SELECT m.idMateria AS ID,m.Nombre FROM materia as m"
+    QString materDips = "SELECT m.idMateria AS ID, m.Nombre as Materia, m.creditos as Creditos FROM materia as m"
              " INNER JOIN infomateria as i ON m.idMateria = i.idMateria "
             "WHERE i.matricula = '" + matricula + "' AND i.disponible = 1";
 
@@ -127,12 +193,15 @@ void MainWindow::CargarTablaMaterias(){
     queryMateriaDisp = new QSqlQueryModel();
     queryMateriaDisp->setQuery(materDips);
 
-    ui->tablaMaterias->verticalHeader()->setVisible(false);   //hide header
+    ui->tablaMaterias->verticalHeader()->setVisible(false);
+    ui->tablaMaterias->verticalHeader()->setDefaultAlignment(Qt::AlignCenter);
     ui->tablaMaterias->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     ui->tablaMaterias->setSelectionBehavior(QAbstractItemView::SelectRows);
     ui->tablaMaterias->setModel(queryMateriaDisp);
-}
+    ui->tablaMaterias->horizontalHeader()->setDefaultAlignment(Qt::AlignCenter);
 
+
+}
 void MainWindow::IndicarMaterias(){
     /*matemáticas*/
         QString mat1 = "SELECT cursada,encurso,disponible,ninguno FROM infomateria WHERE matricula = '" + matricula + "' AND idMateria = 1";
@@ -1619,9 +1688,32 @@ void MainWindow::IndicarMaterias(){
     /**/
 
 }
+void MainWindow::BuscarAlumno2(){
+
+    QSqlQueryModel *model = new QSqlQueryModel;
+    QString search, data;
+    search = ui->nombreusuariobuscm->text();
+    data = "select matricula as Matricula, Nombre as Nombre from estudiante where Nombre LIKE '%"+search+"%'";
+    model->setQuery(data);
+    ui->tablaMatriculas->setModel(model);
+
+}
+void MainWindow::AgregarDatos2(){
+    ui->tablaMatriculas->verticalHeader()->setVisible(false);   //hide header
+    ui->tablaMatriculas->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    ui->tablaMatriculas->setSelectionBehavior(QAbstractItemView::SelectRows);
+    ui->tablaMatriculas->setModel(query);
+}
+void MainWindow::Limpiar2(){
+    QAbstractItemModel *model = ui->tablaMatriculas->model();
+    int rowCount = model->rowCount();
+    for(int r = rowCount - 1; r >= 0; r--) {
+        model->removeRow(r);
+    }
+    AgregarDatos();
+}
 
 //---------------------Interfaz inicio de sesion-------------------
-
 void MainWindow::on_ingresar_clicked(){
 
     QString mat = ui->matricula->text();
@@ -1671,6 +1763,9 @@ void MainWindow::on_ingresar_clicked(){
         }
         /**/
 
+        /*Agregar a un grupo si es necesario*/
+        AnadirGrupo();
+
         IndicarMaterias();
 
         ui->matricula->clear();
@@ -1706,7 +1801,6 @@ void MainWindow::on_ingresar_clicked(){
     }
 
 }
-
 //------------------------ Interfaz Alumno -------------------------
 void MainWindow::on_mapa_clicked(){
     IndicarMaterias();
@@ -1862,67 +1956,71 @@ void MainWindow::on_cerrar_sesion_clicked(){
    ui->stackedWidget->setCurrentIndex(0);
 }
 
-
 //------------------------ Interfaz Maestro -------------------------
 void MainWindow::on_estudiantes_clicked(){
     ui->stackProfesor->setCurrentIndex(0);
 }
+void MainWindow::tablaAlumnxGrup(){
+    QString grupoSelec;
+    grupoSelec = ui->grupo->currentText();
+
+    qDebug() << "Grupo: " << grupoSelec;
+
+    QString queryAlumnXGrupo = "SELECT matricula, Nombre FROM estudiante WHERE grupo = '" + grupoSelec + "'";
+
+    QSqlQueryModel *queryAlxG;
+
+    queryAlxG = new QSqlQueryModel();
+    queryAlxG->setQuery(queryAlumnXGrupo);
+
+    ui->alumnosxgrupo->verticalHeader()->setVisible(false);   //hide header
+    ui->alumnosxgrupo->setSelectionBehavior(QAbstractItemView::SelectRows);
+    ui->alumnosxgrupo->setModel(queryAlxG);
+    ui->alumnosxgrupo->setColumnWidth(0,80);
+    ui->alumnosxgrupo->setColumnWidth(1,300);
+}
 void MainWindow::on_materias_2_clicked(){
     ui->stackProfesor->setCurrentIndex(1);
+    ui->grupo->setCurrentIndex(0);
+
+    tablaAlumnxGrup();
+}
+void MainWindow::on_grupo_currentIndexChanged(int index)
+{
+    tablaAlumnxGrup();
 }
 void MainWindow::graficas(){
     qDeleteAll(ui->horizontalFrame->findChildren<QChartView *>());
-
     QString semestre = ui->semestre->currentText();
-    qDebug() << semestre;
-
     QBarSet *set0 = new QBarSet("En curso");
-
     QBarSeries *series = new QBarSeries();
-
     QStringList categories;
-
     QChart *chart = new QChart();
-
     int sumavalores;
 
     QList <int> lista;
-
     if(semestre=="1er Semestre"){
         int materias = 1, contmat = 0,mat[5];
         QString nombmat[5];
-
         while(materias <= 5){
             QString queryMatOcup = "SELECT sum(encurso) AS suma FROM infomateria WHERE encurso = 1 AND idMateria = '" + QString::number(materias) + "'";
-
             QSqlQuery queryMOcup;
             queryMOcup.exec(queryMatOcup);
             queryMOcup.next();
-
             mat[contmat] = queryMOcup.value("suma").toInt();
             lista.append(mat[contmat]);
-
             QString matNomb = "SELECT Nombre FROM materia WHERE idMateria = '" + QString::number(materias) + "'";
-
             QSqlQuery queryNombMat;
             queryNombMat.exec(matNomb);
             queryNombMat.next();
-
             nombmat[contmat] = queryNombMat.value("Nombre").toString();
-
             contmat = contmat + 1;
             materias = materias + 1;
         }
-
-        qDebug() << mat[0] << mat[1] << mat[2] << mat[3] << mat[4];
         sumavalores = mat[0] + mat[1] + mat[2] + mat[3] + mat[4];
-
         *set0 << mat[0] << mat[1] << mat[2] << mat[3] << mat[4];
-
         series->append(set0);
-
         categories << nombmat[0] << nombmat[1] << nombmat[2] << nombmat[3] << nombmat[4];
-
         ui->labelMaterias->setText("Materias del Primer Semestre");
     }
     if(semestre=="2do Semestre"){
@@ -2321,7 +2419,6 @@ void MainWindow::graficas(){
             materias = materias + 1;
         }
 
-        qDebug() << mat[0] << mat[1] << mat[2];
         sumavalores = mat[0] + mat[1] + mat[2];
 
         *set0 << mat[0] << mat[1] << mat[2];
@@ -2371,14 +2468,11 @@ void MainWindow::graficas(){
     }
 
     int max = *std::max_element(lista.begin(),lista.end());
-
-    qDebug() << max;
-
     series->setLabelsVisible(true);
-
     chart->addSeries(series);
     chart->setAnimationOptions(QChart::SeriesAnimations);
     chart->legend()->markers(series)[0]->setVisible(false);
+
 
     QBarCategoryAxis *axisX = new QBarCategoryAxis();
     axisX->append(categories);
@@ -2386,7 +2480,22 @@ void MainWindow::graficas(){
     series->attachAxis(axisX);
 
     QValueAxis *axisY = new QValueAxis();
-    axisY->setRange(0,10);
+
+    axisY->setRange(0,20);
+
+    if(max <= 10){
+        axisY->setRange(0,10);
+    }
+    if(max <= 20 && max > 10){
+        axisY->setRange(0,20);
+    }
+    if(max <= 50 && max > 20){
+        axisY->setRange(0,50);
+    }
+    if(max <= 100 && max > 50){
+        axisY->setRange(0,50);
+    }
+
     axisY->setTickCount(5);
     chart->addAxis(axisY, Qt::AlignLeft);
     series->attachAxis(axisY);
@@ -2396,6 +2505,7 @@ void MainWindow::graficas(){
 
     QChartView *chartView = new QChartView(chart);
     chartView->setRenderHint(QPainter::Antialiasing);
+    chart->setTheme(QChart::ChartThemeQt);
 
     ui->horizontalFrame->layout()->addWidget(chartView);
 }
@@ -2410,12 +2520,10 @@ void MainWindow::on_semestre_currentIndexChanged(int index)
     graficas();
 }
 void MainWindow::on_perfil_2_clicked(){
-    limpiartabmatnom();
     ui->nombreusuariobuscm->clear();
     ui->resetpassNE->clear();
     ui->resetpassNC->clear();
     ui->resetpassNCR->clear();
-
     ui->stackProfesor->setCurrentIndex(3);
 }
 void MainWindow::on_cambiarpass_clicked()
@@ -2459,40 +2567,8 @@ void MainWindow::on_cambiarpass_clicked()
     ui->resetpassNC->clear();
     ui->resetpassNCR->clear();
 }
-void MainWindow::limpiartabmatnom(){
-    QSqlQueryModel *query2;
-
-    query2 = new QSqlQueryModel();
-    query2->setQuery("SELECT matricula as Matricula,Nombre from estudiante WHERE Nombre = '1515'");
-
-    ui->tablaMatriculas->setModel(query2);
-    ui->tablaMatriculas->setColumnWidth(0,91);
-    ui->tablaMatriculas->setColumnWidth(1,340);
-}
-void MainWindow::on_searchmat_clicked()
-{
-    QString alumnobusqueda;
-    alumnobusqueda = ui->nombreusuariobuscm->text();
-
-    if(alumnobusqueda.isEmpty()){
-        QMessageBox::about(this, "Error", "No ha introducido ningún nombre");
-        return;
-    }
-
-    QString queryBusquedaMat = "SELECT matricula as Matricula,Nombre from estudiante WHERE Nombre LIKE '%" + alumnobusqueda + "%'";
-
-    QSqlQueryModel *queryMatriculaBusc;
-
-    queryMatriculaBusc = new QSqlQueryModel();
-    queryMatriculaBusc->setQuery(queryBusquedaMat);
-
-    ui->tablaMatriculas->verticalHeader()->setVisible(false);   //hide header
-    //ui->tablaMatriculas->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
-    ui->tablaMatriculas->setSelectionBehavior(QAbstractItemView::SelectRows);
-    ui->tablaMatriculas->setModel(queryMatriculaBusc);
-}
 void MainWindow::on_cerrar_sesion_2_clicked(){
-    limpiartabmatnom();
+
     ui->nombreusuariobuscm->clear();
     ui->resetpassNE->clear();
     ui->resetpassNC->clear();
@@ -2502,7 +2578,6 @@ void MainWindow::on_cerrar_sesion_2_clicked(){
 }
 
 //----------------------- Botones del mapa --------------------------
-
 void MainWindow::botones(QString matMateria){
     /*Verificar materia*/
     QString numMat = matMateria;
@@ -2707,7 +2782,6 @@ void MainWindow::on_mater11_clicked()
     botonesinfo(boton);
     botones("11");
 }
-
 void MainWindow::on_mater12_clicked()
 {
     botones("12");
@@ -2716,12 +2790,10 @@ void MainWindow::on_mater13_clicked()
 {
     botones("13");
 }
-
 void MainWindow::on_mater14_clicked()
 {
     botones("14");
 }
-
 void MainWindow::on_mater15_clicked()
 {
     /*Verificar materia*/
@@ -2952,7 +3024,6 @@ void MainWindow::on_mater39_clicked()
 {
     botones("39");
 }
-
 void MainWindow::on_mater40_clicked()
 {
     botones("40");
@@ -3155,7 +3226,6 @@ void MainWindow::on_mater49_clicked()
 {
     botones("72");
 }
-
 void MainWindow::on_mater50_clicked()
 {
     botones("73");

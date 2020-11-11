@@ -104,7 +104,6 @@ compiler_rcc_clean:
 	-$(DEL_FILE) debug\qrc_Imagenes.cpp
 debug/qrc_Imagenes.cpp: ../FCC/Imagenes.qrc \
 		../../../QT/5.14.2/mingw73_32/bin/rcc.exe \
-		C:/Users/52951.DESKTOP-33Q653N/Desktop/mapaadaptado.png \
 		../FCC/Imagenes/Alumno/disponible3.png \
 		../FCC/Imagenes/Alumno/candadoF.png \
 		../FCC/Imagenes/Alumno/Mapa_ICC.jpg \
@@ -115,15 +114,20 @@ debug/qrc_Imagenes.cpp: ../FCC/Imagenes.qrc \
 		../FCC/Imagenes/Alumno/libretaF.png \
 		../FCC/Imagenes/Alumno/simbologia.jpg \
 		../FCC/Imagenes/Alumno/candado.png \
+		../FCC/Imagenes/Alumno/fondo1.jpg \
 		../FCC/Imagenes/Alumno/palomita.png \
+		../FCC/Imagenes/Alumno/fondo2.jpg \
 		../FCC/Imagenes/Alumno/disponible.png \
+		../FCC/Imagenes/Alumno/fondo3.jpg \
 		../FCC/Imagenes/Alumno/disponibleF.png \
+		../FCC/Imagenes/Alumno/fondo4.jpg \
 		../FCC/Imagenes/Alumno/mapa.jpg \
 		../FCC/Imagenes/Alumno/user.png \
 		../FCC/Imagenes/Alumno/libreta2.png \
 		../FCC/Imagenes/Alumno/libreta.png \
 		../FCC/Imagenes/Alumno/libreta3.png \
 		../FCC/Imagenes/Alumno/palomitaF.png \
+		../FCC/Imagenes/Alumno/logo.png \
 		../FCC/Imagenes/Alumno/logo.gif \
 		../FCC/Imagenes/Alumno/disponible2.png \
 		../FCC/Imagenes/Profesor/Estudiantes_Pressed_32.png \
@@ -739,6 +743,7 @@ debug/moc_mainwindow.cpp: ../FCC/mainwindow.h \
 		../../../QT/5.14.2/mingw73_32/include/QtCharts/qtchartsversion.h \
 		../../../QT/5.14.2/mingw73_32/include/QtCharts/QChartView \
 		../../../QT/5.14.2/mingw73_32/include/QtCharts/QBarSeries \
+		../../../QT/5.14.2/mingw73_32/include/QtCore/QTimer \
 		debug/moc_predefs.h \
 		../../../QT/5.14.2/mingw73_32/bin/moc.exe
 	D:\QT\5.14.2\mingw73_32\bin\moc.exe $(DEFINES) --include D:/PROYECTO_SCRUM_IS_II/LoboServicesFCC/build-FCC-Desktop_Qt_5_14_2_MinGW_32_bit-Debug/debug/moc_predefs.h -ID:/QT/5.14.2/mingw73_32/mkspecs/win32-g++ -ID:/PROYECTO_SCRUM_IS_II/LoboServicesFCC/FCC -ID:/QT/5.14.2/mingw73_32/include -ID:/QT/5.14.2/mingw73_32/include/QtCharts -ID:/QT/5.14.2/mingw73_32/include/QtPrintSupport -ID:/QT/5.14.2/mingw73_32/include/QtWidgets -ID:/QT/5.14.2/mingw73_32/include/QtMultimedia -ID:/QT/5.14.2/mingw73_32/include/QtGui -ID:/QT/5.14.2/mingw73_32/include/QtANGLE -ID:/QT/5.14.2/mingw73_32/include/QtSql -ID:/QT/5.14.2/mingw73_32/include/QtNetwork -ID:/QT/5.14.2/mingw73_32/include/QtCore -I. -ID:/QT/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++ -ID:/QT/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/i686-w64-mingw32 -ID:/QT/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/backward -ID:/QT/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include -ID:/QT/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include-fixed -ID:/QT/Tools/mingw730_32/i686-w64-mingw32/include ..\FCC\mainwindow.h -o debug\moc_mainwindow.cpp
@@ -1349,6 +1354,7 @@ debug/main.o: ../FCC/main.cpp ../FCC/mainwindow.h \
 		../../../QT/5.14.2/mingw73_32/include/QtCharts/qtchartsversion.h \
 		../../../QT/5.14.2/mingw73_32/include/QtCharts/QChartView \
 		../../../QT/5.14.2/mingw73_32/include/QtCharts/QBarSeries \
+		../../../QT/5.14.2/mingw73_32/include/QtCore/QTimer \
 		../../../QT/5.14.2/mingw73_32/include/QtWidgets/QApplication
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\main.o ..\FCC\main.cpp
 
@@ -1935,6 +1941,7 @@ debug/mainwindow.o: ../FCC/mainwindow.cpp ../FCC/mainwindow.h \
 		../../../QT/5.14.2/mingw73_32/include/QtCharts/qtchartsversion.h \
 		../../../QT/5.14.2/mingw73_32/include/QtCharts/QChartView \
 		../../../QT/5.14.2/mingw73_32/include/QtCharts/QBarSeries \
+		../../../QT/5.14.2/mingw73_32/include/QtCore/QTimer \
 		ui_mainwindow.h \
 		../../../QT/5.14.2/mingw73_32/include/QtWidgets/QApplication \
 		../../../QT/5.14.2/mingw73_32/include/QtWidgets/QComboBox \
@@ -1946,7 +1953,8 @@ debug/mainwindow.o: ../FCC/mainwindow.cpp ../FCC/mainwindow.h \
 		../../../QT/5.14.2/mingw73_32/include/QtWidgets/QLineEdit \
 		../../../QT/5.14.2/mingw73_32/include/QtWidgets/QPushButton \
 		../../../QT/5.14.2/mingw73_32/include/QtWidgets/QStackedWidget \
-		../../../QT/5.14.2/mingw73_32/include/QtWidgets/QTableView
+		../../../QT/5.14.2/mingw73_32/include/QtWidgets/QTableView \
+		../../../QT/5.14.2/mingw73_32/include/QtCore/QModelIndex
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\mainwindow.o ..\FCC\mainwindow.cpp
 
 debug/qrc_Imagenes.o: debug/qrc_Imagenes.cpp 
