@@ -2546,7 +2546,7 @@ font: 80 14pt &quot;MS Shell Dlg 2&quot;;</string>
    background-color: white; 
    color: black; 
    border : 1px solid black; 
-   font: 13pt; 
+   font: 8.5pt; 
    height: 30px;
 }
 
@@ -2554,7 +2554,7 @@ QHeaderView::section {
     background-color: rgb(49, 51, 64); 
     color: white; 
     border : 1px solid black; 
-    font: 13pt;                                
+    font: 8.5pt;                                
 	height: 30px;
 }</string>
           </property>
@@ -3100,7 +3100,7 @@ padding: 2px 4px;
    background-color: white; 
    color: black; 
    border : 1px solid black; 
-   font: 13pt; 
+   font: 9pt; 
    height: 30px;
 }
 
@@ -3108,7 +3108,7 @@ QHeaderView::section {
     background-color: rgb(49, 51, 64); 
     color: white; 
     border : 1px solid black; 
-    font: 13pt;                                
+    font: 9pt;                                
 	height: 30px;
 }</string>
           </property>

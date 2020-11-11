@@ -1358,7 +1358,7 @@ public:
 "   background-color: white; \n"
 "   color: black; \n"
 "   border : 1px solid black; \n"
-"   font: 13pt; \n"
+"   font: 8.5pt; \n"
 "   height: 30px;\n"
 "}\n"
 "\n"
@@ -1366,7 +1366,7 @@ public:
 "    background-color: rgb(49, 51, 64); \n"
 "    color: white; \n"
 "    border : 1px solid black; \n"
-"    font: 13pt;                                \n"
+"    font: 8.5pt;                                \n"
 "	height: 30px;\n"
 "}"));
         label_20 = new QLabel(groupBox_4);
@@ -1571,7 +1571,7 @@ public:
 "   background-color: white; \n"
 "   color: black; \n"
 "   border : 1px solid black; \n"
-"   font: 13pt; \n"
+"   font: 9pt; \n"
 "   height: 30px;\n"
 "}\n"
 "\n"
@@ -1579,7 +1579,7 @@ public:
 "    background-color: rgb(49, 51, 64); \n"
 "    color: white; \n"
 "    border : 1px solid black; \n"
-"    font: 13pt;                                \n"
+"    font: 9pt;                                \n"
 "	height: 30px;\n"
 "}"));
         stackProfesor->addWidget(Perfil_2);

@@ -1689,18 +1689,17 @@ void MainWindow::IndicarMaterias(){
 
 }
 void MainWindow::BuscarAlumno2(){
-
     QSqlQueryModel *model = new QSqlQueryModel;
     QString search, data;
     search = ui->nombreusuariobuscm->text();
     data = "select matricula as Matricula, Nombre as Nombre from estudiante where Nombre LIKE '%"+search+"%'";
     model->setQuery(data);
     ui->tablaMatriculas->setModel(model);
-
 }
 void MainWindow::AgregarDatos2(){
     ui->tablaMatriculas->verticalHeader()->setVisible(false);   //hide header
-    ui->tablaMatriculas->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    ui->tablaMatriculas->setColumnWidth(0,85);
+    ui->tablaMatriculas->setColumnWidth(1,356);
     ui->tablaMatriculas->setSelectionBehavior(QAbstractItemView::SelectRows);
     ui->tablaMatriculas->setModel(query);
 }
